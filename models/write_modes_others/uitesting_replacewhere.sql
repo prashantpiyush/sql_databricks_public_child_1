@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "incremental",
-    "alias": "alias_uitesting_replacewhere_1",
+    "alias": "alias_uitesting_replacewhere_2",
     "incremental_predicates": ["c_tinyint BETWEEN -1 AND 100000"],
     "incremental_strategy": 'replace_where',
     "on_schema_change": 'append_new_columns'

@@ -10,7 +10,7 @@
     "graphConfig" : {
       "entityConfig" : {
         "incremental_predicates" : [ "\"c_tinyint BETWEEN -1 AND 100000\"" ],
-        "alias" : "\"alias_uitesting_replacewhere_1\"",
+        "alias" : "\"alias_uitesting_replacewhere_2\"",
         "materialized" : "incremental",
         "on_schema_change" : "'append_new_columns'",
         "incremental_strategy" : "'replace_where'",

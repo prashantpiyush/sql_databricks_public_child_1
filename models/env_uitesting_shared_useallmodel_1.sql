@@ -824,7 +824,7 @@ Subgraph_9 AS (
     
     UNION
     
-    SELECT cast(ANY (col) AS string) AS c1
+    SELECT CAST(ANY (col) AS STRING) AS c1
     
     FROM VALUES
           (true),
@@ -6513,6 +6513,39 @@ Reformatsnapshot_parent_main AS (
 
 ),
 
+uitesting_scd2_timestamp AS (
+
+  SELECT * 
+  
+  FROM {{ ref('uitesting_scd2_timestamp')}}
+
+),
+
+Reformat_11 AS (
+
+  {#Retrieves and organizes various data types from a specific testing dataset for analysis.#}
+  SELECT 
+    c_tinyint AS c_tinyint,
+    c_smallint AS c_smallint,
+    c_int AS c_int,
+    c_bigint AS c_bigint,
+    c_float AS c_float,
+    c_double AS c_double,
+    c_string AS c_string,
+    c_boolean AS c_boolean,
+    c_array AS c_array,
+    c_struct AS c_struct,
+    c_id AS c_id,
+    c_date AS c_date,
+    dbt_scd_id AS dbt_scd_id,
+    dbt_updated_at AS dbt_updated_at,
+    dbt_valid_from AS dbt_valid_from,
+    dbt_valid_to AS dbt_valid_to
+  
+  FROM uitesting_scd2_timestamp AS in0
+
+),
+
 SQLStatement31 AS (
 
   SELECT 
@@ -6534,10 +6567,17 @@ SQLStatement31 AS (
   WHERE customer_id
         NOT LIKE '%1%'
         and c13 != (
-              SELECT count(*)
-              
-              FROM Reformatsnapshot_parent_main
-             )
+              (
+                SELECT count(*)
+                
+                FROM Reformatsnapshot_parent_main
+               )
+              + (
+                  SELECT count(*)
+                  
+                  FROM Reformat_11
+                 )
+            )
 
 ),
 
@@ -7663,7 +7703,7 @@ SQLStatement_1_2 AS (
   
   UNION
   
-  SELECT cast(ANY (col) AS string) AS c1
+  SELECT CAST(ANY (col) AS STRING) AS c1
   
   FROM VALUES
         (true),
