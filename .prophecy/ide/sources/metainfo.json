@@ -89105,7 +89105,9 @@
   },
   "dependenciesContainer" : {
     "dependencies" : { },
-    "prophecyProjectDependencies" : { }
+    "prophecyProjectDependencies" : {
+      "https://github.com/abhisheks-prophecy/sql_databricks_public_parent" : "66"
+    }
   },
   "entitiesToSync" : [ {
     "name" : "env_uitesting_shared_child_model_1",
