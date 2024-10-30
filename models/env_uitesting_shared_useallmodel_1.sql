@@ -2563,7 +2563,13 @@ Subgraph_9 AS (
 parent_transform_deduplicate_1 AS (
 
   {#Removes duplicate entries from a dataset based on first names and IDs to ensure data integrity.#}
-  {{ SQL_DatabricksParentProjectMain.parent_transform_deduplicate('Subgraph_9', 'first_name', 'id') }}
+  {{
+    SQL_DatabricksParentProjectMain.parent_transform_deduplicate(
+      relation = 'Subgraph_9', 
+      partition_by = 'first_name', 
+      order_by = 'id'
+    )
+  }}
 
 ),
 
@@ -9192,9 +9198,9 @@ child_deduplicate_custom_1 AS (
   {#Removes duplicate child records to ensure data accuracy.#}
   {{
     SQL_DatabricksSharedBasic.child_deduplicate_custom(
-      'parent_transform_deduplicate_1', 
-      'first_name', 
-      'id'
+      relation = 'parent_transform_deduplicate_1', 
+      partition_by = 'first_name', 
+      order_by = 'id'
     )
   }}
 
