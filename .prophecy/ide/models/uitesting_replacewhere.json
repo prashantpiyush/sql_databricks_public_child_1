@@ -2,74 +2,65 @@
   "id" : "uitesting_replacewhere",
   "metainfo" : {
     "label" : "uitesting_replacewhere",
-    "autoLayout" : false,
+    "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
       "sources" : [ ]
     },
     "graphConfig" : {
       "entityConfig" : {
-        "incremental_predicates" : [ "\"c_tinyint BETWEEN -1 AND 100000\"" ],
+        "incremental_predicates" : "[\"c_tinyint BETWEEN -1 AND 100000\"]",
         "alias" : "\"alias_uitesting_replacewhere_2\"",
         "materialized" : "incremental",
         "on_schema_change" : "'append_new_columns'",
         "incremental_strategy" : "'replace_where'",
         "type" : "ModelConfig"
+      },
+      "userDefinedConfig" : {
+        "vars" : { }
       }
     },
     "version" : 3
   },
   "processes" : {
-    "uitesting_replacewhere##wceiJ6rJ" : {
-      "id" : "uitesting_replacewhere##wceiJ6rJ",
-      "component" : "TargetModel",
+    "all_type_non_par##T6nnpLBV" : {
+      "id" : "all_type_non_par##T6nnpLBV",
+      "component" : "Source",
       "metadata" : {
-        "label" : "uitesting_replacewhere",
-        "x" : 300,
-        "y" : 20,
+        "label" : "all_type_non_partitioned_1",
         "phase" : 0,
-        "macroDependencies" : [ ],
-        "comment" : "Retrieves all records from a dataset without any filtering.",
-        "autoUpdateComment" : true
+        "isLabelGrayed" : false
       },
       "properties" : {
-        "customQueryDisabled" : true,
-        "customQuery" : false,
-        "incrementalEditorDisabled" : true,
-        "query" : "SELECT * \n\nFROM all_type_non_partitioned_columns\n",
-        "incrementalKey" : false,
-        "incremental" : {
-          "expression" : "true"
+        "table" : {
+          "name" : "all_type_non_partitioned",
+          "sourceType" : "Source",
+          "sourceName" : "hive_metastore.qa_database"
         }
       },
       "ports" : {
-        "inputs" : [ {
-          "id" : "ZkQeiKch",
-          "slug" : "all_type_non_partitioned_columns"
-        } ],
+        "inputs" : [ ],
         "outputs" : [ {
-          "id" : "fBRpnqfP",
+          "id" : "kjcJb9p8",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      }
+      },
+      "index" : 0
     },
-    "-TlF2o1x3V-z8K0Gn0sqq$$NrRkoB5hBMfNT4XOvNAdj" : {
-      "id" : "-TlF2o1x3V-z8K0Gn0sqq$$NrRkoB5hBMfNT4XOvNAdj",
+    "all_type_non_par##UtplYGw5" : {
+      "id" : "all_type_non_par##UtplYGw5",
       "component" : "Reformat",
       "metadata" : {
         "label" : "all_type_non_partitioned_columns",
-        "slug" : "all_type_non_partitioned_columns",
-        "x" : 40,
-        "y" : -40,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Extracts all non-partitioned columns from the 'all_type_non_partitioned' table.",
-        "autoUpdateComment" : true
+        "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ "MYPBXHIvvHA4_ovvjtSv3$$OJ5i26WqNWU9leh7a3ETB##c_tinyint", "MYPBXHIvvHA4_ovvjtSv3$$OJ5i26WqNWU9leh7a3ETB##c_smallint", "MYPBXHIvvHA4_ovvjtSv3$$OJ5i26WqNWU9leh7a3ETB##c_int", "MYPBXHIvvHA4_ovvjtSv3$$OJ5i26WqNWU9leh7a3ETB##c_bigint", "MYPBXHIvvHA4_ovvjtSv3$$OJ5i26WqNWU9leh7a3ETB##c_float", "MYPBXHIvvHA4_ovvjtSv3$$OJ5i26WqNWU9leh7a3ETB##c_double", "MYPBXHIvvHA4_ovvjtSv3$$OJ5i26WqNWU9leh7a3ETB##c_string", "MYPBXHIvvHA4_ovvjtSv3$$OJ5i26WqNWU9leh7a3ETB##c_boolean", "MYPBXHIvvHA4_ovvjtSv3$$OJ5i26WqNWU9leh7a3ETB##c_array", "MYPBXHIvvHA4_ovvjtSv3$$OJ5i26WqNWU9leh7a3ETB##c_struct" ],
+        "columnsSelector" : [ ],
         "expressions" : [ {
           "expression" : {
             "expression" : "c_tinyint"
@@ -129,59 +120,63 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "MYPBXHIvvHA4_ovvjtSv3$$OJ5i26WqNWU9leh7a3ETB",
+          "id" : "MRsNWmmR",
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "02Siyvol5i76ve7JKL3RX$$3fAKPIKN5o7Rrz7pd88JZ",
+          "id" : "QeZP4ZaS",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      }
+      },
+      "index" : 1
     },
-    "ZqrocPnb-zwrEAjnrkZJJ" : {
-      "id" : "ZqrocPnb-zwrEAjnrkZJJ",
-      "component" : "Source",
+    "final##ItRg74DK" : {
+      "id" : "final##ItRg74DK",
+      "component" : "TargetModel",
       "metadata" : {
-        "label" : "all_type_non_partitioned_1",
-        "slug" : "all_type_non_partitioned_1",
-        "x" : -140,
-        "y" : -80,
-        "phase" : 0
+        "label" : "uitesting_replacewhere",
+        "phase" : 0,
+        "isLabelGrayed" : false
       },
       "properties" : {
-        "table" : {
-          "name" : "all_type_non_partitioned",
-          "sourceType" : "Source",
-          "sourceName" : "hive_metastore.qa_database",
-          "alias" : "",
-          "additionalProperties" : null
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT *\n\nFROM all_type_non_partitioned_columns\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
         }
       },
       "ports" : {
-        "inputs" : [ ],
+        "inputs" : [ {
+          "id" : "McMp7jTh",
+          "slug" : "all_type_non_partitioned_columns"
+        } ],
         "outputs" : [ {
-          "id" : "USuFXsqPN-e9OE_P8Z53B",
+          "id" : "gRC6Kr4v",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      }
+      },
+      "index" : 2
     }
   },
   "connections" : [ {
-    "id" : "pMbq5pxbIDeWPi0LDHjsX$$eymKLWj61t-04o9NzNmUc",
-    "source" : "-TlF2o1x3V-z8K0Gn0sqq$$NrRkoB5hBMfNT4XOvNAdj",
-    "sourcePort" : "02Siyvol5i76ve7JKL3RX$$3fAKPIKN5o7Rrz7pd88JZ",
-    "target" : "uitesting_replacewhere##wceiJ6rJ",
-    "targetPort" : "ZkQeiKch"
+    "id" : "J3NljTlS",
+    "source" : "all_type_non_par##T6nnpLBV",
+    "sourcePort" : "kjcJb9p8",
+    "target" : "all_type_non_par##UtplYGw5",
+    "targetPort" : "MRsNWmmR"
   }, {
-    "id" : "7yO6p2gFVRVtnqh-RW93w$$LqFznxwvnET4VYKV-m_aj",
-    "source" : "ZqrocPnb-zwrEAjnrkZJJ",
-    "sourcePort" : "USuFXsqPN-e9OE_P8Z53B",
-    "target" : "-TlF2o1x3V-z8K0Gn0sqq$$NrRkoB5hBMfNT4XOvNAdj",
-    "targetPort" : "MYPBXHIvvHA4_ovvjtSv3$$OJ5i26WqNWU9leh7a3ETB"
+    "id" : "QLd4C3vd",
+    "source" : "all_type_non_par##UtplYGw5",
+    "sourcePort" : "QeZP4ZaS",
+    "target" : "final##ItRg74DK",
+    "targetPort" : "McMp7jTh"
   } ],
   "component" : "Model"
 }
