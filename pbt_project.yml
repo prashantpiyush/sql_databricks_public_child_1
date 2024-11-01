@@ -216,7 +216,40 @@ sqlModels:
     createdAt: '2024-07-22 05:13:05'
   .prophecy/metadata/sqlmodels/tpcds_uitesting_shared_1:
     name: tpcds_uitesting_shared_1
-    schema: null
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: substrw_warehouse_name120
+        dataType:
+          type: String
+      - name: sm_type
+        dataType:
+          type: String
+      - name: cc_name
+        dataType:
+          type: String
+      - name: days_30
+        dataType:
+          type: Bigint
+      - name: days_31_60
+        dataType:
+          type: Bigint
+      - name: days_61_90
+        dataType:
+          type: Bigint
+      - name: days_90_120
+        dataType:
+          type: Bigint
+      - name: days_more_than_120
+        dataType:
+          type: Bigint
+      - name: h8_30_to_9
+        dataType:
+          type: Bigint
+      - name: i_item_id
+        dataType:
+          type: String
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -671,7 +704,52 @@ sqlModels:
     createdAt: '2024-07-22 04:47:43'
   .prophecy/metadata/sqlmodels/env_uitesting_shared_useallmodel_1:
     name: env_uitesting_shared_useallmodel_1
-    schema: null
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: c_tinyint
+        dataType:
+          type: TinyInt
+      - name: c_smallint
+        dataType:
+          type: SmallInt
+      - name: c_int
+        dataType:
+          type: Integer
+      - name: c_bigint
+        dataType:
+          type: Bigint
+      - name: c_float
+        dataType:
+          type: Float
+      - name: c_double
+        dataType:
+          type: Double
+      - name: c_string
+        dataType:
+          type: String
+      - name: c_boolean
+        dataType:
+          type: Boolean
+      - name: c_array
+        dataType:
+          type: Array
+          dataType:
+            type: String
+      - name: c_struct
+        dataType:
+          type: Struct
+          fields:
+          - name: city
+            dataType:
+              type: String
+          - name: state
+            dataType:
+              type: String
+          - name: pin
+            dataType:
+              type: Bigint
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
