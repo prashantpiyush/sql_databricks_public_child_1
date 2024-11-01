@@ -89105,7 +89105,6 @@
   },
   "dependenciesContainer" : {
     "dependencies" : { },
-    "lastError" : "Building dependency project SQL_DatabricksParentProjectMain failed. env_uitesting_main_model_databricks_1: Component parent_transform_deduplicate not found,\nenv_uitesting_main_model_databricks_1: Component parent_transform_deduplicate not found,\nenv_uitesting_main_model_databricks_1: Error updating 'env_uitesting_main_model_databricks_1' file: Component parent_transform_deduplicate not found",
     "prophecyProjectDependencies" : { }
   },
   "entitiesToSync" : [ {
