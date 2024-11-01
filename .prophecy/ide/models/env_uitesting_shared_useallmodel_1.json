@@ -20561,13 +20561,15 @@
         "y" : 2560,
         "phase" : 0,
         "macroDependencies" : [ ],
+        "comment" : "Formats names and generates unique identifiers from a dataset.",
+        "autoUpdateComment" : true,
         "isLabelGrayed" : false
       },
       "properties" : {
         "columnsSelector" : [ "XrHCUp0S##col_int" ],
         "expressions" : [ {
           "expression" : {
-            "expression" : "'This is my first name'"
+            "expression" : "concat('This is my first name', cast(null as string))"
           },
           "alias" : "first_name"
         }, {

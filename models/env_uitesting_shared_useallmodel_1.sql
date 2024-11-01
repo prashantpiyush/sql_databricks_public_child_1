@@ -36,8 +36,9 @@ qa_complex_macro_1 AS (
 
 Reformat_1 AS (
 
+  {#Formats names and generates unique identifiers from a dataset.#}
   SELECT 
-    'This is my first name' AS first_name,
+    concat('This is my first name', CAST(NULL AS STRING)) AS first_name,
     'This is my last name' AS last_name,
     1 + col_int AS id
   
