@@ -1,7 +1,6 @@
 {% snapshot uitesting_scd2_diff_col_val %}
 {{
   config({    
-    "check_cols": [],
     "strategy": 'timestamp',
     "target_schema":  var('qa_schema') ,
     "unique_key": 'c_id',

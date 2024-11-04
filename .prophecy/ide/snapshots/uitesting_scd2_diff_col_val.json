@@ -10,7 +10,6 @@
     "graphConfig" : {
       "entityConfig" : {
         "strategy" : "'timestamp'",
-        "check_cols" : [ ],
         "updated_at" : "\"c_float\"",
         "target_schema" : " var('qa_schema') ",
         "unique_key" : "'c_id'",
@@ -23,8 +22,8 @@
     "version" : 3
   },
   "processes" : {
-    "all_type_non_par##gyXVLabR" : {
-      "id" : "all_type_non_par##gyXVLabR",
+    "all_type_non_par##pLtaCujd" : {
+      "id" : "all_type_non_par##pLtaCujd",
       "component" : "Source",
       "metadata" : {
         "label" : "all_type_non_partitioned_1",
@@ -43,7 +42,7 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "QlNhOUIy",
+          "id" : "BChKfcnw",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -51,8 +50,8 @@
       },
       "index" : 0
     },
-    "all_type_non_par##HsLzxCF1" : {
-      "id" : "all_type_non_par##HsLzxCF1",
+    "all_type_non_par##zyH6Up4w" : {
+      "id" : "all_type_non_par##zyH6Up4w",
       "component" : "Reformat",
       "metadata" : {
         "label" : "all_type_non_partitioned_columns",
@@ -124,11 +123,11 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "mOZM7hX2",
+          "id" : "Ix48SQ8P",
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "ilYkYkfZ",
+          "id" : "JnTxGlNc",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -136,8 +135,8 @@
       },
       "index" : 1
     },
-    "final##twOT1prb" : {
-      "id" : "final##twOT1prb",
+    "final##mNu0qXUY" : {
+      "id" : "final##mNu0qXUY",
       "component" : "TargetSnapshot",
       "metadata" : {
         "label" : "uitesting_scd2_diff_col_val",
@@ -158,11 +157,11 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "G6jIOMO0",
+          "id" : "oh8O4602",
           "slug" : "all_type_non_partitioned_columns"
         } ],
         "outputs" : [ {
-          "id" : "fzwkHkEP",
+          "id" : "yyq0UFfp",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -171,17 +170,17 @@
     }
   },
   "connections" : [ {
-    "id" : "q9miE3dQ",
-    "source" : "all_type_non_par##gyXVLabR",
-    "sourcePort" : "QlNhOUIy",
-    "target" : "all_type_non_par##HsLzxCF1",
-    "targetPort" : "mOZM7hX2"
+    "id" : "y5X4CDXs",
+    "source" : "all_type_non_par##pLtaCujd",
+    "sourcePort" : "BChKfcnw",
+    "target" : "all_type_non_par##zyH6Up4w",
+    "targetPort" : "Ix48SQ8P"
   }, {
-    "id" : "LIYuh1Yr",
-    "source" : "all_type_non_par##HsLzxCF1",
-    "sourcePort" : "ilYkYkfZ",
-    "target" : "final##twOT1prb",
-    "targetPort" : "G6jIOMO0"
+    "id" : "hnWSqSaK",
+    "source" : "all_type_non_par##zyH6Up4w",
+    "sourcePort" : "JnTxGlNc",
+    "target" : "final##mNu0qXUY",
+    "targetPort" : "oh8O4602"
   } ],
   "component" : "Snapshot"
 }

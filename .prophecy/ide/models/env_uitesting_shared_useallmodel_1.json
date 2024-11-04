@@ -2,7 +2,7 @@
   "id" : "env_uitesting_shared_useallmodel_1",
   "metainfo" : {
     "label" : "env_uitesting_shared_useallmodel_1",
-    "autoLayout" : true,
+    "autoLayout" : false,
     "staleState" : "none",
     "sourceSuggestions" : {
       "sources" : [ ]
@@ -34,6 +34,8 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "SQLStatement_1_4",
+        "x" : 480,
+        "y" : 1760,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -60,6 +62,8 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "Reformat_11",
+        "x" : 480,
+        "y" : 1360,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Retrieves and organizes various data types from a specific testing dataset for analysis.",
@@ -168,6 +172,8 @@
       "component" : "TargetModel",
       "metadata" : {
         "label" : "env_uitesting_shared_useallmodel_1",
+        "x" : 2140,
+        "y" : 2220,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -200,6 +206,8 @@
       "component" : "Subgraph",
       "metadata" : {
         "label" : "Subgraph_2",
+        "x" : 1140,
+        "y" : 20,
         "phase" : 0
       },
       "processes" : {
@@ -3431,6 +3439,8 @@
       "component" : "Filter",
       "metadata" : {
         "label" : "SQLStatement_3_2",
+        "x" : 880,
+        "y" : 2120,
         "phase" : 0,
         "macroDependencies" : [ ],
         "isLabelGrayed" : false
@@ -3460,6 +3470,8 @@
       "component" : "Model",
       "metadata" : {
         "label" : "env_uitesting_main_model_databricks_1",
+        "x" : 1140,
+        "y" : 2400,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -3485,6 +3497,8 @@
       "component" : "SQLStatement",
       "metadata" : {
         "label" : "SQLStatement_1",
+        "x" : 680,
+        "y" : 3080,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -3515,6 +3529,8 @@
       "component" : "Join",
       "metadata" : {
         "label" : "Join_1_2",
+        "x" : 880,
+        "y" : 420,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Combines customer data with additional records while excluding certain matches for deeper insights.",
@@ -3594,6 +3610,8 @@
       "component" : "Limit",
       "metadata" : {
         "label" : "Limit_5",
+        "x" : 1640,
+        "y" : 1720,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -3621,6 +3639,8 @@
       "component" : "Subgraph",
       "metadata" : {
         "label" : "Subgraph_10",
+        "x" : 1420,
+        "y" : 2600,
         "phase" : 0
       },
       "processes" : {
@@ -9130,6 +9150,8 @@
       "component" : "Join",
       "metadata" : {
         "label" : "Join_1_3",
+        "x" : 880,
+        "y" : 1060,
         "phase" : 0,
         "macroDependencies" : [ ],
         "isLabelGrayed" : false
@@ -9194,6 +9216,8 @@
       "component" : "Join",
       "metadata" : {
         "label" : "joined_records",
+        "x" : 680,
+        "y" : 660,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Combines various unique records to create a comprehensive dataset for analysis.",
@@ -9278,6 +9302,8 @@
       "component" : "Limit",
       "metadata" : {
         "label" : "Limit_2",
+        "x" : 1640,
+        "y" : 420,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -9305,6 +9331,8 @@
       "component" : "Aggregate",
       "metadata" : {
         "label" : "Aggregate_1",
+        "x" : 1420,
+        "y" : 1720,
         "phase" : 0,
         "macroDependencies" : [ ],
         "isLabelGrayed" : false
@@ -9447,6 +9475,8 @@
       "component" : "OrderBy",
       "metadata" : {
         "label" : "OrderBy_2",
+        "x" : 880,
+        "y" : 2960,
         "phase" : 0,
         "macroDependencies" : [ ],
         "isLabelGrayed" : false
@@ -9485,6 +9515,8 @@
       "component" : "Source",
       "metadata" : {
         "label" : "all_type_partitioned",
+        "x" : 480,
+        "y" : 3080,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -9511,6 +9543,8 @@
       "component" : "parent_transform_deduplicate",
       "metadata" : {
         "label" : "parent_transform_deduplicate_1",
+        "x" : 1420,
+        "y" : 2200,
         "phase" : 0,
         "macroDependencies" : [ "SQL_DatabricksParentProjectMain.parent_transform_deduplicate" ],
         "comment" : "Removes duplicate entries from a dataset based on first names and IDs to ensure data integrity.",
@@ -9561,6 +9595,8 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "Reformat_2_1",
+        "x" : 480,
+        "y" : 260,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Filters customer data based on various complex criteria for targeted analysis.",
@@ -9609,6 +9645,8 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "Reformatsnapshot_parent_main",
+        "x" : 480,
+        "y" : 1160,
         "phase" : 0,
         "macroDependencies" : [ ],
         "isLabelGrayed" : false
@@ -9721,6 +9759,8 @@
       "component" : "Deduplicate",
       "metadata" : {
         "label" : "unique_tinyint_records",
+        "x" : 480,
+        "y" : 460,
         "phase" : 0,
         "comment" : "Identifies unique records based on a specific small integer value.",
         "isLabelGrayed" : false
@@ -9755,6 +9795,8 @@
       "component" : "Deduplicate",
       "metadata" : {
         "label" : "distinct_rows_by_partition",
+        "x" : 280,
+        "y" : 660,
         "phase" : 0,
         "comment" : "Identifies unique entries based on city, state, and a boolean flag, prioritizing specific numeric values.",
         "isLabelGrayed" : false
@@ -9811,6 +9853,8 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "AllExReformat",
+        "x" : 480,
+        "y" : 960,
         "phase" : 0,
         "macroDependencies" : [ ],
         "isLabelGrayed" : false
@@ -9963,6 +10007,8 @@
       "component" : "SetOperation",
       "metadata" : {
         "label" : "SetOperation_2",
+        "x" : 1420,
+        "y" : 3080,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -9994,6 +10040,8 @@
       "component" : "Model",
       "metadata" : {
         "label" : "env_uitesting_shared_parent_model_1",
+        "x" : 880,
+        "y" : 1720,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -10019,6 +10067,8 @@
       "component" : "child_deduplicate_custom",
       "metadata" : {
         "label" : "child_deduplicate_custom_1",
+        "x" : 1640,
+        "y" : 2200,
         "phase" : 0,
         "macroDependencies" : [ "SQL_DatabricksSharedBasic.child_deduplicate_custom" ],
         "comment" : "Removes duplicate child records to ensure data accuracy.",
@@ -10068,6 +10118,8 @@
       "component" : "Deduplicate",
       "metadata" : {
         "label" : "distinct_rows_by_partition_1",
+        "x" : 480,
+        "y" : 760,
         "phase" : 0,
         "comment" : "Identifies unique entries based on specific city and state attributes, ensuring data integrity.",
         "isLabelGrayed" : false
@@ -10128,6 +10180,8 @@
       "component" : "Source",
       "metadata" : {
         "label" : "all_type_parquet_1_1_1",
+        "x" : 20,
+        "y" : 1500,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -10154,6 +10208,8 @@
       "component" : "SetOperation",
       "metadata" : {
         "label" : "SetOperation_1",
+        "x" : 1140,
+        "y" : 3140,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -10185,6 +10241,8 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "Reformat_1",
+        "x" : 480,
+        "y" : 2700,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Formats names and generates unique identifiers from a dataset.",
@@ -10228,6 +10286,8 @@
       "component" : "SetOperation",
       "metadata" : {
         "label" : "SetOperation_3",
+        "x" : 1640,
+        "y" : 3040,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -10259,6 +10319,8 @@
       "component" : "Limit",
       "metadata" : {
         "label" : "Limit_4_1",
+        "x" : 880,
+        "y" : 3160,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -10286,6 +10348,8 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "AllStunningOne",
+        "x" : 1140,
+        "y" : 1720,
         "phase" : 0,
         "macroDependencies" : [ "SQL_DatabricksSharedBasic.qa_concat_function_main", "SQL_DatabricksParentProjectMain.qa_boolean_macro", "SQL_BaseGitDepProjectAllFinal.qa_concat_macro_base_column" ],
         "comment" : "Generates a comprehensive dataset combining various data transformations and calculations for analysis.",
@@ -10461,6 +10525,8 @@
       "component" : "Seed",
       "metadata" : {
         "label" : "raw_customers",
+        "x" : 20,
+        "y" : 2700,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -10486,6 +10552,8 @@
       "component" : "Source",
       "metadata" : {
         "label" : "all_type_parquet_1_2",
+        "x" : 880,
+        "y" : 2320,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -10512,6 +10580,8 @@
       "component" : "Source",
       "metadata" : {
         "label" : "date_dim",
+        "x" : 1140,
+        "y" : 2800,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -10538,6 +10608,8 @@
       "component" : "Limit",
       "metadata" : {
         "label" : "Limit8Test1",
+        "x" : 1140,
+        "y" : 420,
         "phase" : 0,
         "comment" : "Extracts a sample of five records from the combined customer and asset data for review.",
         "isLabelGrayed" : false
@@ -10566,6 +10638,8 @@
       "component" : "Join",
       "metadata" : {
         "label" : "Join_1",
+        "x" : 1400,
+        "y" : 400,
         "phase" : 0,
         "macroDependencies" : [ ],
         "isLabelGrayed" : false
@@ -10682,6 +10756,8 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "SQLStatement_2_1",
+        "x" : 680,
+        "y" : 960,
         "phase" : 0,
         "macroDependencies" : [ ],
         "isLabelGrayed" : false
@@ -10737,6 +10813,8 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "SQLStatement_3_1_1",
+        "x" : 680,
+        "y" : 2120,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -10763,6 +10841,8 @@
       "component" : "Snapshot",
       "metadata" : {
         "label" : "snapshot_parent_main",
+        "x" : 280,
+        "y" : 1160,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -10788,6 +10868,8 @@
       "component" : "Filter",
       "metadata" : {
         "label" : "Filter_1",
+        "x" : 680,
+        "y" : 2700,
         "phase" : 0,
         "macroDependencies" : [ ],
         "isLabelGrayed" : false
@@ -10817,6 +10899,8 @@
       "component" : "Model",
       "metadata" : {
         "label" : "env_uitesting_shared_mid_model_1",
+        "x" : 1140,
+        "y" : 220,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -10842,6 +10926,8 @@
       "component" : "Source",
       "metadata" : {
         "label" : "all_type_parquet",
+        "x" : 20,
+        "y" : 1040,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -10868,6 +10954,8 @@
       "component" : "Subgraph",
       "metadata" : {
         "label" : "Subgraph_3",
+        "x" : 1140,
+        "y" : 1460,
         "phase" : 0
       },
       "processes" : {
@@ -12156,6 +12244,8 @@
       "component" : "Macro",
       "metadata" : {
         "label" : "qa_complex_macro_1",
+        "x" : 280,
+        "y" : 2700,
         "phase" : 0,
         "macroDependencies" : [ "SQL_DatabricksParentProjectMain.qa_complex_macro" ],
         "isLabelGrayed" : false
@@ -12193,6 +12283,8 @@
       "component" : "Deduplicate",
       "metadata" : {
         "label" : "SQLStatement_1_1_1",
+        "x" : 680,
+        "y" : 1460,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -12222,6 +12314,8 @@
       "component" : "Limit",
       "metadata" : {
         "label" : "Limit_1",
+        "x" : 880,
+        "y" : 2700,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -12249,6 +12343,8 @@
       "component" : "Limit",
       "metadata" : {
         "label" : "Limit_3",
+        "x" : 1640,
+        "y" : 2600,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -12276,6 +12372,8 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "Reformat_1_1",
+        "x" : 280,
+        "y" : 260,
         "phase" : 0,
         "macroDependencies" : [ ],
         "isLabelGrayed" : false
@@ -12318,6 +12416,8 @@
       "component" : "SQLStatement",
       "metadata" : {
         "label" : "SQLStatement_1_2",
+        "x" : 680,
+        "y" : 420,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -12345,6 +12445,8 @@
       "component" : "Subgraph",
       "metadata" : {
         "label" : "Subgraph_9",
+        "x" : 1140,
+        "y" : 2200,
         "phase" : 0
       },
       "processes" : {
@@ -20636,6 +20738,8 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "all_type_parquet_2",
+        "x" : 280,
+        "y" : 1760,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -20662,6 +20766,8 @@
       "component" : "Snapshot",
       "metadata" : {
         "label" : "uitesting_scd2_timestamp",
+        "x" : 280,
+        "y" : 1360,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -20687,6 +20793,8 @@
       "component" : "SQLStatement",
       "metadata" : {
         "label" : "SQLStatement31",
+        "x" : 680,
+        "y" : 1160,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -20723,6 +20831,8 @@
       "component" : "Macro",
       "metadata" : {
         "label" : "combine_multiple_tables_1",
+        "x" : 1900,
+        "y" : 2200,
         "phase" : 0,
         "macroDependencies" : [ "SQL_DatabricksSharedBasic.combine_multiple_tables" ],
         "isLabelGrayed" : false
@@ -20781,6 +20891,8 @@
       "component" : "Limit",
       "metadata" : {
         "label" : "Limit_1_1",
+        "x" : 1140,
+        "y" : 1060,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -20808,6 +20920,8 @@
       "component" : "Deduplicate",
       "metadata" : {
         "label" : "distinct_all_types",
+        "x" : 280,
+        "y" : 460,
         "phase" : 0,
         "comment" : "Extracts unique combinations of tiny integer values and concatenated integer-string pairs.",
         "isLabelGrayed" : false
@@ -20847,6 +20961,8 @@
       "component" : "Source",
       "metadata" : {
         "label" : "item",
+        "x" : 1140,
+        "y" : 2600,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -20873,6 +20989,8 @@
       "component" : "Source",
       "metadata" : {
         "label" : "all_type_parquet_1_1",
+        "x" : 880,
+        "y" : 1920,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -20899,6 +21017,8 @@
       "component" : "Source",
       "metadata" : {
         "label" : "all_type_non_partitioned",
+        "x" : 20,
+        "y" : 420,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -20925,6 +21045,8 @@
       "component" : "Filter",
       "metadata" : {
         "label" : "SQLStatement_2_2_1",
+        "x" : 880,
+        "y" : 1520,
         "phase" : 0,
         "macroDependencies" : [ ],
         "isLabelGrayed" : false
@@ -20954,6 +21076,8 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "Reformat_1_2_1_1",
+        "x" : 280,
+        "y" : 960,
         "phase" : 0,
         "macroDependencies" : [ ],
         "isLabelGrayed" : false
