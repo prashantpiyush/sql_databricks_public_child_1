@@ -22,6 +22,1050 @@ WITH raw_customers AS (
 
 ),
 
+SQLStatement_1_2 AS (
+
+  SELECT cast(ANY (col1) FILTER (  
+           WHERE col2 = 1
+         ) AS string) AS c1
+  
+  FROM VALUES
+        (false, 1),
+        (false, 2),
+        (true, 2),
+        (NULL, 1) AS tab(col1, col2)
+  
+  UNION
+  
+  SELECT CAST(ANY (col) AS STRING) AS c1
+  
+  FROM VALUES
+        (true),
+        (false),
+        (false) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(approx_count_distinct(col1) AS STRING) AS c1
+  
+  FROM VALUES
+        (1),
+        (1),
+        (2),
+        (2),
+        (3) AS tab(col1)
+  
+  UNION
+  
+  SELECT cast(approx_count_distinct(col1) FILTER (  
+           WHERE col2 = 10
+         ) AS string) AS c1
+  
+  FROM VALUES
+        (1, 10),
+        (1, 10),
+        (2, 10),
+        (2, 10),
+        (3, 10),
+        (1, 12) AS tab(col1, col2)
+  
+  UNION
+  
+  SELECT CAST(approx_percentile(col, ARRAY(0.5, 0.4, 0.1), 100) AS STRING) AS c1
+  
+  FROM VALUES
+        (0),
+        (1),
+        (2),
+        (10) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(approx_percentile(DISTINCT col, 0.5, 100) AS STRING) AS c1
+  
+  FROM VALUES
+        (0),
+        (6),
+        (6),
+        (7),
+        (9),
+        (10) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(array_agg(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (1),
+        (2),
+        (NULL),
+        (1) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(array_agg(DISTINCT col) AS STRING) AS c1
+  
+  FROM VALUES
+        (1),
+        (2),
+        (NULL),
+        (1) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(avg(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (1),
+        (2),
+        (3) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(try_avg(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (10),
+        (20) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(bit_and(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (3),
+        (5) AS tab(col)
+  
+  UNION
+  
+  SELECT cast(bit_and(col) FILTER (  
+           WHERE col < 6
+         ) AS string) AS c1
+  
+  FROM VALUES
+        (3),
+        (5),
+        (6) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(bit_or(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (3),
+        (5) AS tab(col)
+  
+  UNION
+  
+  SELECT cast(bit_or(col) FILTER (  
+           WHERE col < 8
+         ) AS string) AS c1
+  
+  FROM VALUES
+        (3),
+        (5),
+        (8) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(bit_xor(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (3),
+        (3),
+        (5) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(bool_and(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (true),
+        (true),
+        (true) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(bool_or(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (true),
+        (false),
+        (false) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(collect_list(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (1),
+        (2),
+        (NULL),
+        (1) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(collect_set(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (1),
+        (2),
+        (NULL),
+        (1) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(corr(c1, c2) AS STRING) AS c1
+  
+  FROM VALUES
+        (3, 2),
+        (3, 3),
+        (3, 3),
+        (6, 4) AS tab(c1, c2)
+  
+  UNION
+  
+  SELECT cast(corr(DISTINCT c1, c2) FILTER (  
+           WHERE c1 != c2
+         ) AS string) AS c1
+  
+  FROM VALUES
+        (3, 2),
+        (3, 3),
+        (3, 3),
+        (6, 4) AS tab(c1, c2)
+  
+  UNION
+  
+  SELECT CAST(count(*) AS STRING) AS c1
+  
+  FROM VALUES
+        (NULL),
+        (5),
+        (5),
+        (20) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(count(*) AS STRING) AS c1
+  
+  FROM VALUES
+        (NULL),
+        (5),
+        (5),
+        (20) AS tab(col)
+  
+  UNION
+  
+  SELECT cast(count(col) FILTER (  
+           WHERE col < 10
+         ) AS string) AS c1
+  
+  FROM VALUES
+        (NULL),
+        (5),
+        (5),
+        (20) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(count_if(
+           col % 2 = 0) AS STRING) AS c1
+  
+  FROM VALUES
+        (NULL),
+        (0),
+        (1),
+        (2),
+        (2),
+        (3) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(covar_pop(c1, c2) AS STRING) AS c1
+  
+  FROM VALUES
+        (1, 1),
+        (2, 2),
+        (2, 2),
+        (3, 3) AS tab(c1, c2)
+  
+  UNION
+  
+  SELECT CAST(covar_samp(c1, c2) AS STRING) AS c1
+  
+  FROM VALUES
+        (1, 1),
+        (2, 2),
+        (2, 2),
+        (3, 3) AS tab(c1, c2)
+  
+  UNION
+  
+  SELECT CAST(every(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (true),
+        (true),
+        (true) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(first(col, true) AS STRING) AS c1
+  
+  FROM VALUES
+        (NULL),
+        (5),
+        (20) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(first_value(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (10),
+        (5),
+        (20) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(kurtosis(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (-10),
+        (-20),
+        (100),
+        (100),
+        (1000) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(last(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (10),
+        (5),
+        (20) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(last_value(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (10),
+        (5),
+        (20) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(max(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (10),
+        (50),
+        (20) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(max_by(x, y) AS STRING) AS c1
+  
+  FROM VALUES
+        (('a', 10)),
+        (('b', 50)),
+        (('c', 20)) AS tab(x, y)
+  
+  UNION
+  
+  SELECT CAST(mean(DISTINCT col) AS STRING) AS c1
+  
+  FROM VALUES
+        (1),
+        (1),
+        (2),
+        (NULL) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(min(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (10),
+        (50),
+        (20) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(min_by(x, y) AS STRING) AS c1
+  
+  FROM VALUES
+        (('a', 10)),
+        (('b', 50)),
+        (('c', 20)) AS tab(x, y)
+  
+  UNION
+  
+  SELECT CAST(percentile(col, 0.3) AS STRING) AS c1
+  
+  FROM VALUES
+        (0),
+        (10),
+        (10) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(percentile_approx(col, 0.5, 100) AS STRING) AS c1
+  
+  FROM VALUES
+        (0),
+        (6),
+        (7),
+        (9),
+        (10),
+        (10),
+        (10) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(regr_avgx(y, x) AS STRING) AS c1
+  
+  FROM VALUES
+        (1, 2),
+        (2, 3),
+        (2, 3),
+        (NULL, 4),
+        (4, NULL) AS T(y, x)
+  
+  UNION
+  
+  SELECT CAST(regr_avgy(y, x) AS STRING) AS c1
+  
+  FROM VALUES
+        (1, 2),
+        (2, 3),
+        (2, 3),
+        (NULL, 4),
+        (4, NULL) AS T(y, x)
+  
+  UNION
+  
+  SELECT CAST(regr_count(y, x) AS STRING) AS c1
+  
+  FROM VALUES
+        (1, 2),
+        (2, 2),
+        (2, 3),
+        (2, 4) AS t(y, x)
+  
+  UNION
+  
+  SELECT CAST(regr_r2(y, x) AS STRING) AS c1
+  
+  FROM VALUES
+        (1, 2),
+        (2, 3),
+        (2, 3),
+        (NULL, 4),
+        (4, NULL) AS T(y, x)
+  
+  UNION
+  
+  SELECT CAST(skewness(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (-10),
+        (-20),
+        (100),
+        (1000),
+        (1000) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(some(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (true),
+        (false),
+        (false) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(std(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (1),
+        (2),
+        (3),
+        (3) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(stddev(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (1),
+        (2),
+        (3),
+        (3) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(stddev_pop(DISTINCT col) AS STRING) AS c1
+  
+  FROM VALUES
+        (1),
+        (2),
+        (3),
+        (3) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(stddev_samp(DISTINCT col) AS STRING) AS c1
+  
+  FROM VALUES
+        (1),
+        (2),
+        (3),
+        (3) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(sum(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (NULL),
+        (NULL) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(try_avg(DISTINCT col) AS STRING) AS c1
+  
+  FROM VALUES
+        (1),
+        (1),
+        (2) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(try_sum(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (NULL),
+        (10),
+        (15) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(var_pop(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (1),
+        (2),
+        (3),
+        (3) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(var_samp(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (1),
+        (2),
+        (3),
+        (3) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(variance(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (1),
+        (2),
+        (3),
+        (3) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(a AS STRING) AS c1
+  
+  FROM (
+    SELECT 
+      a,
+      b,
+      dense_rank() OVER (PARTITION BY a ORDER BY b),
+      rank() OVER (PARTITION BY a ORDER BY b),
+      row_number() OVER (PARTITION BY a ORDER BY b)
+    
+    FROM VALUES
+          ('A1', 2),
+          ('A1', 1),
+          ('A2', 3),
+          ('A1', 1) AS tab(a, b)
+  )
+  
+  UNION
+  
+  SELECT CAST(a AS STRING) AS c1
+  
+  FROM (
+    SELECT 
+      a,
+      b,
+      ntile(2) OVER (PARTITION BY a ORDER BY b)
+    
+    FROM VALUES
+          ('A1', 2),
+          ('A1', 1),
+          ('A2', 3),
+          ('A1', 1) AS tab(a, b)
+  )
+  
+  UNION
+  
+  SELECT CAST(a AS STRING) AS c1
+  
+  FROM (
+    SELECT 
+      a,
+      b,
+      percent_rank(b) OVER (PARTITION BY a ORDER BY b)
+    
+    FROM VALUES
+          ('A1', 2),
+          ('A1', 1),
+          ('A1', 3),
+          ('A1', 6),
+          ('A1', 7),
+          ('A1', 7),
+          ('A2', 3),
+          ('A1', 1) AS tab(a, b)
+  )
+  
+  UNION
+  
+  SELECT CAST(a AS STRING) AS c1
+  
+  FROM (
+    SELECT 
+      a,
+      b,
+      dense_rank() OVER (PARTITION BY a ORDER BY b),
+      rank() OVER (PARTITION BY a ORDER BY b),
+      row_number() OVER (PARTITION BY a ORDER BY b)
+    
+    FROM VALUES
+          ('A1', 2),
+          ('A1', 1),
+          ('A2', 3),
+          ('A1', 1) AS tab(a, b)
+  )
+  
+  UNION
+  
+  SELECT CAST(a AS STRING) AS c1
+  
+  FROM (
+    SELECT 
+      a,
+      b,
+      cume_dist() OVER (PARTITION BY a ORDER BY b)
+    
+    FROM VALUES
+          ('A1', 2),
+          ('A1', 1),
+          ('A2', 3),
+          ('A1', 1) AS tab(a, b)
+  )
+  
+  UNION
+  
+  SELECT CAST(a AS STRING) AS c1
+  
+  FROM (
+    SELECT 
+      a,
+      b,
+      lag(b) OVER (PARTITION BY a ORDER BY b)
+    
+    FROM VALUES
+          ('A1', 2),
+          ('A1', 1),
+          ('A2', 3),
+          ('A1', 1) AS tab(a, b)
+  )
+  
+  UNION
+  
+  SELECT CAST(a AS STRING) AS c1
+  
+  FROM (
+    SELECT 
+      a,
+      b,
+      lead(b) OVER (PARTITION BY a ORDER BY b)
+    
+    FROM VALUES
+          ('A1', 2),
+          ('A1', 1),
+          ('A2', 3),
+          ('A1', 1) AS tab(a, b)
+  )
+  
+  UNION
+  
+  SELECT CAST(a AS STRING) AS c1
+  
+  FROM (
+    SELECT 
+      a,
+      b,
+      nth_value(b, 2) OVER (PARTITION BY a ORDER BY b)
+    
+    FROM VALUES
+          ('A1', 2),
+          ('A1', 1),
+          ('A2', 3),
+          ('A1', 1) AS tab(a, b)
+  )
+  
+  UNION
+  
+  SELECT CAST(num AS STRING) AS c1
+  
+  FROM (
+    SELECT 
+      explode(MAP(1, 'a', 2, 'b')) AS (num, val),
+      'Spark'
+  )
+  
+  UNION
+  
+  SELECT CAST(elem AS STRING) AS c1
+  
+  FROM (
+    SELECT 
+      explode_outer(ARRAY(10, 20)) AS elem,
+      'Spark'
+  )
+  
+  UNION
+  
+  SELECT CAST(name AS STRING) AS c1
+  
+  FROM (
+    SELECT 
+      name,
+      age,
+      count(*)
+    
+    FROM VALUES
+          (2, 'Alice'),
+          (5, 'Bob') AS people(age, name)
+    
+    GROUP BY CUBE(name, age)
+  )
+  
+  UNION
+  
+  SELECT CAST(name AS STRING) AS c1
+  
+  FROM (
+    SELECT 
+      name,
+      grouping(name),
+      sum(age)
+    
+    FROM VALUES
+          (2, 'Alice'),
+          (5, 'Bob') AS people(age, name)
+    
+    GROUP BY CUBE(name)
+  )
+  
+  UNION
+  
+  SELECT CAST(name AS STRING) AS c1
+  
+  FROM (
+    SELECT 
+      name,
+      age,
+      grouping_id(name, age),
+      conv(CAST(grouping_id(name, age) AS STRING), 10, 2),
+      avg(height)
+    
+    FROM VALUES
+          (2, 'Alice', 165),
+          (5, 'Bob', 180) AS people(age, name, height)
+    
+    GROUP BY CUBE(name, age)
+  )
+  
+  UNION
+  
+  SELECT CAST(col1 AS STRING) AS c1
+  
+  FROM (
+    SELECT 
+      'hello' AS col1,
+      stack(2, 1, 2, 3) AS (first, second),
+      'world'
+  )
+  
+  UNION
+  
+  SELECT CAST(any_value(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (10),
+        (5),
+        (20) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(approx_top_k(expr) AS STRING) AS c1
+  
+  FROM VALUES
+        (0),
+        (0),
+        (1),
+        (1),
+        (2),
+        (3),
+        (4),
+        (4) AS tab(expr)
+  
+  UNION
+  
+  SELECT CAST(hll_sketch_estimate(hll_sketch_agg(col, 12)) AS STRING) AS c1
+  
+  FROM VALUES
+        (1),
+        (1),
+        (2),
+        (2),
+        (3) AS tab(col)
+  
+  UNION
+  
+  -- SELECT CAST(a AS string) AS c1
+  -- FROM (
+  --   SELECT hll_sketch_estimate(hll_union(hll_sketch_agg(col1, 4), hll_sketch_agg(col2, 21))) AS a
+  --   FROM VALUES
+  --         (1, 4),
+  --         (1, 4),
+  --         (2, 5),
+  --         (2, 5),
+  --         (3, 6) AS tab(col1, col2)
+  -- )
+  -- UNION
+  SELECT CAST(median(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (1),
+        (2),
+        (2),
+        (3),
+        (4),
+        (NULL) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(regr_intercept(y, x) AS STRING) AS c1
+  
+  FROM VALUES
+        (1, 2),
+        (2, 3),
+        (2, 3),
+        (NULL, 4),
+        (4, NULL) AS T(y, x)
+  
+  UNION
+  
+  SELECT CAST(regr_slope(y, x) AS STRING) AS c1
+  
+  FROM VALUES
+        (1, 2),
+        (2, 3),
+        (2, 3),
+        (NULL, 4),
+        (4, NULL) AS T(y, x)
+  
+  UNION
+  
+  SELECT CAST(typeof(regr_sxx(y, x)) AS STRING) AS c1
+  
+  FROM VALUES
+        (1, 2),
+        (2, 3),
+        (2, 3),
+        (NULL, 4),
+        (4, NULL) AS T(y, x)
+  
+  UNION
+  
+  SELECT CAST(regr_sxy(y, x) AS STRING) AS c1
+  
+  FROM VALUES
+        (1, 2),
+        (2, 3),
+        (2, 3),
+        (NULL, 4),
+        (4, NULL) AS T(y, x)
+  
+  UNION
+  
+  SELECT CAST(regr_syy(y, x) AS STRING) AS c1
+  
+  FROM VALUES
+        (1, 2),
+        (2, 3),
+        (2, 3),
+        (NULL, 4),
+        (4, NULL) AS T(y, x)
+  
+  UNION
+  
+  SELECT CAST(mode(col) AS STRING) AS c1
+  
+  FROM VALUES
+        (ARRAY(1, 2)),
+        (ARRAY(1, 2)),
+        (ARRAY(2, 3)) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(approx_top_k(expr, 10, 100) AS STRING) AS c1
+  
+  FROM VALUES
+        (0),
+        (1),
+        (1),
+        (2),
+        (2),
+        (2) AS tab(expr)
+  
+  UNION
+  
+  SELECT CAST(hll_sketch_estimate(hll_sketch_agg(col, 12)) AS STRING) AS c1
+  
+  FROM VALUES
+        (1),
+        (1),
+        (2),
+        (2),
+        (3) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(hll_sketch_estimate(hll_union_agg(sketch, true)) AS STRING) AS c1
+  
+  FROM (
+    SELECT hll_sketch_agg(col) AS sketch
+    
+    FROM VALUES
+          (1) AS tab(col)
+    
+    UNION ALL
+    
+    SELECT hll_sketch_agg(col, 20) AS sketch
+    
+    FROM VALUES
+          (1) AS tab(col)
+  )
+  
+  UNION
+  
+  SELECT CAST(hex(TRIM(TRAILING x'00' FROM bitmap_construct_agg(val))) AS STRING) AS c1
+  
+  FROM VALUES
+        (0) AS T(val)
+  
+  UNION
+  
+  SELECT CAST(num_distinct AS STRING) AS c1
+  
+  FROM (
+    SELECT sum(num_distinct) AS num_distinct
+    
+    FROM (
+      SELECT 
+        bitmap_bucket_number(val),
+        bitmap_count(bitmap_construct_agg(bitmap_bit_position(val)))
+      
+      FROM VALUES
+            (1),
+            (2),
+            (1),
+            (-1),
+            (5),
+            (0),
+            (5) AS t(val)
+      
+      GROUP BY ALL  
+    ) AS distinct_vals_by_bucket(bucket, num_distinct)
+  )
+  
+  UNION
+  
+  SELECT CAST(hex(count_min_sketch(column => col, confidence => 0.5d, epsilon => 0.5d, seed => 1)) AS STRING) AS c1
+  
+  FROM VALUES
+        (1),
+        (2),
+        (1) AS tab(col)
+  
+  UNION
+  
+  SELECT CAST(num_distinct AS STRING) AS c1
+  
+  FROM (
+    SELECT sum(num_distinct) AS num_distinct
+    
+    FROM (
+      SELECT 
+        bucket,
+        bitmap_count(bitmap_or_agg(num_distinct)) AS num_distinct
+      
+      FROM (
+        (SELECT 
+          bitmap_bucket_number(val) AS bucket,
+          bitmap_construct_agg(bitmap_bit_position(val)) AS num_distinct
+        
+        FROM VALUES
+              (1),
+              (2),
+              (1),
+              (-1),
+              (5),
+              (0),
+              (5) AS t(val)
+        
+        GROUP BY ALL)
+        
+        UNION ALL
+        
+        (SELECT 
+          bitmap_bucket_number(val) AS bucket,
+          bitmap_construct_agg(bitmap_bit_position(val)) AS num_distinct
+        
+        FROM VALUES
+              (3),
+              (1),
+              (-1),
+              (6),
+              (5),
+              (1),
+              (5),
+              (8) AS t(val)
+        
+        GROUP BY ALL)
+      )
+      
+      GROUP BY ALL  
+    )
+  )
+
+),
+
 qa_complex_macro_1 AS (
 
   {{
@@ -7687,1050 +8731,6 @@ Reformat_2_1 AS (
         ) AS c_expressions
   
   FROM Reformat_1_1 AS in0
-
-),
-
-SQLStatement_1_2 AS (
-
-  SELECT cast(ANY (col1) FILTER (  
-           WHERE col2 = 1
-         ) AS string) AS c1
-  
-  FROM VALUES
-        (false, 1),
-        (false, 2),
-        (true, 2),
-        (NULL, 1) AS tab(col1, col2)
-  
-  UNION
-  
-  SELECT CAST(ANY (col) AS STRING) AS c1
-  
-  FROM VALUES
-        (true),
-        (false),
-        (false) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(approx_count_distinct(col1) AS STRING) AS c1
-  
-  FROM VALUES
-        (1),
-        (1),
-        (2),
-        (2),
-        (3) AS tab(col1)
-  
-  UNION
-  
-  SELECT cast(approx_count_distinct(col1) FILTER (  
-           WHERE col2 = 10
-         ) AS string) AS c1
-  
-  FROM VALUES
-        (1, 10),
-        (1, 10),
-        (2, 10),
-        (2, 10),
-        (3, 10),
-        (1, 12) AS tab(col1, col2)
-  
-  UNION
-  
-  SELECT CAST(approx_percentile(col, ARRAY(0.5, 0.4, 0.1), 100) AS STRING) AS c1
-  
-  FROM VALUES
-        (0),
-        (1),
-        (2),
-        (10) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(approx_percentile(DISTINCT col, 0.5, 100) AS STRING) AS c1
-  
-  FROM VALUES
-        (0),
-        (6),
-        (6),
-        (7),
-        (9),
-        (10) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(array_agg(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (1),
-        (2),
-        (NULL),
-        (1) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(array_agg(DISTINCT col) AS STRING) AS c1
-  
-  FROM VALUES
-        (1),
-        (2),
-        (NULL),
-        (1) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(avg(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (1),
-        (2),
-        (3) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(try_avg(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (10),
-        (20) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(bit_and(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (3),
-        (5) AS tab(col)
-  
-  UNION
-  
-  SELECT cast(bit_and(col) FILTER (  
-           WHERE col < 6
-         ) AS string) AS c1
-  
-  FROM VALUES
-        (3),
-        (5),
-        (6) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(bit_or(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (3),
-        (5) AS tab(col)
-  
-  UNION
-  
-  SELECT cast(bit_or(col) FILTER (  
-           WHERE col < 8
-         ) AS string) AS c1
-  
-  FROM VALUES
-        (3),
-        (5),
-        (8) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(bit_xor(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (3),
-        (3),
-        (5) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(bool_and(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (true),
-        (true),
-        (true) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(bool_or(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (true),
-        (false),
-        (false) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(collect_list(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (1),
-        (2),
-        (NULL),
-        (1) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(collect_set(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (1),
-        (2),
-        (NULL),
-        (1) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(corr(c1, c2) AS STRING) AS c1
-  
-  FROM VALUES
-        (3, 2),
-        (3, 3),
-        (3, 3),
-        (6, 4) AS tab(c1, c2)
-  
-  UNION
-  
-  SELECT cast(corr(DISTINCT c1, c2) FILTER (  
-           WHERE c1 != c2
-         ) AS string) AS c1
-  
-  FROM VALUES
-        (3, 2),
-        (3, 3),
-        (3, 3),
-        (6, 4) AS tab(c1, c2)
-  
-  UNION
-  
-  SELECT CAST(count(*) AS STRING) AS c1
-  
-  FROM VALUES
-        (NULL),
-        (5),
-        (5),
-        (20) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(count(*) AS STRING) AS c1
-  
-  FROM VALUES
-        (NULL),
-        (5),
-        (5),
-        (20) AS tab(col)
-  
-  UNION
-  
-  SELECT cast(count(col) FILTER (  
-           WHERE col < 10
-         ) AS string) AS c1
-  
-  FROM VALUES
-        (NULL),
-        (5),
-        (5),
-        (20) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(count_if(
-           col % 2 = 0) AS STRING) AS c1
-  
-  FROM VALUES
-        (NULL),
-        (0),
-        (1),
-        (2),
-        (2),
-        (3) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(covar_pop(c1, c2) AS STRING) AS c1
-  
-  FROM VALUES
-        (1, 1),
-        (2, 2),
-        (2, 2),
-        (3, 3) AS tab(c1, c2)
-  
-  UNION
-  
-  SELECT CAST(covar_samp(c1, c2) AS STRING) AS c1
-  
-  FROM VALUES
-        (1, 1),
-        (2, 2),
-        (2, 2),
-        (3, 3) AS tab(c1, c2)
-  
-  UNION
-  
-  SELECT CAST(every(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (true),
-        (true),
-        (true) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(first(col, true) AS STRING) AS c1
-  
-  FROM VALUES
-        (NULL),
-        (5),
-        (20) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(first_value(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (10),
-        (5),
-        (20) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(kurtosis(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (-10),
-        (-20),
-        (100),
-        (100),
-        (1000) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(last(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (10),
-        (5),
-        (20) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(last_value(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (10),
-        (5),
-        (20) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(max(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (10),
-        (50),
-        (20) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(max_by(x, y) AS STRING) AS c1
-  
-  FROM VALUES
-        (('a', 10)),
-        (('b', 50)),
-        (('c', 20)) AS tab(x, y)
-  
-  UNION
-  
-  SELECT CAST(mean(DISTINCT col) AS STRING) AS c1
-  
-  FROM VALUES
-        (1),
-        (1),
-        (2),
-        (NULL) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(min(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (10),
-        (50),
-        (20) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(min_by(x, y) AS STRING) AS c1
-  
-  FROM VALUES
-        (('a', 10)),
-        (('b', 50)),
-        (('c', 20)) AS tab(x, y)
-  
-  UNION
-  
-  SELECT CAST(percentile(col, 0.3) AS STRING) AS c1
-  
-  FROM VALUES
-        (0),
-        (10),
-        (10) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(percentile_approx(col, 0.5, 100) AS STRING) AS c1
-  
-  FROM VALUES
-        (0),
-        (6),
-        (7),
-        (9),
-        (10),
-        (10),
-        (10) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(regr_avgx(y, x) AS STRING) AS c1
-  
-  FROM VALUES
-        (1, 2),
-        (2, 3),
-        (2, 3),
-        (NULL, 4),
-        (4, NULL) AS T(y, x)
-  
-  UNION
-  
-  SELECT CAST(regr_avgy(y, x) AS STRING) AS c1
-  
-  FROM VALUES
-        (1, 2),
-        (2, 3),
-        (2, 3),
-        (NULL, 4),
-        (4, NULL) AS T(y, x)
-  
-  UNION
-  
-  SELECT CAST(regr_count(y, x) AS STRING) AS c1
-  
-  FROM VALUES
-        (1, 2),
-        (2, 2),
-        (2, 3),
-        (2, 4) AS t(y, x)
-  
-  UNION
-  
-  SELECT CAST(regr_r2(y, x) AS STRING) AS c1
-  
-  FROM VALUES
-        (1, 2),
-        (2, 3),
-        (2, 3),
-        (NULL, 4),
-        (4, NULL) AS T(y, x)
-  
-  UNION
-  
-  SELECT CAST(skewness(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (-10),
-        (-20),
-        (100),
-        (1000),
-        (1000) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(some(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (true),
-        (false),
-        (false) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(std(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (1),
-        (2),
-        (3),
-        (3) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(stddev(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (1),
-        (2),
-        (3),
-        (3) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(stddev_pop(DISTINCT col) AS STRING) AS c1
-  
-  FROM VALUES
-        (1),
-        (2),
-        (3),
-        (3) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(stddev_samp(DISTINCT col) AS STRING) AS c1
-  
-  FROM VALUES
-        (1),
-        (2),
-        (3),
-        (3) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(sum(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (NULL),
-        (NULL) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(try_avg(DISTINCT col) AS STRING) AS c1
-  
-  FROM VALUES
-        (1),
-        (1),
-        (2) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(try_sum(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (NULL),
-        (10),
-        (15) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(var_pop(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (1),
-        (2),
-        (3),
-        (3) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(var_samp(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (1),
-        (2),
-        (3),
-        (3) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(variance(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (1),
-        (2),
-        (3),
-        (3) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(a AS STRING) AS c1
-  
-  FROM (
-    SELECT 
-      a,
-      b,
-      dense_rank() OVER (PARTITION BY a ORDER BY b),
-      rank() OVER (PARTITION BY a ORDER BY b),
-      row_number() OVER (PARTITION BY a ORDER BY b)
-    
-    FROM VALUES
-          ('A1', 2),
-          ('A1', 1),
-          ('A2', 3),
-          ('A1', 1) AS tab(a, b)
-  )
-  
-  UNION
-  
-  SELECT CAST(a AS STRING) AS c1
-  
-  FROM (
-    SELECT 
-      a,
-      b,
-      ntile(2) OVER (PARTITION BY a ORDER BY b)
-    
-    FROM VALUES
-          ('A1', 2),
-          ('A1', 1),
-          ('A2', 3),
-          ('A1', 1) AS tab(a, b)
-  )
-  
-  UNION
-  
-  SELECT CAST(a AS STRING) AS c1
-  
-  FROM (
-    SELECT 
-      a,
-      b,
-      percent_rank(b) OVER (PARTITION BY a ORDER BY b)
-    
-    FROM VALUES
-          ('A1', 2),
-          ('A1', 1),
-          ('A1', 3),
-          ('A1', 6),
-          ('A1', 7),
-          ('A1', 7),
-          ('A2', 3),
-          ('A1', 1) AS tab(a, b)
-  )
-  
-  UNION
-  
-  SELECT CAST(a AS STRING) AS c1
-  
-  FROM (
-    SELECT 
-      a,
-      b,
-      dense_rank() OVER (PARTITION BY a ORDER BY b),
-      rank() OVER (PARTITION BY a ORDER BY b),
-      row_number() OVER (PARTITION BY a ORDER BY b)
-    
-    FROM VALUES
-          ('A1', 2),
-          ('A1', 1),
-          ('A2', 3),
-          ('A1', 1) AS tab(a, b)
-  )
-  
-  UNION
-  
-  SELECT CAST(a AS STRING) AS c1
-  
-  FROM (
-    SELECT 
-      a,
-      b,
-      cume_dist() OVER (PARTITION BY a ORDER BY b)
-    
-    FROM VALUES
-          ('A1', 2),
-          ('A1', 1),
-          ('A2', 3),
-          ('A1', 1) AS tab(a, b)
-  )
-  
-  UNION
-  
-  SELECT CAST(a AS STRING) AS c1
-  
-  FROM (
-    SELECT 
-      a,
-      b,
-      lag(b) OVER (PARTITION BY a ORDER BY b)
-    
-    FROM VALUES
-          ('A1', 2),
-          ('A1', 1),
-          ('A2', 3),
-          ('A1', 1) AS tab(a, b)
-  )
-  
-  UNION
-  
-  SELECT CAST(a AS STRING) AS c1
-  
-  FROM (
-    SELECT 
-      a,
-      b,
-      lead(b) OVER (PARTITION BY a ORDER BY b)
-    
-    FROM VALUES
-          ('A1', 2),
-          ('A1', 1),
-          ('A2', 3),
-          ('A1', 1) AS tab(a, b)
-  )
-  
-  UNION
-  
-  SELECT CAST(a AS STRING) AS c1
-  
-  FROM (
-    SELECT 
-      a,
-      b,
-      nth_value(b, 2) OVER (PARTITION BY a ORDER BY b)
-    
-    FROM VALUES
-          ('A1', 2),
-          ('A1', 1),
-          ('A2', 3),
-          ('A1', 1) AS tab(a, b)
-  )
-  
-  UNION
-  
-  SELECT CAST(num AS STRING) AS c1
-  
-  FROM (
-    SELECT 
-      explode(MAP(1, 'a', 2, 'b')) AS (num, val),
-      'Spark'
-  )
-  
-  UNION
-  
-  SELECT CAST(elem AS STRING) AS c1
-  
-  FROM (
-    SELECT 
-      explode_outer(ARRAY(10, 20)) AS elem,
-      'Spark'
-  )
-  
-  UNION
-  
-  SELECT CAST(name AS STRING) AS c1
-  
-  FROM (
-    SELECT 
-      name,
-      age,
-      count(*)
-    
-    FROM VALUES
-          (2, 'Alice'),
-          (5, 'Bob') AS people(age, name)
-    
-    GROUP BY CUBE(name, age)
-  )
-  
-  UNION
-  
-  SELECT CAST(name AS STRING) AS c1
-  
-  FROM (
-    SELECT 
-      name,
-      grouping(name),
-      sum(age)
-    
-    FROM VALUES
-          (2, 'Alice'),
-          (5, 'Bob') AS people(age, name)
-    
-    GROUP BY CUBE(name)
-  )
-  
-  UNION
-  
-  SELECT CAST(name AS STRING) AS c1
-  
-  FROM (
-    SELECT 
-      name,
-      age,
-      grouping_id(name, age),
-      conv(CAST(grouping_id(name, age) AS STRING), 10, 2),
-      avg(height)
-    
-    FROM VALUES
-          (2, 'Alice', 165),
-          (5, 'Bob', 180) AS people(age, name, height)
-    
-    GROUP BY CUBE(name, age)
-  )
-  
-  UNION
-  
-  SELECT CAST(col1 AS STRING) AS c1
-  
-  FROM (
-    SELECT 
-      'hello' AS col1,
-      stack(2, 1, 2, 3) AS (first, second),
-      'world'
-  )
-  
-  UNION
-  
-  SELECT CAST(any_value(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (10),
-        (5),
-        (20) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(approx_top_k(expr) AS STRING) AS c1
-  
-  FROM VALUES
-        (0),
-        (0),
-        (1),
-        (1),
-        (2),
-        (3),
-        (4),
-        (4) AS tab(expr)
-  
-  UNION
-  
-  SELECT CAST(hll_sketch_estimate(hll_sketch_agg(col, 12)) AS STRING) AS c1
-  
-  FROM VALUES
-        (1),
-        (1),
-        (2),
-        (2),
-        (3) AS tab(col)
-  
-  UNION
-  
-  -- SELECT CAST(a AS string) AS c1
-  -- FROM (
-  --   SELECT hll_sketch_estimate(hll_union(hll_sketch_agg(col1, 4), hll_sketch_agg(col2, 21))) AS a
-  --   FROM VALUES
-  --         (1, 4),
-  --         (1, 4),
-  --         (2, 5),
-  --         (2, 5),
-  --         (3, 6) AS tab(col1, col2)
-  -- )
-  -- UNION
-  SELECT CAST(median(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (1),
-        (2),
-        (2),
-        (3),
-        (4),
-        (NULL) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(regr_intercept(y, x) AS STRING) AS c1
-  
-  FROM VALUES
-        (1, 2),
-        (2, 3),
-        (2, 3),
-        (NULL, 4),
-        (4, NULL) AS T(y, x)
-  
-  UNION
-  
-  SELECT CAST(regr_slope(y, x) AS STRING) AS c1
-  
-  FROM VALUES
-        (1, 2),
-        (2, 3),
-        (2, 3),
-        (NULL, 4),
-        (4, NULL) AS T(y, x)
-  
-  UNION
-  
-  SELECT CAST(typeof(regr_sxx(y, x)) AS STRING) AS c1
-  
-  FROM VALUES
-        (1, 2),
-        (2, 3),
-        (2, 3),
-        (NULL, 4),
-        (4, NULL) AS T(y, x)
-  
-  UNION
-  
-  SELECT CAST(regr_sxy(y, x) AS STRING) AS c1
-  
-  FROM VALUES
-        (1, 2),
-        (2, 3),
-        (2, 3),
-        (NULL, 4),
-        (4, NULL) AS T(y, x)
-  
-  UNION
-  
-  SELECT CAST(regr_syy(y, x) AS STRING) AS c1
-  
-  FROM VALUES
-        (1, 2),
-        (2, 3),
-        (2, 3),
-        (NULL, 4),
-        (4, NULL) AS T(y, x)
-  
-  UNION
-  
-  SELECT CAST(mode(col) AS STRING) AS c1
-  
-  FROM VALUES
-        (ARRAY(1, 2)),
-        (ARRAY(1, 2)),
-        (ARRAY(2, 3)) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(approx_top_k(expr, 10, 100) AS STRING) AS c1
-  
-  FROM VALUES
-        (0),
-        (1),
-        (1),
-        (2),
-        (2),
-        (2) AS tab(expr)
-  
-  UNION
-  
-  SELECT CAST(hll_sketch_estimate(hll_sketch_agg(col, 12)) AS STRING) AS c1
-  
-  FROM VALUES
-        (1),
-        (1),
-        (2),
-        (2),
-        (3) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(hll_sketch_estimate(hll_union_agg(sketch, true)) AS STRING) AS c1
-  
-  FROM (
-    SELECT hll_sketch_agg(col) AS sketch
-    
-    FROM VALUES
-          (1) AS tab(col)
-    
-    UNION ALL
-    
-    SELECT hll_sketch_agg(col, 20) AS sketch
-    
-    FROM VALUES
-          (1) AS tab(col)
-  )
-  
-  UNION
-  
-  SELECT CAST(hex(TRIM(TRAILING x'00' FROM bitmap_construct_agg(val))) AS STRING) AS c1
-  
-  FROM VALUES
-        (0) AS T(val)
-  
-  UNION
-  
-  SELECT CAST(num_distinct AS STRING) AS c1
-  
-  FROM (
-    SELECT sum(num_distinct) AS num_distinct
-    
-    FROM (
-      SELECT 
-        bitmap_bucket_number(val),
-        bitmap_count(bitmap_construct_agg(bitmap_bit_position(val)))
-      
-      FROM VALUES
-            (1),
-            (2),
-            (1),
-            (-1),
-            (5),
-            (0),
-            (5) AS t(val)
-      
-      GROUP BY ALL  
-    ) AS distinct_vals_by_bucket(bucket, num_distinct)
-  )
-  
-  UNION
-  
-  SELECT CAST(hex(count_min_sketch(column => col, confidence => 0.5d, epsilon => 0.5d, seed => 1)) AS STRING) AS c1
-  
-  FROM VALUES
-        (1),
-        (2),
-        (1) AS tab(col)
-  
-  UNION
-  
-  SELECT CAST(num_distinct AS STRING) AS c1
-  
-  FROM (
-    SELECT sum(num_distinct) AS num_distinct
-    
-    FROM (
-      SELECT 
-        bucket,
-        bitmap_count(bitmap_or_agg(num_distinct)) AS num_distinct
-      
-      FROM (
-        (SELECT 
-          bitmap_bucket_number(val) AS bucket,
-          bitmap_construct_agg(bitmap_bit_position(val)) AS num_distinct
-        
-        FROM VALUES
-              (1),
-              (2),
-              (1),
-              (-1),
-              (5),
-              (0),
-              (5) AS t(val)
-        
-        GROUP BY ALL)
-        
-        UNION ALL
-        
-        (SELECT 
-          bitmap_bucket_number(val) AS bucket,
-          bitmap_construct_agg(bitmap_bit_position(val)) AS num_distinct
-        
-        FROM VALUES
-              (3),
-              (1),
-              (-1),
-              (6),
-              (5),
-              (1),
-              (5),
-              (8) AS t(val)
-        
-        GROUP BY ALL)
-      )
-      
-      GROUP BY ALL  
-    )
-  )
 
 ),
 

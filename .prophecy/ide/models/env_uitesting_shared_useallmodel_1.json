@@ -12417,8 +12417,9 @@
       "metadata" : {
         "label" : "SQLStatement_1_2",
         "x" : 680,
-        "y" : 420,
+        "y" : 240,
         "phase" : 0,
+        "macroDependencies" : [ ],
         "isLabelGrayed" : false
       },
       "properties" : {
@@ -12437,8 +12438,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 38
+      }
     },
     "Subgraph_9##SdPfB78h" : {
       "id" : "Subgraph_9##SdPfB78h",
