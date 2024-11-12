@@ -263,7 +263,7 @@
         "channel" : "abhyslackpub",
         "text" : "Test Slack message DB Airflow PM",
         "token" : null,
-        "slackConnectionId" : "7k_Cby3g6vOgeKrdy93nb",
+        "slackConnectionId" : "qVPMLyIRC9HnFusM3vDBk",
         "taskId" : null
       },
       "connections" : [ ],
@@ -277,12 +277,6 @@
     "sourcePort" : "Zj0ehX15LKvcBdR6zeeKg",
     "targetPort" : "wNypTsMFjLDqvIjCSPmUi$$9PPOv6LQjUSi4A5iQixi8"
   }, {
-    "id" : "njCBthJaVcKABQFN2EjRt",
-    "source" : "1O4M5UTg3OaiGsLprNuKv",
-    "target" : "zkaEBclBUdfGDvo8M8MKm$$8Y5u03HXMUnpuDInAZ2lV",
-    "sourcePort" : "Zj0ehX15LKvcBdR6zeeKg",
-    "targetPort" : "Ti9v1dvFVj9bobvGikzTk$$3_kGQ-AQafcgEA6YRIPyj"
-  }, {
     "id" : "ey9nDSlEWiO5jHdVuEkgZ",
     "source" : "1O4M5UTg3OaiGsLprNuKv",
     "target" : "ZwcVSDRKkoDaz0FeYA8Zl$$HN3wJzFaOz0eD9qVWk9Gd",
@@ -294,5 +288,11 @@
     "target" : "W9a2_5e59_w_4hxPXgLpu$$9L8gmhUEKCUcVyP5dZXKz",
     "sourcePort" : "X4UpzzTakXzb751Fe_hP3$$YtppXOMdvXrmwRY-X1JaG",
     "targetPort" : "LsyXIUMhJqC3dI92vQTmP$$066OLejb4s1YIfERFAd49"
+  }, {
+    "id" : "b9DV7mhpAd_r9NIMJjHLR",
+    "source" : "1O4M5UTg3OaiGsLprNuKv",
+    "target" : "zkaEBclBUdfGDvo8M8MKm$$8Y5u03HXMUnpuDInAZ2lV",
+    "sourcePort" : "Zj0ehX15LKvcBdR6zeeKg",
+    "targetPort" : "Ti9v1dvFVj9bobvGikzTk$$3_kGQ-AQafcgEA6YRIPyj"
   } ]
 }
