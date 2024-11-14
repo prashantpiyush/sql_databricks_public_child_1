@@ -9586,7 +9586,7 @@
         "name" : "parent_transform_deduplicate",
         "projectName" : "SQL_DatabricksParentProjectMain",
         "sourceProjectName" : "SQL_DatabricksParentProjectMain",
-        "sourceProjectVersion" : "SQL_ParentDatabricks/v3.4.1.0-1"
+        "sourceProjectVersion" : "SQL_ParentDatabricks/v3.4.0-6"
       },
       "index" : 13
     },
