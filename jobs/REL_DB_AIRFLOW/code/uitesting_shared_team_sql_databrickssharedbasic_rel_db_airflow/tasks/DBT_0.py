@@ -15,15 +15,15 @@ def DBT_0():
           "is_prophecy_managed": False,
           "run_deps": True,
           "run_seeds": True,
-          "run_parents": False,
-          "run_children": False,
+          "run_parents": True,
+          "run_children": True,
           "run_tests": False,
           "run_mode": "model",
           "entity_kind": "model",
           "entity_name": "env_uitesting_shared_mid_model_1",
           "project_id": "74",
-          "git_entity": "branch",
-          "git_entity_value": "dev_staging",
+          "git_entity": "tag",
+          "git_entity_value": "__PROJECT_FULL_RELEASE_TAG_PLACEHOLDER__",
           "git_ssh_url": "https://github.com/abhisheks-prophecy/sql_databricks_public_child_1",
           "git_sub_path": "",
           "select": "",
@@ -33,7 +33,8 @@ def DBT_0():
           "envs": {
             "DBT_DATABRICKS_INVOCATION_ENV": "prophecy", 
             "DBT_PROFILES_DIR": "/home/airflow/gcs/data", 
-            "DBT_PRINT": "false"
+            "DBT_PRINT": "false", 
+            "DBT_FULL_REFRESH": "true"
           }
         },
         retry_exponential_backoff = True, 
