@@ -12944,50 +12944,10 @@
           "ports" : {
             "inputs" : [ {
               "id" : "q6kVJSxa",
-              "schema" : {
-                "entityType" : "",
-                "providerType" : "Databricks",
-                "fields" : [ {
-                  "name" : "first_name",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "last_name",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "id",
-                  "dataType" : {
-                    "type" : "Integer"
-                  }
-                } ]
-              },
               "slug" : "in0"
             } ],
             "outputs" : [ {
               "id" : "LwLFlEay",
-              "schema" : {
-                "entityType" : "",
-                "providerType" : "Databricks",
-                "fields" : [ {
-                  "name" : "first_name",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "last_name",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "id",
-                  "dataType" : {
-                    "type" : "Integer"
-                  }
-                } ]
-              },
               "slug" : "out"
             } ],
             "isCustomOutputSchema" : false,
@@ -17651,50 +17611,10 @@
           "ports" : {
             "inputs" : [ {
               "id" : "OGktIkG6",
-              "schema" : {
-                "entityType" : "",
-                "providerType" : "Databricks",
-                "fields" : [ {
-                  "name" : "first_name",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "last_name",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "id",
-                  "dataType" : {
-                    "type" : "Integer"
-                  }
-                } ]
-              },
               "slug" : "in0"
             } ],
             "outputs" : [ {
               "id" : "f6QRZBft",
-              "schema" : {
-                "entityType" : "",
-                "providerType" : "Databricks",
-                "fields" : [ {
-                  "name" : "first_name",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "last_name",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "id",
-                  "dataType" : {
-                    "type" : "Integer"
-                  }
-                } ]
-              },
               "slug" : "out"
             } ],
             "isCustomOutputSchema" : false,
@@ -17775,26 +17695,6 @@
           "ports" : {
             "inputs" : [ {
               "id" : "ETPbLLhs",
-              "schema" : {
-                "entityType" : "",
-                "providerType" : "Databricks",
-                "fields" : [ {
-                  "name" : "first_name",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "last_name",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "id",
-                  "dataType" : {
-                    "type" : "Integer"
-                  }
-                } ]
-              },
               "slug" : "Limit_4"
             }, {
               "id" : "OtOxYEf6",
@@ -20390,26 +20290,6 @@
             } ],
             "outputs" : [ {
               "id" : "km3Ofnsb",
-              "schema" : {
-                "entityType" : "",
-                "providerType" : "Databricks",
-                "fields" : [ {
-                  "name" : "first_name",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "last_name",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "id",
-                  "dataType" : {
-                    "type" : "Integer"
-                  }
-                } ]
-              },
               "slug" : "out"
             } ],
             "isCustomOutputSchema" : false,
