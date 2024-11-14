@@ -33,8 +33,7 @@ def DBT_0():
           "envs": {
             "DBT_DATABRICKS_INVOCATION_ENV": "prophecy", 
             "DBT_PROFILES_DIR": "/home/airflow/gcs/data", 
-            "DBT_PRINT": "false", 
-            "DBT_FULL_REFRESH": "true"
+            "DBT_PRINT": "false"
           }
         },
         retry_exponential_backoff = True, 
