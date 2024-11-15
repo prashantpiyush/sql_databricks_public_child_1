@@ -189,7 +189,7 @@
         "partialParse" : null,
         "runRun" : true,
         "vars" : null,
-        "customVersion" : false,
+        "customVersion" : true,
         "noPrint" : true,
         "quiet" : null,
         "projectId" : "74",
