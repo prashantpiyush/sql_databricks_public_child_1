@@ -304,7 +304,7 @@
         "models" : null,
         "target" : null,
         "exclude" : null,
-        "runDeps" : false,
+        "runDeps" : true,
         "gitEntityValueBranch" : "dev_staging",
         "noAnonymousUsageStats" : null,
         "selector" : null,

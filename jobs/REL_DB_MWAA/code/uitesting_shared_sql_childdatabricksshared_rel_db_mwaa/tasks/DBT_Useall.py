@@ -13,7 +13,7 @@ def DBT_Useall():
         op_kwargs = {
           "is_adhoc_run_from_same_project": False,
           "is_prophecy_managed": False,
-          "run_deps": False,
+          "run_deps": True,
           "run_seeds": False,
           "run_parents": False,
           "run_children": False,
