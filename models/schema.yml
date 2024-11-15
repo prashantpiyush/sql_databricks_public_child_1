@@ -33,9 +33,12 @@ models:
     - accepted_values:
         config:
           fail_calc: "count(*)"
+          warn_if: ""
+          severity: "warn"
         values:
         - "100"
         - "200"
+        column_name: "c_tinyint"
     dataType:
       type: "TinyInt"
   - name: "c_smallint"

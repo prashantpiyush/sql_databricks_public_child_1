@@ -175,13 +175,16 @@
         "x" : 2140,
         "y" : 2220,
         "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Consolidates data from multiple tables for comprehensive analysis.",
+        "autoUpdateComment" : true,
         "isLabelGrayed" : false
       },
       "properties" : {
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "SELECT *\n\nFROM combine_multiple_tables_1\n",
+        "query" : "SELECT * \n\nFROM combine_multiple_tables_1\n",
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true"
@@ -198,8 +201,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 61
+      }
     },
     "Subgraph_2##YG6zstnI" : {
       "id" : "Subgraph_2##YG6zstnI",
