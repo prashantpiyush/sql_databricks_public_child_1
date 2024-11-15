@@ -63,7 +63,7 @@
         "runModelWithParents" : false,
         "defer" : null,
         "noDefer" : null,
-        "runSeed" : false,
+        "runSeed" : true,
         "gitEntity" : "branch",
         "noPartialParse" : null,
         "model" : "env_uitesting_shared_child_model_1",
@@ -75,6 +75,7 @@
         "partialParse" : null,
         "runRun" : true,
         "vars" : null,
+        "customVersion" : true,
         "noPrint" : false,
         "quiet" : null,
         "projectId" : "74",
@@ -102,12 +103,33 @@
         "target" : null,
         "exclude" : null,
         "runDeps" : true,
+        "gitEntityValueBranch" : "dev_staging",
         "noAnonymousUsageStats" : null,
         "selector" : null,
         "targetPath" : null,
         "threads" : "2",
         "warnError" : null,
         "currentProjectModels" : [ {
+          "label" : "test_model_1",
+          "value" : "test_model_1",
+          "id" : "74/.prophecy/metadata/sqlmodels/test_model_1",
+          "name" : "test_model_1"
+        }, {
+          "label" : "uitesting_specifycolumns",
+          "value" : "uitesting_specifycolumns",
+          "id" : "74/.prophecy/metadata/sqlmodels/uitesting_specifycolumns",
+          "name" : "uitesting_specifycolumns"
+        }, {
+          "label" : "sanity_simple_model_1",
+          "value" : "sanity_simple_model_1",
+          "id" : "74/.prophecy/metadata/sqlmodels/sanity_simple_model_1",
+          "name" : "sanity_simple_model_1"
+        }, {
+          "label" : "uitesting_expressions_1",
+          "value" : "uitesting_expressions_1",
+          "id" : "74/.prophecy/metadata/sqlmodels/uitesting_expressions_1",
+          "name" : "uitesting_expressions_1"
+        }, {
           "label" : "tpcds_uitesting_shared_1",
           "value" : "tpcds_uitesting_shared_1",
           "id" : "74/.prophecy/metadata/sqlmodels/tpcds_uitesting_shared_1",
@@ -132,6 +154,21 @@
           "value" : "env_uitesting_shared_mid_model_1",
           "id" : "74/.prophecy/metadata/sqlmodels/env_uitesting_shared_mid_model_1",
           "name" : "env_uitesting_shared_mid_model_1"
+        }, {
+          "label" : "uitesting_scd2_diff_col_val",
+          "value" : "uitesting_scd2_diff_col_val",
+          "id" : "74/.prophecy/metadata/sqlsnapshots/uitesting_scd2_diff_col_val",
+          "name" : "uitesting_scd2_diff_col_val"
+        }, {
+          "label" : "uitesting_scd2_timestamp",
+          "value" : "uitesting_scd2_timestamp",
+          "id" : "74/.prophecy/metadata/sqlsnapshots/uitesting_scd2_timestamp",
+          "name" : "uitesting_scd2_timestamp"
+        }, {
+          "label" : "snapshot_sanity_test_1",
+          "value" : "snapshot_sanity_test_1",
+          "id" : "74/.prophecy/metadata/sqlsnapshots/snapshot_sanity_test_1",
+          "name" : "snapshot_sanity_test_1"
         } ],
         "profilesDir" : "/home/airflow/gcs/data",
         "taskId" : null,
@@ -225,10 +262,10 @@
         "entityId" : "74/.prophecy/metadata/sqlmodels/env_uitesting_shared_useallmodel_1",
         "cacheSelectedOnly" : null,
         "gitSubPath" : null,
-        "runModelWithParents" : false,
+        "runModelWithParents" : true,
         "defer" : null,
         "noDefer" : null,
-        "runSeed" : false,
+        "runSeed" : true,
         "gitEntity" : "branch",
         "noPartialParse" : null,
         "model" : "env_uitesting_shared_useallmodel_1",
@@ -249,7 +286,7 @@
         "favorState" : null,
         "failFast" : false,
         "noStaticParser" : null,
-        "runTest" : false,
+        "runTest" : true,
         "select" : null,
         "recordTimingInfo" : null,
         "fullRefresh" : false,
@@ -263,7 +300,7 @@
         "sqlFabricId" : "7",
         "gitEntityValue" : "dev_staging",
         "logFormat" : null,
-        "runModelWithChildren" : false,
+        "runModelWithChildren" : true,
         "models" : null,
         "target" : null,
         "exclude" : null,
