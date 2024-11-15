@@ -14,9 +14,9 @@ def DBT_Useall():
           "is_adhoc_run_from_same_project": False,
           "is_prophecy_managed": False,
           "run_deps": True,
-          "run_seeds": True,
+          "run_seeds": False,
           "run_parents": False,
-          "run_children": True,
+          "run_children": False,
           "run_tests": False,
           "run_mode": "model",
           "entity_kind": "model",
@@ -30,11 +30,7 @@ def DBT_Useall():
           "threads": "2",
           "exclude": "",
           "run_props": " --profile run_profile",
-          "envs": {
-            "DBT_DATABRICKS_INVOCATION_ENV": "prophecy", 
-            "DBT_PROFILES_DIR": "/usr/local/airflow/dags", 
-            "DBT_FULL_REFRESH": "true"
-          }
+          "envs": {"DBT_DATABRICKS_INVOCATION_ENV" : "prophecy", "DBT_PROFILES_DIR" : "/usr/local/airflow/dags"}
         },
         retry_exponential_backoff = True, 
         retries = 0
