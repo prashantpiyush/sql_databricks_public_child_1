@@ -1,150 +1,56 @@
+---
 version: 2
-
 models:
-- name: uitesting_iow
+- name: "uitesting_specifycolumns"
   columns:
-  - name: c_tinyint
+  - name: "c_tinyint"
     dataType:
-      type: TinyInt
-  - name: c_smallint
+      type: "TinyInt"
+  - name: "c_smallint"
     dataType:
-      type: SmallInt
-  - name: c_int
+      type: "SmallInt"
+  - name: "c_int"
     dataType:
-      type: Integer
-  - name: c_bigint
+      type: "Integer"
+  - name: "c_bigint"
     dataType:
-      type: Bigint
-  - name: c_float
+      type: "Bigint"
+  - name: "c_float"
     dataType:
-      type: Float
-  - name: c_double
+      type: "Float"
+  - name: "c_double"
     dataType:
-      type: Float
-  - name: c_string
+      type: "Float"
+  - name: "c_string"
     dataType:
-      type: String
-  - name: c_boolean
+      type: "String"
+  - name: "c_boolean"
     dataType:
-      type: Boolean
-  - name: c_array
+      type: "Boolean"
+  - name: "c_array"
     dataType:
-      type: Array
+      type: "Array"
       dataType:
-        type: String
-  - name: c_struct
+        type: "String"
+  - name: "c_struct"
     dataType:
-      type: Struct
+      type: "Struct"
       fields:
-      - name: city
+      - name: "city"
         dataType:
-          type: String
-      - name: state
+          type: "String"
+      - name: "state"
         dataType:
-          type: String
-      - name: pin
+          type: "String"
+      - name: "pin"
         dataType:
-          type: Bigint
-  - name: c_id
+          type: "Bigint"
+  - name: "c_id"
     dataType:
-      type: Bigint
-- name: uitesting_replacewhere
-  columns:
-  - name: c_tinyint
+      type: "Bigint"
+  - name: "c_date"
     dataType:
-      type: TinyInt
-  - name: c_smallint
+      type: "Date"
+  - name: "c_timestamp"
     dataType:
-      type: SmallInt
-  - name: c_int
-    dataType:
-      type: Integer
-  - name: c_bigint
-    dataType:
-      type: Bigint
-  - name: c_float
-    dataType:
-      type: Float
-  - name: c_double
-    dataType:
-      type: Float
-  - name: c_string
-    dataType:
-      type: String
-  - name: c_boolean
-    dataType:
-      type: Boolean
-  - name: c_array
-    dataType:
-      type: Array
-      dataType:
-        type: String
-  - name: c_struct
-    dataType:
-      type: Struct
-      fields:
-      - name: city
-        dataType:
-          type: String
-      - name: state
-        dataType:
-          type: String
-      - name: pin
-        dataType:
-          type: Bigint
-  - name: c_id
-    dataType:
-      type: Bigint
-- name: uitesting_specifycolumns
-  columns:
-  - name: c_tinyint
-    dataType:
-      type: TinyInt
-  - name: c_smallint
-    dataType:
-      type: SmallInt
-  - name: c_int
-    dataType:
-      type: Integer
-  - name: c_bigint
-    dataType:
-      type: Bigint
-  - name: c_float
-    dataType:
-      type: Float
-  - name: c_double
-    dataType:
-      type: Float
-  - name: c_string
-    dataType:
-      type: String
-  - name: c_boolean
-    dataType:
-      type: Boolean
-  - name: c_array
-    dataType:
-      type: Array
-      dataType:
-        type: String
-  - name: c_struct
-    dataType:
-      type: Struct
-      fields:
-      - name: city
-        dataType:
-          type: String
-      - name: state
-        dataType:
-          type: String
-      - name: pin
-        dataType:
-          type: Bigint
-  - name: c_id
-    dataType:
-      type: Bigint
-  - name: c_date
-    dataType:
-      type: Date
-  - name: c_timestamp
-    dataType:
-      type: Timestamp
+      type: "Timestamp"

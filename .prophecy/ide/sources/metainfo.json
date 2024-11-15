@@ -89138,14 +89138,6 @@
     "type" : "Model",
     "syncedOnce" : false
   }, {
-    "name" : "uitesting_iow",
-    "type" : "Model",
-    "syncedOnce" : true
-  }, {
-    "name" : "uitesting_replacewhere",
-    "type" : "Model",
-    "syncedOnce" : true
-  }, {
     "name" : "uitesting_specifycolumns",
     "type" : "Model",
     "syncedOnce" : true

@@ -56,8 +56,10 @@ models:
         config:
           fail_calc: "count(*)"
           warn_if: ""
+          severity: "warn"
         to: "ref('raw_payments')"
         field: "id"
+        column_name: "c_tinyint"
     - accepted_values:
         config:
           fail_calc: "count(*)"
@@ -102,6 +104,8 @@ models:
         config:
           fail_calc: "count(*)"
           warn_if: ""
+          severity: "warn"
+        column_name: "c_string"
     dataType:
       type: "String"
   - name: "c_boolean"
