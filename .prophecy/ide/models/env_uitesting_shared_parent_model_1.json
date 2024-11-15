@@ -15,6 +15,37 @@
     "version" : 3
   },
   "processes" : {
+    "HEXShDKgsgBI4G8_ALiVV$$5xPnpXyQX2MbuU9vdqzOR" : {
+      "id" : "HEXShDKgsgBI4G8_ALiVV$$5xPnpXyQX2MbuU9vdqzOR",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "Limit_1",
+        "slug" : "Limit_1",
+        "x" : 560,
+        "y" : 220,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Restricts the result set to the first 100 records from the combined customer and asset data.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "limit" : {
+          "expression" : "100"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "SIwj-ubmWaOvf128LGqUC$$jbtYJjIlbQ2qz8YANW7TK",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "Hp9Jcgt6Fde6Mnv_Hp3e9$$0rjCBcLxFXN5JjT1HKdd2",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
     "all_type_parquet##YhAVWwiF" : {
       "id" : "all_type_parquet##YhAVWwiF",
       "component" : "Source",
@@ -169,7 +200,7 @@
           "alias" : "c_struct"
         } ],
         "activeTab" : "conditions",
-        "columnsSelector" : [ "Q7NivZaQ##first_name", "KtBTbHeW##c_int" ],
+        "columnsSelector" : [ "Q7NivZaQ##first_name", "PzbBLhK3##c_string", "PzbBLhK3##c_tinyint", "KtBTbHeW##c_int", "PzbBLhK3##c_tinyint", "PzbBLhK3##c_smallint", "PzbBLhK3##c_int", "PzbBLhK3##c_bigint", "PzbBLhK3##c_float", "PzbBLhK3##c_double", "PzbBLhK3##c_string", "PzbBLhK3##c_boolean", "PzbBLhK3##c_array", "PzbBLhK3##c_struct" ],
         "headAlias" : "in0"
       },
       "ports" : {
@@ -196,7 +227,7 @@
       "component" : "TargetModel",
       "metadata" : {
         "label" : "env_uitesting_shared_parent_model_1",
-        "x" : 620,
+        "x" : 700,
         "y" : 220,
         "phase" : 0,
         "macroDependencies" : [ ]
@@ -205,7 +236,7 @@
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "SELECT * \n\nFROM Join_1\n",
+        "query" : "SELECT * \n\nFROM Limit_1\n",
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true"
@@ -214,7 +245,7 @@
       "ports" : {
         "inputs" : [ {
           "id" : "ML7X77GU",
-          "slug" : "Join_1"
+          "slug" : "Limit_1"
         } ],
         "outputs" : [ {
           "id" : "ebCLCoBV",
@@ -275,11 +306,17 @@
     "target" : "Join_1##P6Xs2N0g",
     "targetPort" : "KtBTbHeW"
   }, {
-    "id" : "qYTWIEAx",
-    "source" : "Join_1##P6Xs2N0g",
-    "sourcePort" : "CQqVjo5u",
+    "id" : "dZzMNVNRCKfn9rSEYELbR$$IMEIo9fhjZGFFtqObj9dK",
+    "source" : "HEXShDKgsgBI4G8_ALiVV$$5xPnpXyQX2MbuU9vdqzOR",
+    "sourcePort" : "Hp9Jcgt6Fde6Mnv_Hp3e9$$0rjCBcLxFXN5JjT1HKdd2",
     "target" : "env_uitesting_shared_parent_model_1##TVbmsG0A",
     "targetPort" : "ML7X77GU"
+  }, {
+    "id" : "ssvwGlYOLl1l6WjI98No3$$m5mwyn2auKpL41RjuE7QY",
+    "source" : "Join_1##P6Xs2N0g",
+    "sourcePort" : "CQqVjo5u",
+    "target" : "HEXShDKgsgBI4G8_ALiVV$$5xPnpXyQX2MbuU9vdqzOR",
+    "targetPort" : "SIwj-ubmWaOvf128LGqUC$$jbtYJjIlbQ2qz8YANW7TK"
   } ],
   "component" : "Model"
 }

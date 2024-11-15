@@ -1,4 +1,12 @@
-WITH all_type_parquet AS (
+WITH raw_customers AS (
+
+  SELECT * 
+  
+  FROM {{ ref('raw_customers')}}
+
+),
+
+all_type_parquet AS (
 
   SELECT * 
   
@@ -11,14 +19,6 @@ Reformat_1 AS (
   SELECT * 
   
   FROM all_type_parquet AS in0
-
-),
-
-raw_customers AS (
-
-  SELECT * 
-  
-  FROM {{ ref('raw_customers')}}
 
 ),
 
@@ -50,8 +50,19 @@ Join_1 AS (
   RIGHT JOIN spark_catalog_qa_database_ungrouped_table_1 AS in2
      ON in1.c_tinyint != in2.c_int
 
+),
+
+Limit_1 AS (
+
+  {#Restricts the result set to the first 100 records from the combined customer and asset data.#}
+  SELECT * 
+  
+  FROM Join_1 AS in0
+  
+  LIMIT 100
+
 )
 
 SELECT *
 
-FROM Join_1
+FROM Limit_1
