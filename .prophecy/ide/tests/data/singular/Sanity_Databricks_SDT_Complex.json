@@ -10,8 +10,8 @@
     "graphConfig" : {
       "entityConfig" : {
         "fail_calc" : "'count(*)'",
-        "severity" : "'warn'",
         "error_if" : "'>1000'",
+        "severity" : "'warn'",
         "warn_if" : "'>500'",
         "type" : "TestConfig"
       }
