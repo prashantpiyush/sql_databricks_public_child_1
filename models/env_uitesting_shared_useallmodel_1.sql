@@ -3612,6 +3612,39 @@ Limit_5 AS (
 
 ),
 
+snapshot_parent_main AS (
+
+  SELECT * 
+  
+  FROM {{ ref('snapshot_parent_main')}}
+
+),
+
+Reformatsnapshot_parent_main AS (
+
+  SELECT 
+    c_tinyint AS c_tinyint,
+    c_smallint AS c_smallint,
+    c_int AS c_int,
+    c_bigint AS c_bigint,
+    c_float AS c_float,
+    c_double AS c_double,
+    c_string AS c_string,
+    c_boolean AS c_boolean,
+    c_array AS c_array,
+    c_struct AS c_struct,
+    p_int AS p_int,
+    p_string AS p_string,
+    c_date AS c_date,
+    dbt_scd_id AS dbt_scd_id,
+    dbt_updated_at AS dbt_updated_at,
+    dbt_valid_from AS dbt_valid_from,
+    dbt_valid_to AS dbt_valid_to
+  
+  FROM snapshot_parent_main AS in0
+
+),
+
 all_type_parquet_1_1_1 AS (
 
   SELECT * 
@@ -4306,39 +4339,6 @@ AllExReformat AS (
     endswith('SparkSQL', 'SQL') AS c21
   
   FROM Reformat_1_2_1_1 AS in0
-
-),
-
-snapshot_parent_main AS (
-
-  SELECT * 
-  
-  FROM {{ ref('snapshot_parent_main')}}
-
-),
-
-Reformatsnapshot_parent_main AS (
-
-  SELECT 
-    c_tinyint AS c_tinyint,
-    c_smallint AS c_smallint,
-    c_int AS c_int,
-    c_bigint AS c_bigint,
-    c_float AS c_float,
-    c_double AS c_double,
-    c_string AS c_string,
-    c_boolean AS c_boolean,
-    c_array AS c_array,
-    c_struct AS c_struct,
-    p_int AS p_int,
-    p_string AS p_string,
-    c_date AS c_date,
-    dbt_scd_id AS dbt_scd_id,
-    dbt_updated_at AS dbt_updated_at,
-    dbt_valid_from AS dbt_valid_from,
-    dbt_valid_to AS dbt_valid_to
-  
-  FROM snapshot_parent_main AS in0
 
 ),
 

@@ -9648,13 +9648,13 @@
       "metadata" : {
         "label" : "Reformatsnapshot_parent_main",
         "x" : 480,
-        "y" : 1160,
+        "y" : 1140,
         "phase" : 0,
         "macroDependencies" : [ ],
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "oQyWJqCm##c_tinyint", "oQyWJqCm##c_smallint", "oQyWJqCm##c_int", "oQyWJqCm##c_bigint", "oQyWJqCm##c_float", "oQyWJqCm##c_double", "oQyWJqCm##c_string", "oQyWJqCm##c_boolean", "oQyWJqCm##c_array", "oQyWJqCm##c_struct", "oQyWJqCm##p_int", "oQyWJqCm##p_string", "oQyWJqCm##c_date", "oQyWJqCm##dbt_scd_id", "oQyWJqCm##dbt_updated_at", "oQyWJqCm##dbt_valid_from", "oQyWJqCm##dbt_valid_to" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "c_tinyint"
@@ -9753,8 +9753,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 25
+      }
     },
     "unique_tinyint_r##CamwOjEH" : {
       "id" : "unique_tinyint_r##CamwOjEH",
