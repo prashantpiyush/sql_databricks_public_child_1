@@ -37,6 +37,7 @@
         "x" : 480,
         "y" : 1760,
         "phase" : 0,
+        "macroDependencies" : [ ],
         "isLabelGrayed" : false
       },
       "properties" : {
@@ -54,8 +55,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 7
+      }
     },
     "Reformat_11##EBpYr57M" : {
       "id" : "Reformat_11##EBpYr57M",
@@ -70,7 +70,7 @@
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "PVdhI2eO##c_tinyint", "PVdhI2eO##c_smallint", "PVdhI2eO##c_int", "PVdhI2eO##c_bigint", "PVdhI2eO##c_float", "PVdhI2eO##c_double", "PVdhI2eO##c_string", "PVdhI2eO##c_boolean", "PVdhI2eO##c_array", "PVdhI2eO##c_struct", "PVdhI2eO##c_id", "PVdhI2eO##c_date", "PVdhI2eO##dbt_scd_id", "PVdhI2eO##dbt_updated_at", "PVdhI2eO##dbt_valid_from", "PVdhI2eO##dbt_valid_to" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "c_tinyint"
@@ -164,8 +164,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 27
+      }
     },
     "final##gF0nBTyA" : {
       "id" : "final##gF0nBTyA",
@@ -526,6 +525,7 @@
                   "metadata" : {
                     "label" : "Reformat_7",
                     "phase" : 0,
+                    "macroDependencies" : [ ],
                     "isLabelGrayed" : false
                   },
                   "properties" : {
@@ -701,8 +701,7 @@
                     } ],
                     "isCustomOutputSchema" : false,
                     "autoUpdateOnRun" : false
-                  },
-                  "index" : 0
+                  }
                 },
                 "TestSubgraph_6Te##TLcPOU2x" : {
                   "id" : "TestSubgraph_6Te##TLcPOU2x",
@@ -913,6 +912,7 @@
                           "metadata" : {
                             "label" : "Reformat_8",
                             "phase" : 0,
+                            "macroDependencies" : [ ],
                             "isLabelGrayed" : false
                           },
                           "properties" : {
@@ -1088,8 +1088,7 @@
                             } ],
                             "isCustomOutputSchema" : false,
                             "autoUpdateOnRun" : false
-                          },
-                          "index" : 0
+                          }
                         },
                         "Subgraph_6##aMrsHtEe" : {
                           "id" : "Subgraph_6##aMrsHtEe",
@@ -1682,6 +1681,7 @@
                                       "metadata" : {
                                         "label" : "Reformat_9",
                                         "phase" : 0,
+                                        "macroDependencies" : [ ],
                                         "isLabelGrayed" : false
                                       },
                                       "properties" : {
@@ -1857,8 +1857,7 @@
                                         } ],
                                         "isCustomOutputSchema" : false,
                                         "autoUpdateOnRun" : false
-                                      },
-                                      "index" : 1
+                                      }
                                     }
                                   },
                                   "connections" : [ {
@@ -3448,7 +3447,7 @@
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "dl9lUmw4##c_smallint" ],
         "condition" : {
           "expression" : "c_smallint > 10"
         }
@@ -3464,8 +3463,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 9
+      }
     },
     "env_uitesting_ma##lJ3ViM7l" : {
       "id" : "env_uitesting_ma##lJ3ViM7l",
@@ -3498,10 +3496,14 @@
       "id" : "SQLStatement_1##KHWvETJq",
       "component" : "SQLStatement",
       "metadata" : {
-        "label" : "SQLStatement_1",
+        "label" : "SQLStatement1",
+        "slug" : "SQLStatement1",
         "x" : 680,
         "y" : 3080,
         "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Identifies records with a specific integer condition, ensuring data integrity by comparing counts from two sources.",
+        "autoUpdateComment" : true,
         "isLabelGrayed" : false
       },
       "properties" : {
@@ -3509,13 +3511,16 @@
           "path" : "out",
           "id" : "out",
           "language" : "sql",
-          "content" : "SELECT *\n\nFROM all_type_partitioned\n\nWHERE c_int != (\n        SELECT count(*)\n        \n        FROM hive_metastore.qa_database.tpcds_uitesting_shared_1\n       )\n\nLIMIT 100\n"
+          "content" : "SELECT *\n\nFROM all_type_partitioned\n\nWHERE c_int != (\n        (SELECT count(*) FROM hive_metastore.qa_database.tpcds_uitesting_shared_1)\n        + (SELECT count(*) FROM map_contains_key)\n       )\n\nLIMIT 100\n"
         } ]
       },
       "ports" : {
         "inputs" : [ {
           "id" : "rXiiJXCl",
           "slug" : "all_type_partitioned"
+        }, {
+          "id" : "TyVmjB5lc-ALZNL04UeG1$$EummbtKM_9QEGEY67I0zX",
+          "slug" : "map_contains_key"
         } ],
         "outputs" : [ {
           "id" : "wpXNBKRt",
@@ -3523,8 +3528,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 54
+      }
     },
     "Join_1_2##HzUngtY7" : {
       "id" : "Join_1_2##HzUngtY7",
@@ -3584,7 +3588,7 @@
           "alias" : "c_tinyint"
         } ],
         "activeTab" : "conditions",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "PwPXc32o##customer_id", "iXos0XFF##c1", "oMJ0WFgp##c_string", "PwPXc32o##customer_id", "PwPXc32o##first_name", "PwPXc32o##last_name", "PwPXc32o##c_expressions", "iXos0XFF##c1", "oMJ0WFgp##c_tinyint" ],
         "headAlias" : "in0"
       },
       "ports" : {
@@ -3604,8 +3608,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 43
+      }
     },
     "Limit_5##WaXgaeuA" : {
       "id" : "Limit_5##WaXgaeuA",
@@ -3652,6 +3655,7 @@
           "metadata" : {
             "label" : "SQLStatementtest15",
             "phase" : 0,
+            "macroDependencies" : [ ],
             "comment" : "Filters records from a partitioned dataset based on a specific count condition.",
             "isLabelGrayed" : false
           },
@@ -3842,8 +3846,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 1
+          }
         },
         "Subgraph_8##Dy5Vn63e" : {
           "id" : "Subgraph_8##Dy5Vn63e",
@@ -4115,7 +4118,7 @@
                   "alias" : "c2"
                 } ],
                 "activeTab" : "conditions",
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "U5mYkm5C##customer_id", "qmMCUmf3##customer_id1", "U5mYkm5C##customer_id", "U5mYkm5C##last_name", "U5mYkm5C##first_name" ],
                 "headAlias" : "in0"
               },
               "ports" : {
@@ -4187,8 +4190,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 12
+              }
             },
             "all_type_partiti##k1KItvkQ" : {
               "id" : "all_type_partiti##k1KItvkQ",
@@ -4310,7 +4312,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "HUwwAtEZ##customer_id", "HUwwAtEZ##first_name", "HUwwAtEZ##last_name" ],
                 "expressions" : [ {
                   "expression" : {
                     "expression" : "customer_id"
@@ -4379,8 +4381,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 11
+              }
             },
             "SQLStatement_1_1##O4CxMFHN" : {
               "id" : "SQLStatement_1_1##O4CxMFHN",
@@ -4388,6 +4389,7 @@
               "metadata" : {
                 "label" : "SQLStatement_1_1",
                 "phase" : 0,
+                "macroDependencies" : [ ],
                 "isLabelGrayed" : false
               },
               "properties" : {
@@ -4451,8 +4453,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 4
+              }
             },
             "SQLStatement_3##VFzetzz6" : {
               "id" : "SQLStatement_3##VFzetzz6",
@@ -4460,6 +4461,7 @@
               "metadata" : {
                 "label" : "SQLStatement_3",
                 "phase" : 0,
+                "macroDependencies" : [ ],
                 "isLabelGrayed" : false
               },
               "properties" : {
@@ -4646,8 +4648,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 8
+              }
             },
             "SQLStatement_2##dHfR28kN" : {
               "id" : "SQLStatement_2##dHfR28kN",
@@ -4655,6 +4656,7 @@
               "metadata" : {
                 "label" : "SQLStatement_2",
                 "phase" : 0,
+                "macroDependencies" : [ ],
                 "isLabelGrayed" : false
               },
               "properties" : {
@@ -5102,8 +5104,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 9
+              }
             },
             "Join_1_1##h6mFmA8H" : {
               "id" : "Join_1_1##h6mFmA8H",
@@ -5180,7 +5181,7 @@
                   "alias" : "h8_30_to_9"
                 } ],
                 "activeTab" : "conditions",
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "JaNRbg0t##cc_name", "debdFpZc##i_item_desc", "debdFpZc##i_current_price", "yjGes9hP##h8_30_to_9", "JaNRbg0t##substr(w_warehouse_name, 1, 20)", "JaNRbg0t##sm_type", "JaNRbg0t##cc_name", "JaNRbg0t##days_30", "JaNRbg0t##days_31_60", "JaNRbg0t##days_61_90", "JaNRbg0t##days_90_120", "JaNRbg0t##days_more_than_120", "debdFpZc##i_item_id", "yjGes9hP##h8_30_to_9" ],
                 "headAlias" : "in0"
               },
               "ports" : {
@@ -5385,8 +5386,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 10
+              }
             },
             "Filter_1_1##BcWpnZSf" : {
               "id" : "Filter_1_1##BcWpnZSf",
@@ -5398,7 +5398,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "qMLfUFrj##customer_id", "qMLfUFrj##last_name", "qMLfUFrj##first_name" ],
                 "condition" : {
                   "expression" : "CAST(customer_id AS INT) > 5\nand CAST(customer_id AS INT) != 0\nor first_name LIKE '%A%'\nor ((1 & 1) == 1)\nor ((2 | 2) == 2)\nand 10 * CAST(customer_id AS INT) == 20\nand last_name != first_name\nand (CAST(customer_id AS INT) BETWEEN 10 AND 20)\nand (ARRAY(10, 20, 30)[2] == 30)\nand (MAP(1, 'Hello', 2, 'World')[1] == 'Hello')\nand (10 ^ 20 == 50)\nand (MAP('three', 3).four == NULL)\nand (named_struct('a', 5, 'b', 'Spark').a == 5)\nand (1 = 2 and 1 == 2)\nand (1 >= 2 and 1 <= 2 and 1 != 3 or 2 > 4 or 4 < 5)\nand (\n      EXISTS(\n        ARRAY(1, NULL, 3), \n        x -> x % 2 == 0)\n    )\nor ilike('Spark', '_PARK')\nor (named_struct('a', 1, 'b', 2) IN (named_struct('a', 1, 'b', 1), named_struct('a', 1, 'b', 3)))\nand (1 IS DISTINCT FROM 5)\nand ('invalid' IS false)\nand isnull(1)\nand ('t' IS NOT true)\nand (1 <=> '1')\nand (1 <> CAST(customer_id AS INT))\nand (10 - 2 + 10 == 8)\nand (NOT true)\nand (false or true)\nand (2 % 0 == 0)\nand ('Spark' || 'SQL' == 'SparkSQL')\nand (r'%SystemDrive%\\Users\\John' LIKE r'%SystemDrive%\\\\Users%')\nand (r'%SystemDrive%\\Users\\John' RLIKE '%SystemDrive%\\\\\\\\Users.*')\nand (regexp_like('%SystemDrive%\\\\Users\\\\John', '%SystemDrive%\\\\\\\\Users.*'))\nand (2L / 2L == 10)\nand (~ 0 == -1)\nand (base64(aes_encrypt('Spark', 'abcdefghijklmnop')) == NULL)\nand (CAST(aes_decrypt(unbase64('4A5jOAh9FNGwoMeuJukfllrLdHEZxA2DyuSQAWz77dfn'), 'abcdefghijklmnop') AS STRING) == NULL)\nand (ascii('234') == 234)\nand (base64('Spark SQL') == NULL)\nand (bin(13) == NULL)\nand (binary('Spark SQL') == NULL)\nand (btrim('abcaabaSparkSQLabcaaba', 'abc') != NULL)\nand (char(65) != NULL)\nand (char_length('Spark SQL ') == 10)\nand (character_length('Spark SQL ') == 10)\nand (concat(customer_id, 'hello') != NULL)\nand (concat_ws(',', 'Spark', ARRAY('S', 'Q', NULL, 'L'), NULL) != NULL)\nand contains('SparkSQL', 'Spork')\nand (crc32('Spark') > 0)\nand chr(65) != NULL\nand (3 ^ 5 == 6)\nand (hex(encode('Spark SQL', 'US-ASCII')) != NULL)\nand endswith('SparkSQL', 'SQL')\nand (find_in_set('ab', 'abc,b,ab,c,def') == 2)\nand (format_number(12332.123456, 4) == 2)\nand (format_number(12332.123456, '#.###') == 10)\nand (format_string('Hello World %d %s', 100, 'days') != NULL)\nand (hex('Spark SQL') != NULL)\nand (r'%SystemDrive%\\Users\\John' LIKE '%SystemDrive%\\\\\\\\Users%')\nand (initcap('sPark sql') != NULL)\nand (instr('SparkSQL', 'R') == 2)\nand (lcase('LowerCase') != NULL)\nand (LEFT('Spark SQL', 3) != NULL)\nand (length('Spark SQL ') > 20)\nand (levenshtein('kitten', 'sitting') > 10)\nand (locate('bar', 'abcbarbar') > 2)\nand (locate('bar', 'abcbarbar', 5) > 2)\nand (lower('LowerCase') != NULL)\nand (lpad('hi', 1, '??') != NULL)\nand (hex(lpad(x'1020', 5, x'05')) != NULL)\nand (('+' || ltrim('abc', 'acbabSparkSQL   ') || '+') != NULL)\nand (md5('Spark') != NULL)\nand (octet_length('Spark SQL') != NULL)\nand (parse_url('http://spark.apache.org/path?query=1', 'HOST') != NULL)\nand (position('bar', 'abcbarbar') > 10)\nand (position('bar', 'abcbarbar', 5) > 5)\nand (printf('Hello World %d %s', 100, 'days') != NULL)\nand (r'%SystemDrive%\\Users\\John' RLIKE r'%SystemDrive%\\\\Users.*')\nand (r'%SystemDrive%\\Users\\John' RLIKE '%SystemDrive%\\\\\\\\Users.*')\nand (regexp_like('%SystemDrive%\\\\Users\\\\John', '%SystemDrive%\\\\\\\\Users.*'))\nand (regexp_extract('100-200', '(\\\\d+)-(\\\\d+)', 1) > 10)\nand (regexp_extract_all('100-200, 300-400', '(\\\\d+)-(\\\\d+)', 1) != NULL)\nand (regexp_replace('100-200', '(\\\\d+)', 'num') != NULL)\nand (repeat('123', 2) != NULL)\nand (replace('ABCabc', 'abc', 'DEF') != NULL)\nand (reverse('Spark SQL') != NULL)\nand (RIGHT('Spark SQL', 3) != NULL)\nand (rpad('hi', 5, 'ab') != NULL)\nand (hex(rpad(x'1020', 5, x'05')) != NULL)\nand (rtrim('ab', 'SparkSQLabcaaba') != NULL)\nand (sentences('Hi there! Good morning.', 'en', 'US') != NULL)\nand (sha('Spark') != NULL)\nand (sha1('Spark') != NULL)\nand (sha2('Spark', 256) != NULL)\nand (soundex('Miller') != NULL)\nand (concat('1', space(2), '1') != NULL)\nand (('->' || split_part('Hello,world,!', ',', 1) || '<-') != NULL)\nand (('->' || split_part('', ',', 1) || '<-') != NULL)\nand (('->' || split_part('Hello,World,!', ',', 0) || '<-') != NULL)\nand (startswith('SparkSQL', 'Spark'))\nand (startswith(NULL, 'Spark'))\nand (substr('Spark SQL', 5, 1) != NULL)\nand (substring_index('www.apache.org', '.', 2) != NULL)\nand (CAST(to_binary('537061726B') AS STRING) != NULL)\nand (CAST(to_binary('537061726B', 'hex') AS STRING) != NULL)\nand (CAST(try_to_binary('U3Bhxcms=', 'base64') AS STRING) != NULL)\nand (translate('AaBbCc', 'abc', '123') != NULL)\nand (CAST(try_to_binary('U3Bhxcms=', 'base64') AS STRING) != NULL)\nand (ucase('SparkSql') != NULL)\nand (CAST(unbase64('U3BhcmsgU1FM') AS STRING) != NULL)\nand (decode(unhex('537061726B2053514C'), 'UTF-8') != NULL)\nand (upper('SparkSql') != NULL)\nand (10 / 2 == 5)\nand ((3 | 5) == 2)\nand ((DATE'2021-03-20' - INTERVAL '2' MONTH) != NULL)\nand (10 - 2 + 2 == 4)\nand (2 % 1.8 == 2)\nand (3 ^ 5 == 3)\nand (3 & 5 == 2)\nand (3 * 2 == 2)\nand ((INTERVAL '3' YEAR * 3) != NULL)\nand (abs(-1) == 1)\nand (acos(1) == 1)\nand (acosh(1) == 1)\nand (asin(0) == 1)\nand (asinh(0) == 1)\nand (atan(0) == 1)\nand (atan2(0, 0) == 1)\nand (atanh(0) == 1)\nand (BIGINT(current_timestamp) > 1)\nand (bit_count(-1) > 1)\nand (bit_get(23Y, 1) == 1)\nand (bround(13.5, -1) == 1)\nand (round(13.5, -1) == 1)\nand (cbrt(27.0) == 3)\nand (ceil(3345.1, -2) == 1)\nand (ceiling(5.4) == 6)\nand (ceiling(3345.1, -2) == 1)\nand (conv('100', 2, 10) == 4)\nand (conv('FFFFFFFFFFFFFFFF', 16, 10) == 1)\nand (cos(pi()) == -1)\nand (cosh(0) == 1)\nand (cot(1) == 1)\nand (csc(pi() / 2) == 2)\nand (decimal('5.2') == 5)\nand (degrees(3.141592653589793) == 10)\nand (double('5.2') == 4)\nand (e() == 2)\nand (exp(1) == 2)\nand (expm1(0) == 1)\nand (factorial(2) == 2)\nand (FLOAT('5.2') == 5)\nand (floor(-0.1) == -1)\nand (floor(3345.1, -2) == 20)\nand (getbit(23Y, 0) == 1)\nand (hypot(3, 4) == 5)\nand (INT(-5.6) == 5)\nand (isnan(CAST('NaN' AS double)))\nand (ln(1) == 1)\nand (log(10, 100) == 2)\nand (log1p(0) == 1)\nand (log2(2) == 1)\nand (log10(10) == 1)\nand (nanvl(CAST('NaN' AS DOUBLE), 123) == 2)\nand (negative(1) == -1)\nand (pmod(-10, 3) == 2)\nand (positive(-1) == -1)\nand (pow(2, 3) * power(2, 3) == 8)\nand (radians(180) == 10)\nand (rand(0) * random(0) == 1)\nand (randn(0) == 1)\nand (rint(12.3456) == 1)\nand (round(2.5, 0) == 3)\nand (sec(pi()) == -1)\nand (sin(0) == 0)\nand (shiftleft(2, 1) == 2)\nand (shiftright(4, 1) == 2)\nand (shiftrightunsigned(4, 1) == 2)\nand (sign(40) == 1)\nand (signum(40) == 1)\nand (sinh(0) == 1)\nand (smallint(-5.6) == 5)\nand (sqrt(4) == 2)\nand (tan(0) == 1)\nand (tanh(0) == 1)\nand (tinyint('12') * tinyint(5.4) == 1)\nand (try_add(DATE'2021-03-20', INTERVAL '2' MONTH) != NULL)\nand (try_add(1, 2) == 3)\nand (try_divide(3, 2) == 3)\nand (try_divide(INTERVAL '3:15' HOUR TO MINUTE, 3) != NULL)\nand (try_subtract(1, 2) == 2)\nand (try_subtract(TIMESTAMP'2021-03-20 12:15:29', INTERVAL '3' SECOND) != NULL)\nand (try_subtract(-128Y, 1Y) != NULL)\nand (width_bucket(5.3, 0.2, 10.6, 5) + width_bucket(-0.9, 5.2, 0.5, 2) == 3)\nand (width_bucket(INTERVAL '1' DAY, INTERVAL '0' DAY, INTERVAL '10' DAY, 11) == 10)\nand (ARRAY(10, 20, 30) != NULL)\nand (\n      (\n        aggregate(\n          ARRAY(1, 2, 3), \n          0, \n          (acc, x) -> acc + x, \n          acc -> acc * 10)\n      ) == 1\n    )\nand (array_contains(ARRAY(1, 2, 3), 2))\nand (array_distinct(ARRAY(1, 2, 3, NULL, 3)) != NULL)\nand (array_except(ARRAY(1, 2, 2, 3), ARRAY(1, 1, 3, 5)) != NULL)\nand (array_intersect(ARRAY(1, 2, 3), ARRAY(1, 3, 3, 5)) != NULL)\nand (array_join(ARRAY('hello', 'world'), ',') != NULL)\nand (array_join(ARRAY('hello', NULL, 'world'), ',', '*') == NULL)\nand (array_max(ARRAY(1, 20, NULL, 3)) > 10)\nand (array_min(ARRAY(1, 20, NULL, 3)) == 1)\nand (array_position(ARRAY(3, 2, 1, 4, 1), 1) == 2)\nand (array_remove(ARRAY(1, 2, 3, NULL, 3, 2), 3) != NULL)\nand (array_repeat('123', 2) != NULL)\nand (array_size(ARRAY(1, NULL, 3, NULL)) == 2)\nand (array_sort(ARRAY('bc', 'ab', 'dc')) != NULL)\nand (array_union(ARRAY(1, 2, 2, 3), ARRAY(1, 3, 5)) != NULL)\nand (arrays_overlap(ARRAY(1, 2, NULL, 3), ARRAY(NULL, 4, 5)) == NULL)\nand (arrays_zip(ARRAY(1, 2), ARRAY('shoe', 'string', 'budget')) == NULL)\nand (cardinality(ARRAY('b', 'd', 'c', 'a')) == 2)\nand (concat(ARRAY(1, 2, 3), ARRAY(4, 5), ARRAY(6)) != NULL)\nand (element_at(MAP(1, 'a', 2, 'b'), 2) == NULL)\nand (\n      EXISTS(\n        ARRAY(1, 2, 3), \n        x -> x % 2 == 0)\n    )\nand (\n      EXISTS(\n        ARRAY(0, NULL, 2, 3, NULL), \n        x -> x IS NULL)\n    )\nand (\n      filter(\n        ARRAY(1, 2, 3), \n        x -> x % 2 == 1) != NULL\n    )\nand (flatten(ARRAY(ARRAY(1, 2), ARRAY(3, 4))) != NULL)\nand (\n      forall(\n        ARRAY(1, 2, 3), \n        x -> x % 2 == 0) == NULL\n    )\nand (reverse(ARRAY(2, 1, 4, 3)) != NULL)\nand (sequence(5, 1) != NULL)\nand (cardinality(ARRAY('b', 'd', 'c', 'a')) == 10)\nand (slice(ARRAY(1, 2, 3, 4), 2, 2) != NULL)\nand (sort_array(ARRAY('b', 'd', NULL, 'c', 'a'), true) != NULL)\nand (\n      transform(\n        ARRAY(1, 2, 3), \n        x -> x + 1) != NULL\n    )\nand (try_element_at(ARRAY(1, 2, 3), 2) == 2)\nand (\n      zip_with(\n        ARRAY('a', 'b', 'c'), \n        ARRAY('d', 'e', 'f'), \n        (x, y) -> concat(x, y)) != NULL\n    )\nand (MAP(1, 'Hello', 2, 'World')[1] != NULL)\nand (cardinality(MAP('a', 1, 'b', 2)) == 2)\nand (element_at(MAP(1, 'a', 2, 'b'), 3) == NULL)\nand (MAP(1.0, '2', 3.0, '4') IS NOT NULL)\nand (map_concat(MAP(1, 'a', 2, 'b'), MAP(3, 'c')) IS NOT NULL)\nand (map_contains_key(MAP(1, 'a', 2, 'b'), 2))\nand (map_entries(MAP(1, 'a', 2, 'b')) IS NOT NULL)\nand (\n      map_filter(\n        MAP(1, 0, 2, 2, 3, -1), \n        (k, v) -> k > v) IS NOT NULL\n    )\nand (map_from_arrays(ARRAY(1.0, 3.0), ARRAY('2', '4')) IS NOT NULL)\nand (map_from_entries(ARRAY(STRUCT(1, 'a'), STRUCT(2, 'b'))) IS NOT NULL)\nand (map_keys(MAP(1, 'a', 2, 'b')) IS NOT NULL)\nand (map_values(MAP(1, 'a', 2, 'b')) IS NOT NULL)\nand (\n      map_zip_with(\n        MAP(1, 'a', 2, 'b'), \n        MAP(1, 'x', 2, 'y'), \n        (k, v1, v2) -> concat(v1, v2)) IS NOT NULL\n    )\nand (cardinality(MAP('a', 1, 'b', 2)) == 2)\nand (str_to_map('a:1,b:2,c:3', ',', ':') IS NOT NULL)\nand (\n      transform_keys(\n        map_from_arrays(ARRAY(1, 2, 3), ARRAY(1, 2, 3)), \n        (k, v) -> k + 1) IS NOT NULL\n    )\nand (\n      transform_values(\n        map_from_arrays(ARRAY(1, 2, 3), ARRAY(1, 2, 3)), \n        (k, v) -> k + v) IS NOT NULL\n    )\nand (try_element_at(MAP(1, 'a', 2, 'b'), 2) IS NOT NULL)\nand ((INTERVAL '3:15' HOUR TO MINUTE / 3) IS NOT NULL)\nand ((DATE'2021-03-31' - INTERVAL '1' MONTH) != NULL)\nand (typeof(current_timestamp - (current_date + INTERVAL '1' DAY)) != NULL)\nand ((DATE'2021-03-31' + INTERVAL '1' MONTH) != NULL)\nand ((INTERVAL '3' YEAR * 3) != NULL)\nand (add_months('2016-08-31', -6) != NULL)\nand (current_date() != NULL)\nand (current_timestamp() != NULL)\nand (current_timezone() != NULL)\nand (DATE('2021-03-21') != NULL)\nand (date_add('2016-07-30', 1) != NULL)\nand (date_format('2016-04-08', 'y') == 2016)\nand (date_from_unix_date(1) != NULL)\nand (date_sub('2016-07-30', 1) != NULL)\nand (date_trunc('YEAR', '2015-03-05T09:32:05.359') != NULL)\nand (datediff('2009-07-31', '2009-07-30') == 1)\nand (day('2009-07-30') == 30)\nand (dayofmonth('2009-07-30') == 30)\nand (dayofweek('2009-07-30') == 5)\nand (dayofyear('2016-04-09') == 100)\nand (EXTRACT(SECONDS FROM INTERVAL '5:00:30.001' HOUR TO SECOND) == 30)\nand (EXTRACT(WEEK FROM TIMESTAMP'2019-08-12 01:00:00.123456') == 33)\nand (from_unixtime(0, 'yyyy-MM-dd HH:mm:ss') != NULL)\nand (from_utc_timestamp('2017-07-14 02:40:00.0', 'GMT+1') != NULL)\nand (from_utc_timestamp('2016-08-31', 'Asia/Seoul') != NULL)\nand (hour('2009-07-30 12:58:59') == 10)\nand (last_day('2009-01-12') IS NOT NULL)\nand (make_date(2013, 7, 15) IS NOT NULL)\nand (make_dt_interval(0, 0, 1, -0.1) IS NOT NULL)\nand (make_ym_interval(100, 5) IS NOT NULL)\nand (minute('2009-07-30 12:58:59') == 58)\nand (month('2016-07-30') == 7)\nand (months_between('1997-02-28 10:30:00', '1996-10-30') == 3)\nand (months_between('1997-02-28 10:30:00', '1996-10-30', false) == 2)\nand (next_day('2015-01-14', 'TU') != NULL)\nand (now() != NULL)\nand (quarter('2016-08-31') == 3)\nand (second('2009-07-30 12:58:59') == 59)\nand (TIMESTAMP(123) != NULL)\nand (TIMESTAMP('2020-04-30 12:25:13.45') != NULL)\nand (timestamp_micros(1230219000123123) != NULL)\nand (timestamp_millis(1230219000123) != NULL)\nand (timestamp_seconds(1230219000) != NULL)\nand (to_date('2016-12-31', 'yyyy-MM-dd') != NULL)\nand (to_timestamp('2016-12-31', 'yyyy-MM-dd') != NULL)\nand (to_utc_timestamp('2017-07-14 02:40:00.0', 'GMT+1') != NULL)\nand (trunc('2015-10-27', 'YEAR') != NULL)\nand (trunc('2019-08-04', 'quarter') != NULL)\nand (try_add(TIMESTAMP'2021-03-20 12:15:29', INTERVAL '3' SECOND) != NULL)\nand (try_add(DATE'2021-03-31', INTERVAL '1' MONTH) != NULL)\nand (try_divide(INTERVAL '3:15' HOUR TO MINUTE, 3) != NULL)\nand ((INTERVAL '3' YEAR * 3) != NULL)\nand (try_subtract(DATE'2021-03-20', INTERVAL '2' MONTH) != NULL)\nand (try_subtract(TIMESTAMP'2021-03-20 12:15:29', INTERVAL '3' SECOND) != NULL)\nand (unix_date(DATE('1970-01-02')) == 1)\nand (unix_micros(TIMESTAMP('1970-01-01 00:00:01Z')) == 1)\nand (unix_millis(TIMESTAMP('1970-01-01 00:00:01Z')) == 1)\nand (unix_seconds(TIMESTAMP('1970-01-01 00:00:01Z')) == 1)\nand (unix_timestamp('2016-04-08', 'yyyy-MM-dd') == 1)\nand (weekday(DATE'2009-07-30') == 1)\nand (EXTRACT(DAYOFWEEK_ISO FROM DATE'2009-07-30') == 4)\nand (weekofyear('2008-02-20') == 8)\nand (year('2016-07-30') == 2016)\nand (ARRAY(1, 2, 3) != NULL)\nand (BIGINT('5') == 5)\nand (binary('Spark SQL') != NULL)\nand (BOOLEAN(1))\nand (CAST(5.6 AS DECIMAL (2, 0)) != NULL)\nand (CAST(INTERVAL '1-2' YEAR TO MONTH AS INTEGER) == 12)\nand (DATE('2021-03-21') != NULL)\nand (decimal('5.2') == 5)\nand (double('5.2') / 2 == 5)\nand (FLOAT('5.2') / 2 == 2)\nand (INT('5') == 5)\nand (make_date(2013, 7, 15) != NULL)\nand (make_dt_interval(100, 13) != NULL)\nand (make_ym_interval(100, 5) == NULL)\nand (MAP(1.0, '2', 3.0, '4') IS NOT NULL)\nand (named_struct('a', 1, 'b', 2, 'c', 3) IS NOT NULL)\nand (smallint('5') == 5)\nand (STRUCT(1, 2, 3) IS NOT NULL)\nand (tinyint('12') == 12)\nand (TIMESTAMP('2020-04-30 12:25:13.45') != NULL)\nand (to_date('2016-12-31', 'yyyy-MM-dd') != NULL)\nand (to_timestamp('2016-12-31 00:12:00') != NULL)\nand (from_csv('1, 0.8', 'a INT, b DOUBLE') != NULL)\nand (schema_of_csv('1,abc') != NULL)\nand (json_array_length('[1,2,3,{\"f1\":1,\"f2\":[5,6]},4]') == 5)\nand (json_object_keys('{\"f1\":\"abc\",\"f2\":{\"f3\":\"a\", \"f4\":\"b\"}}') != NULL)\nand (schema_of_json('[{\"col\":01}]', MAP('allowNumericLeadingZeros', 'true')) != NULL)\nand (to_json(named_struct('a', 1, 'b', 2)) != NULL)\nand (to_json(MAP(named_struct('a', 1), named_struct('b', 2))) != NULL)\nand (to_json(ARRAY((MAP('a', 1)))) != NULL)\nand (xpath('<a><b>b1</b><b>b2</b><b>b3</b><c>c1</c><c>c2</c></a>', 'a/b/text()') != NULL)\nand (xpath_boolean('<a><b>1</b></a>', 'a/b'))\nand (xpath_double('<a><b>1</b><b>2</b></a>', 'sum(a/b)') != NULL)\nand (xpath_float('<a><b>1</b><b>2</b></a>', 'sum(a/b)') != NULL)\nand (xpath_int('<a><b>1</b><b>2</b></a>', 'sum(a/b)') == 2)\nand (xpath_long('<a><b>1</b><b>2</b></a>', 'sum(a/b)') == 3)\nand (xpath_number('<a><b>1</b><b>2</b></a>', 'sum(a/b)') == 2)\nand (xpath_int('<a><b>1</b><b>2</b></a>', 'sum(a/b)') == 2)\nand (xpath_string('<a><b>b</b><c>cc</c></a>', 'a/c') != NULL)\nand (\n      assert_true(\n        0 < 1) == NULL\n    )\nand (\n      (\n        CASE\n          WHEN 1 > 0\n            THEN 1\n          WHEN 2 > 0\n            THEN 2.0\n          ELSE 1.2\n        END\n      ) == 1\n    )\nand (\n      (\n        CASE 3\n          WHEN 1\n            THEN 'A'\n          WHEN 2\n            THEN 'B'\n          WHEN 3\n            THEN 'C'\n        END\n      ) != NULL\n    )\nand (coalesce(2, 5 / 0) == 2)\nand (current_catalog() != NULL)\nand (current_database() != NULL)\nand (current_user() != NULL)\nand (decode(5, 6, 'Spark', 5, 'SQL', 4, 'rocks') != NULL)\nand (elt(1, 'scala', 'java') != NULL)\nand (greatest(10, 9, 2, 4, 3) == 10)\nand (hash('Spark', ARRAY(123), 2) != NULL)\nand (\n      if(\n        1 < 2, \n        'a', \n        'b') != NULL\n    )\nand (ifnull(NULL, ARRAY('2')) != NULL)\nand (isnull(1))\nand (isnotnull(1))\nand (least(10, 9, 2, 4, 3) == 2)\nand (monotonically_increasing_id() > 10)\nand (nullif(2, 2) == NULL)\nand (nvl(NULL, 2) == 2)\nand (nvl2(NULL, 2, 1) == 1)\nand (typeof(1) != NULL)\nand (uuid() != NULL)\nand (xxhash64('Spark', ARRAY(123), 2) != NULL)\nand ('20'::INTEGER == 20)\nand like('Spark', '_park')\nand ('Spark' LIKE SOME('_park', '_ock'))\nand (bitmap_count(x'00') == 10)\nand (charindex('bar', 'abcbarbar') == 1)\nand (decode(x'FEFF0053007000610072006B002000530051004C', 'UTF-16') != NULL)\nand (like('Spark', '_park'))\nand (len('Spark SQL ') > 10)\nand (levenshtein('kitten', 'sitting', 4) > 10)\nand (('+' || ltrim('abc', 'acbabSparkSQL   ') || '+') != NULL)\nand (mask('AaBb123-&^ASDXYZ921312asd', 'Z', 'z', '9', 'X') != NULL)\nand (mask('AaBb123-&^ASDXYZ921312asd', lowerChar => 'z', upperChar => 'X') != NULL)\nand (mask('AaBb123-&ASDXYZ921312asd', NULL, NULL, NULL, NULL) != NULL)\nand (overlay('Spark SQL' PLACING '_' FROM 6) != NULL)\nand (overlay('Spark SQL' PLACING 'tructured' FROM 2 FOR 4) != NULL)\nand (overlay(encode('Spark SQL', 'utf-8') PLACING encode('_', 'utf-8') FROM 6) != NULL)\nand (position('bar' IN 'abcbarbar') > 2)\nand (regexp_count('Steven Jones and Stephen Smith are the best players', 'Ste(v|ph)en') > 2)\nand (regexp_instr('Mary had a little lamb', NULL) != NULL)\nand (regexp_substr(NULL, 'Ste(v|ph)en') != NULL)\nand (rtrim('ab', 'SparkSQLabcaaba') != NULL)\nand (STRING(4) != NULL)\nand (substr('Spark SQL', -3) != NULL)\nand (substr('Spark SQL' FROM 5 FOR 1) != NULL)\nand (substr('Spark SQL' FROM -3) != NULL)\nand (to_char(454, '000.00') != NULL)\nand (to_char(DATE'2016-04-08', 'y') != NULL)\nand (to_char(encode('abc', 'utf-8'), 'utf-8') != NULL)\nand (to_varchar(454, '999') != NULL)\nand (to_varchar(DATE'2016-04-08', 'y') != NULL)\nand (to_varchar(x'537061726b2053514c', 'hex') != NULL)\nand (TRIM( 'SL' FROM 'SSparkSQLS') != NULL)\nand (TRIM(BOTH 'SL' FROM 'SSparkSQLS') != NULL)\nand (TRIM(LEADING 'SL' FROM 'SSparkSQLS') != NULL)\nand (TRIM(TRAILING 'SL' FROM 'SSparkSQLS') != NULL)\nand (\n      CAST(try_aes_decrypt(\n        unbase64('MTIzNDU2Nzg5MDEyMdXvR41sJqwZ6hnTU8FRTTtXbL8yeChIZA=='), \n        '1234567890abcdef', \n        'GCM', \n        'DEFAULT', \n        'Some AAD') AS STRING) != NULL\n    )\nand (url_decode('http%3A%2F%2Fspark.apache.org%2Fpath%3Fquery%3D1') != NULL)\nand (url_encode('http://spark.apache.org/path?query=1') != NULL)\nand ((TIMESTAMP'2021-03-20 12:15:29' - INTERVAL '3' SECOND) != NULL)\nand ((TIMESTAMP'2021-03-20 12:15:29' + INTERVAL '3' SECOND) != NULL)\nand (bit_reverse(-1) == -1)\nand (bitmap_bit_position(-32768) == 1)\nand (bitmap_bucket_number(-32768) == 1)\nand (MOD(2, 1.8) == 2)\nand (array_append(ARRAY(1, 2, 3), 0) == NULL)\nand (array_compact(ARRAY(1, 2, NULL, 3, NULL, 3)) == NULL)\nand (array_insert(ARRAY('a', 'b', 'c'), 1, 'z') != NULL)\nand (array_prepend(ARRAY(1, 2, 3), 0) != NULL)\nand (get(ARRAY(1, 2, 3), 2) != NULL)\nand (\n      reduce(\n        ARRAY(1, 2, 3), \n        0, \n        (acc, x) -> acc + x) == 2\n    )\nand (shuffle(ARRAY(1, 20, 3, 5)) != NULL)\nand (map_contains_key(MAP(1, 'a', 2, 'b'), 2))\nand ((DATE'2021-03-31' - INTERVAL '1' MONTH) != NULL)\nand ((DATE'2021-03-31' + INTERVAL '1' MONTH) != NULL)\nand ((TIMESTAMP'2021-03-20 12:15:29' - INTERVAL '3' SECOND) != NULL)\nand (date_diff(MONTH, TIMESTAMP'2021-02-28 12:00:00', TIMESTAMP'2021-03-28 12:00:00') == 1)\nand (date_part('SECONDS', TIMESTAMP'2019-10-01 00:00:01.000001') == 1)\nand (date_part('Week', TIMESTAMP'2019-08-12 01:00:00.123456') == 33)\nand (dateadd('2016-07-30', 1) != NULL)\nand (dateadd(MICROSECOND, 5, TIMESTAMP'2022-02-28 00:00:00') != NULL)\nand (datediff(MONTH, TIMESTAMP'2021-02-28 12:00:00', TIMESTAMP'2021-03-28 11:59:59') == 0)\nand (make_interval(0, 0, 1, 1, 12, 30, 1.001001) IS NOT NULL)\nand (make_timestamp(2014, 12, 28, 6, 30, 45.887, 'CET') IS NOT NULL)\nand (make_timestamp(NULL, 7, 22, 15, 30, 0) IS NOT NULL)\nand (now() != NULL)\nand (timediff(MONTH, TIMESTAMP'2021-02-28 12:00:00', TIMESTAMP'2021-03-28 12:00:00') == 1)\nand (timestampdiff(MONTH, TIMESTAMP'2021-02-28 12:00:00', TIMESTAMP'2021-03-28 12:00:00') == 1)\nand (to_unix_timestamp('2016-04-08', 'yyyy-MM-dd') == 100)\nand (try_to_timestamp('2016-12-31', 'yyyy-MM-dd') != NULL)\nand ('20'::INTEGER == 20)\nand (make_interval(100, 11) IS NOT NULL)\nand (make_timestamp(2014, 12, 28, 6, 30, 45.887) IS NOT NULL)\nand (STRING(5) != NULL)\nand (to_char(454, '000.00') != NULL)\nand (to_varchar(454, '999') IS NOT NULL)\nand (from_json('{\"a\":1, \"b\":0.8}', 'a INT, b DOUBLE') IS NOT NULL)\nand (get_json_object('{\"a\":\"b\"}', '$.a') IS NOT NULL)\nand (to_csv(named_struct('time', to_timestamp('2015-08-26', 'yyyy-MM-dd')), MAP('timestampFormat', 'dd/MM/yyyy')) IS NOT NULL)\nand (to_csv(named_struct('a', 1, 'b', 2)) IS NOT NULL)\nand (from_xml('<p><time>26/08/2015</time></p>', 'time Timestamp', MAP('timestampFormat', 'dd/MM/yyyy')) != NULL)\nand (schema_of_xml('<p><a attr=\"2\">1</a><a>3</a></p>', MAP('excludeAttribute', 'true')) IS NOT NULL)\nand (current_metastore() != NULL)\nand (current_schema() != NULL)\nand (current_version() != NULL)\nand (equal_null(2, 2))\nand (\n      iff(\n        1 < 2, \n        'a', \n        'b') == 'a'\n    )\nand (is_account_group_member('admins'))\nand (is_member('admins'))\nand (luhn_check('12345') == NULL)\nand (user() != NULL)\nand (h3_coverash3('POLYGON((-122.4194 37.7749,-118.2437 34.0522,-74.0060 40.7128,-122.4194 37.7749))', 0) != NULL)\nand (h3_coverash3string('{\"type\":\"LineString\",\"coordinates\":[[-122.4194,37.7749],[-118.2437,34.0522],[-74.0060,40.7128]]}', 1) != NULL)\nand (h3_longlatash3(-122.4783, 37.8199, 13) > 0)\nand (h3_longlatash3string(-122.4783, 37.8199, 13) != NULL)\nand (h3_pointash3('POINT(-122.4783 37.8199)', 13) > 0)\nand (h3_pointash3string('{\"type\":\"Point\",\"coordinates\":[]}', 15) == NULL)\nand (h3_pointash3string('POINT(-122.4783 37.8199)', 13) != NULL)\nand (\n      h3_polyfillash3(\n        unhex(\n          '0103000000010000000400000050fc1873d79a5ec0d0d556ec2fe342404182e2c7988f5dc0f46c567dae064140aaf1d24d628052c05e4bc8073d5b444050fc1873d79a5ec0d0d556ec2fe34240'), \n        2) != NULL\n    )\nand (h3_polyfillash3('POLYGON((-122.4194 37.7749,-118.2437 34.0522,-74.0060 40.7128,-122.4194 37.7749))', 2) != NULL)\nand (h3_polyfillash3string('POLYGON((-122.4194 37.7749,-118.2437 34.0522,-74.0060 40.7128,-122.4194 37.7749))', 2) != NULL)\nand (h3_try_polyfillash3('Not-a-valid-rep', 2) == NULL)\nand (h3_try_polyfillash3('POLYGON((-122.4194 37.7749,-118.2437 34.0522,-74.0060 40.7128,-122.4194 37.7749))', 2) != NULL)\nand (h3_try_polyfillash3string('POLYGON((-122.4194 37.7749,-118.2437 34.0522,-74.0060 40.7128,-122.4194 37.7749))', 2) != NULL)\nand (h3_boundaryasgeojson('8009fffffffffff') != NULL)\nand (h3_boundaryasgeojson(599686042433355775) != NULL)\nand (hex(h3_boundaryaswkb(599686042433355775)) != NULL)\nand (h3_boundaryaswkt(599686042433355775) != NULL)\nand (h3_centerasgeojson(599686042433355775) != NULL)\nand (hex(h3_centeraswkb('8009fffffffffff')) == NULL)\nand (h3_centeraswkt('8009fffffffffff') != NULL)\nand (h3_h3tostring(599686042433355775) != NULL)\nand (h3_stringtoh3('85283473fffffff') == NULL)\nand (h3_ischildof('88283471b9fffff', '85283473fffffff'))\nand (h3_ispentagon(590112357393367039))\nand (h3_isvalid('85283473fffffff'))\nand (h3_try_validate(590112357393367039) != NULL)\nand (h3_validate(590112357393367039) != NULL)\nand (h3_distance(599686030622195711, 599686015589810175) == 2)\nand (h3_hexring(599686042433355775, 1) != NULL)\nand (h3_kring(599686042433355775, 1) != NULL)\nand (h3_kringdistances(599686042433355775, 1) != NULL)\nand (h3_distance(599686030622195711, 599686015589810175) == 2)\nand (h3_maxchild(599686042433355775, 10) != NULL)\nand (h3_minchild(599686042433355775, 10) != NULL)\nand (h3_resolution(599686042433355775) == 5)\nand (h3_tochildren(599686042433355775, 6) != NULL)\nand (h3_toparent(599686042433355775, 0) != NULL)\nand (\n      h3_compact(\n        ARRAY(\n          599686042433355775, \n          599686030622195711, \n          599686044580839423, \n          599686038138388479, \n          599686043507097599, \n          599686015589810175, \n          599686014516068351, \n          599686034917163007, \n          599686029548453887, \n          599686032769679359, \n          599686198125920255, \n          599686040285872127, \n          599686041359613951, \n          599686039212130303, \n          599686023106002943, \n          599686027400970239, \n          599686013442326527, \n          599686012368584703, \n          599686018811035647)) != NULL\n    )\nand (\n      h3_uncompact(\n        ARRAY(\n          599686030622195711, \n          599686015589810175, \n          599686014516068351, \n          599686034917163007, \n          599686029548453887, \n          599686032769679359, \n          599686198125920255, \n          599686023106002943, \n          599686027400970239, \n          599686013442326527, \n          599686012368584703, \n          599686018811035647, \n          595182446027210751), \n        5) != NULL\n    )"
                 }
@@ -5454,8 +5454,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 3
+              }
             },
             "OrderBy_1_1##wh15VZ7t" : {
               "id" : "OrderBy_1_1##wh15VZ7t",
@@ -5467,7 +5466,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "MFKRE4O8##customer_id", "MFKRE4O8##last_name", "MFKRE4O8##first_name" ],
                 "orders" : [ {
                   "expression" : {
                     "expression" : "customer_id"
@@ -5563,8 +5562,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 2
+              }
             },
             "Reformat_3_1##Rh8z7fFs" : {
               "id" : "Reformat_3_1##Rh8z7fFs",
@@ -5576,7 +5574,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "hQuqyksv##customer_id" ],
                 "expressions" : [ {
                   "expression" : {
                     "expression" : "CAST(customer_id AS INT) > 5"
@@ -5635,8 +5633,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 6
+              }
             },
             "Reformatfsdfdsf1##cd3oVtvf" : {
               "id" : "Reformatfsdfdsf1##cd3oVtvf",
@@ -5648,7 +5645,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "H97dwLh6##c_int", "H97dwLh6##c_string" ],
                 "expressions" : [ {
                   "expression" : {
                     "expression" : "CAST(c_int AS STRING)"
@@ -5781,8 +5778,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 1
+              }
             },
             "Aggregate_1_1##TPXynV9E" : {
               "id" : "Aggregate_1_1##TPXynV9E",
@@ -5810,7 +5806,7 @@
                   "expression" : ""
                 },
                 "activeTab" : "aggregate",
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "prFscd6w##last_name", "prFscd6w##first_name", "prFscd6w##customer_id" ],
                 "groupBy" : [ {
                   "expression" : {
                     "expression" : "last_name"
@@ -5871,8 +5867,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 5
+              }
             },
             "store_sales##rK3U2Kfi" : {
               "id" : "store_sales##rK3U2Kfi",
@@ -6492,7 +6487,7 @@
             "isLabelGrayed" : false
           },
           "properties" : {
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "RxhpzuZp##c_string", "RxhpzuZp##c_int", "RxhpzuZp##c_tinyint" ],
             "orders" : [ {
               "expression" : {
                 "expression" : "concat(c_string, c_int)"
@@ -6685,8 +6680,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 2
+          }
         },
         "Limit_7##bRHnJV9o" : {
           "id" : "Limit_7##bRHnJV9o",
@@ -7115,7 +7109,7 @@
               "alias" : "c_struct_pin"
             } ],
             "activeTab" : "conditions",
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "vzX2hMg7##country_code", "Fvb6Gu8h##p_string", "YU1uefWO##sm_type", "vRHTbAFN##p_string", "iFyUjukU##IB_INCOME_BAND_SK", "Fvb6Gu8h##p_int", "Fvb6Gu8h##p_string", "Fvb6Gu8h##c_string", "Fvb6Gu8h##c_int", "Fvb6Gu8h##c_bigint", "Fvb6Gu8h##c_smallint", "Fvb6Gu8h##c_tinyint", "Fvb6Gu8h##c_float", "Fvb6Gu8h##c_boolean", "Fvb6Gu8h##c_array", "Fvb6Gu8h##c_double", "Fvb6Gu8h##c_struct", "Fvb6Gu8h##c_struct.city", "Fvb6Gu8h##c_struct.state", "Fvb6Gu8h##c_struct.pin" ],
             "headAlias" : "in0"
           },
           "ports" : {
@@ -7518,8 +7512,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 7
+          }
         },
         "Subgraph_1##VxMyG7gp" : {
           "id" : "Subgraph_1##VxMyG7gp",
@@ -7539,7 +7532,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "xq1MPZUE##IB_INCOME_BAND_SK", "xq1MPZUE##IB_LOWER_BOUND", "xq1MPZUE##IB_UPPER_BOUND" ],
                 "expressions" : [ {
                   "expression" : {
                     "expression" : "IB_INCOME_BAND_SK"
@@ -7608,8 +7601,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 9
+              }
             },
             "time_dim##NgRqCvNC" : {
               "id" : "time_dim##NgRqCvNC",
@@ -7966,7 +7958,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "y4jmBXRt##ID", "y4jmBXRt##USER_ID", "y4jmBXRt##ORDER_DATE", "y4jmBXRt##STATUS" ],
                 "expressions" : [ {
                   "expression" : {
                     "expression" : "ID"
@@ -8050,8 +8042,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 11
+              }
             },
             "orders##ngfDOFwH" : {
               "id" : "orders##ngfDOFwH",
@@ -8114,7 +8105,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "kmJWVQn9##ID", "kmJWVQn9##ORDER_ID", "kmJWVQn9##PAYMENT_METHOD", "kmJWVQn9##AMOUNT" ],
                 "expressions" : [ {
                   "expression" : {
                     "expression" : "ID"
@@ -8198,8 +8189,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 3
+              }
             },
             "SQLStatement_4##WwGPfUxj" : {
               "id" : "SQLStatement_4##WwGPfUxj",
@@ -8224,7 +8214,7 @@
                   }
                 } ],
                 "dedupType" : "distinct",
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "svP4ad0L##IB_INCOME_BAND_SK", "svP4ad0L##IB_Lower_boUND", "svP4ad0L##IB_UPPER_BOUND" ],
                 "orders" : [ ],
                 "useOrderBy" : false
               },
@@ -8279,8 +8269,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 6
+              }
             },
             "SQLStatement_4_1##ZbtMG4C2" : {
               "id" : "SQLStatement_4_1##ZbtMG4C2",
@@ -8305,7 +8294,7 @@
                   }
                 } ],
                 "dedupType" : "distinct",
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "QQCDD1bT##SR_RETURNED_Date_SK", "QQCDD1bT##SR_RETURN_TIME_SK", "QQCDD1bT##SR_RETURN_amt_INC_TAX" ],
                 "orders" : [ ],
                 "useOrderBy" : false
               },
@@ -8445,8 +8434,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 7
+              }
             },
             "Reformat_4##bOyLZrVj" : {
               "id" : "Reformat_4##bOyLZrVj",
@@ -8458,7 +8446,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "z8lsrL21##T_TIME_SK", "z8lsrL21##T_TIME_ID", "z8lsrL21##T_TIME", "z8lsrL21##T_HOUR", "z8lsrL21##T_MINUTE", "z8lsrL21##T_SECOND", "z8lsrL21##T_AM_PM", "z8lsrL21##T_SHIFT", "z8lsrL21##T_SUB_SHIFT", "z8lsrL21##T_MEAL_TIME" ],
                 "expressions" : [ {
                   "expression" : {
                     "expression" : "T_TIME_SK"
@@ -8632,8 +8620,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 1
+              }
             },
             "Reformat_6##U8SR8lXm" : {
               "id" : "Reformat_6##U8SR8lXm",
@@ -8645,7 +8632,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "F3GhUpYN##SR_RETURNED_DATE_SK", "F3GhUpYN##SR_RETURN_TIME_SK" ],
                 "expressions" : [ {
                   "expression" : {
                     "expression" : "SR_RETURNED_DATE_SK"
@@ -8704,8 +8691,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 8
+              }
             },
             "store_returns##ily63EQx" : {
               "id" : "store_returns##ily63EQx",
@@ -9193,7 +9179,7 @@
           "alias" : "c1"
         } ],
         "activeTab" : "conditions",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "dsmkOsEz##customer_id", "Fslgfo75##customer_id", "dsmkOsEz##customer_id", "Fslgfo75##first_name", "dsmkOsEz##first_name", "dsmkOsEz##c1", "Fslgfo75##c1" ],
         "headAlias" : "in0"
       },
       "ports" : {
@@ -9210,8 +9196,37 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
+      }
+    },
+    "WLLFpGiq3PBbV-_O4KPwj$$ynkG1PGtaeS3vFHKaqGy4" : {
+      "id" : "WLLFpGiq3PBbV-_O4KPwj$$ynkG1PGtaeS3vFHKaqGy4",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "UNPIVOT",
+        "slug" : "UNPIVOT",
+        "x" : 220,
+        "y" : 3220,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "isLabelGrayed" : false
       },
-      "index" : 34
+      "properties" : {
+        "limit" : {
+          "expression" : "10"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Vu0nI2rXxiKaychf0pCgf$$GszKqjOVgE4dyg-Er7VSW",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "zswGLXjTP3jxTmkQujR_1$$w_nwZeoc22sPQfgF6p1PD",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
     },
     "joined_records##DXtR9oBM" : {
       "id" : "joined_records##DXtR9oBM",
@@ -9276,7 +9291,7 @@
           "alias" : "c_double"
         } ],
         "activeTab" : "conditions",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "NfjPJQsp##c_tinyint", "eE5ZqHCK##c_tinyint", "hoChC6Oe##c_smallint", "NfjPJQsp##c_tinyint", "NfjPJQsp##c_int_string", "eE5ZqHCK##c_bigint", "eE5ZqHCK##c_array", "hoChC6Oe##c_struct", "hoChC6Oe##c_string", "hoChC6Oe##c_double" ],
         "headAlias" : "in0"
       },
       "ports" : {
@@ -9296,8 +9311,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 42
+      }
     },
     "Limit_2##l8rfulMA" : {
       "id" : "Limit_2##l8rfulMA",
@@ -9451,7 +9465,7 @@
           "expression" : ""
         },
         "activeTab" : "aggregate",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "boiIs13R##c_boolean", "boiIs13R##c_bool_expr", "boiIs13R##c_concat_expr", "boiIs13R##c_add_expr", "boiIs13R##c_tinyint", "boiIs13R##c_smallint", "boiIs13R##c_int", "boiIs13R##c_bigint", "boiIs13R##c_float", "boiIs13R##c_double", "boiIs13R##c_string", "boiIs13R##c_macro", "boiIs13R##c_if", "boiIs13R##cfor_col_0", "boiIs13R##cfor_col_1", "boiIs13R##cfor_col_2", "boiIs13R##cfor_col_3", "boiIs13R##cfor_col_4", "boiIs13R##c_databricks_project_main", "boiIs13R##c_base_project", "boiIs13R##c_dbt_utils_functions" ],
         "groupBy" : [ {
           "expression" : {
             "expression" : "c_boolean"
@@ -9469,8 +9483,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 31
+      }
     },
     "OrderBy_2##dPEnthKn" : {
       "id" : "OrderBy_2##dPEnthKn",
@@ -9484,7 +9497,7 @@
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "LkhQvTbV##c_string", "LkhQvTbV##c_int", "LkhQvTbV##c_tinyint" ],
         "orders" : [ {
           "expression" : {
             "expression" : "concat(c_string, c_int)"
@@ -9509,8 +9522,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 55
+      }
     },
     "all_type_partiti##JbsfLCs1" : {
       "id" : "all_type_partiti##JbsfLCs1",
@@ -9549,8 +9561,7 @@
         "y" : 2200,
         "phase" : 0,
         "macroDependencies" : [ "SQL_DatabricksParentProjectMain.parent_transform_deduplicate" ],
-        "comment" : "Removes duplicate entries from a dataset based on first names and IDs to ensure data integrity.",
-        "isLabelGrayed" : false
+        "comment" : "Removes duplicate entries from a dataset based on first names and IDs to ensure data integrity."
       },
       "properties" : {
         "relation" : "Subgraph_9",
@@ -9589,8 +9600,7 @@
         "projectName" : "SQL_DatabricksParentProjectMain",
         "sourceProjectName" : "SQL_DatabricksParentProjectMain",
         "sourceProjectVersion" : "SQL_ParentDatabricks/v3.4.0-6"
-      },
-      "index" : 13
+      }
     },
     "Reformat_2_1##r8tLIGls" : {
       "id" : "Reformat_2_1##r8tLIGls",
@@ -9605,7 +9615,7 @@
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "svKn5ddV##customer_id", "svKn5ddV##first_name", "svKn5ddV##last_name" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "customer_id"
@@ -9639,8 +9649,48 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
+      }
+    },
+    "504fjlbEW5s8EpEufNAh7$$7KEuZ75eAdsZqdTyF8MtP" : {
+      "id" : "504fjlbEW5s8EpEufNAh7$$7KEuZ75eAdsZqdTyF8MtP",
+      "component" : "OrderBy",
+      "metadata" : {
+        "label" : "map_contains_key",
+        "slug" : "map_contains_key",
+        "x" : 560,
+        "y" : 3200,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Sorts filtered results based on specified criteria for better visibility.",
+        "autoUpdateComment" : true,
+        "isLabelGrayed" : false
       },
-      "index" : 37
+      "properties" : {
+        "columnsSelector" : [ "9qhoE45APS-l2crckvZ2M$$7LzXybxJmHgP_dc4tjn9P##LIMIT", "9qhoE45APS-l2crckvZ2M$$7LzXybxJmHgP_dc4tjn9P##JOIN" ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : "LIMIT"
+          },
+          "sortType" : "asc"
+        }, {
+          "expression" : {
+            "expression" : "JOIN"
+          },
+          "sortType" : "desc"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "9qhoE45APS-l2crckvZ2M$$7LzXybxJmHgP_dc4tjn9P",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "p0vxk0VpJm4HRUwbm_sMc$$6wGviaX7tFUN1inLqZoRy",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
     },
     "Reformatsnapshot##zUe7PVmq" : {
       "id" : "Reformatsnapshot##zUe7PVmq",
@@ -9773,7 +9823,7 @@
           }
         } ],
         "dedupType" : "unique_only",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "eC0uT8Br##c_tinyint" ],
         "orders" : [ ],
         "useOrderBy" : false
       },
@@ -9788,8 +9838,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 41
+      }
     },
     "distinct_rows_by##z2sOjPXH" : {
       "id" : "distinct_rows_by##z2sOjPXH",
@@ -9817,7 +9866,7 @@
           }
         } ],
         "dedupType" : "first",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "qjFsn9Iz##c_struct", "qjFsn9Iz##c_struct.city", "qjFsn9Iz##c_struct.state", "qjFsn9Iz##c_boolean" ],
         "orders" : [ {
           "expression" : {
             "expression" : {
@@ -9846,8 +9895,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 39
+      }
     },
     "AllExReformat##ZINBvjsM" : {
       "id" : "AllExReformat##ZINBvjsM",
@@ -9861,7 +9909,7 @@
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "qKhYi0wt##customer_id", "qKhYi0wt##first_name", "qKhYi0wt##last_name" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "customer_id"
@@ -10000,8 +10048,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 23
+      }
     },
     "SetOperation_2##FgJ5xu6S" : {
       "id" : "SetOperation_2##FgJ5xu6S",
@@ -10033,8 +10080,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 58
+      }
     },
     "env_uitesting_sh##v8pkvcZ8" : {
       "id" : "env_uitesting_sh##v8pkvcZ8",
@@ -10072,8 +10118,7 @@
         "y" : 2200,
         "phase" : 0,
         "macroDependencies" : [ "SQL_DatabricksSharedBasic.child_deduplicate_custom" ],
-        "comment" : "Removes duplicate child records to ensure data accuracy.",
-        "isLabelGrayed" : false
+        "comment" : "Removes duplicate child records to ensure data accuracy."
       },
       "properties" : {
         "relation" : "parent_transform_deduplicate_1",
@@ -10111,8 +10156,7 @@
         "name" : "child_deduplicate_custom",
         "projectName" : "SQL_DatabricksSharedBasic",
         "sourceProjectName" : "SQL_DatabricksSharedBasic"
-      },
-      "index" : 52
+      }
     },
     "distinct_rows_by##x9LNVOT7" : {
       "id" : "distinct_rows_by##x9LNVOT7",
@@ -10144,7 +10188,7 @@
           }
         } ],
         "dedupType" : "last",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "NxGDWNNL##c_struct", "NxGDWNNL##c_struct.city", "NxGDWNNL##c_boolean", "NxGDWNNL##c_struct.state", "NxGDWNNL##c_struct.pin" ],
         "orders" : [ {
           "expression" : {
             "expression" : {
@@ -10173,8 +10217,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 20
+      }
     },
     "all_type_parquet##Q9LF7kEP" : {
       "id" : "all_type_parquet##Q9LF7kEP",
@@ -10234,8 +10277,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 57
+      }
     },
     "Reformat_1##oY4tTZDB" : {
       "id" : "Reformat_1##oY4tTZDB",
@@ -10250,7 +10292,7 @@
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "ZSck9xO0##col_int" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "concat('This is my first name', CAST(NULL AS STRING))"
@@ -10279,8 +10321,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 2
+      }
     },
     "SetOperation_3##afMUewKz" : {
       "id" : "SetOperation_3##afMUewKz",
@@ -10312,8 +10353,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 59
+      }
     },
     "Limit_4_1##pQedcvwX" : {
       "id" : "Limit_4_1##pQedcvwX",
@@ -10341,8 +10381,38 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
+      }
+    },
+    "caWohCl4h_8U0cncrxJ8P$$XF7n2K-dpToHz2UZHYJwH" : {
+      "id" : "caWohCl4h_8U0cncrxJ8P$$XF7n2K-dpToHz2UZHYJwH",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "array_contains",
+        "slug" : "array_contains",
+        "x" : 400,
+        "y" : 3240,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "isLabelGrayed" : false
       },
-      "index" : 56
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Sp0xgd6N_DNvuxMTvKBZE$$W7htOKFbttYin3sRahWcs",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "mKxidIFLErXwp3f0TaCYi$$MYUOFbz9itjad4OYXETK8",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
     },
     "AllStunningOne##ppLp0Crb" : {
       "id" : "AllStunningOne##ppLp0Crb",
@@ -10357,7 +10427,7 @@
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "wZvxIb4m##c_array", "wZvxIb4m##c_struct", "wZvxIb4m##c_struct.city", "wZvxIb4m##c_smallint", "wZvxIb4m##c_tinyint", "wZvxIb4m##c_int", "wZvxIb4m##c_bigint", "wZvxIb4m##c_float", "wZvxIb4m##c_double", "wZvxIb4m##c_string", "wZvxIb4m##c_boolean" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "concat(\n  c_array[0], \n  c_struct.city, \n  aes_decrypt(unhex('83F16B2AA704794132802D248E6BFD4E380078182D1544813898AC97E709B28A94'), '0000111122223333'), \n  base64(aes_encrypt('Spark SQL', '1234567890abcdef', 'ECB', 'PKCS')), \n  bin(13), \n  btrim('    SparkSQL   '), \n  char(65), \n  chr(65), \n  concat('Spark', 'SQL'), \n  concat_ws(' ', 'Spark', 'SQL'), \n  crc32('Spark'), \n  current_catalog(), \n  current_database(), \n  current_date(), \n  current_timestamp(), \n  current_timezone(), \n  current_user(), \n  date_add('2016-07-30', 1), \n  date_sub('2016-07-30', 1), \n  date_format('2016-04-08', 'y'), \n  date_from_unix_date(1), \n  date_part('YEAR', TIMESTAMP'2019-08-12 01:00:00.123456'), \n  date_part('MONTH', INTERVAL '2021-11' YEAR TO MONTH), \n  date_part('MINUTE', INTERVAL '123 23:55:59.002001' DAY TO SECOND), \n  date_trunc('HOUR', '2015-03-05T09:32:05.359'), \n  date_trunc('DD', '2015-03-05T09:32:05.359'), \n  datediff('2009-07-31', '2009-07-30'), \n  decode(encode('abc', 'utf-8'), 'utf-8'), \n  e(), \n  elt(1, 'scala', 'java'), \n  format_number(12332.123456, '##################.###'), \n  format_string('Hello World %d %s', 100, 'days'), \n  CAST(from_csv('1, 0.8', 'a INT, b DOUBLE') AS STRING), \n  CAST(from_json(\n    '{\"teacher\": \"Alice\", \"student\": [{\"name\": \"Bob\", \"rank\": 1}, {\"name\": \"Charlie\", \"rank\": 2}]}', \n    'STRUCT<teacher: STRING, student: ARRAY<STRUCT<name: STRING, rank: INT>>>') AS STRING), \n  CAST(from_unixtime(0, 'yyyy-MM-dd HH:mm:ss') AS STRING), \n  CAST(from_utc_timestamp('2016-08-31', 'Asia/Seoul') AS STRING), \n  CAST(get_json_object('{\"a\":\"b\"}', '$.a') AS STRING), \n  hash('Spark', ARRAY(123), 2), \n  hex(17), \n  CAST(hour('2009-07-30 12:58:59') AS STRING), \n  CAST(hypot(3, 4) AS STRING), \n  CAST(ilike('Spark', '_Park') AS STRING), \n  CAST(initcap('sPark sql') AS STRING), \n  CAST(last_day('2009-01-12') AS STRING), \n  CAST(lcase('SparkSql') AS STRING), \n  CAST(if(\n    1 < 2, \n    'a', \n    'b') AS STRING), \n  CAST(ifnull(NULL, ARRAY('2')) AS STRING), \n  LEFT('Spark SQL', 3), \n  lower('SparkSql'), \n  lpad('hi', 5, '??'), \n  ltrim('    SparkSQL   '), \n  CAST(make_date(2013, 7, 15) AS STRING), \n  CAST(make_dt_interval(1, 12, 30, 1.001001) AS STRING), \n  CAST(make_interval(100, 11, 1, 1, 12, 30, 1.001001) AS STRING), \n  CAST(make_timestamp(2019, 6, 30, 23, 59, 60) AS STRING), \n  CAST(make_ym_interval(1, 2) AS STRING), \n  md5('Spark'), \n  next_day('2015-01-14', 'TU'), \n  now(), \n  nullif(2, 2), \n  nvl(NULL, 'hello'), \n  CAST(overlay('Spark SQL' PLACING '_' FROM 6) AS STRING), \n  CAST(parse_url('http://spark.apache.org/path?query=1', 'HOST') AS STRING), \n  printf('Hello World %d %s', 100, 'days'), \n  CAST(regexp_extract('100-200', '(\\\\d+)-(\\\\d+)', 1) AS STRING), \n  CAST(regexp_replace('100-200', '(\\\\d+)', 'num') AS STRING), \n  repeat('123', 2), \n  replace('ABCabc', 'abc', 'DEF'), \n  reverse('Spark SQL'), \n  RIGHT('Spark SQL', 3), \n  rpad('hi', 5, '??'), \n  rtrim('    SparkSQL   '), \n  CAST(schema_of_json('[{\"col\":0}]') AS STRING), \n  sha('Spark'), \n  sha1('Spark'), \n  sha2('Spark', 256), \n  concat(space(2), '1'), \n  split_part('11.12.13', '.', 3), \n  substr('Spark SQL', 5), \n  substring('Spark SQL', 5), \n  substring_index('www.apache.org', '.', 2), \n  timestamp_micros(1230219000123123), \n  timestamp_millis(1230219000123), \n  timestamp_seconds(1.230219000123E9), \n  to_csv(named_struct('a', 1, 'b', 2)), \n  to_date('2009-07-30 04:17:52'), \n  to_timestamp('2016-12-31 00:12:00'), \n  to_unix_timestamp('2016-04-08', 'yyyy-MM-dd'), \n  to_utc_timestamp('2016-08-31', 'Asia/Seoul'), \n  translate('AaBbCc', 'abc', '123'), \n  trunc('2019-08-04', 'week'), \n  try_to_binary('abc', 'utf-8'), \n  try_to_number('454', '999'), \n  typeof(1), \n  ucase('SparkSql'), \n  unbase64('U3BhcmsgU1FM'), \n  decode(unhex('537061726B2053514C'), 'UTF-8'), \n  unix_date(DATE(\"1970-01-02\")), \n  unix_micros(TIMESTAMP('1970-01-01 00:00:01Z')), \n  unix_millis(TIMESTAMP('1970-01-01 00:00:01Z')), \n  unix_seconds(TIMESTAMP('1970-01-01 00:00:01Z')), \n  unix_timestamp('2016-04-08', 'yyyy-MM-dd'), \n  upper('SparkSql'), \n  uuid(), \n  xpath_string('<a><b>b</b><c>cc</c></a>', 'a/c'), \n  xxhash64('Spark', ARRAY(123), 2), \n  YEAR ('2016-07-30'), \n  to_json(ARRAY(named_struct('a', 1, 'b', 2))))"
@@ -10518,8 +10588,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 30
+      }
     },
     "raw_customers##xcnXu57X" : {
       "id" : "raw_customers##xcnXu57X",
@@ -10723,7 +10792,7 @@
           "alias" : "c_struct"
         } ],
         "activeTab" : "conditions",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "PXIRSTiz##c_smallint", "mLCaFNSf##c_int", "mLCaFNSf##c_string", "WOZmbaA8##customer_id", "IKTm6HKo##customer_id", "vHe8drxq##c1", "PXIRSTiz##c_tinyint", "PXIRSTiz##c_smallint", "mLCaFNSf##c_int", "PXIRSTiz##c_bigint", "PXIRSTiz##c_float", "PXIRSTiz##c_double", "PXIRSTiz##c_string", "PXIRSTiz##c_boolean", "PXIRSTiz##c_array", "PXIRSTiz##c_struct" ],
         "headAlias" : "in0"
       },
       "ports" : {
@@ -10749,8 +10818,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 50
+      }
     },
     "SQLStatement_2_1##g157GeYj" : {
       "id" : "SQLStatement_2_1##g157GeYj",
@@ -10764,7 +10832,7 @@
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "Ked0BYZI##customer_id", "Ked0BYZI##first_name", "Ked0BYZI##c1", "Ked0BYZI##c3", "Ked0BYZI##c6", "Ked0BYZI##c13", "Ked0BYZI##c14" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "customer_id"
@@ -10806,8 +10874,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 33
+      }
     },
     "SQLStatement_3_1##QpRApQSK" : {
       "id" : "SQLStatement_3_1##QpRApQSK",
@@ -10817,6 +10884,7 @@
         "x" : 680,
         "y" : 2120,
         "phase" : 0,
+        "macroDependencies" : [ ],
         "isLabelGrayed" : false
       },
       "properties" : {
@@ -10834,8 +10902,333 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
+      }
+    },
+    "EZnTWta-Lip_DiyN6_55L$$VG7ANo8JbJcHtKLhfv-In" : {
+      "id" : "EZnTWta-Lip_DiyN6_55L$$VG7ANo8JbJcHtKLhfv-In",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "PIVOT",
+        "slug" : "PIVOT",
+        "x" : 80,
+        "y" : 3220,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Retrieves a comprehensive list of SQL keywords for reference or documentation purposes.",
+        "autoUpdateComment" : true,
+        "isLabelGrayed" : false
       },
-      "index" : 8
+      "properties" : {
+        "columnsSelector" : [ "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##LIMIT", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##JOIN", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##ASC", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##DESC", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##INNER", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##FULL", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##CROSS", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##SEMI", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##ANTI", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##ESCAPE", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##INTERVAL", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##LEFT", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##RIGHT", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##OUTER", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##TIMESTAMP", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##DATETIME", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##END", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##OVER", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##RANGE", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##PRECEDING", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##FORMAT", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##ARRAY", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##PARTITION", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##UNBOUNDED", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##JSON", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##TYPE", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##IGNORE", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##RESPECT", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##VERSION", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##FILTER", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##CLUSTER", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##DISTRIBUTE", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##ROLLUP", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##CUBE", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##GROUPING", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##SETS", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##LATERAL", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##OFFSET", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##SORT", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##WINDOW", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##FETCH", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##catch", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##finally", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##object", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##protected", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##return", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##final", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##new", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##while", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##yield", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##trait", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##except", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##do", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##extends", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##assert", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##global", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##import" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "LIMIT"
+          },
+          "alias" : "LIMIT"
+        }, {
+          "expression" : {
+            "expression" : "JOIN"
+          },
+          "alias" : "JOIN"
+        }, {
+          "expression" : {
+            "expression" : "ASC"
+          },
+          "alias" : "ASC"
+        }, {
+          "expression" : {
+            "expression" : "DESC"
+          },
+          "alias" : "DESC"
+        }, {
+          "expression" : {
+            "expression" : "INNER"
+          },
+          "alias" : "INNER"
+        }, {
+          "expression" : {
+            "expression" : "FULL"
+          },
+          "alias" : "FULL"
+        }, {
+          "expression" : {
+            "expression" : "CROSS"
+          },
+          "alias" : "CROSS"
+        }, {
+          "expression" : {
+            "expression" : "SEMI"
+          },
+          "alias" : "SEMI"
+        }, {
+          "expression" : {
+            "expression" : "ANTI"
+          },
+          "alias" : "ANTI"
+        }, {
+          "expression" : {
+            "expression" : "ESCAPE"
+          },
+          "alias" : "ESCAPE"
+        }, {
+          "expression" : {
+            "expression" : "INTERVAL"
+          },
+          "alias" : "INTERVAL"
+        }, {
+          "expression" : {
+            "expression" : "LEFT"
+          },
+          "alias" : "LEFT"
+        }, {
+          "expression" : {
+            "expression" : "RIGHT"
+          },
+          "alias" : "RIGHT"
+        }, {
+          "expression" : {
+            "expression" : "OUTER"
+          },
+          "alias" : "OUTER"
+        }, {
+          "expression" : {
+            "expression" : "TIMESTAMP"
+          },
+          "alias" : "TIMESTAMP"
+        }, {
+          "expression" : {
+            "expression" : "DATETIME"
+          },
+          "alias" : "DATETIME"
+        }, {
+          "expression" : {
+            "expression" : "END"
+          },
+          "alias" : "END"
+        }, {
+          "expression" : {
+            "expression" : "OVER"
+          },
+          "alias" : "OVER"
+        }, {
+          "expression" : {
+            "expression" : "RANGE"
+          },
+          "alias" : "RANGE"
+        }, {
+          "expression" : {
+            "expression" : "PRECEDING"
+          },
+          "alias" : "PRECEDING"
+        }, {
+          "expression" : {
+            "expression" : "FORMAT"
+          },
+          "alias" : "FORMAT"
+        }, {
+          "expression" : {
+            "expression" : "ARRAY"
+          },
+          "alias" : "ARRAY"
+        }, {
+          "expression" : {
+            "expression" : "PARTITION"
+          },
+          "alias" : "PARTITION"
+        }, {
+          "expression" : {
+            "expression" : "UNBOUNDED"
+          },
+          "alias" : "UNBOUNDED"
+        }, {
+          "expression" : {
+            "expression" : "JSON"
+          },
+          "alias" : "JSON"
+        }, {
+          "expression" : {
+            "expression" : "TYPE"
+          },
+          "alias" : "TYPE"
+        }, {
+          "expression" : {
+            "expression" : "IGNORE"
+          },
+          "alias" : "IGNORE"
+        }, {
+          "expression" : {
+            "expression" : "RESPECT"
+          },
+          "alias" : "RESPECT"
+        }, {
+          "expression" : {
+            "expression" : "VERSION"
+          },
+          "alias" : "VERSION"
+        }, {
+          "expression" : {
+            "expression" : "FILTER"
+          },
+          "alias" : "FILTER"
+        }, {
+          "expression" : {
+            "expression" : "CLUSTER"
+          },
+          "alias" : "CLUSTER"
+        }, {
+          "expression" : {
+            "expression" : "DISTRIBUTE"
+          },
+          "alias" : "DISTRIBUTE"
+        }, {
+          "expression" : {
+            "expression" : "ROLLUP"
+          },
+          "alias" : "ROLLUP"
+        }, {
+          "expression" : {
+            "expression" : "CUBE"
+          },
+          "alias" : "CUBE"
+        }, {
+          "expression" : {
+            "expression" : "GROUPING"
+          },
+          "alias" : "GROUPING"
+        }, {
+          "expression" : {
+            "expression" : "SETS"
+          },
+          "alias" : "SETS"
+        }, {
+          "expression" : {
+            "expression" : "LATERAL"
+          },
+          "alias" : "LATERAL"
+        }, {
+          "expression" : {
+            "expression" : "OFFSET"
+          },
+          "alias" : "OFFSET"
+        }, {
+          "expression" : {
+            "expression" : "SORT"
+          },
+          "alias" : "SORT"
+        }, {
+          "expression" : {
+            "expression" : "WINDOW"
+          },
+          "alias" : "WINDOW"
+        }, {
+          "expression" : {
+            "expression" : "FETCH"
+          },
+          "alias" : "FETCH"
+        }, {
+          "expression" : {
+            "expression" : "catch"
+          },
+          "alias" : "catch"
+        }, {
+          "expression" : {
+            "expression" : "finally"
+          },
+          "alias" : "finally"
+        }, {
+          "expression" : {
+            "expression" : "object"
+          },
+          "alias" : "object"
+        }, {
+          "expression" : {
+            "expression" : "protected"
+          },
+          "alias" : "protected"
+        }, {
+          "expression" : {
+            "expression" : "return"
+          },
+          "alias" : "return"
+        }, {
+          "expression" : {
+            "expression" : "final"
+          },
+          "alias" : "final"
+        }, {
+          "expression" : {
+            "expression" : "new"
+          },
+          "alias" : "new"
+        }, {
+          "expression" : {
+            "expression" : "while"
+          },
+          "alias" : "while"
+        }, {
+          "expression" : {
+            "expression" : "yield"
+          },
+          "alias" : "yield"
+        }, {
+          "expression" : {
+            "expression" : "true"
+          },
+          "alias" : "true"
+        }, {
+          "expression" : {
+            "expression" : "false"
+          },
+          "alias" : "false"
+        }, {
+          "expression" : {
+            "expression" : "trait"
+          },
+          "alias" : "trait"
+        }, {
+          "expression" : {
+            "expression" : "except"
+          },
+          "alias" : "except"
+        }, {
+          "expression" : {
+            "expression" : "do"
+          },
+          "alias" : "do"
+        }, {
+          "expression" : {
+            "expression" : "extends"
+          },
+          "alias" : "extends"
+        }, {
+          "expression" : {
+            "expression" : "assert"
+          },
+          "alias" : "assert"
+        }, {
+          "expression" : {
+            "expression" : "global"
+          },
+          "alias" : "global"
+        }, {
+          "expression" : {
+            "expression" : "import"
+          },
+          "alias" : "import"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "JdHUerh5eU01UwM8pl8Dg$$a0QM8EdkdQaEACN706KCL",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
     },
     "snapshot_parent_##WQnfqsHG" : {
       "id" : "snapshot_parent_##WQnfqsHG",
@@ -10863,6 +11256,35 @@
         "autoUpdateOnRun" : false
       },
       "index" : 24
+    },
+    "fhqT-hKBZQ_QaGcJjytWZ$$2wN8jkbk0PqWsvwsRRO8W" : {
+      "id" : "fhqT-hKBZQ_QaGcJjytWZ$$2wN8jkbk0PqWsvwsRRO8W",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "IS_INCREMENTAL",
+        "slug" : "IS_INCREMENTAL",
+        "x" : -60,
+        "y" : 3220,
+        "phase" : 0,
+        "isLabelGrayed" : false
+      },
+      "properties" : {
+        "table" : {
+          "name" : "table_keywords",
+          "sourceType" : "Source",
+          "sourceName" : "qa-team.qa_database",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "t9vE7JR4DtG4RAzZzc4ii$$lyow41pQ6fP7SXf4wiP6v",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
     },
     "Filter_1##ntsupvTG" : {
       "id" : "Filter_1##ntsupvTG",
@@ -10966,6 +11388,7 @@
           "metadata" : {
             "label" : "pvt1",
             "phase" : 0,
+            "macroDependencies" : [ ],
             "isLabelGrayed" : false
           },
           "properties" : {
@@ -11048,8 +11471,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 3
+          }
         },
         "pvt2##VQjHHJsv" : {
           "id" : "pvt2##VQjHHJsv",
@@ -11057,6 +11479,7 @@
           "metadata" : {
             "label" : "pvt2",
             "phase" : 0,
+            "macroDependencies" : [ ],
             "isLabelGrayed" : false
           },
           "properties" : {
@@ -11157,8 +11580,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 6
+          }
         },
         "SQLStatement_5##dMgY3hD5" : {
           "id" : "SQLStatement_5##dMgY3hD5",
@@ -11240,6 +11662,7 @@
           "metadata" : {
             "label" : "Reformat_10",
             "phase" : 0,
+            "macroDependencies" : [ ],
             "isLabelGrayed" : false
           },
           "properties" : {
@@ -11405,8 +11828,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 0
+          }
         },
         "departments##M1oYwx42" : {
           "id" : "departments##M1oYwx42",
@@ -11418,7 +11840,7 @@
             "isLabelGrayed" : false
           },
           "properties" : {
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "JF3vIBrH##c_int", "JF3vIBrH##c_string" ],
             "expressions" : [ {
               "expression" : {
                 "expression" : "c_int * 2"
@@ -11531,8 +11953,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 1
+          }
         },
         "SQLStatement_1_1##NPkYtSJv" : {
           "id" : "SQLStatement_1_1##NPkYtSJv",
@@ -11549,7 +11970,7 @@
               }
             } ],
             "dedupType" : "distinct",
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "LGmjjLnc##c_tinyint" ],
             "orders" : [ ],
             "useOrderBy" : false
           },
@@ -11648,8 +12069,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 4
+          }
         },
         "employees##UUTvxiEy" : {
           "id" : "employees##UUTvxiEy",
@@ -11661,7 +12081,7 @@
             "isLabelGrayed" : false
           },
           "properties" : {
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "q7iAo3wy##c_int", "q7iAo3wy##c_string" ],
             "expressions" : [ {
               "expression" : {
                 "expression" : "c_int * 2"
@@ -11807,8 +12227,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 2
+          }
         },
         "SQLStatementtest##Z6CX5A3Z" : {
           "id" : "SQLStatementtest##Z6CX5A3Z",
@@ -11816,6 +12235,7 @@
           "metadata" : {
             "label" : "SQLStatementtest1232134",
             "phase" : 0,
+            "macroDependencies" : [ ],
             "comment" : "Filters specific performance records based on defined criteria.",
             "isLabelGrayed" : false
           },
@@ -12017,8 +12437,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 5
+          }
         },
         "pvt##j6nNkGvD" : {
           "id" : "pvt##j6nNkGvD",
@@ -12026,6 +12445,7 @@
           "metadata" : {
             "label" : "pvt",
             "phase" : 0,
+            "macroDependencies" : [ ],
             "isLabelGrayed" : false
           },
           "properties" : {
@@ -12108,8 +12528,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 7
+          }
         }
       },
       "connections" : [ {
@@ -12380,7 +12799,7 @@
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "fyk1B35G##c_int", "fyk1B35G##c_string" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "CAST(c_int AS STRING)"
@@ -12409,8 +12828,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 36
+      }
     },
     "SQLStatement_1_2##nTrWbK6y" : {
       "id" : "SQLStatement_1_2##nTrWbK6y",
@@ -12457,6 +12875,7 @@
           "metadata" : {
             "label" : "SQLStatement_4_2",
             "phase" : 0,
+            "macroDependencies" : [ ],
             "isLabelGrayed" : false
           },
           "properties" : {
@@ -12616,8 +13035,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 3
+          }
         },
         "Reformat_1_2_2##ZRe1Rfcm" : {
           "id" : "Reformat_1_2_2##ZRe1Rfcm",
@@ -12629,7 +13047,7 @@
             "isLabelGrayed" : false
           },
           "properties" : {
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "wFvHAhCx##c_int", "wFvHAhCx##c_string" ],
             "expressions" : [ {
               "expression" : {
                 "expression" : "CAST(c_int AS STRING)"
@@ -12752,8 +13170,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 5
+          }
         },
         "SQLStatement_6##LrMiahzN" : {
           "id" : "SQLStatement_6##LrMiahzN",
@@ -12761,6 +13178,7 @@
           "metadata" : {
             "label" : "SQLStatement_6",
             "phase" : 0,
+            "macroDependencies" : [ ],
             "isLabelGrayed" : false
           },
           "properties" : {
@@ -12926,8 +13344,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 2
+          }
         },
         "Limit_4##X0tyMUPz" : {
           "id" : "Limit_4##X0tyMUPz",
@@ -13006,7 +13423,7 @@
             "isLabelGrayed" : false
           },
           "properties" : {
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "Dit3cNV7##customer_id", "Dit3cNV7##first_name", "Dit3cNV7##last_name" ],
             "expressions" : [ {
               "expression" : {
                 "expression" : "CAST(customer_id AS INT) > 5"
@@ -17627,8 +18044,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 1
+          }
         },
         "OrderBy_1##P9VdZ2y5" : {
           "id" : "OrderBy_1##P9VdZ2y5",
@@ -17640,7 +18056,7 @@
             "isLabelGrayed" : false
           },
           "properties" : {
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "OGktIkG6##first_name" ],
             "orders" : [ {
               "expression" : {
                 "expression" : "first_name"
@@ -17700,8 +18116,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 7
+          }
         },
         "SQLStatement_1_3##TuUZPkWH" : {
           "id" : "SQLStatement_1_3##TuUZPkWH",
@@ -17709,6 +18124,7 @@
           "metadata" : {
             "label" : "SQLStatement_1_3",
             "phase" : 0,
+            "macroDependencies" : [ ],
             "isLabelGrayed" : false
           },
           "properties" : {
@@ -17737,8 +18153,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 4
+          }
         },
         "combine_multiple##K9C4FHrn" : {
           "id" : "combine_multiple##K9C4FHrn",
@@ -20428,7 +20843,7 @@
             "isLabelGrayed" : false
           },
           "properties" : {
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "UNZGVbyP##customer_id", "UNZGVbyP##last_name", "UNZGVbyP##first_name" ],
             "condition" : {
               "expression" : "CAST(customer_id AS INT) > 5\nand CAST(customer_id AS INT) != 0\nor first_name LIKE '%A%'\nor ((1 & 1) == 1)\nor ((2 | 2) == 2)\nand 10 * CAST(customer_id AS INT) == 20\nand last_name != first_name\nand (CAST(customer_id AS INT) BETWEEN 10 AND 20)\nand (ARRAY(10, 20, 30)[2] == 30)\nand (MAP(1, 'Hello', 2, 'World')[1] == 'Hello')\nand (10 ^ 20 == 50)\nand (MAP('three', 3).four == NULL)\nand (named_struct('a', 5, 'b', 'Spark').a == 5)\nand (1 = 2 and 1 == 2)\nand (1 >= 2 and 1 <= 2 and 1 != 3 or 2 > 4 or 4 < 5)\nand (\n      EXISTS(\n        ARRAY(1, NULL, 3), \n        x -> x % 2 == 0)\n    )\nor ilike('Spark', '_PARK')\nor (named_struct('a', 1, 'b', 2) IN (named_struct('a', 1, 'b', 1), named_struct('a', 1, 'b', 3)))\nand (1 IS DISTINCT FROM 5)\nand ('invalid' IS false)\nand isnull(1)\nand ('t' IS NOT true)\nand (1 <=> '1')\nand (1 <> CAST(customer_id AS INT))\nand (10 - 2 + 10 == 8)\nand (NOT true)\nand (false or true)\nand (2 % 0 == 0)\nand ('Spark' || 'SQL' == 'SparkSQL')\nand (r'%SystemDrive%\\Users\\John' LIKE r'%SystemDrive%\\\\Users%')\nand (r'%SystemDrive%\\Users\\John' RLIKE '%SystemDrive%\\\\\\\\Users.*')\nand (regexp_like('%SystemDrive%\\\\Users\\\\John', '%SystemDrive%\\\\\\\\Users.*'))\nand (2L / 2L == 10)\nand (~ 0 == -1)\nand (base64(aes_encrypt('Spark', 'abcdefghijklmnop')) == NULL)\nand (CAST(aes_decrypt(unbase64('4A5jOAh9FNGwoMeuJukfllrLdHEZxA2DyuSQAWz77dfn'), 'abcdefghijklmnop') AS STRING) == NULL)\nand (ascii('234') == 234)\nand (base64('Spark SQL') == NULL)\nand (bin(13) == NULL)\nand (binary('Spark SQL') == NULL)\nand (btrim('abcaabaSparkSQLabcaaba', 'abc') != NULL)\nand (char(65) != NULL)\nand (char_length('Spark SQL ') == 10)\nand (character_length('Spark SQL ') == 10)\nand (concat(customer_id, 'hello') != NULL)\nand (concat_ws(',', 'Spark', ARRAY('S', 'Q', NULL, 'L'), NULL) != NULL)\nand contains('SparkSQL', 'Spork')\nand (crc32('Spark') > 0)\nand chr(65) != NULL\nand (3 ^ 5 == 6)\nand (hex(encode('Spark SQL', 'US-ASCII')) != NULL)\nand endswith('SparkSQL', 'SQL')\nand (find_in_set('ab', 'abc,b,ab,c,def') == 2)\nand (format_number(12332.123456, 4) == 2)\nand (format_number(12332.123456, '#.###') == 10)\nand (format_string('Hello World %d %s', 100, 'days') != NULL)\nand (hex('Spark SQL') != NULL)\nand (r'%SystemDrive%\\Users\\John' LIKE '%SystemDrive%\\\\\\\\Users%')\nand (initcap('sPark sql') != NULL)\nand (instr('SparkSQL', 'R') == 2)\nand (lcase('LowerCase') != NULL)\nand (LEFT('Spark SQL', 3) != NULL)\nand (length('Spark SQL ') > 20)\nand (levenshtein('kitten', 'sitting') > 10)\nand (locate('bar', 'abcbarbar') > 2)\nand (locate('bar', 'abcbarbar', 5) > 2)\nand (lower('LowerCase') != NULL)\nand (lpad('hi', 1, '??') != NULL)\nand (hex(lpad(x'1020', 5, x'05')) != NULL)\nand (('+' || ltrim('abc', 'acbabSparkSQL   ') || '+') != NULL)\nand (md5('Spark') != NULL)\nand (octet_length('Spark SQL') != NULL)\nand (parse_url('http://spark.apache.org/path?query=1', 'HOST') != NULL)\nand (position('bar', 'abcbarbar') > 10)\nand (position('bar', 'abcbarbar', 5) > 5)\nand (printf('Hello World %d %s', 100, 'days') != NULL)\nand (r'%SystemDrive%\\Users\\John' RLIKE r'%SystemDrive%\\\\Users.*')\nand (r'%SystemDrive%\\Users\\John' RLIKE '%SystemDrive%\\\\\\\\Users.*')\nand (regexp_like('%SystemDrive%\\\\Users\\\\John', '%SystemDrive%\\\\\\\\Users.*'))\nand (regexp_extract('100-200', '(\\\\d+)-(\\\\d+)', 1) > 10)\nand (regexp_extract_all('100-200, 300-400', '(\\\\d+)-(\\\\d+)', 1) != NULL)\nand (regexp_replace('100-200', '(\\\\d+)', 'num') != NULL)\nand (repeat('123', 2) != NULL)\nand (replace('ABCabc', 'abc', 'DEF') != NULL)\nand (reverse('Spark SQL') != NULL)\nand (RIGHT('Spark SQL', 3) != NULL)\nand (rpad('hi', 5, 'ab') != NULL)\nand (hex(rpad(x'1020', 5, x'05')) != NULL)\nand (rtrim('ab', 'SparkSQLabcaaba') != NULL)\nand (sentences('Hi there! Good morning.', 'en', 'US') != NULL)\nand (sha('Spark') != NULL)\nand (sha1('Spark') != NULL)\nand (sha2('Spark', 256) != NULL)\nand (soundex('Miller') != NULL)\nand (concat('1', space(2), '1') != NULL)\nand (('->' || split_part('Hello,world,!', ',', 1) || '<-') != NULL)\nand (('->' || split_part('', ',', 1) || '<-') != NULL)\nand (('->' || split_part('Hello,World,!', ',', 0) || '<-') != NULL)\nand (startswith('SparkSQL', 'Spark'))\nand (startswith(NULL, 'Spark'))\nand (substr('Spark SQL', 5, 1) != NULL)\nand (substring_index('www.apache.org', '.', 2) != NULL)\nand (CAST(to_binary('537061726B') AS STRING) != NULL)\nand (CAST(to_binary('537061726B', 'hex') AS STRING) != NULL)\nand (CAST(try_to_binary('U3Bhxcms=', 'base64') AS STRING) != NULL)\nand (translate('AaBbCc', 'abc', '123') != NULL)\nand (CAST(try_to_binary('U3Bhxcms=', 'base64') AS STRING) != NULL)\nand (ucase('SparkSql') != NULL)\nand (CAST(unbase64('U3BhcmsgU1FM') AS STRING) != NULL)\nand (decode(unhex('537061726B2053514C'), 'UTF-8') != NULL)\nand (upper('SparkSql') != NULL)\nand (10 / 2 == 5)\nand ((3 | 5) == 2)\nand ((DATE'2021-03-20' - INTERVAL '2' MONTH) != NULL)\nand (10 - 2 + 2 == 4)\nand (2 % 1.8 == 2)\nand (3 ^ 5 == 3)\nand (3 & 5 == 2)\nand (3 * 2 == 2)\nand ((INTERVAL '3' YEAR * 3) != NULL)\nand (abs(-1) == 1)\nand (acos(1) == 1)\nand (acosh(1) == 1)\nand (asin(0) == 1)\nand (asinh(0) == 1)\nand (atan(0) == 1)\nand (atan2(0, 0) == 1)\nand (atanh(0) == 1)\nand (BIGINT(current_timestamp) > 1)\nand (bit_count(-1) > 1)\nand (bit_get(23Y, 1) == 1)\nand (bround(13.5, -1) == 1)\nand (round(13.5, -1) == 1)\nand (cbrt(27.0) == 3)\nand (ceil(3345.1, -2) == 1)\nand (ceiling(5.4) == 6)\nand (ceiling(3345.1, -2) == 1)\nand (conv('100', 2, 10) == 4)\nand (conv('FFFFFFFFFFFFFFFF', 16, 10) == 1)\nand (cos(pi()) == -1)\nand (cosh(0) == 1)\nand (cot(1) == 1)\nand (csc(pi() / 2) == 2)\nand (decimal('5.2') == 5)\nand (degrees(3.141592653589793) == 10)\nand (double('5.2') == 4)\nand (e() == 2)\nand (exp(1) == 2)\nand (expm1(0) == 1)\nand (factorial(2) == 2)\nand (FLOAT('5.2') == 5)\nand (floor(-0.1) == -1)\nand (floor(3345.1, -2) == 20)\nand (getbit(23Y, 0) == 1)\nand (hypot(3, 4) == 5)\nand (INT(-5.6) == 5)\nand (isnan(CAST('NaN' AS double)))\nand (ln(1) == 1)\nand (log(10, 100) == 2)\nand (log1p(0) == 1)\nand (log2(2) == 1)\nand (log10(10) == 1)\nand (nanvl(CAST('NaN' AS DOUBLE), 123) == 2)\nand (negative(1) == -1)\nand (pmod(-10, 3) == 2)\nand (positive(-1) == -1)\nand (pow(2, 3) * power(2, 3) == 8)\nand (radians(180) == 10)\nand (rand(0) * random(0) == 1)\nand (randn(0) == 1)\nand (rint(12.3456) == 1)\nand (round(2.5, 0) == 3)\nand (sec(pi()) == -1)\nand (sin(0) == 0)\nand (shiftleft(2, 1) == 2)\nand (shiftright(4, 1) == 2)\nand (shiftrightunsigned(4, 1) == 2)\nand (sign(40) == 1)\nand (signum(40) == 1)\nand (sinh(0) == 1)\nand (smallint(-5.6) == 5)\nand (sqrt(4) == 2)\nand (tan(0) == 1)\nand (tanh(0) == 1)\nand (tinyint('12') * tinyint(5.4) == 1)\nand (try_add(DATE'2021-03-20', INTERVAL '2' MONTH) != NULL)\nand (try_add(1, 2) == 3)\nand (try_divide(3, 2) == 3)\nand (try_divide(INTERVAL '3:15' HOUR TO MINUTE, 3) != NULL)\nand (try_subtract(1, 2) == 2)\nand (try_subtract(TIMESTAMP'2021-03-20 12:15:29', INTERVAL '3' SECOND) != NULL)\nand (try_subtract(-128Y, 1Y) != NULL)\nand (width_bucket(5.3, 0.2, 10.6, 5) + width_bucket(-0.9, 5.2, 0.5, 2) == 3)\nand (width_bucket(INTERVAL '1' DAY, INTERVAL '0' DAY, INTERVAL '10' DAY, 11) == 10)\nand (ARRAY(10, 20, 30) != NULL)\nand (\n      (\n        aggregate(\n          ARRAY(1, 2, 3), \n          0, \n          (acc, x) -> acc + x, \n          acc -> acc * 10)\n      ) == 1\n    )\nand (array_contains(ARRAY(1, 2, 3), 2))\nand (array_distinct(ARRAY(1, 2, 3, NULL, 3)) != NULL)\nand (array_except(ARRAY(1, 2, 2, 3), ARRAY(1, 1, 3, 5)) != NULL)\nand (array_intersect(ARRAY(1, 2, 3), ARRAY(1, 3, 3, 5)) != NULL)\nand (array_join(ARRAY('hello', 'world'), ',') != NULL)\nand (array_join(ARRAY('hello', NULL, 'world'), ',', '*') == NULL)\nand (array_max(ARRAY(1, 20, NULL, 3)) > 10)\nand (array_min(ARRAY(1, 20, NULL, 3)) == 1)\nand (array_position(ARRAY(3, 2, 1, 4, 1), 1) == 2)\nand (array_remove(ARRAY(1, 2, 3, NULL, 3, 2), 3) != NULL)\nand (array_repeat('123', 2) != NULL)\nand (array_size(ARRAY(1, NULL, 3, NULL)) == 2)\nand (array_sort(ARRAY('bc', 'ab', 'dc')) != NULL)\nand (array_union(ARRAY(1, 2, 2, 3), ARRAY(1, 3, 5)) != NULL)\nand (arrays_overlap(ARRAY(1, 2, NULL, 3), ARRAY(NULL, 4, 5)) == NULL)\nand (arrays_zip(ARRAY(1, 2), ARRAY('shoe', 'string', 'budget')) == NULL)\nand (cardinality(ARRAY('b', 'd', 'c', 'a')) == 2)\nand (concat(ARRAY(1, 2, 3), ARRAY(4, 5), ARRAY(6)) != NULL)\nand (element_at(MAP(1, 'a', 2, 'b'), 2) == NULL)\nand (\n      EXISTS(\n        ARRAY(1, 2, 3), \n        x -> x % 2 == 0)\n    )\nand (\n      EXISTS(\n        ARRAY(0, NULL, 2, 3, NULL), \n        x -> x IS NULL)\n    )\nand (\n      filter(\n        ARRAY(1, 2, 3), \n        x -> x % 2 == 1) != NULL\n    )\nand (flatten(ARRAY(ARRAY(1, 2), ARRAY(3, 4))) != NULL)\nand (\n      forall(\n        ARRAY(1, 2, 3), \n        x -> x % 2 == 0) == NULL\n    )\nand (reverse(ARRAY(2, 1, 4, 3)) != NULL)\nand (sequence(5, 1) != NULL)\nand (cardinality(ARRAY('b', 'd', 'c', 'a')) == 10)\nand (slice(ARRAY(1, 2, 3, 4), 2, 2) != NULL)\nand (sort_array(ARRAY('b', 'd', NULL, 'c', 'a'), true) != NULL)\nand (\n      transform(\n        ARRAY(1, 2, 3), \n        x -> x + 1) != NULL\n    )\nand (try_element_at(ARRAY(1, 2, 3), 2) == 2)\nand (\n      zip_with(\n        ARRAY('a', 'b', 'c'), \n        ARRAY('d', 'e', 'f'), \n        (x, y) -> concat(x, y)) != NULL\n    )\nand (MAP(1, 'Hello', 2, 'World')[1] != NULL)\nand (cardinality(MAP('a', 1, 'b', 2)) == 2)\nand (element_at(MAP(1, 'a', 2, 'b'), 3) == NULL)\nand (MAP(1.0, '2', 3.0, '4') IS NOT NULL)\nand (map_concat(MAP(1, 'a', 2, 'b'), MAP(3, 'c')) IS NOT NULL)\nand (map_contains_key(MAP(1, 'a', 2, 'b'), 2))\nand (map_entries(MAP(1, 'a', 2, 'b')) IS NOT NULL)\nand (\n      map_filter(\n        MAP(1, 0, 2, 2, 3, -1), \n        (k, v) -> k > v) IS NOT NULL\n    )\nand (map_from_arrays(ARRAY(1.0, 3.0), ARRAY('2', '4')) IS NOT NULL)\nand (map_from_entries(ARRAY(STRUCT(1, 'a'), STRUCT(2, 'b'))) IS NOT NULL)\nand (map_keys(MAP(1, 'a', 2, 'b')) IS NOT NULL)\nand (map_values(MAP(1, 'a', 2, 'b')) IS NOT NULL)\nand (\n      map_zip_with(\n        MAP(1, 'a', 2, 'b'), \n        MAP(1, 'x', 2, 'y'), \n        (k, v1, v2) -> concat(v1, v2)) IS NOT NULL\n    )\nand (cardinality(MAP('a', 1, 'b', 2)) == 2)\nand (str_to_map('a:1,b:2,c:3', ',', ':') IS NOT NULL)\nand (\n      transform_keys(\n        map_from_arrays(ARRAY(1, 2, 3), ARRAY(1, 2, 3)), \n        (k, v) -> k + 1) IS NOT NULL\n    )\nand (\n      transform_values(\n        map_from_arrays(ARRAY(1, 2, 3), ARRAY(1, 2, 3)), \n        (k, v) -> k + v) IS NOT NULL\n    )\nand (try_element_at(MAP(1, 'a', 2, 'b'), 2) IS NOT NULL)\nand ((INTERVAL '3:15' HOUR TO MINUTE / 3) IS NOT NULL)\nand ((DATE'2021-03-31' - INTERVAL '1' MONTH) != NULL)\nand (typeof(current_timestamp - (current_date + INTERVAL '1' DAY)) != NULL)\nand ((DATE'2021-03-31' + INTERVAL '1' MONTH) != NULL)\nand ((INTERVAL '3' YEAR * 3) != NULL)\nand (add_months('2016-08-31', -6) != NULL)\nand (current_date() != NULL)\nand (current_timestamp() != NULL)\nand (current_timezone() != NULL)\nand (DATE('2021-03-21') != NULL)\nand (date_add('2016-07-30', 1) != NULL)\nand (date_format('2016-04-08', 'y') == 2016)\nand (date_from_unix_date(1) != NULL)\nand (date_sub('2016-07-30', 1) != NULL)\nand (date_trunc('YEAR', '2015-03-05T09:32:05.359') != NULL)\nand (datediff('2009-07-31', '2009-07-30') == 1)\nand (day('2009-07-30') == 30)\nand (dayofmonth('2009-07-30') == 30)\nand (dayofweek('2009-07-30') == 5)\nand (dayofyear('2016-04-09') == 100)\nand (EXTRACT(SECONDS FROM INTERVAL '5:00:30.001' HOUR TO SECOND) == 30)\nand (EXTRACT(WEEK FROM TIMESTAMP'2019-08-12 01:00:00.123456') == 33)\nand (from_unixtime(0, 'yyyy-MM-dd HH:mm:ss') != NULL)\nand (from_utc_timestamp('2017-07-14 02:40:00.0', 'GMT+1') != NULL)\nand (from_utc_timestamp('2016-08-31', 'Asia/Seoul') != NULL)\nand (hour('2009-07-30 12:58:59') == 10)\nand (last_day('2009-01-12') IS NOT NULL)\nand (make_date(2013, 7, 15) IS NOT NULL)\nand (make_dt_interval(0, 0, 1, -0.1) IS NOT NULL)\nand (make_ym_interval(100, 5) IS NOT NULL)\nand (minute('2009-07-30 12:58:59') == 58)\nand (month('2016-07-30') == 7)\nand (months_between('1997-02-28 10:30:00', '1996-10-30') == 3)\nand (months_between('1997-02-28 10:30:00', '1996-10-30', false) == 2)\nand (next_day('2015-01-14', 'TU') != NULL)\nand (now() != NULL)\nand (quarter('2016-08-31') == 3)\nand (second('2009-07-30 12:58:59') == 59)\nand (TIMESTAMP(123) != NULL)\nand (TIMESTAMP('2020-04-30 12:25:13.45') != NULL)\nand (timestamp_micros(1230219000123123) != NULL)\nand (timestamp_millis(1230219000123) != NULL)\nand (timestamp_seconds(1230219000) != NULL)\nand (to_date('2016-12-31', 'yyyy-MM-dd') != NULL)\nand (to_timestamp('2016-12-31', 'yyyy-MM-dd') != NULL)\nand (to_utc_timestamp('2017-07-14 02:40:00.0', 'GMT+1') != NULL)\nand (trunc('2015-10-27', 'YEAR') != NULL)\nand (trunc('2019-08-04', 'quarter') != NULL)\nand (try_add(TIMESTAMP'2021-03-20 12:15:29', INTERVAL '3' SECOND) != NULL)\nand (try_add(DATE'2021-03-31', INTERVAL '1' MONTH) != NULL)\nand (try_divide(INTERVAL '3:15' HOUR TO MINUTE, 3) != NULL)\nand ((INTERVAL '3' YEAR * 3) != NULL)\nand (try_subtract(DATE'2021-03-20', INTERVAL '2' MONTH) != NULL)\nand (try_subtract(TIMESTAMP'2021-03-20 12:15:29', INTERVAL '3' SECOND) != NULL)\nand (unix_date(DATE('1970-01-02')) == 1)\nand (unix_micros(TIMESTAMP('1970-01-01 00:00:01Z')) == 1)\nand (unix_millis(TIMESTAMP('1970-01-01 00:00:01Z')) == 1)\nand (unix_seconds(TIMESTAMP('1970-01-01 00:00:01Z')) == 1)\nand (unix_timestamp('2016-04-08', 'yyyy-MM-dd') == 1)\nand (weekday(DATE'2009-07-30') == 1)\nand (EXTRACT(DAYOFWEEK_ISO FROM DATE'2009-07-30') == 4)\nand (weekofyear('2008-02-20') == 8)\nand (year('2016-07-30') == 2016)\nand (ARRAY(1, 2, 3) != NULL)\nand (BIGINT('5') == 5)\nand (binary('Spark SQL') != NULL)\nand (BOOLEAN(1))\nand (CAST(5.6 AS DECIMAL (2, 0)) != NULL)\nand (CAST(INTERVAL '1-2' YEAR TO MONTH AS INTEGER) == 12)\nand (DATE('2021-03-21') != NULL)\nand (decimal('5.2') == 5)\nand (double('5.2') / 2 == 5)\nand (FLOAT('5.2') / 2 == 2)\nand (INT('5') == 5)\nand (make_date(2013, 7, 15) != NULL)\nand (make_dt_interval(100, 13) != NULL)\nand (make_ym_interval(100, 5) == NULL)\nand (MAP(1.0, '2', 3.0, '4') IS NOT NULL)\nand (named_struct('a', 1, 'b', 2, 'c', 3) IS NOT NULL)\nand (smallint('5') == 5)\nand (STRUCT(1, 2, 3) IS NOT NULL)\nand (tinyint('12') == 12)\nand (TIMESTAMP('2020-04-30 12:25:13.45') != NULL)\nand (to_date('2016-12-31', 'yyyy-MM-dd') != NULL)\nand (to_timestamp('2016-12-31 00:12:00') != NULL)\nand (from_csv('1, 0.8', 'a INT, b DOUBLE') != NULL)\nand (schema_of_csv('1,abc') != NULL)\nand (json_array_length('[1,2,3,{\"f1\":1,\"f2\":[5,6]},4]') == 5)\nand (json_object_keys('{\"f1\":\"abc\",\"f2\":{\"f3\":\"a\", \"f4\":\"b\"}}') != NULL)\nand (schema_of_json('[{\"col\":01}]', MAP('allowNumericLeadingZeros', 'true')) != NULL)\nand (to_json(named_struct('a', 1, 'b', 2)) != NULL)\nand (to_json(MAP(named_struct('a', 1), named_struct('b', 2))) != NULL)\nand (to_json(ARRAY((MAP('a', 1)))) != NULL)\nand (xpath('<a><b>b1</b><b>b2</b><b>b3</b><c>c1</c><c>c2</c></a>', 'a/b/text()') != NULL)\nand (xpath_boolean('<a><b>1</b></a>', 'a/b'))\nand (xpath_double('<a><b>1</b><b>2</b></a>', 'sum(a/b)') != NULL)\nand (xpath_float('<a><b>1</b><b>2</b></a>', 'sum(a/b)') != NULL)\nand (xpath_int('<a><b>1</b><b>2</b></a>', 'sum(a/b)') == 2)\nand (xpath_long('<a><b>1</b><b>2</b></a>', 'sum(a/b)') == 3)\nand (xpath_number('<a><b>1</b><b>2</b></a>', 'sum(a/b)') == 2)\nand (xpath_int('<a><b>1</b><b>2</b></a>', 'sum(a/b)') == 2)\nand (xpath_string('<a><b>b</b><c>cc</c></a>', 'a/c') != NULL)\nand (\n      assert_true(\n        0 < 1) == NULL\n    )\nand (\n      (\n        CASE\n          WHEN 1 > 0\n            THEN 1\n          WHEN 2 > 0\n            THEN 2.0\n          ELSE 1.2\n        END\n      ) == 1\n    )\nand (\n      (\n        CASE 3\n          WHEN 1\n            THEN 'A'\n          WHEN 2\n            THEN 'B'\n          WHEN 3\n            THEN 'C'\n        END\n      ) != NULL\n    )\nand (coalesce(2, 5 / 0) == 2)\nand (current_catalog() != NULL)\nand (current_database() != NULL)\nand (current_user() != NULL)\nand (decode(5, 6, 'Spark', 5, 'SQL', 4, 'rocks') != NULL)\nand (elt(1, 'scala', 'java') != NULL)\nand (greatest(10, 9, 2, 4, 3) == 10)\nand (hash('Spark', ARRAY(123), 2) != NULL)\nand (\n      if(\n        1 < 2, \n        'a', \n        'b') != NULL\n    )\nand (ifnull(NULL, ARRAY('2')) != NULL)\nand (isnull(1))\nand (isnotnull(1))\nand (least(10, 9, 2, 4, 3) == 2)\nand (monotonically_increasing_id() > 10)\nand (nullif(2, 2) == NULL)\nand (nvl(NULL, 2) == 2)\nand (nvl2(NULL, 2, 1) == 1)\nand (typeof(1) != NULL)\nand (uuid() != NULL)\nand (xxhash64('Spark', ARRAY(123), 2) != NULL)\nand ('20'::INTEGER == 20)\nand like('Spark', '_park')\nand ('Spark' LIKE SOME('_park', '_ock'))\nand (bitmap_count(x'00') == 10)\nand (charindex('bar', 'abcbarbar') == 1)\nand (decode(x'FEFF0053007000610072006B002000530051004C', 'UTF-16') != NULL)\nand (like('Spark', '_park'))\nand (len('Spark SQL ') > 10)\nand (levenshtein('kitten', 'sitting', 4) > 10)\nand (('+' || ltrim('abc', 'acbabSparkSQL   ') || '+') != NULL)\nand (mask('AaBb123-&^ASDXYZ921312asd', 'Z', 'z', '9', 'X') != NULL)\nand (mask('AaBb123-&^ASDXYZ921312asd', lowerChar => 'z', upperChar => 'X') != NULL)\nand (mask('AaBb123-&ASDXYZ921312asd', NULL, NULL, NULL, NULL) != NULL)\nand (overlay('Spark SQL' PLACING '_' FROM 6) != NULL)\nand (overlay('Spark SQL' PLACING 'tructured' FROM 2 FOR 4) != NULL)\nand (overlay(encode('Spark SQL', 'utf-8') PLACING encode('_', 'utf-8') FROM 6) != NULL)\nand (position('bar' IN 'abcbarbar') > 2)\nand (regexp_count('Steven Jones and Stephen Smith are the best players', 'Ste(v|ph)en') > 2)\nand (regexp_instr('Mary had a little lamb', NULL) != NULL)\nand (regexp_substr(NULL, 'Ste(v|ph)en') != NULL)\nand (rtrim('ab', 'SparkSQLabcaaba') != NULL)\nand (STRING(4) != NULL)\nand (substr('Spark SQL', -3) != NULL)\nand (substr('Spark SQL' FROM 5 FOR 1) != NULL)\nand (substr('Spark SQL' FROM -3) != NULL)\nand (to_char(454, '000.00') != NULL)\nand (to_char(DATE'2016-04-08', 'y') != NULL)\nand (to_char(encode('abc', 'utf-8'), 'utf-8') != NULL)\nand (to_varchar(454, '999') != NULL)\nand (to_varchar(DATE'2016-04-08', 'y') != NULL)\nand (to_varchar(x'537061726b2053514c', 'hex') != NULL)\nand (TRIM( 'SL' FROM 'SSparkSQLS') != NULL)\nand (TRIM(BOTH 'SL' FROM 'SSparkSQLS') != NULL)\nand (TRIM(LEADING 'SL' FROM 'SSparkSQLS') != NULL)\nand (TRIM(TRAILING 'SL' FROM 'SSparkSQLS') != NULL)\nand (\n      CAST(try_aes_decrypt(\n        unbase64('MTIzNDU2Nzg5MDEyMdXvR41sJqwZ6hnTU8FRTTtXbL8yeChIZA=='), \n        '1234567890abcdef', \n        'GCM', \n        'DEFAULT', \n        'Some AAD') AS STRING) != NULL\n    )\nand (url_decode('http%3A%2F%2Fspark.apache.org%2Fpath%3Fquery%3D1') != NULL)\nand (url_encode('http://spark.apache.org/path?query=1') != NULL)\nand ((TIMESTAMP'2021-03-20 12:15:29' - INTERVAL '3' SECOND) != NULL)\nand ((TIMESTAMP'2021-03-20 12:15:29' + INTERVAL '3' SECOND) != NULL)\nand (bit_reverse(-1) == -1)\nand (bitmap_bit_position(-32768) == 1)\nand (bitmap_bucket_number(-32768) == 1)\nand (MOD(2, 1.8) == 2)\nand (array_append(ARRAY(1, 2, 3), 0) == NULL)\nand (array_compact(ARRAY(1, 2, NULL, 3, NULL, 3)) == NULL)\nand (array_insert(ARRAY('a', 'b', 'c'), 1, 'z') != NULL)\nand (array_prepend(ARRAY(1, 2, 3), 0) != NULL)\nand (get(ARRAY(1, 2, 3), 2) != NULL)\nand (\n      reduce(\n        ARRAY(1, 2, 3), \n        0, \n        (acc, x) -> acc + x) == 2\n    )\nand (shuffle(ARRAY(1, 20, 3, 5)) != NULL)\nand (map_contains_key(MAP(1, 'a', 2, 'b'), 2))\nand ((DATE'2021-03-31' - INTERVAL '1' MONTH) != NULL)\nand ((DATE'2021-03-31' + INTERVAL '1' MONTH) != NULL)\nand ((TIMESTAMP'2021-03-20 12:15:29' - INTERVAL '3' SECOND) != NULL)\nand (date_diff(MONTH, TIMESTAMP'2021-02-28 12:00:00', TIMESTAMP'2021-03-28 12:00:00') == 1)\nand (date_part('SECONDS', TIMESTAMP'2019-10-01 00:00:01.000001') == 1)\nand (date_part('Week', TIMESTAMP'2019-08-12 01:00:00.123456') == 33)\nand (dateadd('2016-07-30', 1) != NULL)\nand (dateadd(MICROSECOND, 5, TIMESTAMP'2022-02-28 00:00:00') != NULL)\nand (datediff(MONTH, TIMESTAMP'2021-02-28 12:00:00', TIMESTAMP'2021-03-28 11:59:59') == 0)\nand (make_interval(0, 0, 1, 1, 12, 30, 1.001001) IS NOT NULL)\nand (make_timestamp(2014, 12, 28, 6, 30, 45.887, 'CET') IS NOT NULL)\nand (make_timestamp(NULL, 7, 22, 15, 30, 0) IS NOT NULL)\nand (now() != NULL)\nand (timediff(MONTH, TIMESTAMP'2021-02-28 12:00:00', TIMESTAMP'2021-03-28 12:00:00') == 1)\nand (timestampdiff(MONTH, TIMESTAMP'2021-02-28 12:00:00', TIMESTAMP'2021-03-28 12:00:00') == 1)\nand (to_unix_timestamp('2016-04-08', 'yyyy-MM-dd') == 100)\nand (try_to_timestamp('2016-12-31', 'yyyy-MM-dd') != NULL)\nand ('20'::INTEGER == 20)\nand (make_interval(100, 11) IS NOT NULL)\nand (make_timestamp(2014, 12, 28, 6, 30, 45.887) IS NOT NULL)\nand (STRING(5) != NULL)\nand (to_char(454, '000.00') != NULL)\nand (to_varchar(454, '999') IS NOT NULL)\nand (from_json('{\"a\":1, \"b\":0.8}', 'a INT, b DOUBLE') IS NOT NULL)\nand (get_json_object('{\"a\":\"b\"}', '$.a') IS NOT NULL)\nand (to_csv(named_struct('time', to_timestamp('2015-08-26', 'yyyy-MM-dd')), MAP('timestampFormat', 'dd/MM/yyyy')) IS NOT NULL)\nand (to_csv(named_struct('a', 1, 'b', 2)) IS NOT NULL)\nand (from_xml('<p><time>26/08/2015</time></p>', 'time Timestamp', MAP('timestampFormat', 'dd/MM/yyyy')) != NULL)\nand (schema_of_xml('<p><a attr=\"2\">1</a><a>3</a></p>', MAP('excludeAttribute', 'true')) IS NOT NULL)\nand (current_metastore() != NULL)\nand (current_schema() != NULL)\nand (current_version() != NULL)\nand (equal_null(2, 2))\nand (\n      iff(\n        1 < 2, \n        'a', \n        'b') == 'a'\n    )\nand (is_account_group_member('admins'))\nand (is_member('admins'))\nand (luhn_check('12345') == NULL)\nand (user() != NULL)\nand (h3_coverash3('POLYGON((-122.4194 37.7749,-118.2437 34.0522,-74.0060 40.7128,-122.4194 37.7749))', 0) != NULL)\nand (h3_coverash3string('{\"type\":\"LineString\",\"coordinates\":[[-122.4194,37.7749],[-118.2437,34.0522],[-74.0060,40.7128]]}', 1) != NULL)\nand (h3_longlatash3(-122.4783, 37.8199, 13) > 0)\nand (h3_longlatash3string(-122.4783, 37.8199, 13) != NULL)\nand (h3_pointash3('POINT(-122.4783 37.8199)', 13) > 0)\nand (h3_pointash3string('{\"type\":\"Point\",\"coordinates\":[]}', 15) == NULL)\nand (h3_pointash3string('POINT(-122.4783 37.8199)', 13) != NULL)\nand (\n      h3_polyfillash3(\n        unhex(\n          '0103000000010000000400000050fc1873d79a5ec0d0d556ec2fe342404182e2c7988f5dc0f46c567dae064140aaf1d24d628052c05e4bc8073d5b444050fc1873d79a5ec0d0d556ec2fe34240'), \n        2) != NULL\n    )\nand (h3_polyfillash3('POLYGON((-122.4194 37.7749,-118.2437 34.0522,-74.0060 40.7128,-122.4194 37.7749))', 2) != NULL)\nand (h3_polyfillash3string('POLYGON((-122.4194 37.7749,-118.2437 34.0522,-74.0060 40.7128,-122.4194 37.7749))', 2) != NULL)\nand (h3_try_polyfillash3('Not-a-valid-rep', 2) == NULL)\nand (h3_try_polyfillash3('POLYGON((-122.4194 37.7749,-118.2437 34.0522,-74.0060 40.7128,-122.4194 37.7749))', 2) != NULL)\nand (h3_try_polyfillash3string('POLYGON((-122.4194 37.7749,-118.2437 34.0522,-74.0060 40.7128,-122.4194 37.7749))', 2) != NULL)\nand (h3_boundaryasgeojson('8009fffffffffff') != NULL)\nand (h3_boundaryasgeojson(599686042433355775) != NULL)\nand (hex(h3_boundaryaswkb(599686042433355775)) != NULL)\nand (h3_boundaryaswkt(599686042433355775) != NULL)\nand (h3_centerasgeojson(599686042433355775) != NULL)\nand (hex(h3_centeraswkb('8009fffffffffff')) == NULL)\nand (h3_centeraswkt('8009fffffffffff') != NULL)\nand (h3_h3tostring(599686042433355775) != NULL)\nand (h3_stringtoh3('85283473fffffff') == NULL)\nand (h3_ischildof('88283471b9fffff', '85283473fffffff'))\nand (h3_ispentagon(590112357393367039))\nand (h3_isvalid('85283473fffffff'))\nand (h3_try_validate(590112357393367039) != NULL)\nand (h3_validate(590112357393367039) != NULL)\nand (h3_distance(599686030622195711, 599686015589810175) == 2)\nand (h3_hexring(599686042433355775, 1) != NULL)\nand (h3_kring(599686042433355775, 1) != NULL)\nand (h3_kringdistances(599686042433355775, 1) != NULL)\nand (h3_distance(599686030622195711, 599686015589810175) == 2)\nand (h3_maxchild(599686042433355775, 10) != NULL)\nand (h3_minchild(599686042433355775, 10) != NULL)\nand (h3_resolution(599686042433355775) == 5)\nand (h3_tochildren(599686042433355775, 6) != NULL)\nand (h3_toparent(599686042433355775, 0) != NULL)\nand (\n      h3_compact(\n        ARRAY(\n          599686042433355775, \n          599686030622195711, \n          599686044580839423, \n          599686038138388479, \n          599686043507097599, \n          599686015589810175, \n          599686014516068351, \n          599686034917163007, \n          599686029548453887, \n          599686032769679359, \n          599686198125920255, \n          599686040285872127, \n          599686041359613951, \n          599686039212130303, \n          599686023106002943, \n          599686027400970239, \n          599686013442326527, \n          599686012368584703, \n          599686018811035647)) != NULL\n    )\nand (\n      h3_uncompact(\n        ARRAY(\n          599686030622195711, \n          599686015589810175, \n          599686014516068351, \n          599686034917163007, \n          599686029548453887, \n          599686032769679359, \n          599686198125920255, \n          599686023106002943, \n          599686027400970239, \n          599686013442326527, \n          599686012368584703, \n          599686018811035647, \n          595182446027210751), \n        5) != NULL\n    )"
             }
@@ -20484,8 +20899,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 6
+          }
         },
         "Reformat_1_2_1##Vg0SfxwH" : {
           "id" : "Reformat_1_2_1##Vg0SfxwH",
@@ -20497,7 +20911,7 @@
             "isLabelGrayed" : false
           },
           "properties" : {
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "HNspQ0bs##c_int", "HNspQ0bs##c_string" ],
             "expressions" : [ {
               "expression" : {
                 "expression" : "CAST(c_int AS STRING)"
@@ -20620,8 +21034,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 0
+          }
         }
       },
       "connections" : [ {
@@ -20742,6 +21155,7 @@
         "x" : 280,
         "y" : 1760,
         "phase" : 0,
+        "macroDependencies" : [ ],
         "isLabelGrayed" : false
       },
       "properties" : {
@@ -20759,8 +21173,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 6
+      }
     },
     "uitesting_scd2_t##sTmuvFqY" : {
       "id" : "uitesting_scd2_t##sTmuvFqY",
@@ -20797,6 +21210,7 @@
         "x" : 680,
         "y" : 1160,
         "phase" : 0,
+        "macroDependencies" : [ ],
         "isLabelGrayed" : false
       },
       "properties" : {
@@ -20824,8 +21238,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 28
+      }
     },
     "combine_multiple##ygzXEcL1" : {
       "id" : "combine_multiple##ygzXEcL1",
@@ -20884,8 +21297,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 60
+      }
     },
     "Limit_1_1##RznwvI79" : {
       "id" : "Limit_1_1##RznwvI79",
@@ -20939,7 +21351,7 @@
           "alias" : "c_int_string"
         } ],
         "dedupType" : "distinct",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "B1eqT4Cr##c_tinyint", "B1eqT4Cr##c_int", "B1eqT4Cr##c_string" ],
         "orders" : [ ],
         "useOrderBy" : false
       },
@@ -20954,8 +21366,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 40
+      }
     },
     "item##hUrMkDmC" : {
       "id" : "item##hUrMkDmC",
@@ -21084,7 +21495,7 @@
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "xMl1qtax##c_int", "xMl1qtax##c_string" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "CAST(c_int AS STRING)"
@@ -21113,8 +21524,7 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 22
+      }
     }
   },
   "connections" : [ {
@@ -21537,6 +21947,36 @@
     "sourcePort" : "YrZz5cPV",
     "target" : "final##gF0nBTyA",
     "targetPort" : "vmL4WLtf"
+  }, {
+    "id" : "R7XDODTRO3xVZZQ3JPBPS",
+    "source" : "fhqT-hKBZQ_QaGcJjytWZ$$2wN8jkbk0PqWsvwsRRO8W",
+    "sourcePort" : "t9vE7JR4DtG4RAzZzc4ii$$lyow41pQ6fP7SXf4wiP6v",
+    "target" : "EZnTWta-Lip_DiyN6_55L$$VG7ANo8JbJcHtKLhfv-In",
+    "targetPort" : "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d"
+  }, {
+    "id" : "LKr8bjgSdxb1uEHbChxlK",
+    "source" : "EZnTWta-Lip_DiyN6_55L$$VG7ANo8JbJcHtKLhfv-In",
+    "sourcePort" : "JdHUerh5eU01UwM8pl8Dg$$a0QM8EdkdQaEACN706KCL",
+    "target" : "WLLFpGiq3PBbV-_O4KPwj$$ynkG1PGtaeS3vFHKaqGy4",
+    "targetPort" : "Vu0nI2rXxiKaychf0pCgf$$GszKqjOVgE4dyg-Er7VSW"
+  }, {
+    "id" : "PPRSsvj3-muNH8GWPGxos",
+    "source" : "WLLFpGiq3PBbV-_O4KPwj$$ynkG1PGtaeS3vFHKaqGy4",
+    "sourcePort" : "zswGLXjTP3jxTmkQujR_1$$w_nwZeoc22sPQfgF6p1PD",
+    "target" : "caWohCl4h_8U0cncrxJ8P$$XF7n2K-dpToHz2UZHYJwH",
+    "targetPort" : "Sp0xgd6N_DNvuxMTvKBZE$$W7htOKFbttYin3sRahWcs"
+  }, {
+    "id" : "KUA-DZjSEjh3ZVQjhRJMe",
+    "source" : "caWohCl4h_8U0cncrxJ8P$$XF7n2K-dpToHz2UZHYJwH",
+    "sourcePort" : "mKxidIFLErXwp3f0TaCYi$$MYUOFbz9itjad4OYXETK8",
+    "target" : "504fjlbEW5s8EpEufNAh7$$7KEuZ75eAdsZqdTyF8MtP",
+    "targetPort" : "9qhoE45APS-l2crckvZ2M$$7LzXybxJmHgP_dc4tjn9P"
+  }, {
+    "id" : "4iX6M-rGd_VFOXDfsV37x",
+    "source" : "504fjlbEW5s8EpEufNAh7$$7KEuZ75eAdsZqdTyF8MtP",
+    "sourcePort" : "p0vxk0VpJm4HRUwbm_sMc$$6wGviaX7tFUN1inLqZoRy",
+    "target" : "SQLStatement_1##KHWvETJq",
+    "targetPort" : "TyVmjB5lc-ALZNL04UeG1$$EummbtKM_9QEGEY67I0zX"
   } ],
   "component" : "Model"
 }

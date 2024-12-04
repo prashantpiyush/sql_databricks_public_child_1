@@ -43,6 +43,363 @@
         "autoUpdateOnRun" : false
       }
     },
+    "7hFVZ5_yRPXbMAa3YME1i$$ckGPuuzMsM_xS_7Fn0UWI" : {
+      "id" : "7hFVZ5_yRPXbMAa3YME1i$$ckGPuuzMsM_xS_7Fn0UWI",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "PIVOT",
+        "slug" : "PIVOT",
+        "x" : -820,
+        "y" : -300,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Retrieves a comprehensive list of SQL keywords for reference or documentation purposes.",
+        "autoUpdateComment" : true,
+        "isLabelGrayed" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##LIMIT", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##JOIN", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##ASC", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##DESC", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##INNER", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##FULL", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##CROSS", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##SEMI", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##ANTI", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##ESCAPE", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##INTERVAL", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##LEFT", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##RIGHT", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##OUTER", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##TIMESTAMP", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##DATETIME", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##END", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##OVER", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##RANGE", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##PRECEDING", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##FORMAT", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##ARRAY", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##PARTITION", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##UNBOUNDED", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##JSON", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##TYPE", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##IGNORE", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##RESPECT", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##VERSION", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##FILTER", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##CLUSTER", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##DISTRIBUTE", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##ROLLUP", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##CUBE", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##GROUPING", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##SETS", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##LATERAL", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##OFFSET", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##SORT", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##WINDOW", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##FETCH", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##catch", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##finally", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##object", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##protected", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##return", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##final", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##new", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##while", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##yield", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##trait", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##except", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##do", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##extends", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##assert", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##global", "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0##import" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "LIMIT"
+          },
+          "alias" : "LIMIT"
+        }, {
+          "expression" : {
+            "expression" : "JOIN"
+          },
+          "alias" : "JOIN"
+        }, {
+          "expression" : {
+            "expression" : "ASC"
+          },
+          "alias" : "ASC"
+        }, {
+          "expression" : {
+            "expression" : "DESC"
+          },
+          "alias" : "DESC"
+        }, {
+          "expression" : {
+            "expression" : "INNER"
+          },
+          "alias" : "INNER"
+        }, {
+          "expression" : {
+            "expression" : "FULL"
+          },
+          "alias" : "FULL"
+        }, {
+          "expression" : {
+            "expression" : "CROSS"
+          },
+          "alias" : "CROSS"
+        }, {
+          "expression" : {
+            "expression" : "SEMI"
+          },
+          "alias" : "SEMI"
+        }, {
+          "expression" : {
+            "expression" : "ANTI"
+          },
+          "alias" : "ANTI"
+        }, {
+          "expression" : {
+            "expression" : "ESCAPE"
+          },
+          "alias" : "ESCAPE"
+        }, {
+          "expression" : {
+            "expression" : "INTERVAL"
+          },
+          "alias" : "INTERVAL"
+        }, {
+          "expression" : {
+            "expression" : "LEFT"
+          },
+          "alias" : "LEFT"
+        }, {
+          "expression" : {
+            "expression" : "RIGHT"
+          },
+          "alias" : "RIGHT"
+        }, {
+          "expression" : {
+            "expression" : "OUTER"
+          },
+          "alias" : "OUTER"
+        }, {
+          "expression" : {
+            "expression" : "TIMESTAMP"
+          },
+          "alias" : "TIMESTAMP"
+        }, {
+          "expression" : {
+            "expression" : "DATETIME"
+          },
+          "alias" : "DATETIME"
+        }, {
+          "expression" : {
+            "expression" : "END"
+          },
+          "alias" : "END"
+        }, {
+          "expression" : {
+            "expression" : "OVER"
+          },
+          "alias" : "OVER"
+        }, {
+          "expression" : {
+            "expression" : "RANGE"
+          },
+          "alias" : "RANGE"
+        }, {
+          "expression" : {
+            "expression" : "PRECEDING"
+          },
+          "alias" : "PRECEDING"
+        }, {
+          "expression" : {
+            "expression" : "FORMAT"
+          },
+          "alias" : "FORMAT"
+        }, {
+          "expression" : {
+            "expression" : "ARRAY"
+          },
+          "alias" : "ARRAY"
+        }, {
+          "expression" : {
+            "expression" : "PARTITION"
+          },
+          "alias" : "PARTITION"
+        }, {
+          "expression" : {
+            "expression" : "UNBOUNDED"
+          },
+          "alias" : "UNBOUNDED"
+        }, {
+          "expression" : {
+            "expression" : "JSON"
+          },
+          "alias" : "JSON"
+        }, {
+          "expression" : {
+            "expression" : "TYPE"
+          },
+          "alias" : "TYPE"
+        }, {
+          "expression" : {
+            "expression" : "IGNORE"
+          },
+          "alias" : "IGNORE"
+        }, {
+          "expression" : {
+            "expression" : "RESPECT"
+          },
+          "alias" : "RESPECT"
+        }, {
+          "expression" : {
+            "expression" : "VERSION"
+          },
+          "alias" : "VERSION"
+        }, {
+          "expression" : {
+            "expression" : "FILTER"
+          },
+          "alias" : "FILTER"
+        }, {
+          "expression" : {
+            "expression" : "CLUSTER"
+          },
+          "alias" : "CLUSTER"
+        }, {
+          "expression" : {
+            "expression" : "DISTRIBUTE"
+          },
+          "alias" : "DISTRIBUTE"
+        }, {
+          "expression" : {
+            "expression" : "ROLLUP"
+          },
+          "alias" : "ROLLUP"
+        }, {
+          "expression" : {
+            "expression" : "CUBE"
+          },
+          "alias" : "CUBE"
+        }, {
+          "expression" : {
+            "expression" : "GROUPING"
+          },
+          "alias" : "GROUPING"
+        }, {
+          "expression" : {
+            "expression" : "SETS"
+          },
+          "alias" : "SETS"
+        }, {
+          "expression" : {
+            "expression" : "LATERAL"
+          },
+          "alias" : "LATERAL"
+        }, {
+          "expression" : {
+            "expression" : "OFFSET"
+          },
+          "alias" : "OFFSET"
+        }, {
+          "expression" : {
+            "expression" : "SORT"
+          },
+          "alias" : "SORT"
+        }, {
+          "expression" : {
+            "expression" : "WINDOW"
+          },
+          "alias" : "WINDOW"
+        }, {
+          "expression" : {
+            "expression" : "FETCH"
+          },
+          "alias" : "FETCH"
+        }, {
+          "expression" : {
+            "expression" : "catch"
+          },
+          "alias" : "catch"
+        }, {
+          "expression" : {
+            "expression" : "finally"
+          },
+          "alias" : "finally"
+        }, {
+          "expression" : {
+            "expression" : "object"
+          },
+          "alias" : "object"
+        }, {
+          "expression" : {
+            "expression" : "protected"
+          },
+          "alias" : "protected"
+        }, {
+          "expression" : {
+            "expression" : "return"
+          },
+          "alias" : "return"
+        }, {
+          "expression" : {
+            "expression" : "final"
+          },
+          "alias" : "final"
+        }, {
+          "expression" : {
+            "expression" : "new"
+          },
+          "alias" : "new"
+        }, {
+          "expression" : {
+            "expression" : "while"
+          },
+          "alias" : "while"
+        }, {
+          "expression" : {
+            "expression" : "yield"
+          },
+          "alias" : "yield"
+        }, {
+          "expression" : {
+            "expression" : "true"
+          },
+          "alias" : "true"
+        }, {
+          "expression" : {
+            "expression" : "false"
+          },
+          "alias" : "false"
+        }, {
+          "expression" : {
+            "expression" : "trait"
+          },
+          "alias" : "trait"
+        }, {
+          "expression" : {
+            "expression" : "except"
+          },
+          "alias" : "except"
+        }, {
+          "expression" : {
+            "expression" : "do"
+          },
+          "alias" : "do"
+        }, {
+          "expression" : {
+            "expression" : "extends"
+          },
+          "alias" : "extends"
+        }, {
+          "expression" : {
+            "expression" : "assert"
+          },
+          "alias" : "assert"
+        }, {
+          "expression" : {
+            "expression" : "global"
+          },
+          "alias" : "global"
+        }, {
+          "expression" : {
+            "expression" : "import"
+          },
+          "alias" : "import"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "TdHB_SExvIAPt1HkOLslk$$AgYFiJ9twJ7tAz7X7oyEI",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "NJPGe7cCbDLlQGWoucGN0$$vOr1jb4PksWVSwk7DHMPF" : {
+      "id" : "NJPGe7cCbDLlQGWoucGN0$$vOr1jb4PksWVSwk7DHMPF",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "array_contains",
+        "slug" : "array_contains",
+        "x" : -480,
+        "y" : -260,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "isLabelGrayed" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Z5OnldsMPbtnnFTw60LpN$$7KQGHW74LY-VJ0SLDCWwJ",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "8cIcN_y0BnonndbnQK1zh$$PHnMVxszLc3pU2Vv3nro6",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
     "f-HTuJEBwn47CLb8icb_-$$Eio4wM928tKoOCxM5hB7m" : {
       "id" : "f-HTuJEBwn47CLb8icb_-$$Eio4wM928tKoOCxM5hB7m",
       "component" : "Deduplicate",
@@ -81,6 +438,36 @@
         "autoUpdateOnRun" : false
       }
     },
+    "H2aHImP_GxwOOhCfZjJRU" : {
+      "id" : "H2aHImP_GxwOOhCfZjJRU",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "IS_INCREMENTAL",
+        "slug" : "IS_INCREMENTAL",
+        "x" : -980,
+        "y" : -280,
+        "phase" : 0,
+        "isLabelGrayed" : false
+      },
+      "properties" : {
+        "table" : {
+          "name" : "table_keywords",
+          "sourceType" : "Source",
+          "sourceName" : "qa-team.qa_database",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "_KVyxzun68Ur5tiGFYf4x",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
     "4BB0UM8m3J8PBETQvPABJ" : {
       "id" : "4BB0UM8m3J8PBETQvPABJ",
       "component" : "Source",
@@ -109,6 +496,77 @@
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
+    },
+    "xk9BE8nqbfavCFGAvDXOW$$B8r3ngGZ2G2H_6MjyyjWx" : {
+      "id" : "xk9BE8nqbfavCFGAvDXOW$$B8r3ngGZ2G2H_6MjyyjWx",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "UNPIVOT",
+        "slug" : "UNPIVOT",
+        "x" : -640,
+        "y" : -280,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "isLabelGrayed" : false
+      },
+      "properties" : {
+        "limit" : {
+          "expression" : "10"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "q0JAA-LVe4DSK4LHPox4g$$dnxYqnI_58lnkmiucmgdL",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "8xhUzwdbbVn9m_NN5nUK1$$Tt-mx-63niLBTXMvvoP-a",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "rQrLfEd8IFsnOocHK1EPG$$VTzgKM2vH9YEv0FV0jhJF" : {
+      "id" : "rQrLfEd8IFsnOocHK1EPG$$VTzgKM2vH9YEv0FV0jhJF",
+      "component" : "OrderBy",
+      "metadata" : {
+        "label" : "map_contains_key",
+        "slug" : "map_contains_key",
+        "x" : -340,
+        "y" : -240,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Sorts filtered results based on specified criteria for better visibility.",
+        "autoUpdateComment" : true,
+        "isLabelGrayed" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "nbY1YcjYwh4C23XA0Vsah$$4Fzx3e7UEtAchkfoNDABY##LIMIT", "nbY1YcjYwh4C23XA0Vsah$$4Fzx3e7UEtAchkfoNDABY##JOIN" ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : "LIMIT"
+          },
+          "sortType" : "asc"
+        }, {
+          "expression" : {
+            "expression" : "JOIN"
+          },
+          "sortType" : "desc"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "nbY1YcjYwh4C23XA0Vsah$$4Fzx3e7UEtAchkfoNDABY",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "emVC-QS-3QmE9z_e4Hshv$$96NAO07om_Bw5XCFWRvXW",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
     }
   },
   "connections" : [ {
@@ -123,6 +581,30 @@
     "sourcePort" : "X7DiYDLC6vNHkQ05EFT7Z$$H29mdQStk9vSHhL48c9uX",
     "target" : "test_model_1##t1FaD8T6",
     "targetPort" : "S2PpKUtB"
+  }, {
+    "id" : "eGJs9RwwbO0BM-6UpiFMH$$MwWYf8jFSmIEaGnv__NKY",
+    "source" : "H2aHImP_GxwOOhCfZjJRU",
+    "sourcePort" : "_KVyxzun68Ur5tiGFYf4x",
+    "target" : "7hFVZ5_yRPXbMAa3YME1i$$ckGPuuzMsM_xS_7Fn0UWI",
+    "targetPort" : "d9SJ_tQtVTNgWzJxssx2-$$1BAmXKiIP4-bETggJcvb0"
+  }, {
+    "id" : "3LPKHSoEorVa5q3BF8qyF$$XVHEqpLYA-KASFN_M2N6h",
+    "source" : "7hFVZ5_yRPXbMAa3YME1i$$ckGPuuzMsM_xS_7Fn0UWI",
+    "sourcePort" : "TdHB_SExvIAPt1HkOLslk$$AgYFiJ9twJ7tAz7X7oyEI",
+    "target" : "xk9BE8nqbfavCFGAvDXOW$$B8r3ngGZ2G2H_6MjyyjWx",
+    "targetPort" : "q0JAA-LVe4DSK4LHPox4g$$dnxYqnI_58lnkmiucmgdL"
+  }, {
+    "id" : "ixqkGDbYt6fmiKl8WjR_7$$kfYnoT0xyLZ8xSkGU1NHs",
+    "source" : "xk9BE8nqbfavCFGAvDXOW$$B8r3ngGZ2G2H_6MjyyjWx",
+    "sourcePort" : "8xhUzwdbbVn9m_NN5nUK1$$Tt-mx-63niLBTXMvvoP-a",
+    "target" : "NJPGe7cCbDLlQGWoucGN0$$vOr1jb4PksWVSwk7DHMPF",
+    "targetPort" : "Z5OnldsMPbtnnFTw60LpN$$7KQGHW74LY-VJ0SLDCWwJ"
+  }, {
+    "id" : "I7ggGUkRrdbGL2fSmaym3$$JNgHjibgo8NYZWKeSPICl",
+    "source" : "NJPGe7cCbDLlQGWoucGN0$$vOr1jb4PksWVSwk7DHMPF",
+    "sourcePort" : "8cIcN_y0BnonndbnQK1zh$$PHnMVxszLc3pU2Vv3nro6",
+    "target" : "rQrLfEd8IFsnOocHK1EPG$$VTzgKM2vH9YEv0FV0jhJF",
+    "targetPort" : "nbY1YcjYwh4C23XA0Vsah$$4Fzx3e7UEtAchkfoNDABY"
   } ],
   "component" : "Model"
 }

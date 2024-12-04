@@ -89088,7 +89088,431 @@
     }, {
       "type" : "Catalog",
       "name" : "qa-team",
-      "children" : [ ]
+      "children" : [ {
+        "type" : "Schema",
+        "name" : "default",
+        "children" : [ ]
+      }, {
+        "type" : "Schema",
+        "name" : "information_schema",
+        "children" : [ ]
+      }, {
+        "type" : "Schema",
+        "name" : "qa_database",
+        "tables" : {
+          "all_type_non_partitioned" : {
+            "entityType" : "TABLE",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "c_tinyint",
+              "dataType" : {
+                "type" : "TinyInt"
+              }
+            }, {
+              "name" : "c_smallint",
+              "dataType" : {
+                "type" : "SmallInt"
+              }
+            }, {
+              "name" : "c_int",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "c_bigint",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "c_float",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "c_double",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "c_string",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_boolean",
+              "dataType" : {
+                "type" : "Boolean"
+              }
+            }, {
+              "name" : "c_array",
+              "dataType" : {
+                "type" : "Array",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }
+            }, {
+              "name" : "c_struct",
+              "dataType" : {
+                "type" : "Struct",
+                "fields" : [ {
+                  "name" : "city",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "state",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "pin",
+                  "dataType" : {
+                    "type" : "Bigint"
+                  }
+                } ]
+              }
+            } ]
+          },
+          "table_keywords" : {
+            "entityType" : "TABLE",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "LIMIT",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "JOIN",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "ASC",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "DESC",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "INNER",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "FULL",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "CROSS",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "SEMI",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "ANTI",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "ESCAPE",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "INTERVAL",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "LEFT",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "RIGHT",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "OUTER",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "TIMESTAMP",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "DATETIME",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "END",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "OVER",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "RANGE",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "PRECEDING",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "FORMAT",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "ARRAY",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "PARTITION",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "UNBOUNDED",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "JSON",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "TYPE",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "IGNORE",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "RESPECT",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "VERSION",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "FILTER",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "CLUSTER",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "DISTRIBUTE",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "ROLLUP",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "CUBE",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "GROUPING",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "SETS",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "LATERAL",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "OFFSET",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "SORT",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "WINDOW",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "FETCH",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "case",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "catch",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "finally",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "object",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "protected",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "return",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "else",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "final",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "new",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "while",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "yield",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "with",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "true",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "false",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "trait",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "except",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "do",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "extends",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "assert",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "global",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "import",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          },
+          "test_table" : {
+            "entityType" : "TABLE",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "c_int",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          }
+        }
+      }, {
+        "type" : "Schema",
+        "name" : "qa_volume_external",
+        "children" : [ ]
+      }, {
+        "type" : "Schema",
+        "name" : "qa_volume_external_s3",
+        "children" : [ ]
+      }, {
+        "type" : "Schema",
+        "name" : "qa_volume_managed",
+        "children" : [ ]
+      } ]
     }, {
       "type" : "Catalog",
       "name" : "rohit_temp",

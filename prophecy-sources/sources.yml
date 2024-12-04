@@ -2671,3 +2671,266 @@ sources:
                       description: "Lab results related to asthma conditions."
                 description: "Information related to asthma conditions and treatments"
           description: "List of health problems identified in the patient"
+- name: "qa-team.qa_database"
+  database: "qa-team"
+  schema: "qa_database"
+  config:
+    enabled: true
+  quoting:
+    database: true
+  tables:
+  - name: "table_keywords"
+    description: "Keyword usage data for various programming constructs, aiding in\
+      \ understanding language syntax and structure."
+    quoting:
+      identifier: true
+    columns:
+    - name: "LIMIT"
+      description: "Specifies the maximum number of records to return"
+      dataType:
+        type: "String"
+    - name: "JOIN"
+      description: "Indicates how tables are combined in a query"
+      dataType:
+        type: "String"
+    - name: "ASC"
+      description: "Indicates sorting in ascending order"
+      dataType:
+        type: "Integer"
+    - name: "DESC"
+      description: "Indicates sorting in descending order"
+      dataType:
+        type: "Integer"
+    - name: "INNER"
+      description: "Represents the inner join type used in queries"
+      dataType:
+        type: "Integer"
+    - name: "FULL"
+      description: "Count of FULL joins used in queries."
+      dataType:
+        type: "Integer"
+    - name: "CROSS"
+      description: "Count of CROSS joins used in queries."
+      dataType:
+        type: "Integer"
+    - name: "SEMI"
+      description: "Count of SEMI joins used in queries."
+      dataType:
+        type: "Integer"
+    - name: "ANTI"
+      description: "Count of ANTI joins used in queries."
+      dataType:
+        type: "Integer"
+    - name: "ESCAPE"
+      description: "Count of ESCAPE clauses used in queries."
+      dataType:
+        type: "Integer"
+    - name: "INTERVAL"
+      description: "Represents a time duration used in queries."
+      dataType:
+        type: "Integer"
+    - name: "LEFT"
+      description: "Indicates the count of left joins in a query."
+      dataType:
+        type: "Integer"
+    - name: "RIGHT"
+      description: "Indicates the count of right joins in a query."
+      dataType:
+        type: "Integer"
+    - name: "OUTER"
+      description: "Indicates the count of outer joins in a query."
+      dataType:
+        type: "Integer"
+    - name: "TIMESTAMP"
+      description: "Represents the count of timestamp data types used."
+      dataType:
+        type: "Integer"
+    - name: "DATETIME"
+      description: "Represents the count of occurrences of the DATETIME keyword."
+      dataType:
+        type: "Integer"
+    - name: "END"
+      description: "Represents the count of occurrences of the END keyword."
+      dataType:
+        type: "Integer"
+    - name: "OVER"
+      description: "Represents the count of occurrences of the OVER keyword."
+      dataType:
+        type: "Integer"
+    - name: "RANGE"
+      description: "Represents the count of occurrences of the RANGE keyword."
+      dataType:
+        type: "Integer"
+    - name: "PRECEDING"
+      description: "Represents the count of occurrences of the PRECEDING keyword."
+      dataType:
+        type: "Integer"
+    - name: "FORMAT"
+      description: "Indicates the format type for data representation"
+      dataType:
+        type: "Integer"
+    - name: "ARRAY"
+      description: "Represents the count of array data structures used"
+      dataType:
+        type: "Integer"
+    - name: "PARTITION"
+      description: "Indicates the number of partitions for data distribution"
+      dataType:
+        type: "Integer"
+    - name: "UNBOUNDED"
+      description: "Represents the count of unbounded data ranges"
+      dataType:
+        type: "Integer"
+    - name: "JSON"
+      description: "Indicates the count of JSON data structures used"
+      dataType:
+        type: "Integer"
+    - name: "TYPE"
+      description: "Indicates the type of keyword used in the dataset."
+      dataType:
+        type: "Integer"
+    - name: "IGNORE"
+      description: "Counts the occurrences of the ignore keyword."
+      dataType:
+        type: "Integer"
+    - name: "RESPECT"
+      description: "Counts the occurrences of the respect keyword."
+      dataType:
+        type: "Integer"
+    - name: "VERSION"
+      description: "Counts the occurrences of the version keyword."
+      dataType:
+        type: "Integer"
+    - name: "FILTER"
+      description: "Counts the occurrences of the filter keyword."
+      dataType:
+        type: "Integer"
+    - name: "CLUSTER"
+      description: "Count of cluster operations performed"
+      dataType:
+        type: "Integer"
+    - name: "DISTRIBUTE"
+      description: "Count of distribution operations performed"
+      dataType:
+        type: "Integer"
+    - name: "ROLLUP"
+      description: "Count of rollup operations performed"
+      dataType:
+        type: "Integer"
+    - name: "CUBE"
+      description: "Count of cube operations performed"
+      dataType:
+        type: "Integer"
+    - name: "GROUPING"
+      description: "Count of grouping operations performed"
+      dataType:
+        type: "Integer"
+    - name: "SETS"
+      description: "Count of set operations performed"
+      dataType:
+        type: "Integer"
+    - name: "LATERAL"
+      description: "Count of lateral joins used in queries"
+      dataType:
+        type: "Integer"
+    - name: "OFFSET"
+      description: "Number of rows to skip before starting to return rows"
+      dataType:
+        type: "Integer"
+    - name: "SORT"
+      description: "Count of sorting operations applied to query results"
+      dataType:
+        type: "Integer"
+    - name: "WINDOW"
+      description: "Count of window functions used in queries"
+      dataType:
+        type: "Integer"
+    - name: "FETCH"
+      description: "Indicates the number of records to retrieve from a query."
+      dataType:
+        type: "Integer"
+    - name: "case"
+      description: "Represents a conditional expression in the query."
+      dataType:
+        type: "Integer"
+    - name: "catch"
+      description: "Used to handle exceptions that may occur during query execution."
+      dataType:
+        type: "Integer"
+    - name: "finally"
+      description: "Block that executes after try-catch, regardless of whether an\
+        \ exception occurred."
+      dataType:
+        type: "Integer"
+    - name: "object"
+      description: "Represents an instance of a class in the context of the query."
+      dataType:
+        type: "Integer"
+    - name: "protected"
+      description: "Indicates a protected access modifier for a class or method."
+      dataType:
+        type: "Integer"
+    - name: "return"
+      description: "Specifies the value returned from a function or method."
+      dataType:
+        type: "Integer"
+    - name: "else"
+      description: "Provides an alternative path of execution in conditional statements."
+      dataType:
+        type: "Integer"
+    - name: "final"
+      description: "Denotes that a class or method cannot be subclassed or overridden."
+      dataType:
+        type: "Integer"
+    - name: "new"
+      description: "Indicates the creation of a new instance of a class."
+      dataType:
+        type: "Integer"
+    - name: "while"
+      description: "Count of occurrences of the 'while' keyword"
+      dataType:
+        type: "Integer"
+    - name: "yield"
+      description: "Count of occurrences of the 'yield' keyword"
+      dataType:
+        type: "Integer"
+    - name: "with"
+      description: "Count of occurrences of the 'with' keyword"
+      dataType:
+        type: "Integer"
+    - name: "true"
+      description: "Count of occurrences of the 'true' keyword"
+      dataType:
+        type: "Integer"
+    - name: "false"
+      description: "Count of occurrences of the 'false' keyword"
+      dataType:
+        type: "Integer"
+    - name: "trait"
+      description: "Indicates a characteristic or behavior in the context"
+      dataType:
+        type: "Integer"
+    - name: "except"
+      description: "Specifies exceptions to a rule or condition"
+      dataType:
+        type: "Integer"
+    - name: "do"
+      description: "Represents an action to be performed"
+      dataType:
+        type: "Integer"
+    - name: "extends"
+      description: "Indicates inheritance from a parent class or structure"
+      dataType:
+        type: "Integer"
+    - name: "assert"
+      description: "Used to validate conditions during execution"
+      dataType:
+        type: "Integer"
+    - name: "global"
+      description: "Indicates the global scope of a variable or function"
+      dataType:
+        type: "Integer"
+    - name: "import"
+      description: "Indicates the inclusion of external libraries or modules"
+      dataType:
+        type: "Integer"

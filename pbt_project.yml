@@ -1001,6 +1001,363 @@ sqlSeeds:
     - seeds/raw/raw_customers.csv
     createdAt: '2023-04-12 09:25:50'
 sqlSources:
+  .prophecy/metadata/sqlsources/spark_catalog_qa_database:
+    name: spark_catalog.qa_database
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2023-04-12 09:22:07'
+    tables:
+    - name: all_type_parquet
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: c_tinyint
+          dataType:
+            type: TinyInt
+        - name: c_smallint
+          dataType:
+            type: SmallInt
+        - name: c_int
+          dataType:
+            type: Integer
+        - name: c_bigint
+          dataType:
+            type: Bigint
+        - name: c_float
+          dataType:
+            type: Float
+        - name: c_double
+          dataType:
+            type: Double
+        - name: c_string
+          dataType:
+            type: String
+        - name: c_boolean
+          dataType:
+            type: Boolean
+        - name: c_array
+          dataType:
+            type: Array
+            dataType:
+              type: String
+        - name: c_struct
+          dataType:
+            type: Struct
+            fields:
+            - name: city
+              dataType:
+                type: String
+            - name: state
+              dataType:
+                type: String
+            - name: pin
+              dataType:
+                type: Bigint
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2023-04-12 09:22:07'
+    - name: store_sales
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: SS_SOLD_DATE_SK
+          dataType:
+            type: Decimal
+        - name: SS_SOLD_TIME_SK
+          dataType:
+            type: Decimal
+        - name: SS_ITEM_SK
+          dataType:
+            type: Decimal
+        - name: SS_CUSTOMER_SK
+          dataType:
+            type: Decimal
+        - name: SS_CDEMO_SK
+          dataType:
+            type: Decimal
+        - name: SS_HDEMO_SK
+          dataType:
+            type: Decimal
+        - name: SS_ADDR_SK
+          dataType:
+            type: Decimal
+        - name: SS_STORE_SK
+          dataType:
+            type: Decimal
+        - name: SS_PROMO_SK
+          dataType:
+            type: Decimal
+        - name: SS_TICKET_NUMBER
+          dataType:
+            type: Decimal
+        - name: SS_QUANTITY
+          dataType:
+            type: Decimal
+        - name: SS_WHOLESALE_COST
+          dataType:
+            type: Decimal
+        - name: SS_LIST_PRICE
+          dataType:
+            type: Decimal
+        - name: SS_SALES_PRICE
+          dataType:
+            type: Decimal
+        - name: SS_EXT_DISCOUNT_AMT
+          dataType:
+            type: Decimal
+        - name: SS_EXT_SALES_PRICE
+          dataType:
+            type: Decimal
+        - name: SS_EXT_WHOLESALE_COST
+          dataType:
+            type: Decimal
+        - name: SS_EXT_LIST_PRICE
+          dataType:
+            type: Decimal
+        - name: SS_EXT_TAX
+          dataType:
+            type: Decimal
+        - name: SS_COUPON_AMT
+          dataType:
+            type: Decimal
+        - name: SS_NET_PAID
+          dataType:
+            type: Decimal
+        - name: SS_NET_PAID_INC_TAX
+          dataType:
+            type: Decimal
+        - name: SS_NET_PROFIT
+          dataType:
+            type: Decimal
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2023-04-19 17:49:01'
+    - name: item
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: I_ITEM_SK
+          dataType:
+            type: Decimal
+        - name: I_ITEM_ID
+          dataType:
+            type: String
+        - name: I_REC_START_DATE
+          dataType:
+            type: Date
+        - name: I_REC_END_DATE
+          dataType:
+            type: Date
+        - name: I_ITEM_DESC
+          dataType:
+            type: String
+        - name: I_CURRENT_PRICE
+          dataType:
+            type: Decimal
+        - name: I_WHOLESALE_COST
+          dataType:
+            type: Decimal
+        - name: I_BRAND_ID
+          dataType:
+            type: Decimal
+        - name: I_BRAND
+          dataType:
+            type: String
+        - name: I_CLASS_ID
+          dataType:
+            type: Decimal
+        - name: I_CLASS
+          dataType:
+            type: String
+        - name: I_CATEGORY_ID
+          dataType:
+            type: Decimal
+        - name: I_CATEGORY
+          dataType:
+            type: String
+        - name: I_MANUFACT_ID
+          dataType:
+            type: Decimal
+        - name: I_MANUFACT
+          dataType:
+            type: String
+        - name: I_SIZE
+          dataType:
+            type: String
+        - name: I_FORMULATION
+          dataType:
+            type: String
+        - name: I_COLOR
+          dataType:
+            type: String
+        - name: I_UNITS
+          dataType:
+            type: String
+        - name: I_CONTAINER
+          dataType:
+            type: String
+        - name: I_MANAGER_ID
+          dataType:
+            type: Decimal
+        - name: I_PRODUCT_NAME
+          dataType:
+            type: String
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2023-04-19 17:49:08'
+    - name: date_dim
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: D_DATE_SK
+          dataType:
+            type: Decimal
+        - name: D_DATE_ID
+          dataType:
+            type: String
+        - name: D_DATE
+          dataType:
+            type: Date
+        - name: D_MONTH_SEQ
+          dataType:
+            type: Decimal
+        - name: D_WEEK_SEQ
+          dataType:
+            type: Decimal
+        - name: D_QUARTER_SEQ
+          dataType:
+            type: Decimal
+        - name: D_YEAR
+          dataType:
+            type: Decimal
+        - name: D_DOW
+          dataType:
+            type: Decimal
+        - name: D_MOY
+          dataType:
+            type: Decimal
+        - name: D_DOM
+          dataType:
+            type: Decimal
+        - name: D_QOY
+          dataType:
+            type: Decimal
+        - name: D_FY_YEAR
+          dataType:
+            type: Decimal
+        - name: D_FY_QUARTER_SEQ
+          dataType:
+            type: Decimal
+        - name: D_FY_WEEK_SEQ
+          dataType:
+            type: Decimal
+        - name: D_DAY_NAME
+          dataType:
+            type: String
+        - name: D_QUARTER_NAME
+          dataType:
+            type: String
+        - name: D_HOLIDAY
+          dataType:
+            type: String
+        - name: D_WEEKEND
+          dataType:
+            type: String
+        - name: D_FOLLOWING_HOLIDAY
+          dataType:
+            type: String
+        - name: D_FIRST_DOM
+          dataType:
+            type: Decimal
+        - name: D_LAST_DOM
+          dataType:
+            type: Decimal
+        - name: D_SAME_DAY_LY
+          dataType:
+            type: Decimal
+        - name: D_SAME_DAY_LQ
+          dataType:
+            type: Decimal
+        - name: D_CURRENT_DAY
+          dataType:
+            type: String
+        - name: D_CURRENT_WEEK
+          dataType:
+            type: String
+        - name: D_CURRENT_MONTH
+          dataType:
+            type: String
+        - name: D_CURRENT_QUARTER
+          dataType:
+            type: String
+        - name: D_CURRENT_YEAR
+          dataType:
+            type: String
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2023-04-19 17:49:16'
+    - name: all_type_partitioned
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: c_tinyint
+          dataType:
+            type: TinyInt
+        - name: c_smallint
+          dataType:
+            type: SmallInt
+        - name: c_int
+          dataType:
+            type: Integer
+        - name: c_bigint
+          dataType:
+            type: Bigint
+        - name: c_float
+          dataType:
+            type: Float
+        - name: c_double
+          dataType:
+            type: Double
+        - name: c_string
+          dataType:
+            type: String
+        - name: c_boolean
+          dataType:
+            type: Boolean
+        - name: c_array
+          dataType:
+            type: Array
+            dataType:
+              type: String
+        - name: c_struct
+          dataType:
+            type: Struct
+            fields:
+            - name: city
+              dataType:
+                type: String
+            - name: state
+              dataType:
+                type: String
+            - name: pin
+              dataType:
+                type: Bigint
+        - name: p_int
+          dataType:
+            type: Integer
+        - name: p_string
+          dataType:
+            type: String
+      description: null
+      author: abhisheks+shared@prophecy.io
+      createdAt: '2023-05-24 16:09:08'
   .prophecy/metadata/sqlsources/hive_metastore_qa_database:
     name: hive_metastore.qa_database
     description: null
@@ -1905,6 +2262,209 @@ sqlSources:
         and lab results, aimed at enhancing patient care and treatment strategies.
       author: abhisheks+shared@prophecy.io
       createdAt: '2024-10-15 12:14:59'
+  .prophecy/metadata/sqlsources/qa-team_qa_database:
+    name: qa-team.qa_database
+    description: null
+    author: abhisheks+shared@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2024-12-04 06:23:56'
+    tables:
+    - name: table_keywords
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: LIMIT
+          dataType:
+            type: String
+        - name: JOIN
+          dataType:
+            type: String
+        - name: ASC
+          dataType:
+            type: Integer
+        - name: DESC
+          dataType:
+            type: Integer
+        - name: INNER
+          dataType:
+            type: Integer
+        - name: FULL
+          dataType:
+            type: Integer
+        - name: CROSS
+          dataType:
+            type: Integer
+        - name: SEMI
+          dataType:
+            type: Integer
+        - name: ANTI
+          dataType:
+            type: Integer
+        - name: ESCAPE
+          dataType:
+            type: Integer
+        - name: INTERVAL
+          dataType:
+            type: Integer
+        - name: LEFT
+          dataType:
+            type: Integer
+        - name: RIGHT
+          dataType:
+            type: Integer
+        - name: OUTER
+          dataType:
+            type: Integer
+        - name: TIMESTAMP
+          dataType:
+            type: Integer
+        - name: DATETIME
+          dataType:
+            type: Integer
+        - name: END
+          dataType:
+            type: Integer
+        - name: OVER
+          dataType:
+            type: Integer
+        - name: RANGE
+          dataType:
+            type: Integer
+        - name: PRECEDING
+          dataType:
+            type: Integer
+        - name: FORMAT
+          dataType:
+            type: Integer
+        - name: ARRAY
+          dataType:
+            type: Integer
+        - name: PARTITION
+          dataType:
+            type: Integer
+        - name: UNBOUNDED
+          dataType:
+            type: Integer
+        - name: JSON
+          dataType:
+            type: Integer
+        - name: TYPE
+          dataType:
+            type: Integer
+        - name: IGNORE
+          dataType:
+            type: Integer
+        - name: RESPECT
+          dataType:
+            type: Integer
+        - name: VERSION
+          dataType:
+            type: Integer
+        - name: FILTER
+          dataType:
+            type: Integer
+        - name: CLUSTER
+          dataType:
+            type: Integer
+        - name: DISTRIBUTE
+          dataType:
+            type: Integer
+        - name: ROLLUP
+          dataType:
+            type: Integer
+        - name: CUBE
+          dataType:
+            type: Integer
+        - name: GROUPING
+          dataType:
+            type: Integer
+        - name: SETS
+          dataType:
+            type: Integer
+        - name: LATERAL
+          dataType:
+            type: Integer
+        - name: OFFSET
+          dataType:
+            type: Integer
+        - name: SORT
+          dataType:
+            type: Integer
+        - name: WINDOW
+          dataType:
+            type: Integer
+        - name: FETCH
+          dataType:
+            type: Integer
+        - name: case
+          dataType:
+            type: Integer
+        - name: catch
+          dataType:
+            type: Integer
+        - name: finally
+          dataType:
+            type: Integer
+        - name: object
+          dataType:
+            type: Integer
+        - name: protected
+          dataType:
+            type: Integer
+        - name: return
+          dataType:
+            type: Integer
+        - name: else
+          dataType:
+            type: Integer
+        - name: final
+          dataType:
+            type: Integer
+        - name: new
+          dataType:
+            type: Integer
+        - name: while
+          dataType:
+            type: Integer
+        - name: yield
+          dataType:
+            type: Integer
+        - name: with
+          dataType:
+            type: Integer
+        - name: 'true'
+          dataType:
+            type: Integer
+        - name: 'false'
+          dataType:
+            type: Integer
+        - name: trait
+          dataType:
+            type: Integer
+        - name: except
+          dataType:
+            type: Integer
+        - name: do
+          dataType:
+            type: Integer
+        - name: extends
+          dataType:
+            type: Integer
+        - name: assert
+          dataType:
+            type: Integer
+        - name: global
+          dataType:
+            type: Integer
+        - name: import
+          dataType:
+            type: Integer
+      description: Keyword usage data for various programming constructs, aiding in
+        understanding language syntax and structure.
+      author: abhisheks+shared@prophecy.io
+      createdAt: '2024-12-04 06:23:56'
   .prophecy/metadata/sqlsources/hive_metastore_qa_db_warehouse:
     name: hive_metastore.qa_db_warehouse
     description: null
@@ -1968,363 +2528,6 @@ sqlSources:
         analytical capabilities across multiple dimensions.
       author: abhisheks+shared@prophecy.io
       createdAt: '2024-10-14 04:38:20'
-  .prophecy/metadata/sqlsources/spark_catalog_qa_database:
-    name: spark_catalog.qa_database
-    description: null
-    author: abhisheks+e2etests@prophecy.io
-    files:
-    - prophecy-sources/sources.yml
-    createdAt: '2023-04-12 09:22:07'
-    tables:
-    - name: all_type_parquet
-      schema:
-        entityType: ''
-        providerType: databricks
-        fields:
-        - name: c_tinyint
-          dataType:
-            type: TinyInt
-        - name: c_smallint
-          dataType:
-            type: SmallInt
-        - name: c_int
-          dataType:
-            type: Integer
-        - name: c_bigint
-          dataType:
-            type: Bigint
-        - name: c_float
-          dataType:
-            type: Float
-        - name: c_double
-          dataType:
-            type: Double
-        - name: c_string
-          dataType:
-            type: String
-        - name: c_boolean
-          dataType:
-            type: Boolean
-        - name: c_array
-          dataType:
-            type: Array
-            dataType:
-              type: String
-        - name: c_struct
-          dataType:
-            type: Struct
-            fields:
-            - name: city
-              dataType:
-                type: String
-            - name: state
-              dataType:
-                type: String
-            - name: pin
-              dataType:
-                type: Bigint
-      description: null
-      author: abhisheks+e2etests@prophecy.io
-      createdAt: '2023-04-12 09:22:07'
-    - name: store_sales
-      schema:
-        entityType: ''
-        providerType: databricks
-        fields:
-        - name: SS_SOLD_DATE_SK
-          dataType:
-            type: Decimal
-        - name: SS_SOLD_TIME_SK
-          dataType:
-            type: Decimal
-        - name: SS_ITEM_SK
-          dataType:
-            type: Decimal
-        - name: SS_CUSTOMER_SK
-          dataType:
-            type: Decimal
-        - name: SS_CDEMO_SK
-          dataType:
-            type: Decimal
-        - name: SS_HDEMO_SK
-          dataType:
-            type: Decimal
-        - name: SS_ADDR_SK
-          dataType:
-            type: Decimal
-        - name: SS_STORE_SK
-          dataType:
-            type: Decimal
-        - name: SS_PROMO_SK
-          dataType:
-            type: Decimal
-        - name: SS_TICKET_NUMBER
-          dataType:
-            type: Decimal
-        - name: SS_QUANTITY
-          dataType:
-            type: Decimal
-        - name: SS_WHOLESALE_COST
-          dataType:
-            type: Decimal
-        - name: SS_LIST_PRICE
-          dataType:
-            type: Decimal
-        - name: SS_SALES_PRICE
-          dataType:
-            type: Decimal
-        - name: SS_EXT_DISCOUNT_AMT
-          dataType:
-            type: Decimal
-        - name: SS_EXT_SALES_PRICE
-          dataType:
-            type: Decimal
-        - name: SS_EXT_WHOLESALE_COST
-          dataType:
-            type: Decimal
-        - name: SS_EXT_LIST_PRICE
-          dataType:
-            type: Decimal
-        - name: SS_EXT_TAX
-          dataType:
-            type: Decimal
-        - name: SS_COUPON_AMT
-          dataType:
-            type: Decimal
-        - name: SS_NET_PAID
-          dataType:
-            type: Decimal
-        - name: SS_NET_PAID_INC_TAX
-          dataType:
-            type: Decimal
-        - name: SS_NET_PROFIT
-          dataType:
-            type: Decimal
-      description: null
-      author: abhisheks+e2etests@prophecy.io
-      createdAt: '2023-04-19 17:49:01'
-    - name: item
-      schema:
-        entityType: ''
-        providerType: databricks
-        fields:
-        - name: I_ITEM_SK
-          dataType:
-            type: Decimal
-        - name: I_ITEM_ID
-          dataType:
-            type: String
-        - name: I_REC_START_DATE
-          dataType:
-            type: Date
-        - name: I_REC_END_DATE
-          dataType:
-            type: Date
-        - name: I_ITEM_DESC
-          dataType:
-            type: String
-        - name: I_CURRENT_PRICE
-          dataType:
-            type: Decimal
-        - name: I_WHOLESALE_COST
-          dataType:
-            type: Decimal
-        - name: I_BRAND_ID
-          dataType:
-            type: Decimal
-        - name: I_BRAND
-          dataType:
-            type: String
-        - name: I_CLASS_ID
-          dataType:
-            type: Decimal
-        - name: I_CLASS
-          dataType:
-            type: String
-        - name: I_CATEGORY_ID
-          dataType:
-            type: Decimal
-        - name: I_CATEGORY
-          dataType:
-            type: String
-        - name: I_MANUFACT_ID
-          dataType:
-            type: Decimal
-        - name: I_MANUFACT
-          dataType:
-            type: String
-        - name: I_SIZE
-          dataType:
-            type: String
-        - name: I_FORMULATION
-          dataType:
-            type: String
-        - name: I_COLOR
-          dataType:
-            type: String
-        - name: I_UNITS
-          dataType:
-            type: String
-        - name: I_CONTAINER
-          dataType:
-            type: String
-        - name: I_MANAGER_ID
-          dataType:
-            type: Decimal
-        - name: I_PRODUCT_NAME
-          dataType:
-            type: String
-      description: null
-      author: abhisheks+e2etests@prophecy.io
-      createdAt: '2023-04-19 17:49:08'
-    - name: date_dim
-      schema:
-        entityType: ''
-        providerType: databricks
-        fields:
-        - name: D_DATE_SK
-          dataType:
-            type: Decimal
-        - name: D_DATE_ID
-          dataType:
-            type: String
-        - name: D_DATE
-          dataType:
-            type: Date
-        - name: D_MONTH_SEQ
-          dataType:
-            type: Decimal
-        - name: D_WEEK_SEQ
-          dataType:
-            type: Decimal
-        - name: D_QUARTER_SEQ
-          dataType:
-            type: Decimal
-        - name: D_YEAR
-          dataType:
-            type: Decimal
-        - name: D_DOW
-          dataType:
-            type: Decimal
-        - name: D_MOY
-          dataType:
-            type: Decimal
-        - name: D_DOM
-          dataType:
-            type: Decimal
-        - name: D_QOY
-          dataType:
-            type: Decimal
-        - name: D_FY_YEAR
-          dataType:
-            type: Decimal
-        - name: D_FY_QUARTER_SEQ
-          dataType:
-            type: Decimal
-        - name: D_FY_WEEK_SEQ
-          dataType:
-            type: Decimal
-        - name: D_DAY_NAME
-          dataType:
-            type: String
-        - name: D_QUARTER_NAME
-          dataType:
-            type: String
-        - name: D_HOLIDAY
-          dataType:
-            type: String
-        - name: D_WEEKEND
-          dataType:
-            type: String
-        - name: D_FOLLOWING_HOLIDAY
-          dataType:
-            type: String
-        - name: D_FIRST_DOM
-          dataType:
-            type: Decimal
-        - name: D_LAST_DOM
-          dataType:
-            type: Decimal
-        - name: D_SAME_DAY_LY
-          dataType:
-            type: Decimal
-        - name: D_SAME_DAY_LQ
-          dataType:
-            type: Decimal
-        - name: D_CURRENT_DAY
-          dataType:
-            type: String
-        - name: D_CURRENT_WEEK
-          dataType:
-            type: String
-        - name: D_CURRENT_MONTH
-          dataType:
-            type: String
-        - name: D_CURRENT_QUARTER
-          dataType:
-            type: String
-        - name: D_CURRENT_YEAR
-          dataType:
-            type: String
-      description: null
-      author: abhisheks+e2etests@prophecy.io
-      createdAt: '2023-04-19 17:49:16'
-    - name: all_type_partitioned
-      schema:
-        entityType: ''
-        providerType: databricks
-        fields:
-        - name: c_tinyint
-          dataType:
-            type: TinyInt
-        - name: c_smallint
-          dataType:
-            type: SmallInt
-        - name: c_int
-          dataType:
-            type: Integer
-        - name: c_bigint
-          dataType:
-            type: Bigint
-        - name: c_float
-          dataType:
-            type: Float
-        - name: c_double
-          dataType:
-            type: Double
-        - name: c_string
-          dataType:
-            type: String
-        - name: c_boolean
-          dataType:
-            type: Boolean
-        - name: c_array
-          dataType:
-            type: Array
-            dataType:
-              type: String
-        - name: c_struct
-          dataType:
-            type: Struct
-            fields:
-            - name: city
-              dataType:
-                type: String
-            - name: state
-              dataType:
-                type: String
-            - name: pin
-              dataType:
-                type: Bigint
-        - name: p_int
-          dataType:
-            type: Integer
-        - name: p_string
-          dataType:
-            type: String
-      description: null
-      author: abhisheks+shared@prophecy.io
-      createdAt: '2023-05-24 16:09:08'
   .prophecy/metadata/sqlsources/spark_catalog_qa_suggestion_database:
     name: spark_catalog.qa_suggestion_database
     description: null
