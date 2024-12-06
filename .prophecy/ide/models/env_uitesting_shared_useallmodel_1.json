@@ -10914,12 +10914,12 @@
         "y" : 3220,
         "phase" : 0,
         "macroDependencies" : [ ],
-        "comment" : "Retrieves a comprehensive list of SQL keywords for reference or documentation purposes.",
+        "comment" : "Generates a comprehensive list of SQL keywords and their corresponding formats for reference and documentation purposes.",
         "autoUpdateComment" : true,
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##LIMIT", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##JOIN", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##ASC", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##DESC", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##INNER", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##FULL", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##CROSS", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##SEMI", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##ANTI", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##ESCAPE", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##INTERVAL", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##LEFT", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##RIGHT", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##OUTER", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##TIMESTAMP", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##DATETIME", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##END", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##OVER", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##RANGE", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##PRECEDING", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##FORMAT", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##ARRAY", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##PARTITION", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##UNBOUNDED", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##JSON", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##TYPE", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##IGNORE", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##RESPECT", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##VERSION", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##FILTER", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##CLUSTER", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##DISTRIBUTE", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##ROLLUP", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##CUBE", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##GROUPING", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##SETS", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##LATERAL", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##OFFSET", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##SORT", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##WINDOW", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##FETCH", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##catch", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##finally", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##object", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##protected", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##return", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##final", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##new", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##while", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##yield", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##trait", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##except", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##do", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##extends", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##assert", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##global", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##import" ],
+        "columnsSelector" : [ "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##LIMIT", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##JOIN", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##ASC", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##DESC", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##INNER", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##FULL", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##CROSS", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##SEMI", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##ANTI", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##ESCAPE", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##INTERVAL", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##LEFT", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##RIGHT", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##OUTER", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##TIMESTAMP", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##DATETIME", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##END", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##OVER", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##RANGE", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##PRECEDING", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##FORMAT", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##ARRAY", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##PARTITION", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##UNBOUNDED", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##JSON", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##TYPE", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##IGNORE", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##RESPECT", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##VERSION", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##FILTER", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##CLUSTER", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##DISTRIBUTE", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##ROLLUP", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##CUBE", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##GROUPING", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##SETS", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##LATERAL", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##OFFSET", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##SORT", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##WINDOW", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##FETCH", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##catch", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##finally", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##object", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##protected", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##return", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##final", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##new", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##while", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##yield", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##trait", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##except", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##do", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##extends", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##assert", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##global", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##import", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##cast", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##add", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##allocate", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##at", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##both", "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d##limit" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "LIMIT"
@@ -11215,6 +11215,11 @@
             "expression" : "import"
           },
           "alias" : "import"
+        }, {
+          "expression" : {
+            "expression" : "concat(`cast`, `add`, `allocate`, `at`, `both`, FULL, CROSS, `limit`)"
+          },
+          "alias" : "cast"
         } ]
       },
       "ports" : {
@@ -11263,7 +11268,7 @@
       "metadata" : {
         "label" : "IS_INCREMENTAL",
         "slug" : "IS_INCREMENTAL",
-        "x" : -60,
+        "x" : -280,
         "y" : 3220,
         "phase" : 0,
         "isLabelGrayed" : false
@@ -21396,6 +21401,372 @@
       },
       "index" : 16
     },
+    "DpwKpFuL9Ry8AGvWsoenh$$nM2T8hP9QtkxRDfIdOBxe" : {
+      "id" : "DpwKpFuL9Ry8AGvWsoenh$$nM2T8hP9QtkxRDfIdOBxe",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformattest312312",
+        "slug" : "Reformattest312312",
+        "x" : -100,
+        "y" : 3220,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Demonstrates a variety of SQL keywords and their usage in a structured format.",
+        "autoUpdateComment" : true,
+        "isLabelGrayed" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##LIMIT", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##JOIN", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##ASC", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##DESC", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##INNER", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##FULL", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##CROSS", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##SEMI", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##ANTI", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##ESCAPE", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##INTERVAL", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##LEFT", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##RIGHT", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##OUTER", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##TIMESTAMP", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##DATETIME", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##END", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##OVER", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##RANGE", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##PRECEDING", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##FORMAT", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##ARRAY", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##PARTITION", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##UNBOUNDED", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##JSON", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##TYPE", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##IGNORE", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##RESPECT", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##VERSION", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##FILTER", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##CLUSTER", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##DISTRIBUTE", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##ROLLUP", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##CUBE", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##GROUPING", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##SETS", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##LATERAL", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##OFFSET", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##SORT", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##WINDOW", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##FETCH", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##case", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##catch", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##finally", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##object", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##protected", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##return", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##else", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##final", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##new", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##while", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##yield", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##with", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##trait", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##except", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##do", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##extends", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##assert", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##global", "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx##import" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "LIMIT"
+          },
+          "alias" : "LIMIT"
+        }, {
+          "expression" : {
+            "expression" : "JOIN"
+          },
+          "alias" : "JOIN"
+        }, {
+          "expression" : {
+            "expression" : "ASC"
+          },
+          "alias" : "ASC"
+        }, {
+          "expression" : {
+            "expression" : "DESC"
+          },
+          "alias" : "DESC"
+        }, {
+          "expression" : {
+            "expression" : "INNER"
+          },
+          "alias" : "INNER"
+        }, {
+          "expression" : {
+            "expression" : "FULL"
+          },
+          "alias" : "FULL"
+        }, {
+          "expression" : {
+            "expression" : "CROSS"
+          },
+          "alias" : "CROSS"
+        }, {
+          "expression" : {
+            "expression" : "SEMI"
+          },
+          "alias" : "SEMI"
+        }, {
+          "expression" : {
+            "expression" : "ANTI"
+          },
+          "alias" : "ANTI"
+        }, {
+          "expression" : {
+            "expression" : "ESCAPE"
+          },
+          "alias" : "ESCAPE"
+        }, {
+          "expression" : {
+            "expression" : "INTERVAL"
+          },
+          "alias" : "INTERVAL"
+        }, {
+          "expression" : {
+            "expression" : "LEFT"
+          },
+          "alias" : "LEFT"
+        }, {
+          "expression" : {
+            "expression" : "RIGHT"
+          },
+          "alias" : "RIGHT"
+        }, {
+          "expression" : {
+            "expression" : "OUTER"
+          },
+          "alias" : "OUTER"
+        }, {
+          "expression" : {
+            "expression" : "TIMESTAMP"
+          },
+          "alias" : "TIMESTAMP"
+        }, {
+          "expression" : {
+            "expression" : "DATETIME"
+          },
+          "alias" : "DATETIME"
+        }, {
+          "expression" : {
+            "expression" : "END"
+          },
+          "alias" : "END"
+        }, {
+          "expression" : {
+            "expression" : "OVER"
+          },
+          "alias" : "OVER"
+        }, {
+          "expression" : {
+            "expression" : "RANGE"
+          },
+          "alias" : "RANGE"
+        }, {
+          "expression" : {
+            "expression" : "PRECEDING"
+          },
+          "alias" : "PRECEDING"
+        }, {
+          "expression" : {
+            "expression" : "FORMAT"
+          },
+          "alias" : "FORMAT"
+        }, {
+          "expression" : {
+            "expression" : "ARRAY"
+          },
+          "alias" : "ARRAY"
+        }, {
+          "expression" : {
+            "expression" : "PARTITION"
+          },
+          "alias" : "PARTITION"
+        }, {
+          "expression" : {
+            "expression" : "UNBOUNDED"
+          },
+          "alias" : "UNBOUNDED"
+        }, {
+          "expression" : {
+            "expression" : "JSON"
+          },
+          "alias" : "JSON"
+        }, {
+          "expression" : {
+            "expression" : "TYPE"
+          },
+          "alias" : "TYPE"
+        }, {
+          "expression" : {
+            "expression" : "IGNORE"
+          },
+          "alias" : "IGNORE"
+        }, {
+          "expression" : {
+            "expression" : "RESPECT"
+          },
+          "alias" : "RESPECT"
+        }, {
+          "expression" : {
+            "expression" : "VERSION"
+          },
+          "alias" : "VERSION"
+        }, {
+          "expression" : {
+            "expression" : "FILTER"
+          },
+          "alias" : "FILTER"
+        }, {
+          "expression" : {
+            "expression" : "CLUSTER"
+          },
+          "alias" : "CLUSTER"
+        }, {
+          "expression" : {
+            "expression" : "DISTRIBUTE"
+          },
+          "alias" : "DISTRIBUTE"
+        }, {
+          "expression" : {
+            "expression" : "ROLLUP"
+          },
+          "alias" : "ROLLUP"
+        }, {
+          "expression" : {
+            "expression" : "CUBE"
+          },
+          "alias" : "CUBE"
+        }, {
+          "expression" : {
+            "expression" : "GROUPING"
+          },
+          "alias" : "GROUPING"
+        }, {
+          "expression" : {
+            "expression" : "SETS"
+          },
+          "alias" : "SETS"
+        }, {
+          "expression" : {
+            "expression" : "LATERAL"
+          },
+          "alias" : "LATERAL"
+        }, {
+          "expression" : {
+            "expression" : "OFFSET"
+          },
+          "alias" : "OFFSET"
+        }, {
+          "expression" : {
+            "expression" : "SORT"
+          },
+          "alias" : "SORT"
+        }, {
+          "expression" : {
+            "expression" : "WINDOW"
+          },
+          "alias" : "WINDOW"
+        }, {
+          "expression" : {
+            "expression" : "FETCH"
+          },
+          "alias" : "FETCH"
+        }, {
+          "expression" : {
+            "expression" : "`case`"
+          },
+          "alias" : "`case`"
+        }, {
+          "expression" : {
+            "expression" : "catch"
+          },
+          "alias" : "catch"
+        }, {
+          "expression" : {
+            "expression" : "finally"
+          },
+          "alias" : "finally"
+        }, {
+          "expression" : {
+            "expression" : "object"
+          },
+          "alias" : "object"
+        }, {
+          "expression" : {
+            "expression" : "protected"
+          },
+          "alias" : "protected"
+        }, {
+          "expression" : {
+            "expression" : "return"
+          },
+          "alias" : "return"
+        }, {
+          "expression" : {
+            "expression" : "`else`"
+          },
+          "alias" : "`else`"
+        }, {
+          "expression" : {
+            "expression" : "final"
+          },
+          "alias" : "final"
+        }, {
+          "expression" : {
+            "expression" : "new"
+          },
+          "alias" : "new"
+        }, {
+          "expression" : {
+            "expression" : "while"
+          },
+          "alias" : "while"
+        }, {
+          "expression" : {
+            "expression" : "yield"
+          },
+          "alias" : "yield"
+        }, {
+          "expression" : {
+            "expression" : "`with`"
+          },
+          "alias" : "`with`"
+        }, {
+          "expression" : {
+            "expression" : "true"
+          },
+          "alias" : "true"
+        }, {
+          "expression" : {
+            "expression" : "false"
+          },
+          "alias" : "false"
+        }, {
+          "expression" : {
+            "expression" : "trait"
+          },
+          "alias" : "trait"
+        }, {
+          "expression" : {
+            "expression" : "except"
+          },
+          "alias" : "except"
+        }, {
+          "expression" : {
+            "expression" : "do"
+          },
+          "alias" : "do"
+        }, {
+          "expression" : {
+            "expression" : "extends"
+          },
+          "alias" : "extends"
+        }, {
+          "expression" : {
+            "expression" : "assert"
+          },
+          "alias" : "assert"
+        }, {
+          "expression" : {
+            "expression" : "global"
+          },
+          "alias" : "global"
+        }, {
+          "expression" : {
+            "expression" : "import"
+          },
+          "alias" : "import"
+        }, {
+          "expression" : {
+            "expression" : "concat(trait, extends)"
+          },
+          "alias" : "CAST"
+        }, {
+          "expression" : {
+            "expression" : "concat(trait, extends)"
+          },
+          "alias" : "ADD"
+        }, {
+          "expression" : {
+            "expression" : "concat(trait, extends)"
+          },
+          "alias" : "ALLOCATE"
+        }, {
+          "expression" : {
+            "expression" : "concat(trait, extends)"
+          },
+          "alias" : "AT"
+        }, {
+          "expression" : {
+            "expression" : "concat(trait, extends)"
+          },
+          "alias" : "BOTH"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "2qRNJWeKm8Hne6Qaq9rDX$$SnWHg8QCGvhMgwDphTBgo",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
     "all_type_parquet##IxfnsgbF" : {
       "id" : "all_type_parquet##IxfnsgbF",
       "component" : "Source",
@@ -21948,12 +22319,6 @@
     "target" : "final##gF0nBTyA",
     "targetPort" : "vmL4WLtf"
   }, {
-    "id" : "R7XDODTRO3xVZZQ3JPBPS",
-    "source" : "fhqT-hKBZQ_QaGcJjytWZ$$2wN8jkbk0PqWsvwsRRO8W",
-    "sourcePort" : "t9vE7JR4DtG4RAzZzc4ii$$lyow41pQ6fP7SXf4wiP6v",
-    "target" : "EZnTWta-Lip_DiyN6_55L$$VG7ANo8JbJcHtKLhfv-In",
-    "targetPort" : "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d"
-  }, {
     "id" : "LKr8bjgSdxb1uEHbChxlK",
     "source" : "EZnTWta-Lip_DiyN6_55L$$VG7ANo8JbJcHtKLhfv-In",
     "sourcePort" : "JdHUerh5eU01UwM8pl8Dg$$a0QM8EdkdQaEACN706KCL",
@@ -21977,6 +22342,18 @@
     "sourcePort" : "p0vxk0VpJm4HRUwbm_sMc$$6wGviaX7tFUN1inLqZoRy",
     "target" : "SQLStatement_1##KHWvETJq",
     "targetPort" : "TyVmjB5lc-ALZNL04UeG1$$EummbtKM_9QEGEY67I0zX"
+  }, {
+    "id" : "MaJUeySsLSAJ1Ucm2BGX1$$r5mDZxkck8fd0wgonw-ax",
+    "source" : "DpwKpFuL9Ry8AGvWsoenh$$nM2T8hP9QtkxRDfIdOBxe",
+    "sourcePort" : "2qRNJWeKm8Hne6Qaq9rDX$$SnWHg8QCGvhMgwDphTBgo",
+    "target" : "EZnTWta-Lip_DiyN6_55L$$VG7ANo8JbJcHtKLhfv-In",
+    "targetPort" : "VM879iZ9coCR8a33sMzOK$$x2WdDvlcHgOeRIOW1nB7d"
+  }, {
+    "id" : "JXcNRPp1dnNpRnNvWNUW_",
+    "source" : "fhqT-hKBZQ_QaGcJjytWZ$$2wN8jkbk0PqWsvwsRRO8W",
+    "sourcePort" : "t9vE7JR4DtG4RAzZzc4ii$$lyow41pQ6fP7SXf4wiP6v",
+    "target" : "DpwKpFuL9Ry8AGvWsoenh$$nM2T8hP9QtkxRDfIdOBxe",
+    "targetPort" : "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx"
   } ],
   "component" : "Model"
 }

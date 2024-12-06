@@ -2622,9 +2622,85 @@ IS_INCREMENTAL AS (
 
 ),
 
+Reformattest312312 AS (
+
+  {#Demonstrates a variety of SQL keywords and their usage in a structured format.#}
+  SELECT 
+    LIMIT AS LIMIT,
+    JOIN AS JOIN,
+    ASC AS ASC,
+    DESC AS DESC,
+    INNER AS INNER,
+    FULL AS FULL,
+    CROSS AS CROSS,
+    SEMI AS SEMI,
+    ANTI AS ANTI,
+    ESCAPE AS ESCAPE,
+    INTERVAL AS INTERVAL,
+    LEFT AS LEFT,
+    RIGHT AS RIGHT,
+    OUTER AS OUTER,
+    TIMESTAMP AS TIMESTAMP,
+    DATETIME AS DATETIME,
+    END AS END,
+    OVER AS OVER,
+    RANGE AS RANGE,
+    PRECEDING AS PRECEDING,
+    FORMAT AS FORMAT,
+    ARRAY AS ARRAY,
+    PARTITION AS PARTITION,
+    UNBOUNDED AS UNBOUNDED,
+    JSON AS JSON,
+    TYPE AS TYPE,
+    IGNORE AS IGNORE,
+    RESPECT AS RESPECT,
+    VERSION AS VERSION,
+    FILTER AS FILTER,
+    CLUSTER AS CLUSTER,
+    DISTRIBUTE AS DISTRIBUTE,
+    ROLLUP AS ROLLUP,
+    CUBE AS CUBE,
+    GROUPING AS GROUPING,
+    SETS AS SETS,
+    LATERAL AS LATERAL,
+    OFFSET AS OFFSET,
+    SORT AS SORT,
+    WINDOW AS WINDOW,
+    FETCH AS FETCH,
+    `case` AS `case`,
+    catch AS catch,
+    finally AS finally,
+    object AS object,
+    protected AS protected,
+    return AS return,
+    `else` AS `else`,
+    final AS final,
+    new AS new,
+    while AS while,
+    yield AS yield,
+    `with` AS `with`,
+    true AS true,
+    false AS false,
+    trait AS trait,
+    except AS except,
+    do AS do,
+    extends AS extends,
+    assert AS assert,
+    global AS global,
+    import AS import,
+    concat(trait, extends) AS CAST,
+    concat(trait, extends) AS ADD,
+    concat(trait, extends) AS ALLOCATE,
+    concat(trait, extends) AS AT,
+    concat(trait, extends) AS BOTH
+  
+  FROM IS_INCREMENTAL AS in0
+
+),
+
 PIVOT AS (
 
-  {#Retrieves a comprehensive list of SQL keywords for reference or documentation purposes.#}
+  {#Generates a comprehensive list of SQL keywords and their corresponding formats for reference and documentation purposes.#}
   SELECT 
     LIMIT AS LIMIT,
     JOIN AS JOIN,
@@ -2684,9 +2760,10 @@ PIVOT AS (
     extends AS extends,
     assert AS assert,
     global AS global,
-    import AS import
+    import AS import,
+    concat(`cast`, `add`, `allocate`, `at`, `both`, FULL, CROSS, `limit`) AS cast
   
-  FROM IS_INCREMENTAL AS in0
+  FROM Reformattest312312 AS in0
 
 ),
 
