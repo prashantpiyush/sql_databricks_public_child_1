@@ -10914,7 +10914,7 @@
         "y" : 3220,
         "phase" : 0,
         "macroDependencies" : [ ],
-        "comment" : "Generates a comprehensive list of SQL keywords and their corresponding formats for reference and documentation purposes.",
+        "comment" : "Generates a comprehensive list of SQL keywords and their definitions for reference.",
         "autoUpdateComment" : true,
         "isLabelGrayed" : false
       },

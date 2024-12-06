@@ -2700,7 +2700,7 @@ Reformattest312312 AS (
 
 PIVOT AS (
 
-  {#Generates a comprehensive list of SQL keywords and their corresponding formats for reference and documentation purposes.#}
+  {#Generates a comprehensive list of SQL keywords and their definitions for reference.#}
   SELECT 
     LIMIT AS LIMIT,
     JOIN AS JOIN,
