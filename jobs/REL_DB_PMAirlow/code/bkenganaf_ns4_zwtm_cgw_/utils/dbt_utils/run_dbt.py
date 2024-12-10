@@ -320,6 +320,8 @@ def invoke_dbt_runner(run_mode, entity_kind, entity_name, run_deps,
         project_folder = f"{temp_folder}/project"
         LOG.info(f"project_folder: {project_folder} + flag:{(os.path.isdir(project_folder))} zip_path:{zip_path}")
 
+        set_git_keypass(tmp_file, git_token_secret)
+
         cmd_list = []
         if not (os.path.isdir(project_folder)):
             git_cmd = "git clone "
@@ -340,8 +342,6 @@ def invoke_dbt_runner(run_mode, entity_kind, entity_name, run_deps,
             cmd_list = [git_cmd]
             command_runner(cmd_list)
             cmd_list = []
-
-        set_git_keypass(tmp_file, git_token_secret)
 
         LOG.info(f"Prophecy managed update on path {project_folder}")
         make_dbt_profiles_dir(profiles_temp_dir, dbt_profile_secret)
