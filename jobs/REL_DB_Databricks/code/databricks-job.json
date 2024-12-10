@@ -56,7 +56,7 @@
           "spark.prophecy.metadata.job.uri" : "__PROJECT_ID_PLACEHOLDER__/jobs/REL_DB_Databricks",
           "spark.prophecy.metadata.is.interactive.run" : "false",
           "spark.prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
-          "spark.prophecy.metadata.user.id" : "4",
+          "spark.prophecy.metadata.user.id" : "3",
           "spark.prophecy.tasks" : "H4sIAAAAAAAAAKuuBQBDv6ajAgAAAA==",
           "spark.prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
           "spark.prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
