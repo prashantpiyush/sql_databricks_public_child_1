@@ -67,6 +67,115 @@
       "connections" : [ ],
       "processes" : { }
     },
+    "swQuv63WtNpSP5NdvxHvB" : {
+      "id" : "swQuv63WtNpSP5NdvxHvB",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "DBT_OAuth",
+        "slug" : "DBT_OAuth",
+        "x" : 1000,
+        "y" : 420
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Y6Oslx9gtiWB7C2GlMeHf",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "o1wJheX3OjO4g0vAg1zPo",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "retries" : 10,
+        "retry_exponential_backoff" : true
+      },
+      "properties" : {
+        "entityId" : "74/.prophecy/metadata/sqlmodels/env_uitesting_shared_mid_model_1",
+        "cacheSelectedOnly" : null,
+        "gitSubPath" : null,
+        "runModelWithParents" : true,
+        "defer" : null,
+        "noDefer" : null,
+        "runSeed" : true,
+        "gitEntity" : "branch",
+        "noPartialParse" : null,
+        "model" : "env_uitesting_shared_mid_model_1",
+        "warnErrorOptions" : null,
+        "state" : null,
+        "useExperimentalParser" : null,
+        "gitSshUrl" : null,
+        "indirectSelection" : null,
+        "partialParse" : null,
+        "runRun" : true,
+        "vars" : null,
+        "noPrint" : true,
+        "quiet" : null,
+        "projectId" : "74",
+        "runMode" : "model",
+        "runOnlyModel" : false,
+        "favorState" : null,
+        "failFast" : true,
+        "noStaticParser" : null,
+        "runTest" : false,
+        "select" : null,
+        "recordTimingInfo" : null,
+        "fullRefresh" : true,
+        "entityName" : "env_uitesting_shared_mid_model_1",
+        "noCacheSelectedOnly" : null,
+        "noFavorState" : null,
+        "profile" : "run_profile",
+        "noVersionCheck" : null,
+        "noWriteJson" : false,
+        "printerWidth" : null,
+        "sqlFabricId" : "4353",
+        "gitEntityValue" : "dev_staging",
+        "logFormat" : null,
+        "runModelWithChildren" : true,
+        "models" : null,
+        "target" : null,
+        "exclude" : null,
+        "runDeps" : true,
+        "noAnonymousUsageStats" : null,
+        "selector" : null,
+        "targetPath" : null,
+        "threads" : "2",
+        "warnError" : null,
+        "currentProjectModels" : [ {
+          "label" : "tpcds_uitesting_shared_1",
+          "value" : "tpcds_uitesting_shared_1",
+          "id" : "74/.prophecy/metadata/sqlmodels/tpcds_uitesting_shared_1",
+          "name" : "tpcds_uitesting_shared_1"
+        }, {
+          "label" : "env_uitesting_shared_useallmodel_1",
+          "value" : "env_uitesting_shared_useallmodel_1",
+          "id" : "74/.prophecy/metadata/sqlmodels/env_uitesting_shared_useallmodel_1",
+          "name" : "env_uitesting_shared_useallmodel_1"
+        }, {
+          "label" : "env_uitesting_shared_parent_model_1",
+          "value" : "env_uitesting_shared_parent_model_1",
+          "id" : "74/.prophecy/metadata/sqlmodels/env_uitesting_shared_parent_model_1",
+          "name" : "env_uitesting_shared_parent_model_1"
+        }, {
+          "label" : "env_uitesting_shared_child_model_1",
+          "value" : "env_uitesting_shared_child_model_1",
+          "id" : "74/.prophecy/metadata/sqlmodels/env_uitesting_shared_child_model_1",
+          "name" : "env_uitesting_shared_child_model_1"
+        }, {
+          "label" : "env_uitesting_shared_mid_model_1",
+          "value" : "env_uitesting_shared_mid_model_1",
+          "id" : "74/.prophecy/metadata/sqlmodels/env_uitesting_shared_mid_model_1",
+          "name" : "env_uitesting_shared_mid_model_1"
+        } ],
+        "profilesDir" : "/home/airflow/gcs/data",
+        "taskId" : null,
+        "logPath" : null,
+        "storeFailures" : null,
+        "entityKind" : "model"
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
     "mBQhjg88LmLiZ9eoyiiur$$dr_PIoqMQN3fdB0NWFB6M" : {
       "id" : "mBQhjg88LmLiZ9eoyiiur$$dr_PIoqMQN3fdB0NWFB6M",
       "component" : "S3FileSensor",
@@ -294,5 +403,11 @@
     "target" : "zkaEBclBUdfGDvo8M8MKm$$8Y5u03HXMUnpuDInAZ2lV",
     "sourcePort" : "Zj0ehX15LKvcBdR6zeeKg",
     "targetPort" : "Ti9v1dvFVj9bobvGikzTk$$3_kGQ-AQafcgEA6YRIPyj"
+  }, {
+    "id" : "tf2aaD_0fD65L14BqpqbQ$$Pqshvoa1wnQmO6to3u-rM",
+    "source" : "mBQhjg88LmLiZ9eoyiiur$$dr_PIoqMQN3fdB0NWFB6M",
+    "target" : "swQuv63WtNpSP5NdvxHvB",
+    "sourcePort" : "-dII46RngJyrKoD4xd00l$$d58P6eDoe0D-dQhK1SEKE",
+    "targetPort" : "Y6Oslx9gtiWB7C2GlMeHf"
   } ]
 }
