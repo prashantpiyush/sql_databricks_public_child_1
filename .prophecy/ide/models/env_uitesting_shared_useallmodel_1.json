@@ -11392,6 +11392,8 @@
           "component" : "SQLStatement",
           "metadata" : {
             "label" : "pvt1",
+            "x" : 480,
+            "y" : 220,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -11483,6 +11485,8 @@
           "component" : "SQLStatement",
           "metadata" : {
             "label" : "pvt2",
+            "x" : 480,
+            "y" : 420,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -11592,6 +11596,8 @@
           "component" : "SetOperation",
           "metadata" : {
             "label" : "SQLStatement_5",
+            "x" : 740,
+            "y" : 120,
             "phase" : 0,
             "isLabelGrayed" : false
           },
@@ -11666,6 +11672,8 @@
           "component" : "Reformat",
           "metadata" : {
             "label" : "Reformat_10",
+            "x" : 20,
+            "y" : 220,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -11840,6 +11848,8 @@
           "component" : "Reformat",
           "metadata" : {
             "label" : "departments",
+            "x" : 220,
+            "y" : 20,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -11965,6 +11975,8 @@
           "component" : "Deduplicate",
           "metadata" : {
             "label" : "SQLStatement_1_1_1_1",
+            "x" : 20,
+            "y" : 440,
             "phase" : 0,
             "isLabelGrayed" : false
           },
@@ -12081,6 +12093,8 @@
           "component" : "Reformat",
           "metadata" : {
             "label" : "employees",
+            "x" : 220,
+            "y" : 220,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -12239,6 +12253,8 @@
           "component" : "SQLStatement",
           "metadata" : {
             "label" : "SQLStatementtest1232134",
+            "x" : 220,
+            "y" : 440,
             "phase" : 0,
             "macroDependencies" : [ ],
             "comment" : "Filters specific performance records based on defined criteria.",
@@ -12449,6 +12465,8 @@
           "component" : "SQLStatement",
           "metadata" : {
             "label" : "pvt",
+            "x" : 480,
+            "y" : 20,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
