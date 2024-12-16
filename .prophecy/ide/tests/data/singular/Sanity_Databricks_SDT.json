@@ -9,11 +9,11 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "limit" : "3000",
-        "fail_calc" : "\"count(*)\"",
-        "severity" : "'error'",
-        "error_if" : "\">=4000\"",
         "warn_if" : "\">=3500\"",
+        "fail_calc" : "\"count(*)\"",
+        "error_if" : "\">=4000\"",
+        "severity" : "'error'",
+        "limit" : "3000",
         "type" : "TestConfig"
       }
     },
