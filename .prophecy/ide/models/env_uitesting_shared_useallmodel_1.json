@@ -11392,6 +11392,8 @@
           "component" : "SQLStatement",
           "metadata" : {
             "label" : "pvt1",
+            "x" : 480,
+            "y" : 220,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -11483,6 +11485,8 @@
           "component" : "SQLStatement",
           "metadata" : {
             "label" : "pvt2",
+            "x" : 480,
+            "y" : 420,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -11592,6 +11596,8 @@
           "component" : "SetOperation",
           "metadata" : {
             "label" : "SQLStatement_5",
+            "x" : 740,
+            "y" : 120,
             "phase" : 0,
             "isLabelGrayed" : false
           },
@@ -11666,6 +11672,8 @@
           "component" : "Reformat",
           "metadata" : {
             "label" : "Reformat_10",
+            "x" : 20,
+            "y" : 220,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -11840,6 +11848,8 @@
           "component" : "Reformat",
           "metadata" : {
             "label" : "departments",
+            "x" : 220,
+            "y" : 20,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -11965,6 +11975,8 @@
           "component" : "Deduplicate",
           "metadata" : {
             "label" : "SQLStatement_1_1_1_1",
+            "x" : 20,
+            "y" : 440,
             "phase" : 0,
             "isLabelGrayed" : false
           },
@@ -12081,6 +12093,8 @@
           "component" : "Reformat",
           "metadata" : {
             "label" : "employees",
+            "x" : 220,
+            "y" : 220,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -12239,6 +12253,8 @@
           "component" : "SQLStatement",
           "metadata" : {
             "label" : "SQLStatementtest1232134",
+            "x" : 220,
+            "y" : 440,
             "phase" : 0,
             "macroDependencies" : [ ],
             "comment" : "Filters specific performance records based on defined criteria.",
@@ -12449,6 +12465,8 @@
           "component" : "SQLStatement",
           "metadata" : {
             "label" : "pvt",
+            "x" : 480,
+            "y" : 20,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -12879,6 +12897,8 @@
           "component" : "SQLStatement",
           "metadata" : {
             "label" : "SQLStatement_4_2",
+            "x" : 220,
+            "y" : 420,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -13047,6 +13067,8 @@
           "component" : "Reformat",
           "metadata" : {
             "label" : "Reformat_1_2_2",
+            "x" : 20,
+            "y" : 820,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -13182,6 +13204,8 @@
           "component" : "Reformat",
           "metadata" : {
             "label" : "SQLStatement_6",
+            "x" : 20,
+            "y" : 420,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -13356,6 +13380,8 @@
           "component" : "Limit",
           "metadata" : {
             "label" : "Limit_4",
+            "x" : 220,
+            "y" : 20,
             "phase" : 0,
             "isLabelGrayed" : false
           },
@@ -13423,6 +13449,8 @@
           "component" : "Reformat",
           "metadata" : {
             "label" : "AllExSQL",
+            "x" : 220,
+            "y" : 620,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -18056,6 +18084,8 @@
           "component" : "OrderBy",
           "metadata" : {
             "label" : "OrderBy_1",
+            "x" : 20,
+            "y" : 20,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -18128,6 +18158,8 @@
           "component" : "SQLStatement",
           "metadata" : {
             "label" : "SQLStatement_1_3",
+            "x" : 220,
+            "y" : 220,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -18165,6 +18197,8 @@
           "component" : "Macro",
           "metadata" : {
             "label" : "combine_multiple_tables_4",
+            "x" : 480,
+            "y" : 400,
             "phase" : 0,
             "macroDependencies" : [ "SQL_DatabricksSharedBasic.combine_multiple_tables" ],
             "comment" : "Consolidates data from multiple tables for comprehensive analysis.",
@@ -20843,6 +20877,8 @@
           "component" : "Filter",
           "metadata" : {
             "label" : "Filter_1_1_1",
+            "x" : 220,
+            "y" : 820,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
@@ -20911,6 +20947,8 @@
           "component" : "Reformat",
           "metadata" : {
             "label" : "Reformat_1_2_1",
+            "x" : 20,
+            "y" : 620,
             "phase" : 0,
             "macroDependencies" : [ ],
             "isLabelGrayed" : false
