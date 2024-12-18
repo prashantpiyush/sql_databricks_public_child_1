@@ -1,4 +1,59 @@
-WITH very_complex_table AS (
+WITH qa_complex_array_data AS (
+
+  SELECT * 
+  
+  FROM {{ source('hive_metastore.qa_database', 'qa_complex_array_data') }}
+
+),
+
+exploded_complex_data AS (
+
+  {#Breaks down complex data structures into individual components for detailed analysis.#}
+  SELECT 
+    array_of_integers.col AS array_of_integers,
+    array_of_strings.col AS array_of_strings,
+    id AS id,
+    name AS name,
+    nested_array_of_strings.col AS nested_array_of_strings,
+    array_of_structs.col.description AS description,
+    array_of_mixed_structs.col.nested.flag AS flag,
+    array_of_mixed_structs.col AS array_of_mixed_structs,
+    array_of_mixed_structs.col.details AS details
+  
+  FROM qa_complex_array_data AS in0, 
+  LATERAL explode_outer(array_of_integers) AS array_of_integers, 
+  LATERAL explode_outer(array_of_strings) AS array_of_strings, 
+  LATERAL explode_outer(nested_array_of_strings) AS nested_array_of_strings, 
+  LATERAL explode_outer(array_of_structs) AS array_of_structs, 
+  LATERAL explode_outer(array_of_mixed_structs) AS array_of_mixed_structs
+
+),
+
+win_row AS (
+
+  {#Organizes complex data into ranked entries for better analysis and reporting.#}
+  SELECT 
+    *,
+    row_number() OVER (PARTITION BY id, name, array_of_mixed_structs.nested.value ORDER BY array_of_mixed_structs.nested.flag ASC NULLS LAST, description DESC NULLS FIRST, details ASC ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS id1,
+    row_number() OVER (PARTITION BY id, name, array_of_mixed_structs.nested.value ORDER BY array_of_mixed_structs.nested.flag ASC NULLS LAST, description DESC NULLS FIRST, details ASC ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS name1
+  
+  FROM exploded_complex_data AS in0
+
+),
+
+win_range AS (
+
+  {#Calculates maximum IDs and average values for grouped data, enhancing insights into trends.#}
+  SELECT 
+    *,
+    max(id) OVER (PARTITION BY array_of_mixed_structs.nested.value ORDER BY id ASC, id1 ASC, name1 ASC RANGE BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS id2,
+    avg(array_of_mixed_structs.nested.value) OVER (PARTITION BY array_of_mixed_structs.nested.value ORDER BY id ASC, id1 ASC, name1 ASC RANGE BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS name2
+  
+  FROM win_row AS in0
+
+),
+
+very_complex_table AS (
 
   SELECT * 
   
@@ -12,113 +67,6 @@ distinct_asthma_medications AS (
   SELECT DISTINCT `c_complex-array`.Asthma.medications.medicationsClasses.className_1.`associated-Drug`
   
   FROM very_complex_table AS in0
-
-),
-
-IS_INCREMENTAL AS (
-
-  SELECT * 
-  
-  FROM {{ source('qa-team.qa_database', 'table_keywords') }}
-
-),
-
-PIVOT AS (
-
-  {#Retrieves a comprehensive list of SQL keywords for reference or documentation purposes.#}
-  SELECT 
-    LIMIT AS LIMIT,
-    JOIN AS JOIN,
-    ASC AS ASC,
-    DESC AS DESC,
-    INNER AS INNER,
-    FULL AS FULL,
-    CROSS AS CROSS,
-    SEMI AS SEMI,
-    ANTI AS ANTI,
-    ESCAPE AS ESCAPE,
-    INTERVAL AS INTERVAL,
-    LEFT AS LEFT,
-    RIGHT AS RIGHT,
-    OUTER AS OUTER,
-    TIMESTAMP AS TIMESTAMP,
-    DATETIME AS DATETIME,
-    END AS END,
-    OVER AS OVER,
-    RANGE AS RANGE,
-    PRECEDING AS PRECEDING,
-    FORMAT AS FORMAT,
-    ARRAY AS ARRAY,
-    PARTITION AS PARTITION,
-    UNBOUNDED AS UNBOUNDED,
-    JSON AS JSON,
-    TYPE AS TYPE,
-    IGNORE AS IGNORE,
-    RESPECT AS RESPECT,
-    VERSION AS VERSION,
-    FILTER AS FILTER,
-    CLUSTER AS CLUSTER,
-    DISTRIBUTE AS DISTRIBUTE,
-    ROLLUP AS ROLLUP,
-    CUBE AS CUBE,
-    GROUPING AS GROUPING,
-    SETS AS SETS,
-    LATERAL AS LATERAL,
-    OFFSET AS OFFSET,
-    SORT AS SORT,
-    WINDOW AS WINDOW,
-    FETCH AS FETCH,
-    catch AS catch,
-    finally AS finally,
-    object AS object,
-    protected AS protected,
-    return AS return,
-    final AS final,
-    new AS new,
-    while AS while,
-    yield AS yield,
-    true AS true,
-    false AS false,
-    trait AS trait,
-    except AS except,
-    do AS do,
-    extends AS extends,
-    assert AS assert,
-    global AS global,
-    import AS import
-  
-  FROM IS_INCREMENTAL AS in0
-
-),
-
-UNPIVOT AS (
-
-  SELECT * 
-  
-  FROM PIVOT AS in0
-  
-  LIMIT 10
-
-),
-
-array_contains AS (
-
-  SELECT * 
-  
-  FROM UNPIVOT AS in0
-  
-  WHERE true
-
-),
-
-map_contains_key AS (
-
-  {#Sorts filtered results based on specified criteria for better visibility.#}
-  SELECT * 
-  
-  FROM array_contains AS in0
-  
-  ORDER BY LIMIT ASC, JOIN DESC
 
 )
 

@@ -3502,7 +3502,7 @@
         "y" : 3080,
         "phase" : 0,
         "macroDependencies" : [ ],
-        "comment" : "Identifies records with a specific integer condition, ensuring data integrity by comparing counts from two sources.",
+        "comment" : "Identifies records in a partitioned dataset that do not match a specific count derived from multiple sources.",
         "autoUpdateComment" : true,
         "isLabelGrayed" : false
       },
@@ -3511,7 +3511,7 @@
           "path" : "out",
           "id" : "out",
           "language" : "sql",
-          "content" : "SELECT *\n\nFROM all_type_partitioned\n\nWHERE c_int != (\n        (SELECT count(*) FROM hive_metastore.qa_database.tpcds_uitesting_shared_1)\n        + (SELECT count(*) FROM map_contains_key)\n       )\n\nLIMIT 100\n"
+          "content" : "SELECT *\n\nFROM all_type_partitioned\n\nWHERE c_int != (\n        (SELECT count(*) FROM hive_metastore.qa_database.tpcds_uitesting_shared_1)\n        + (SELECT count(*) FROM map_contains_key) + (SELECT count(*) FROM win_range)\n       )\n\nLIMIT 100\n"
         } ]
       },
       "ports" : {
@@ -3521,6 +3521,9 @@
         }, {
           "id" : "TyVmjB5lc-ALZNL04UeG1$$EummbtKM_9QEGEY67I0zX",
           "slug" : "map_contains_key"
+        }, {
+          "id" : "c7m3dgYktAER7oZnKfKP5$$m7Zn3AQoo4CjH9lmFEZjh",
+          "slug" : "win_range"
         } ],
         "outputs" : [ {
           "id" : "wpXNBKRt",
@@ -9497,7 +9500,7 @@
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ "LkhQvTbV##c_string", "LkhQvTbV##c_int", "LkhQvTbV##c_tinyint" ],
+        "columnsSelector" : [ ],
         "orders" : [ {
           "expression" : {
             "expression" : "concat(c_string, c_int)"
@@ -10273,6 +10276,108 @@
         } ],
         "outputs" : [ {
           "id" : "wUw3pBqs",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "vPWCrgfgiu10nNmb2ENFl$$vF9rxbuA_Cp0jCM8xWAcF" : {
+      "id" : "vPWCrgfgiu10nNmb2ENFl$$vF9rxbuA_Cp0jCM8xWAcF",
+      "component" : "FlattenSchema",
+      "metadata" : {
+        "label" : "exploded_complex_data",
+        "slug" : "exploded_complex_data",
+        "x" : 200,
+        "y" : 3340,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Breaks down complex data structures into individual components for detailed analysis.",
+        "autoUpdateComment" : true,
+        "isLabelGrayed" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "9E1AhRZe4avv6dgCVaTyY$$jOst84VK9aduBoJwP7GbA##array_of_integers", "9E1AhRZe4avv6dgCVaTyY$$jOst84VK9aduBoJwP7GbA##array_of_strings", "9E1AhRZe4avv6dgCVaTyY$$jOst84VK9aduBoJwP7GbA##nested_array_of_strings", "9E1AhRZe4avv6dgCVaTyY$$jOst84VK9aduBoJwP7GbA##array_of_structs", "9E1AhRZe4avv6dgCVaTyY$$jOst84VK9aduBoJwP7GbA##array_of_mixed_structs", "9E1AhRZe4avv6dgCVaTyY$$jOst84VK9aduBoJwP7GbA##id", "9E1AhRZe4avv6dgCVaTyY$$jOst84VK9aduBoJwP7GbA##name" ],
+        "flattenExpressions" : [ {
+          "expression" : {
+            "expression" : "array_of_integers"
+          },
+          "alias" : "array_of_integers"
+        }, {
+          "expression" : {
+            "expression" : "array_of_strings"
+          },
+          "alias" : "array_of_strings"
+        }, {
+          "expression" : {
+            "expression" : "nested_array_of_strings"
+          },
+          "alias" : "nested_array_of_strings"
+        }, {
+          "expression" : {
+            "expression" : "array_of_structs"
+          },
+          "alias" : "array_of_structs"
+        }, {
+          "expression" : {
+            "expression" : "array_of_mixed_structs"
+          },
+          "alias" : "array_of_mixed_structs"
+        } ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "array_of_integers.col"
+          },
+          "alias" : "array_of_integers"
+        }, {
+          "expression" : {
+            "expression" : "array_of_strings.col"
+          },
+          "alias" : "array_of_strings"
+        }, {
+          "expression" : {
+            "expression" : "id"
+          },
+          "alias" : "id"
+        }, {
+          "expression" : {
+            "expression" : "name"
+          },
+          "alias" : "name"
+        }, {
+          "expression" : {
+            "expression" : "nested_array_of_strings.col"
+          },
+          "alias" : "nested_array_of_strings"
+        }, {
+          "expression" : {
+            "expression" : "array_of_structs.col.description"
+          },
+          "alias" : "description"
+        }, {
+          "expression" : {
+            "expression" : "array_of_mixed_structs.col.nested.flag"
+          },
+          "alias" : "flag"
+        }, {
+          "expression" : {
+            "expression" : "array_of_mixed_structs.col"
+          },
+          "alias" : "array_of_mixed_structs"
+        }, {
+          "expression" : {
+            "expression" : "array_of_mixed_structs.col.details"
+          },
+          "alias" : "details"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "9E1AhRZe4avv6dgCVaTyY$$jOst84VK9aduBoJwP7GbA",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "Dzpo84UpJKBR8FXaSHdWV$$5boDAVcpXdZdULx_1Fn1H",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -21391,6 +21496,34 @@
         "autoUpdateOnRun" : false
       }
     },
+    "LUFHSe_PTC1Hl8GytPz_6$$JKTw4Ui4wyoS-XM9r-ZF9" : {
+      "id" : "LUFHSe_PTC1Hl8GytPz_6$$JKTw4Ui4wyoS-XM9r-ZF9",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "qa_complex_array_data",
+        "slug" : "qa_complex_array_data",
+        "x" : -20,
+        "y" : 3340,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "qa_complex_array_data",
+          "sourceType" : "Source",
+          "sourceName" : "hive_metastore.qa_database",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "nTNjKQpbmUXOmIx5kvNiU$$xNWXkSmejzSjs-N49RV7T",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
     "item##hUrMkDmC" : {
       "id" : "item##hUrMkDmC",
       "component" : "Source",
@@ -21813,6 +21946,78 @@
       },
       "index" : 11
     },
+    "MlgY-J74i3RTgxKfDqvs-$$o4nM-J2HByRdYb1ruiBxf" : {
+      "id" : "MlgY-J74i3RTgxKfDqvs-$$o4nM-J2HByRdYb1ruiBxf",
+      "component" : "WindowFunction",
+      "metadata" : {
+        "label" : "win_range",
+        "slug" : "win_range",
+        "x" : 580,
+        "y" : 3340,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Calculates maximum IDs and average values for grouped data, enhancing insights into trends.",
+        "autoUpdateComment" : true,
+        "isLabelGrayed" : false
+      },
+      "properties" : {
+        "frameEndType" : "unboundedFollowing",
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "max(id)"
+          },
+          "alias" : "id2"
+        }, {
+          "expression" : {
+            "expression" : "avg(array_of_mixed_structs.nested.value)"
+          },
+          "alias" : "name2"
+        } ],
+        "frameType" : "range",
+        "activeTab" : "frameTab",
+        "columnsSelector" : [ "oLJLT_GPgbHovRNx9J7OZ$$BiXRzq9vrs8l_AJ07o4tW##array_of_mixed_structs", "oLJLT_GPgbHovRNx9J7OZ$$BiXRzq9vrs8l_AJ07o4tW##array_of_mixed_structs.nested", "oLJLT_GPgbHovRNx9J7OZ$$BiXRzq9vrs8l_AJ07o4tW##array_of_mixed_structs.nested.value", "oLJLT_GPgbHovRNx9J7OZ$$BiXRzq9vrs8l_AJ07o4tW##id", "oLJLT_GPgbHovRNx9J7OZ$$BiXRzq9vrs8l_AJ07o4tW##id1", "oLJLT_GPgbHovRNx9J7OZ$$BiXRzq9vrs8l_AJ07o4tW##name1" ],
+        "partitionExpressions" : [ {
+          "expression" : {
+            "expression" : "array_of_mixed_structs.nested.value"
+          }
+        } ],
+        "frameStartType" : "unboundedPreceding",
+        "ordersBy" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "id"
+            }
+          },
+          "sortType" : "asc"
+        }, {
+          "expression" : {
+            "expression" : {
+              "expression" : "id1"
+            }
+          },
+          "sortType" : "asc"
+        }, {
+          "expression" : {
+            "expression" : {
+              "expression" : "name1"
+            }
+          },
+          "sortType" : "asc"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "oLJLT_GPgbHovRNx9J7OZ$$BiXRzq9vrs8l_AJ07o4tW",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "mVucZ06Z6G7cy1ZMAwL-F$$gbZmsoPNdhzFM0-ZB03G8",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
     "all_type_non_par##PLSigiDI" : {
       "id" : "all_type_non_par##PLSigiDI",
       "component" : "Source",
@@ -21871,6 +22076,88 @@
         "autoUpdateOnRun" : false
       },
       "index" : 47
+    },
+    "9us0n7lQ1GDOHDe5aGYSP$$N_oRPzb4rnJ5NgDz7zgvx" : {
+      "id" : "9us0n7lQ1GDOHDe5aGYSP$$N_oRPzb4rnJ5NgDz7zgvx",
+      "component" : "WindowFunction",
+      "metadata" : {
+        "label" : "win_row",
+        "slug" : "win_row",
+        "x" : 440,
+        "y" : 3340,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Organizes complex data into ranked entries for better analysis and reporting.",
+        "autoUpdateComment" : true,
+        "isLabelGrayed" : false
+      },
+      "properties" : {
+        "frameEndType" : "currentRow",
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "row_number()"
+          },
+          "alias" : "id1"
+        }, {
+          "expression" : {
+            "expression" : "row_number()"
+          },
+          "alias" : "name1"
+        } ],
+        "frameType" : "row",
+        "activeTab" : "orderTab",
+        "columnsSelector" : [ "sRBDHfxPubI_L--ygIlsM$$PBZKxVeVduELK1aNgGqYX##id", "sRBDHfxPubI_L--ygIlsM$$PBZKxVeVduELK1aNgGqYX##name", "sRBDHfxPubI_L--ygIlsM$$PBZKxVeVduELK1aNgGqYX##array_of_mixed_structs", "sRBDHfxPubI_L--ygIlsM$$PBZKxVeVduELK1aNgGqYX##array_of_mixed_structs.nested", "sRBDHfxPubI_L--ygIlsM$$PBZKxVeVduELK1aNgGqYX##array_of_mixed_structs.nested.value", "sRBDHfxPubI_L--ygIlsM$$PBZKxVeVduELK1aNgGqYX##array_of_mixed_structs.nested.flag", "sRBDHfxPubI_L--ygIlsM$$PBZKxVeVduELK1aNgGqYX##description", "sRBDHfxPubI_L--ygIlsM$$PBZKxVeVduELK1aNgGqYX##details" ],
+        "partitionExpressions" : [ {
+          "expression" : {
+            "expression" : "id"
+          }
+        }, {
+          "expression" : {
+            "expression" : "name"
+          }
+        }, {
+          "expression" : {
+            "expression" : "array_of_mixed_structs.nested.value"
+          }
+        } ],
+        "frameStartType" : "unboundedPreceding",
+        "ordersBy" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "array_of_mixed_structs.nested.flag"
+            }
+          },
+          "sortType" : "asc",
+          "nullsType" : "nulls last"
+        }, {
+          "expression" : {
+            "expression" : {
+              "expression" : "description"
+            }
+          },
+          "sortType" : "desc",
+          "nullsType" : "nulls first"
+        }, {
+          "expression" : {
+            "expression" : {
+              "expression" : "details"
+            }
+          },
+          "sortType" : "asc"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "sRBDHfxPubI_L--ygIlsM$$PBZKxVeVduELK1aNgGqYX",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "m73sO0tPr9PCMYwxgzzZE$$06AQ2zvNSP-mBiXqSNF73",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
     },
     "Reformat_1_2_1_1##DMbCmqcB" : {
       "id" : "Reformat_1_2_1_1##DMbCmqcB",
@@ -22372,6 +22659,30 @@
     "sourcePort" : "t9vE7JR4DtG4RAzZzc4ii$$lyow41pQ6fP7SXf4wiP6v",
     "target" : "DpwKpFuL9Ry8AGvWsoenh$$nM2T8hP9QtkxRDfIdOBxe",
     "targetPort" : "9NEBEQaIcSUqkv9sSIW7g$$qI33obHQ2d6SxpBD0Zmgx"
+  }, {
+    "id" : "RkvniMuad2tTZ4mo2E-mi",
+    "source" : "LUFHSe_PTC1Hl8GytPz_6$$JKTw4Ui4wyoS-XM9r-ZF9",
+    "sourcePort" : "nTNjKQpbmUXOmIx5kvNiU$$xNWXkSmejzSjs-N49RV7T",
+    "target" : "vPWCrgfgiu10nNmb2ENFl$$vF9rxbuA_Cp0jCM8xWAcF",
+    "targetPort" : "9E1AhRZe4avv6dgCVaTyY$$jOst84VK9aduBoJwP7GbA"
+  }, {
+    "id" : "khOz91dRrNVyjIb9PLz_U",
+    "source" : "vPWCrgfgiu10nNmb2ENFl$$vF9rxbuA_Cp0jCM8xWAcF",
+    "sourcePort" : "Dzpo84UpJKBR8FXaSHdWV$$5boDAVcpXdZdULx_1Fn1H",
+    "target" : "9us0n7lQ1GDOHDe5aGYSP$$N_oRPzb4rnJ5NgDz7zgvx",
+    "targetPort" : "sRBDHfxPubI_L--ygIlsM$$PBZKxVeVduELK1aNgGqYX"
+  }, {
+    "id" : "1kCfq0M6x9mrykbPeNjlx",
+    "source" : "9us0n7lQ1GDOHDe5aGYSP$$N_oRPzb4rnJ5NgDz7zgvx",
+    "sourcePort" : "m73sO0tPr9PCMYwxgzzZE$$06AQ2zvNSP-mBiXqSNF73",
+    "target" : "MlgY-J74i3RTgxKfDqvs-$$o4nM-J2HByRdYb1ruiBxf",
+    "targetPort" : "oLJLT_GPgbHovRNx9J7OZ$$BiXRzq9vrs8l_AJ07o4tW"
+  }, {
+    "id" : "Y-xR0cORd6HQWiP9O-M_-",
+    "source" : "MlgY-J74i3RTgxKfDqvs-$$o4nM-J2HByRdYb1ruiBxf",
+    "sourcePort" : "mVucZ06Z6G7cy1ZMAwL-F$$gbZmsoPNdhzFM0-ZB03G8",
+    "target" : "SQLStatement_1##KHWvETJq",
+    "targetPort" : "c7m3dgYktAER7oZnKfKP5$$m7Zn3AQoo4CjH9lmFEZjh"
   } ],
   "component" : "Model"
 }
