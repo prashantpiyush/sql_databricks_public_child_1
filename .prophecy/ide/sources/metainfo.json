@@ -64495,6 +64495,31 @@
               }
             } ]
           },
+          "alias_test_automationabhishek_model" : {
+            "entityType" : "TABLE",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "c_ui_macro",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_generic_round",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "cfor_2",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "cfor_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "payments" : {
             "entityType" : "TABLE",
             "providerType" : "Databricks",
@@ -64911,6 +64936,184 @@
               "name" : "branch",
               "dataType" : {
                 "type" : "String"
+              }
+            }, {
+              "name" : "gem_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "process_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "gem_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "input_gems",
+              "dataType" : {
+                "type" : "Array",
+                "dataType" : {
+                  "type" : "Struct",
+                  "fields" : [ {
+                    "name" : "gem_name",
+                    "dataType" : {
+                      "type" : "String"
+                    }
+                  }, {
+                    "name" : "from_port",
+                    "dataType" : {
+                      "type" : "String"
+                    }
+                  }, {
+                    "name" : "to_port",
+                    "dataType" : {
+                      "type" : "String"
+                    }
+                  }, {
+                    "name" : "num_rows",
+                    "dataType" : {
+                      "type" : "Bigint"
+                    }
+                  } ]
+                }
+              }
+            }, {
+              "name" : "output_gems",
+              "dataType" : {
+                "type" : "Array",
+                "dataType" : {
+                  "type" : "Struct",
+                  "fields" : [ {
+                    "name" : "gem_name",
+                    "dataType" : {
+                      "type" : "String"
+                    }
+                  }, {
+                    "name" : "from_port",
+                    "dataType" : {
+                      "type" : "String"
+                    }
+                  }, {
+                    "name" : "to_port",
+                    "dataType" : {
+                      "type" : "String"
+                    }
+                  }, {
+                    "name" : "num_rows",
+                    "dataType" : {
+                      "type" : "Bigint"
+                    }
+                  } ]
+                }
+              }
+            }, {
+              "name" : "in_ports",
+              "dataType" : {
+                "type" : "Array",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }
+            }, {
+              "name" : "out_ports",
+              "dataType" : {
+                "type" : "Array",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }
+            }, {
+              "name" : "num_rows_output",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "stdout",
+              "dataType" : {
+                "type" : "Array",
+                "dataType" : {
+                  "type" : "Struct",
+                  "fields" : [ {
+                    "name" : "content",
+                    "dataType" : {
+                      "type" : "String"
+                    }
+                  }, {
+                    "name" : "time",
+                    "dataType" : {
+                      "type" : "Bigint"
+                    }
+                  } ]
+                }
+              }
+            }, {
+              "name" : "stderr",
+              "dataType" : {
+                "type" : "Array",
+                "dataType" : {
+                  "type" : "Struct",
+                  "fields" : [ {
+                    "name" : "content",
+                    "dataType" : {
+                      "type" : "String"
+                    }
+                  }, {
+                    "name" : "time",
+                    "dataType" : {
+                      "type" : "Bigint"
+                    }
+                  } ]
+                }
+              }
+            }, {
+              "name" : "start_time",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "end_time",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "state",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "exception",
+              "dataType" : {
+                "type" : "Struct",
+                "fields" : [ {
+                  "name" : "exception_type",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "msg",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "cause_msg",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "stack_trace",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "time",
+                  "dataType" : {
+                    "type" : "Bigint"
+                  }
+                } ]
               }
             } ]
           },
@@ -65379,6 +65582,26 @@
               }
             } ]
           },
+          "test_automationabhishek_databricks_jobs_model" : {
+            "entityType" : "TABLE",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "id",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "updated_at",
+              "dataType" : {
+                "type" : "Date"
+              }
+            } ]
+          },
           "test_catalog_destination_2" : {
             "entityType" : "TABLE",
             "providerType" : "Databricks",
@@ -65745,6 +65968,61 @@
               "name" : "c_bool",
               "dataType" : {
                 "type" : "Boolean"
+              }
+            } ]
+          },
+          "all_type_table" : {
+            "entityType" : "TABLE",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "id",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "age",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "salary",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "department",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "start_date",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "active",
+              "dataType" : {
+                "type" : "Boolean"
+              }
+            }, {
+              "name" : "rating",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "notes",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "email",
+              "dataType" : {
+                "type" : "String"
               }
             } ]
           },
@@ -69803,6 +70081,21 @@
               }
             } ]
           },
+          "dummy_seed" : {
+            "entityType" : "TABLE",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "first_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "last_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "test12334_nonexistent1" : {
             "entityType" : "TABLE",
             "providerType" : "Databricks",
@@ -70077,29 +70370,334 @@
             "entityType" : "TABLE",
             "providerType" : "Databricks",
             "fields" : [ {
-              "name" : "c_int",
+              "name" : "id",
               "dataType" : {
                 "type" : "Bigint"
               }
             }, {
-              "name" : "c_bignumeric",
-              "dataType" : {
-                "type" : "Bigint"
-              }
-            }, {
-              "name" : "c_string",
+              "name" : "name",
               "dataType" : {
                 "type" : "String"
               }
             }, {
-              "name" : "c_float64",
+              "name" : "updated_at",
               "dataType" : {
-                "type" : "Double"
+                "type" : "Date"
+              }
+            } ]
+          },
+          "table_keywords" : {
+            "entityType" : "TABLE",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "LIMIT",
+              "dataType" : {
+                "type" : "String"
               }
             }, {
-              "name" : "c_bool",
+              "name" : "JOIN",
               "dataType" : {
-                "type" : "Boolean"
+                "type" : "String"
+              }
+            }, {
+              "name" : "ASC",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "DESC",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "INNER",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "FULL",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "CROSS",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "SEMI",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "ANTI",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "ESCAPE",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "INTERVAL",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "LEFT",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "RIGHT",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "OUTER",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "TIMESTAMP",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "DATETIME",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "END",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "OVER",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "RANGE",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "PRECEDING",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "FORMAT",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "ARRAY",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "PARTITION",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "UNBOUNDED",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "JSON",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "TYPE",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "IGNORE",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "RESPECT",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "VERSION",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "FILTER",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "CLUSTER",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "DISTRIBUTE",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "ROLLUP",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "CUBE",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "GROUPING",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "SETS",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "LATERAL",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "OFFSET",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "SORT",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "WINDOW",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "FETCH",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "case",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "catch",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "finally",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "object",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "protected",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "return",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "else",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "final",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "new",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "while",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "yield",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "with",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "true",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "false",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "trait",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "except",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "do",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "extends",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "assert",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "global",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "import",
+              "dataType" : {
+                "type" : "Integer"
               }
             } ]
           },
@@ -73767,11 +74365,6 @@
             "entityType" : "VIEW",
             "providerType" : "Databricks",
             "fields" : [ {
-              "name" : "id",
-              "dataType" : {
-                "type" : "Bigint"
-              }
-            }, {
               "name" : "first_name",
               "dataType" : {
                 "type" : "String"
@@ -75330,33 +75923,181 @@
               }
             } ]
           },
-          "qa_test_seed_job_databricks" : {
+          "qa_complex_array_data" : {
             "entityType" : "TABLE",
             "providerType" : "Databricks",
             "fields" : [ {
-              "name" : "c_int",
+              "name" : "id",
               "dataType" : {
-                "type" : "Bigint"
+                "type" : "Integer"
               }
             }, {
-              "name" : "c_bignumeric",
-              "dataType" : {
-                "type" : "Bigint"
-              }
-            }, {
-              "name" : "c_string",
+              "name" : "name",
               "dataType" : {
                 "type" : "String"
               }
             }, {
-              "name" : "c_float64",
+              "name" : "array_of_integers",
               "dataType" : {
-                "type" : "Double"
+                "type" : "Array",
+                "dataType" : {
+                  "type" : "Integer"
+                }
               }
             }, {
-              "name" : "c_bool",
+              "name" : "array_of_strings",
               "dataType" : {
-                "type" : "Boolean"
+                "type" : "Array",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }
+            }, {
+              "name" : "array_of_booleans",
+              "dataType" : {
+                "type" : "Array",
+                "dataType" : {
+                  "type" : "Boolean"
+                }
+              }
+            }, {
+              "name" : "array_of_floats",
+              "dataType" : {
+                "type" : "Array",
+                "dataType" : {
+                  "type" : "Float"
+                }
+              }
+            }, {
+              "name" : "array_of_bigints",
+              "dataType" : {
+                "type" : "Array",
+                "dataType" : {
+                  "type" : "Bigint"
+                }
+              }
+            }, {
+              "name" : "array_of_decimals",
+              "dataType" : {
+                "type" : "Array",
+                "dataType" : {
+                  "type" : "Decimal"
+                }
+              }
+            }, {
+              "name" : "array_of_timestamps",
+              "dataType" : {
+                "type" : "Array",
+                "dataType" : {
+                  "type" : "Timestamp"
+                }
+              }
+            }, {
+              "name" : "array_of_dates",
+              "dataType" : {
+                "type" : "Array",
+                "dataType" : {
+                  "type" : "Date"
+                }
+              }
+            }, {
+              "name" : "array_of_structs",
+              "dataType" : {
+                "type" : "Array",
+                "dataType" : {
+                  "type" : "Struct",
+                  "fields" : [ {
+                    "name" : "id",
+                    "dataType" : {
+                      "type" : "Integer"
+                    }
+                  }, {
+                    "name" : "description",
+                    "dataType" : {
+                      "type" : "String"
+                    }
+                  }, {
+                    "name" : "price",
+                    "dataType" : {
+                      "type" : "Decimal"
+                    }
+                  } ]
+                }
+              }
+            }, {
+              "name" : "nested_array_of_strings",
+              "dataType" : {
+                "type" : "Array",
+                "dataType" : {
+                  "type" : "Array",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }
+              }
+            }, {
+              "name" : "array_of_maps",
+              "dataType" : {
+                "type" : "Array",
+                "dataType" : {
+                  "type" : "Map",
+                  "keyType" : {
+                    "type" : "String"
+                  },
+                  "valueType" : {
+                    "type" : "Integer"
+                  }
+                }
+              }
+            }, {
+              "name" : "array_of_mixed_structs",
+              "dataType" : {
+                "type" : "Array",
+                "dataType" : {
+                  "type" : "Struct",
+                  "fields" : [ {
+                    "name" : "details",
+                    "dataType" : {
+                      "type" : "String"
+                    }
+                  }, {
+                    "name" : "nested",
+                    "dataType" : {
+                      "type" : "Struct",
+                      "fields" : [ {
+                        "name" : "value",
+                        "dataType" : {
+                          "type" : "Integer"
+                        }
+                      }, {
+                        "name" : "flag",
+                        "dataType" : {
+                          "type" : "Boolean"
+                        }
+                      } ]
+                    }
+                  } ]
+                }
+              }
+            } ]
+          },
+          "qa_test_seed_job_databricks" : {
+            "entityType" : "TABLE",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "id",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "updated_at",
+              "dataType" : {
+                "type" : "Date"
               }
             } ]
           },
