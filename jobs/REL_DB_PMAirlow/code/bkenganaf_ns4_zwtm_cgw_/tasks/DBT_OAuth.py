@@ -40,5 +40,5 @@ def DBT_OAuth():
           "dbt_profile_secret": "02LHkEp6zEu7z-R2YN42k"
         },
         retry_exponential_backoff = True, 
-        retries = 10
+        retries = 0
     )

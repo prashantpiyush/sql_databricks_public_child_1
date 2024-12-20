@@ -87,7 +87,7 @@
         } ]
       },
       "settings" : {
-        "retries" : 10,
+        "retries" : 0,
         "retry_exponential_backoff" : true
       },
       "properties" : {
