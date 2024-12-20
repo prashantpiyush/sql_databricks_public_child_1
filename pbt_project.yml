@@ -576,52 +576,7 @@ sqlModels:
     createdAt: '2023-04-12 09:19:50'
   .prophecy/metadata/sqlmodels/env_uitesting_shared_useallmodel_1:
     name: env_uitesting_shared_useallmodel_1
-    schema:
-      entityType: ''
-      providerType: Databricks
-      fields:
-      - name: c_tinyint
-        dataType:
-          type: TinyInt
-      - name: c_smallint
-        dataType:
-          type: SmallInt
-      - name: c_int
-        dataType:
-          type: Integer
-      - name: c_bigint
-        dataType:
-          type: Bigint
-      - name: c_float
-        dataType:
-          type: Float
-      - name: c_double
-        dataType:
-          type: Double
-      - name: c_string
-        dataType:
-          type: String
-      - name: c_boolean
-        dataType:
-          type: Boolean
-      - name: c_array
-        dataType:
-          type: Array
-          dataType:
-            type: String
-      - name: c_struct
-        dataType:
-          type: Struct
-          fields:
-          - name: city
-            dataType:
-              type: String
-          - name: state
-            dataType:
-              type: String
-          - name: pin
-            dataType:
-              type: Bigint
+    schema: null
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
