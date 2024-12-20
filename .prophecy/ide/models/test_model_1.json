@@ -2,86 +2,160 @@
   "id" : "test_model_1",
   "metainfo" : {
     "label" : "test_model_1",
-    "autoLayout" : true,
+    "autoLayout" : false,
     "staleState" : "none",
     "sourceSuggestions" : {
       "sources" : [ ]
     },
-    "graphConfig" : {
-      "userDefinedConfig" : {
-        "vars" : { }
-      }
-    },
     "version" : 3
   },
   "processes" : {
-    "very_complex_tab##YnbAHZW5" : {
-      "id" : "very_complex_tab##YnbAHZW5",
-      "component" : "Source",
+    "JSS3V0PUdrXPzbAlf02dW$$j3mQUSzVj45yQ-tlXXu7s" : {
+      "id" : "JSS3V0PUdrXPzbAlf02dW$$j3mQUSzVj45yQ-tlXXu7s",
+      "component" : "WindowFunction",
       "metadata" : {
-        "label" : "very_complex_table",
+        "label" : "win_range",
+        "slug" : "win_range",
+        "x" : -340,
+        "y" : -320,
         "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Calculates maximum IDs and average values for grouped data, enhancing insights into trends.",
+        "autoUpdateComment" : true,
         "isLabelGrayed" : false
       },
       "properties" : {
+        "frameEndType" : "unboundedFollowing",
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "max(id)"
+          },
+          "alias" : "id2"
+        }, {
+          "expression" : {
+            "expression" : "avg(array_of_mixed_structs.nested.value)"
+          },
+          "alias" : "name2"
+        } ],
+        "frameType" : "range",
+        "activeTab" : "frameTab",
+        "columnsSelector" : [ "YxXD0xfloIj_HIpZQLyvS$$aDHy2Bfe6C5keT1f27Vj3##array_of_mixed_structs", "YxXD0xfloIj_HIpZQLyvS$$aDHy2Bfe6C5keT1f27Vj3##array_of_mixed_structs.nested", "YxXD0xfloIj_HIpZQLyvS$$aDHy2Bfe6C5keT1f27Vj3##array_of_mixed_structs.nested.value", "YxXD0xfloIj_HIpZQLyvS$$aDHy2Bfe6C5keT1f27Vj3##id", "YxXD0xfloIj_HIpZQLyvS$$aDHy2Bfe6C5keT1f27Vj3##id1", "YxXD0xfloIj_HIpZQLyvS$$aDHy2Bfe6C5keT1f27Vj3##name1" ],
+        "partitionExpressions" : [ {
+          "expression" : {
+            "expression" : "array_of_mixed_structs.nested.value"
+          }
+        } ],
+        "frameStartType" : "unboundedPreceding",
+        "ordersBy" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "id"
+            }
+          },
+          "sortType" : "asc"
+        }, {
+          "expression" : {
+            "expression" : {
+              "expression" : "id1"
+            }
+          },
+          "sortType" : "asc"
+        }, {
+          "expression" : {
+            "expression" : {
+              "expression" : "name1"
+            }
+          },
+          "sortType" : "asc"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "YxXD0xfloIj_HIpZQLyvS$$aDHy2Bfe6C5keT1f27Vj3",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "UqGwn25KNjemKQQVaEYUq$$wPSzXnhX-V_1rP6TS3hrB",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "test_model_1##t1FaD8T6" : {
+      "id" : "test_model_1##t1FaD8T6",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "test_model_1",
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM distinct_asthma_medications\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "S2PpKUtB",
+          "slug" : "distinct_asthma_medications"
+        } ],
+        "outputs" : [ {
+          "id" : "tnDOtTUj",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "w8u2ArGrT03kcblo-oFzu" : {
+      "id" : "w8u2ArGrT03kcblo-oFzu",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "qa_complex_array_data",
+        "slug" : "qa_complex_array_data",
+        "x" : -940,
+        "y" : -320,
+        "phase" : 0
+      },
+      "properties" : {
         "table" : {
-          "name" : "very_complex_table",
+          "name" : "qa_complex_array_data",
           "sourceType" : "Source",
-          "sourceName" : "hive_metastore.qa_database"
+          "sourceName" : "hive_metastore.qa_database",
+          "alias" : "",
+          "additionalProperties" : null
         }
       },
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "hLztfVsi",
+          "id" : "U69MRrYFbOgs90EHrZZ5I",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 4
+      }
     },
-    "distinct_asthma_##n31GPBBY" : {
-      "id" : "distinct_asthma_##n31GPBBY",
-      "component" : "Deduplicate",
-      "metadata" : {
-        "label" : "distinct_asthma_medications",
-        "phase" : 0,
-        "comment" : "Identifies unique classes of asthma medications for better treatment options.",
-        "isLabelGrayed" : false
-      },
-      "properties" : {
-        "dedupColumns" : [ {
-          "expression" : {
-            "expression" : "`c_complex-array`.Asthma.medications.medicationsClasses.className_1.`associated-Drug`"
-          }
-        } ],
-        "dedupType" : "distinct",
-        "columnsSelector" : [ ],
-        "orders" : [ ],
-        "useOrderBy" : false
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "S981X55J",
-          "slug" : "in0"
-        } ],
-        "outputs" : [ {
-          "id" : "cnIyCGPi",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      },
-      "index" : 5
-    },
-    "win_row##RCoebX3x" : {
-      "id" : "win_row##RCoebX3x",
+    "0WEAZ-Yg7cNPperyd3Qoe$$kyeplD3c2FpylulALzePT" : {
+      "id" : "0WEAZ-Yg7cNPperyd3Qoe$$kyeplD3c2FpylulALzePT",
       "component" : "WindowFunction",
       "metadata" : {
         "label" : "win_row",
+        "slug" : "win_row",
+        "x" : -480,
+        "y" : -320,
         "phase" : 0,
+        "macroDependencies" : [ ],
         "comment" : "Organizes complex data into ranked entries for better analysis and reporting.",
+        "autoUpdateComment" : true,
         "isLabelGrayed" : false
       },
       "properties" : {
@@ -98,8 +172,8 @@
           "alias" : "name1"
         } ],
         "frameType" : "row",
-        "activeTab" : "partitionTab",
-        "columnsSelector" : [ ],
+        "activeTab" : "orderTab",
+        "columnsSelector" : [ "6vGBnFo5oYCCbvWw3THVo$$xohIWqJzwi4CfzniiPdhb##id", "6vGBnFo5oYCCbvWw3THVo$$xohIWqJzwi4CfzniiPdhb##name", "6vGBnFo5oYCCbvWw3THVo$$xohIWqJzwi4CfzniiPdhb##array_of_mixed_structs", "6vGBnFo5oYCCbvWw3THVo$$xohIWqJzwi4CfzniiPdhb##array_of_mixed_structs.nested", "6vGBnFo5oYCCbvWw3THVo$$xohIWqJzwi4CfzniiPdhb##array_of_mixed_structs.nested.value", "6vGBnFo5oYCCbvWw3THVo$$xohIWqJzwi4CfzniiPdhb##array_of_mixed_structs.nested.flag", "6vGBnFo5oYCCbvWw3THVo$$xohIWqJzwi4CfzniiPdhb##description", "6vGBnFo5oYCCbvWw3THVo$$xohIWqJzwi4CfzniiPdhb##details" ],
         "partitionExpressions" : [ {
           "expression" : {
             "expression" : "id"
@@ -141,157 +215,100 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "xOQo5BNW",
+          "id" : "6vGBnFo5oYCCbvWw3THVo$$xohIWqJzwi4CfzniiPdhb",
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "p9sX9w3V",
+          "id" : "n0Fq-o17SEucQQHOAYcpF$$6R0ftDB9DeX9Sr0f1bfFZ",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 2
+      }
     },
-    "final##zFHMaZE0" : {
-      "id" : "final##zFHMaZE0",
-      "component" : "TargetModel",
+    "f-HTuJEBwn47CLb8icb_-$$Eio4wM928tKoOCxM5hB7m" : {
+      "id" : "f-HTuJEBwn47CLb8icb_-$$Eio4wM928tKoOCxM5hB7m",
+      "component" : "Deduplicate",
       "metadata" : {
-        "label" : "test_model_1",
+        "label" : "distinct_asthma_medications",
+        "slug" : "distinct_asthma_medications",
+        "x" : -460,
+        "y" : -40,
         "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Identifies unique classes of asthma medications for better treatment options.",
+        "autoUpdateComment" : true,
         "isLabelGrayed" : false
       },
       "properties" : {
-        "customQueryDisabled" : true,
-        "customQuery" : false,
-        "incrementalEditorDisabled" : true,
-        "query" : "SELECT *\n\nFROM distinct_asthma_medications\n",
-        "incrementalKey" : false,
-        "incremental" : {
-          "expression" : "true"
-        }
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "`c_complex-array`.Asthma.medications.medicationsClasses.className_1.`associated-Drug`"
+          }
+        } ],
+        "dedupType" : "distinct",
+        "columnsSelector" : [ "EBXskAIQKCtwcc60n-NEQ$$lJjDabxkABX1bIkiAuZ3L##c_complex-array", "EBXskAIQKCtwcc60n-NEQ$$lJjDabxkABX1bIkiAuZ3L##c_complex-array.Asthma", "EBXskAIQKCtwcc60n-NEQ$$lJjDabxkABX1bIkiAuZ3L##c_complex-array.Asthma.medications", "EBXskAIQKCtwcc60n-NEQ$$lJjDabxkABX1bIkiAuZ3L##c_complex-array.Asthma.medications.medicationsClasses", "EBXskAIQKCtwcc60n-NEQ$$lJjDabxkABX1bIkiAuZ3L##c_complex-array.Asthma.medications.medicationsClasses.className_1", "EBXskAIQKCtwcc60n-NEQ$$lJjDabxkABX1bIkiAuZ3L##c_complex-array.Asthma.medications.medicationsClasses.className_1.associated-Drug" ],
+        "orders" : [ ],
+        "useOrderBy" : false
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "fE4XLuFx",
-          "slug" : "distinct_asthma_medications"
+          "id" : "EBXskAIQKCtwcc60n-NEQ$$lJjDabxkABX1bIkiAuZ3L",
+          "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "EvJBlFv6",
+          "id" : "X7DiYDLC6vNHkQ05EFT7Z$$H29mdQStk9vSHhL48c9uX",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 6
+      }
     },
-    "qa_complex_array##YL2G1FYW" : {
-      "id" : "qa_complex_array##YL2G1FYW",
+    "4BB0UM8m3J8PBETQvPABJ" : {
+      "id" : "4BB0UM8m3J8PBETQvPABJ",
       "component" : "Source",
       "metadata" : {
-        "label" : "qa_complex_array_data",
-        "phase" : 0,
-        "isLabelGrayed" : false
+        "label" : "very_complex_table",
+        "slug" : "very_complex_table",
+        "x" : -780,
+        "y" : -60,
+        "phase" : 0
       },
       "properties" : {
         "table" : {
-          "name" : "qa_complex_array_data",
+          "name" : "very_complex_table",
           "sourceType" : "Source",
-          "sourceName" : "hive_metastore.qa_database"
+          "sourceName" : "hive_metastore.qa_database",
+          "alias" : "",
+          "additionalProperties" : null
         }
       },
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "hcZdxavV",
+          "id" : "fq-ndG7jmI8zJx7ZW6GbQ",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 0
+      }
     },
-    "win_range##E39iQ9ZC" : {
-      "id" : "win_range##E39iQ9ZC",
-      "component" : "WindowFunction",
-      "metadata" : {
-        "label" : "win_range",
-        "phase" : 0,
-        "comment" : "Calculates maximum IDs and average values for grouped data, enhancing insights into trends.",
-        "isLabelGrayed" : false
-      },
-      "properties" : {
-        "frameEndType" : "userSpecified",
-        "frameEndValue" : "UNBOUNDED",
-        "expressions" : [ {
-          "expression" : {
-            "expression" : "max(id)"
-          },
-          "alias" : "id2"
-        }, {
-          "expression" : {
-            "expression" : "avg(array_of_mixed_structs.nested.value)"
-          },
-          "alias" : "name2"
-        } ],
-        "frameType" : "range",
-        "activeTab" : "partitionTab",
-        "columnsSelector" : [ ],
-        "partitionExpressions" : [ {
-          "expression" : {
-            "expression" : "array_of_mixed_structs.nested.value"
-          }
-        } ],
-        "frameStartType" : "unboundedPreceding",
-        "ordersBy" : [ {
-          "expression" : {
-            "expression" : {
-              "expression" : "id"
-            }
-          },
-          "sortType" : "asc"
-        }, {
-          "expression" : {
-            "expression" : {
-              "expression" : "id1"
-            }
-          },
-          "sortType" : "asc"
-        }, {
-          "expression" : {
-            "expression" : {
-              "expression" : "name1"
-            }
-          },
-          "sortType" : "asc"
-        } ]
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "JL9OMOyi",
-          "slug" : "in0"
-        } ],
-        "outputs" : [ {
-          "id" : "HvavKg9V",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      },
-      "index" : 3
-    },
-    "exploded_complex##grkybr3i" : {
-      "id" : "exploded_complex##grkybr3i",
+    "LTfN_TvowWgM62d8wAMbb$$wpOWumw2XTEk7eWMWGkWO" : {
+      "id" : "LTfN_TvowWgM62d8wAMbb$$wpOWumw2XTEk7eWMWGkWO",
       "component" : "FlattenSchema",
       "metadata" : {
         "label" : "exploded_complex_data",
+        "slug" : "exploded_complex_data",
+        "x" : -720,
+        "y" : -320,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Breaks down complex data structures into individual components for detailed analysis.",
+        "autoUpdateComment" : true,
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "RiODb1l75Rf1yeSWgbU7o$$hrIOUV0Dlmj8vG5hAASGW##array_of_integers", "RiODb1l75Rf1yeSWgbU7o$$hrIOUV0Dlmj8vG5hAASGW##array_of_strings", "RiODb1l75Rf1yeSWgbU7o$$hrIOUV0Dlmj8vG5hAASGW##nested_array_of_strings", "RiODb1l75Rf1yeSWgbU7o$$hrIOUV0Dlmj8vG5hAASGW##array_of_structs", "RiODb1l75Rf1yeSWgbU7o$$hrIOUV0Dlmj8vG5hAASGW##array_of_mixed_structs", "RiODb1l75Rf1yeSWgbU7o$$hrIOUV0Dlmj8vG5hAASGW##id", "RiODb1l75Rf1yeSWgbU7o$$hrIOUV0Dlmj8vG5hAASGW##name" ],
         "flattenExpressions" : [ {
           "expression" : {
             "expression" : "array_of_integers"
@@ -367,49 +384,48 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "VBOZe4Vi",
+          "id" : "RiODb1l75Rf1yeSWgbU7o$$hrIOUV0Dlmj8vG5hAASGW",
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "F7Hb6yEq",
+          "id" : "y_624SdACwGPC_5kxdueK$$tzy4wYRz9BRNI47dkNT2V",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 1
+      }
     }
   },
   "connections" : [ {
-    "id" : "VdijJnPV",
-    "source" : "qa_complex_array##YL2G1FYW",
-    "sourcePort" : "hcZdxavV",
-    "target" : "exploded_complex##grkybr3i",
-    "targetPort" : "VBOZe4Vi"
+    "id" : "jG0U1NpZMqGufYELysYkU",
+    "source" : "4BB0UM8m3J8PBETQvPABJ",
+    "sourcePort" : "fq-ndG7jmI8zJx7ZW6GbQ",
+    "target" : "f-HTuJEBwn47CLb8icb_-$$Eio4wM928tKoOCxM5hB7m",
+    "targetPort" : "EBXskAIQKCtwcc60n-NEQ$$lJjDabxkABX1bIkiAuZ3L"
   }, {
-    "id" : "aHzjVR9O",
-    "source" : "exploded_complex##grkybr3i",
-    "sourcePort" : "F7Hb6yEq",
-    "target" : "win_row##RCoebX3x",
-    "targetPort" : "xOQo5BNW"
+    "id" : "M9K1HhMiGFsoQ2ew6UAK1",
+    "source" : "f-HTuJEBwn47CLb8icb_-$$Eio4wM928tKoOCxM5hB7m",
+    "sourcePort" : "X7DiYDLC6vNHkQ05EFT7Z$$H29mdQStk9vSHhL48c9uX",
+    "target" : "test_model_1##t1FaD8T6",
+    "targetPort" : "S2PpKUtB"
   }, {
-    "id" : "Eeccdu2r",
-    "source" : "win_row##RCoebX3x",
-    "sourcePort" : "p9sX9w3V",
-    "target" : "win_range##E39iQ9ZC",
-    "targetPort" : "JL9OMOyi"
+    "id" : "F6PPPRUREllTlF8IKvPWK$$jzqAs3PfHsc-FCGTp_7_u",
+    "source" : "w8u2ArGrT03kcblo-oFzu",
+    "sourcePort" : "U69MRrYFbOgs90EHrZZ5I",
+    "target" : "LTfN_TvowWgM62d8wAMbb$$wpOWumw2XTEk7eWMWGkWO",
+    "targetPort" : "RiODb1l75Rf1yeSWgbU7o$$hrIOUV0Dlmj8vG5hAASGW"
   }, {
-    "id" : "BXXsEJcX",
-    "source" : "very_complex_tab##YnbAHZW5",
-    "sourcePort" : "hLztfVsi",
-    "target" : "distinct_asthma_##n31GPBBY",
-    "targetPort" : "S981X55J"
+    "id" : "hqQvjgDGxEc47lj-vL68g$$YzEB-Nu2kZISDx_QGHPgZ",
+    "source" : "LTfN_TvowWgM62d8wAMbb$$wpOWumw2XTEk7eWMWGkWO",
+    "sourcePort" : "y_624SdACwGPC_5kxdueK$$tzy4wYRz9BRNI47dkNT2V",
+    "target" : "0WEAZ-Yg7cNPperyd3Qoe$$kyeplD3c2FpylulALzePT",
+    "targetPort" : "6vGBnFo5oYCCbvWw3THVo$$xohIWqJzwi4CfzniiPdhb"
   }, {
-    "id" : "b29cKPYF",
-    "source" : "distinct_asthma_##n31GPBBY",
-    "sourcePort" : "cnIyCGPi",
-    "target" : "final##zFHMaZE0",
-    "targetPort" : "fE4XLuFx"
+    "id" : "zRrM2GDk5GQRayXw1okSn$$LBTebTkZ_e2g4IimTWBtv",
+    "source" : "0WEAZ-Yg7cNPperyd3Qoe$$kyeplD3c2FpylulALzePT",
+    "sourcePort" : "n0Fq-o17SEucQQHOAYcpF$$6R0ftDB9DeX9Sr0f1bfFZ",
+    "target" : "JSS3V0PUdrXPzbAlf02dW$$j3mQUSzVj45yQ-tlXXu7s",
+    "targetPort" : "YxXD0xfloIj_HIpZQLyvS$$aDHy2Bfe6C5keT1f27Vj3"
   } ],
   "component" : "Model"
 }
