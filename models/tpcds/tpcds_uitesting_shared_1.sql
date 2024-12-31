@@ -1,101 +1,8 @@
-WITH SQLStatement_1 AS (
-
-  SELECT 
-    substr(w_warehouse_name, 1, 20),
-    sm_type,
-    cc_name,
-    sum(CASE
-      WHEN (cs_ship_date_sk - cs_sold_date_sk <= 30)
-        THEN 1
-      ELSE 0
-    END) AS days_30,
-    sum(
-      CASE
-        WHEN (cs_ship_date_sk - cs_sold_date_sk > 30) and (cs_ship_date_sk - cs_sold_date_sk <= 60)
-          THEN 1
-        ELSE 0
-      END) AS days_31_60,
-    sum(
-      CASE
-        WHEN (cs_ship_date_sk - cs_sold_date_sk > 60) and (cs_ship_date_sk - cs_sold_date_sk <= 90)
-          THEN 1
-        ELSE 0
-      END) AS days_61_90,
-    sum(
-      CASE
-        WHEN (cs_ship_date_sk - cs_sold_date_sk > 90) and (cs_ship_date_sk - cs_sold_date_sk <= 120)
-          THEN 1
-        ELSE 0
-      END) AS days_90_120,
-    sum(CASE
-      WHEN (cs_ship_date_sk - cs_sold_date_sk > 120)
-        THEN 1
-      ELSE 0
-    END) AS days_more_than_120
-  
-  FROM hive_metastore.qa_database.catalog_sales, hive_metastore.qa_database.warehouse, hive_metastore.qa_database.ship_mode, hive_metastore.qa_database.call_center, hive_metastore.qa_database.date_dim
-  
-  WHERE d_month_seq BETWEEN 1200 AND 1200 + 11
-        and cs_ship_date_sk = d_date_sk
-        and cs_warehouse_sk = w_warehouse_sk
-        and cs_ship_mode_sk = sm_ship_mode_sk
-        and cs_call_center_sk = cc_call_center_sk
-  
-  GROUP BY 
-    substr(w_warehouse_name, 1, 20), sm_type, cc_name
-  
-  ORDER BY substr(w_warehouse_name, 1, 20), sm_type, cc_name
-  
-  LIMIT 100
-
-),
-
-date_dim AS (
-
-  SELECT * 
-  
-  FROM {{ source('spark_catalog.qa_database', 'date_dim') }}
-
-),
-
-item AS (
-
-  SELECT * 
-  
-  FROM {{ source('spark_catalog.qa_database', 'item') }}
-
-),
-
-store_sales AS (
+WITH store_sales AS (
 
   SELECT * 
   
   FROM {{ source('spark_catalog.qa_database', 'store_sales') }}
-
-),
-
-SQLStatement_2 AS (
-
-  SELECT 
-    i_item_id,
-    i_item_desc,
-    i_category,
-    i_class,
-    i_current_price,
-    sum(ss_ext_sales_price) AS itemrevenue,
-    sum(ss_ext_sales_price) * 100 / sum(sum(ss_ext_sales_price)) OVER (PARTITION BY i_class) AS revenueratio
-  
-  FROM store_sales, item, date_dim
-  
-  WHERE ss_item_sk = i_item_sk
-        and i_category IN ('Women', 'Electronics', 'Shoes')
-        and ss_sold_date_sk = d_date_sk
-        and d_date BETWEEN CAST('2002-05-27' AS date) AND dateadd(DAY, 30, to_date('2002-05-27'))
-  
-  GROUP BY 
-    i_item_id, i_item_desc, i_category, i_class, i_current_price
-  
-  ORDER BY i_category, i_class, i_item_id, i_item_desc, revenueratio
 
 ),
 
@@ -232,6 +139,99 @@ SQLStatement_3 AS (
               )
           and store.s_store_name = 'ese'
   ) AS s8
+
+),
+
+item AS (
+
+  SELECT * 
+  
+  FROM {{ source('spark_catalog.qa_database', 'item') }}
+
+),
+
+date_dim AS (
+
+  SELECT * 
+  
+  FROM {{ source('spark_catalog.qa_database', 'date_dim') }}
+
+),
+
+SQLStatement_2 AS (
+
+  SELECT 
+    i_item_id,
+    i_item_desc,
+    i_category,
+    i_class,
+    i_current_price,
+    sum(ss_ext_sales_price) AS itemrevenue,
+    sum(ss_ext_sales_price) * 100 / sum(sum(ss_ext_sales_price)) OVER (PARTITION BY i_class) AS revenueratio
+  
+  FROM store_sales, item, date_dim
+  
+  WHERE ss_item_sk = i_item_sk
+        and i_category IN ('Women', 'Electronics', 'Shoes')
+        and ss_sold_date_sk = d_date_sk
+        and d_date BETWEEN CAST('2002-05-27' AS DATE) AND dateadd(DAY, 30, to_date('2002-05-27'))
+  
+  GROUP BY 
+    i_item_id, i_item_desc, i_category, i_class, i_current_price
+  
+  ORDER BY i_category, i_class, i_item_id, i_item_desc, revenueratio
+
+),
+
+SQLStatement_1 AS (
+
+  SELECT 
+    substr(w_warehouse_name, 1, 20),
+    sm_type,
+    cc_name,
+    sum(CASE
+      WHEN (cs_ship_date_sk - cs_sold_date_sk <= 30)
+        THEN 1
+      ELSE 0
+    END) AS days_30,
+    sum(
+      CASE
+        WHEN (cs_ship_date_sk - cs_sold_date_sk > 30) and (cs_ship_date_sk - cs_sold_date_sk <= 60)
+          THEN 1
+        ELSE 0
+      END) AS days_31_60,
+    sum(
+      CASE
+        WHEN (cs_ship_date_sk - cs_sold_date_sk > 60) and (cs_ship_date_sk - cs_sold_date_sk <= 90)
+          THEN 1
+        ELSE 0
+      END) AS days_61_90,
+    sum(
+      CASE
+        WHEN (cs_ship_date_sk - cs_sold_date_sk > 90) and (cs_ship_date_sk - cs_sold_date_sk <= 120)
+          THEN 1
+        ELSE 0
+      END) AS days_90_120,
+    sum(CASE
+      WHEN (cs_ship_date_sk - cs_sold_date_sk > 120)
+        THEN 1
+      ELSE 0
+    END) AS days_more_than_120
+  
+  FROM hive_metastore.qa_database.catalog_sales, hive_metastore.qa_database.warehouse, hive_metastore.qa_database.ship_mode, hive_metastore.qa_database.call_center, hive_metastore.qa_database.date_dim
+  
+  WHERE d_month_seq BETWEEN 1200 AND 1200 + 11
+        and cs_ship_date_sk = d_date_sk
+        and cs_warehouse_sk = w_warehouse_sk
+        and cs_ship_mode_sk = sm_ship_mode_sk
+        and cs_call_center_sk = cc_call_center_sk
+  
+  GROUP BY 
+    substr(w_warehouse_name, 1, 20), sm_type, cc_name
+  
+  ORDER BY substr(w_warehouse_name, 1, 20), sm_type, cc_name
+  
+  LIMIT 100
 
 ),
 

@@ -8,7 +8,15 @@
   })
 }}
 
-WITH uitesting_expressions_1_1 AS (
+WITH uitesting_expressions_1 AS (
+
+  SELECT * 
+  
+  FROM {{ ref('uitesting_expressions_1')}}
+
+),
+
+uitesting_expressions_1_1 AS (
 
   SELECT * 
   
@@ -34,34 +42,6 @@ Limit_1 AS (
 
 ),
 
-Limit_4 AS (
-
-  SELECT * 
-  
-  FROM uitesting_expressions_1_1 AS in0
-  
-  LIMIT 10
-
-),
-
-uitesting_expressions_1 AS (
-
-  SELECT * 
-  
-  FROM {{ ref('uitesting_expressions_1')}}
-
-),
-
-Limit_3 AS (
-
-  SELECT * 
-  
-  FROM uitesting_expressions_1 AS in0
-  
-  LIMIT 10
-
-),
-
 snapshot_sanity_test_1 AS (
 
   SELECT * 
@@ -75,6 +55,26 @@ Limit_2 AS (
   SELECT * 
   
   FROM snapshot_sanity_test_1 AS in0
+  
+  LIMIT 10
+
+),
+
+Limit_4 AS (
+
+  SELECT * 
+  
+  FROM uitesting_expressions_1_1 AS in0
+  
+  LIMIT 10
+
+),
+
+Limit_3 AS (
+
+  SELECT * 
+  
+  FROM uitesting_expressions_1 AS in0
   
   LIMIT 10
 
