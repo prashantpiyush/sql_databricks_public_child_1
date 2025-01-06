@@ -40,5 +40,5 @@ def DBT_0():
           "dbt_profile_secret": "NBGW5z7eP5DyFVJyclt-j"
         },
         retry_exponential_backoff = True, 
-        retries = 10
+        retries = 1
     )
