@@ -2,10 +2,715 @@
   "id" : "env_uitesting_shared_useallmodel_1",
   "metainfo" : {
     "label" : "env_uitesting_shared_useallmodel_1",
-    "autoLayout" : true,
+    "autoLayout" : false,
     "staleState" : "none",
     "sourceSuggestions" : {
-      "sources" : [ ]
+      "sources" : [ {
+        "source" : {
+          "table" : {
+            "name" : "customerdata",
+            "sourceName" : "hive_metastore.qa_db_warehouse",
+            "sourceType" : "ExternalSource"
+          }
+        },
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "customerdata",
+        "canJoinWith" : [ {
+          "processLabel" : "raw_customers",
+          "processId" : "raw_customers##hc8zynrq",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "first_name", "last_name" ],
+            "conditions" : [ {
+              "alias" : "customerdata",
+              "expression" : {
+                "expression" : "customerdata.first_name = raw_customers.first_name AND customerdata.last_name = raw_customers.last_name"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "customerdata.customer_id"
+              },
+              "alias" : "customer_id"
+            }, {
+              "expression" : {
+                "expression" : "customerdata.phone"
+              },
+              "alias" : "phone"
+            }, {
+              "expression" : {
+                "expression" : "customerdata.email"
+              },
+              "alias" : "email"
+            }, {
+              "expression" : {
+                "expression" : "customerdata.country_code"
+              },
+              "alias" : "country_code"
+            }, {
+              "expression" : {
+                "expression" : "customerdata.account_open_date"
+              },
+              "alias" : "account_open_date"
+            }, {
+              "expression" : {
+                "expression" : "customerdata.account_flags"
+              },
+              "alias" : "account_flags"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.id"
+              },
+              "alias" : "id"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.first_name"
+              },
+              "alias" : "first_name"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.last_name"
+              },
+              "alias" : "last_name"
+            } ],
+            "headAlias" : "customerdata",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "first_name", "last_name" ],
+          "isRecommended" : true
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "customers",
+            "sourceName" : "spark_catalog.qa_suggestion_database",
+            "sourceType" : "Source"
+          }
+        },
+        "sourceComponentKind" : "Source",
+        "sourceLabel" : "customers",
+        "canJoinWith" : [ {
+          "processLabel" : "raw_customers",
+          "processId" : "raw_customers##hc8zynrq",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "first_name", "last_name" ],
+            "conditions" : [ {
+              "alias" : "customers",
+              "expression" : {
+                "expression" : "customers.FIRST_NAME = raw_customers.first_name AND customers.LAST_NAME = raw_customers.last_name"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "customers.ID"
+              },
+              "alias" : "ID"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.id"
+              },
+              "alias" : "id"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.first_name"
+              },
+              "alias" : "first_name"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.last_name"
+              },
+              "alias" : "last_name"
+            } ],
+            "headAlias" : "customers",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "first_name", "last_name" ],
+          "isRecommended" : true
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "env_uitesting_expressions",
+            "sourceName" : "hive_metastore.qa_db_warehouse",
+            "sourceType" : "ExternalSource"
+          }
+        },
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "env_uitesting_expressions",
+        "canJoinWith" : [ {
+          "processLabel" : "raw_customers",
+          "processId" : "raw_customers##hc8zynrq",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "first_name", "last_name" ],
+            "conditions" : [ {
+              "alias" : "env_uitesting_expressions",
+              "expression" : {
+                "expression" : "env_uitesting_expressions.first_name = raw_customers.first_name AND env_uitesting_expressions.last_name = raw_customers.last_name"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "env_uitesting_expressions.customer_id"
+              },
+              "alias" : "customer_id"
+            }, {
+              "expression" : {
+                "expression" : "env_uitesting_expressions.c_expressions"
+              },
+              "alias" : "c_expressions"
+            }, {
+              "expression" : {
+                "expression" : "env_uitesting_expressions.c1"
+              },
+              "alias" : "c1"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.id"
+              },
+              "alias" : "id"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.first_name"
+              },
+              "alias" : "first_name"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.last_name"
+              },
+              "alias" : "last_name"
+            } ],
+            "headAlias" : "env_uitesting_expressions",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "first_name", "last_name" ],
+          "isRecommended" : true
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "qa_complex_array_data",
+            "sourceName" : "hive_metastore.qa_database",
+            "sourceType" : "Source"
+          }
+        },
+        "sourceComponentKind" : "Source",
+        "sourceLabel" : "qa_complex_array_data_1",
+        "canJoinWith" : [ {
+          "processLabel" : "raw_customers",
+          "processId" : "raw_customers##hc8zynrq",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "id" ],
+            "conditions" : [ {
+              "alias" : "qa_complex_array_data_1",
+              "expression" : {
+                "expression" : "qa_complex_array_data_1.id = raw_customers.id"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "qa_complex_array_data_1.name"
+              },
+              "alias" : "name"
+            }, {
+              "expression" : {
+                "expression" : "qa_complex_array_data_1.array_of_integers"
+              },
+              "alias" : "array_of_integers"
+            }, {
+              "expression" : {
+                "expression" : "qa_complex_array_data_1.array_of_strings"
+              },
+              "alias" : "array_of_strings"
+            }, {
+              "expression" : {
+                "expression" : "qa_complex_array_data_1.array_of_booleans"
+              },
+              "alias" : "array_of_booleans"
+            }, {
+              "expression" : {
+                "expression" : "qa_complex_array_data_1.array_of_floats"
+              },
+              "alias" : "array_of_floats"
+            }, {
+              "expression" : {
+                "expression" : "qa_complex_array_data_1.array_of_bigints"
+              },
+              "alias" : "array_of_bigints"
+            }, {
+              "expression" : {
+                "expression" : "qa_complex_array_data_1.array_of_decimals"
+              },
+              "alias" : "array_of_decimals"
+            }, {
+              "expression" : {
+                "expression" : "qa_complex_array_data_1.array_of_timestamps"
+              },
+              "alias" : "array_of_timestamps"
+            }, {
+              "expression" : {
+                "expression" : "qa_complex_array_data_1.array_of_dates"
+              },
+              "alias" : "array_of_dates"
+            }, {
+              "expression" : {
+                "expression" : "qa_complex_array_data_1.array_of_structs"
+              },
+              "alias" : "array_of_structs"
+            }, {
+              "expression" : {
+                "expression" : "qa_complex_array_data_1.nested_array_of_strings"
+              },
+              "alias" : "nested_array_of_strings"
+            }, {
+              "expression" : {
+                "expression" : "qa_complex_array_data_1.array_of_maps"
+              },
+              "alias" : "array_of_maps"
+            }, {
+              "expression" : {
+                "expression" : "qa_complex_array_data_1.array_of_mixed_structs"
+              },
+              "alias" : "array_of_mixed_structs"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.id"
+              },
+              "alias" : "id"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.first_name"
+              },
+              "alias" : "first_name"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.last_name"
+              },
+              "alias" : "last_name"
+            } ],
+            "headAlias" : "qa_complex_array_data_1",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "id" ],
+          "isRecommended" : true
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "stg_customers",
+            "sourceName" : "hive_metastore.qa_database",
+            "sourceType" : "ExternalSource"
+          }
+        },
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "stg_customers",
+        "canJoinWith" : [ {
+          "processLabel" : "raw_customers",
+          "processId" : "raw_customers##hc8zynrq",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "first_name", "last_name" ],
+            "conditions" : [ {
+              "alias" : "stg_customers",
+              "expression" : {
+                "expression" : "stg_customers.first_name = raw_customers.first_name AND stg_customers.last_name = raw_customers.last_name"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "stg_customers.customer_id"
+              },
+              "alias" : "customer_id"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.id"
+              },
+              "alias" : "id"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.first_name"
+              },
+              "alias" : "first_name"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.last_name"
+              },
+              "alias" : "last_name"
+            } ],
+            "headAlias" : "stg_customers",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "first_name", "last_name" ],
+          "isRecommended" : true
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "customerorders",
+            "sourceName" : "hive_metastore.qa_db_warehouse",
+            "sourceType" : "ExternalSource"
+          }
+        },
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "customerorders",
+        "canJoinWith" : [ {
+          "processLabel" : "raw_customers",
+          "processId" : "raw_customers##hc8zynrq",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "first_name", "last_name" ],
+            "conditions" : [ {
+              "alias" : "customerorders",
+              "expression" : {
+                "expression" : "customerorders.first_name = raw_customers.first_name AND customerorders.last_name = raw_customers.last_name"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "customerorders.customer_id"
+              },
+              "alias" : "customer_id"
+            }, {
+              "expression" : {
+                "expression" : "customerorders.revenue"
+              },
+              "alias" : "revenue"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.id"
+              },
+              "alias" : "id"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.first_name"
+              },
+              "alias" : "first_name"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.last_name"
+              },
+              "alias" : "last_name"
+            } ],
+            "headAlias" : "customerorders",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "first_name", "last_name" ],
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "customers_data",
+            "sourceName" : "hive_metastore.qa_db_warehouse",
+            "sourceType" : "ExternalSource"
+          }
+        },
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "customers_data",
+        "canJoinWith" : [ {
+          "processLabel" : "raw_customers",
+          "processId" : "raw_customers##hc8zynrq",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "first_name", "last_name" ],
+            "conditions" : [ {
+              "alias" : "customers_data",
+              "expression" : {
+                "expression" : "customers_data.first_name = raw_customers.first_name AND customers_data.last_name = raw_customers.last_name"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "customers_data.customer_id"
+              },
+              "alias" : "customer_id"
+            }, {
+              "expression" : {
+                "expression" : "customers_data.phone"
+              },
+              "alias" : "phone"
+            }, {
+              "expression" : {
+                "expression" : "customers_data.email"
+              },
+              "alias" : "email"
+            }, {
+              "expression" : {
+                "expression" : "customers_data.country_code"
+              },
+              "alias" : "country_code"
+            }, {
+              "expression" : {
+                "expression" : "customers_data.account_open_date"
+              },
+              "alias" : "account_open_date"
+            }, {
+              "expression" : {
+                "expression" : "customers_data.account_flags"
+              },
+              "alias" : "account_flags"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.id"
+              },
+              "alias" : "id"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.first_name"
+              },
+              "alias" : "first_name"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.last_name"
+              },
+              "alias" : "last_name"
+            } ],
+            "headAlias" : "customers_data",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "first_name", "last_name" ],
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "enhancedexpmodel_2",
+            "sourceName" : "hive_metastore.qa_db_warehouse",
+            "sourceType" : "ExternalSource"
+          }
+        },
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "enhancedexpmodel_2",
+        "canJoinWith" : [ {
+          "processLabel" : "raw_customers",
+          "processId" : "raw_customers##hc8zynrq",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "first_name", "last_name" ],
+            "conditions" : [ {
+              "alias" : "enhancedexpmodel_2",
+              "expression" : {
+                "expression" : "enhancedexpmodel_2.first_name = raw_customers.first_name AND enhancedexpmodel_2.last_name = raw_customers.last_name"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "enhancedexpmodel_2.credit_card_amount"
+              },
+              "alias" : "credit_card_amount"
+            }, {
+              "expression" : {
+                "expression" : "enhancedexpmodel_2.amount"
+              },
+              "alias" : "amount"
+            }, {
+              "expression" : {
+                "expression" : "enhancedexpmodel_2.first_order"
+              },
+              "alias" : "first_order"
+            }, {
+              "expression" : {
+                "expression" : "enhancedexpmodel_2.gift_card_amount"
+              },
+              "alias" : "gift_card_amount"
+            }, {
+              "expression" : {
+                "expression" : "enhancedexpmodel_2.order_date"
+              },
+              "alias" : "order_date"
+            }, {
+              "expression" : {
+                "expression" : "enhancedexpmodel_2.order_id"
+              },
+              "alias" : "order_id"
+            }, {
+              "expression" : {
+                "expression" : "enhancedexpmodel_2.coupon_amount"
+              },
+              "alias" : "coupon_amount"
+            }, {
+              "expression" : {
+                "expression" : "enhancedexpmodel_2.customer_lifetime_value"
+              },
+              "alias" : "customer_lifetime_value"
+            }, {
+              "expression" : {
+                "expression" : "enhancedexpmodel_2.number_of_orders"
+              },
+              "alias" : "number_of_orders"
+            }, {
+              "expression" : {
+                "expression" : "enhancedexpmodel_2.bank_transfer_amount"
+              },
+              "alias" : "bank_transfer_amount"
+            }, {
+              "expression" : {
+                "expression" : "enhancedexpmodel_2.customer_id"
+              },
+              "alias" : "customer_id"
+            }, {
+              "expression" : {
+                "expression" : "enhancedexpmodel_2.most_recent_order"
+              },
+              "alias" : "most_recent_order"
+            }, {
+              "expression" : {
+                "expression" : "enhancedexpmodel_2.status"
+              },
+              "alias" : "status"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.id"
+              },
+              "alias" : "id"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.first_name"
+              },
+              "alias" : "first_name"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.last_name"
+              },
+              "alias" : "last_name"
+            } ],
+            "headAlias" : "enhancedexpmodel_2",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "first_name", "last_name" ],
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "genericdatatestmodel",
+            "sourceName" : "hive_metastore.qa_db_warehouse",
+            "sourceType" : "ExternalSource"
+          }
+        },
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "genericdatatestmodel",
+        "canJoinWith" : [ {
+          "processLabel" : "raw_customers",
+          "processId" : "raw_customers##hc8zynrq",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "first_name", "last_name" ],
+            "conditions" : [ {
+              "alias" : "genericdatatestmodel",
+              "expression" : {
+                "expression" : "genericdatatestmodel.first_name = raw_customers.first_name AND genericdatatestmodel.last_name = raw_customers.last_name"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "raw_customers.id"
+              },
+              "alias" : "id"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.first_name"
+              },
+              "alias" : "first_name"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.last_name"
+              },
+              "alias" : "last_name"
+            } ],
+            "headAlias" : "genericdatatestmodel",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "first_name", "last_name" ],
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "newmodel",
+            "sourceName" : "hive_metastore.qa_db_warehouse",
+            "sourceType" : "ExternalSource"
+          }
+        },
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "newmodel",
+        "canJoinWith" : [ {
+          "processLabel" : "raw_customers",
+          "processId" : "raw_customers##hc8zynrq",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "first_name", "last_name" ],
+            "conditions" : [ {
+              "alias" : "newmodel",
+              "expression" : {
+                "expression" : "newmodel.first_name = raw_customers.first_name AND newmodel.last_name = raw_customers.last_name"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "newmodel.customer_id"
+              },
+              "alias" : "customer_id"
+            }, {
+              "expression" : {
+                "expression" : "newmodel.phone"
+              },
+              "alias" : "phone"
+            }, {
+              "expression" : {
+                "expression" : "newmodel.email"
+              },
+              "alias" : "email"
+            }, {
+              "expression" : {
+                "expression" : "newmodel.country_code"
+              },
+              "alias" : "country_code"
+            }, {
+              "expression" : {
+                "expression" : "newmodel.account_open_date"
+              },
+              "alias" : "account_open_date"
+            }, {
+              "expression" : {
+                "expression" : "newmodel.account_flags"
+              },
+              "alias" : "account_flags"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.id"
+              },
+              "alias" : "id"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.first_name"
+              },
+              "alias" : "first_name"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.last_name"
+              },
+              "alias" : "last_name"
+            } ],
+            "headAlias" : "newmodel",
+            "allowSelection" : false
+          },
+          "joinColumns" : [ "first_name", "last_name" ],
+          "isRecommended" : false
+        } ]
+      } ]
     },
     "graphConfig" : {
       "entityConfig" : {
@@ -34,7 +739,10 @@
       "component" : "SQLStatement",
       "metadata" : {
         "label" : "SQLStatement_1_2",
+        "x" : 1340,
+        "y" : 420,
         "phase" : 0,
+        "macroDependencies" : [ ],
         "isLabelGrayed" : false
       },
       "properties" : {
@@ -53,14 +761,15 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 60
+      }
     },
     "array_contains##wGe4qLIV" : {
       "id" : "array_contains##wGe4qLIV",
       "component" : "Filter",
       "metadata" : {
         "label" : "array_contains",
+        "x" : 880,
+        "y" : 3040,
         "phase" : 0,
         "macroDependencies" : [ ],
         "isLabelGrayed" : false
@@ -90,6 +799,8 @@
       "component" : "Source",
       "metadata" : {
         "label" : "qa_complex_array_data",
+        "x" : 420,
+        "y" : 3240,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -116,13 +827,15 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "AllStunningOne",
+        "x" : 1800,
+        "y" : 1760,
         "phase" : 0,
         "macroDependencies" : [ "SQL_DatabricksSharedBasic.qa_concat_function_main", "SQL_DatabricksParentProjectMain.qa_boolean_macro", "SQL_BaseGitDepProjectAllFinal.qa_concat_macro_base_column" ],
         "comment" : "Generates a comprehensive dataset combining various data transformations and calculations for analysis.",
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "XWBAtT0J##c_array", "XWBAtT0J##c_struct", "XWBAtT0J##c_struct.city", "XWBAtT0J##c_smallint", "XWBAtT0J##c_tinyint", "XWBAtT0J##c_int", "XWBAtT0J##c_bigint", "XWBAtT0J##c_float", "XWBAtT0J##c_double", "XWBAtT0J##c_string", "XWBAtT0J##c_boolean" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "concat(\n  c_array[0], \n  c_struct.city, \n  aes_decrypt(unhex('83F16B2AA704794132802D248E6BFD4E380078182D1544813898AC97E709B28A94'), '0000111122223333'), \n  base64(aes_encrypt('Spark SQL', '1234567890abcdef', 'ECB', 'PKCS')), \n  bin(13), \n  btrim('    SparkSQL   '), \n  char(65), \n  chr(65), \n  concat('Spark', 'SQL'), \n  concat_ws(' ', 'Spark', 'SQL'), \n  crc32('Spark'), \n  current_catalog(), \n  current_database(), \n  current_date(), \n  current_timestamp(), \n  current_timezone(), \n  current_user(), \n  date_add('2016-07-30', 1), \n  date_sub('2016-07-30', 1), \n  date_format('2016-04-08', 'y'), \n  date_from_unix_date(1), \n  date_part('YEAR', TIMESTAMP'2019-08-12 01:00:00.123456'), \n  date_part('MONTH', INTERVAL '2021-11' YEAR TO MONTH), \n  date_part('MINUTE', INTERVAL '123 23:55:59.002001' DAY TO SECOND), \n  date_trunc('HOUR', '2015-03-05T09:32:05.359'), \n  date_trunc('DD', '2015-03-05T09:32:05.359'), \n  datediff('2009-07-31', '2009-07-30'), \n  decode(encode('abc', 'utf-8'), 'utf-8'), \n  e(), \n  elt(1, 'scala', 'java'), \n  format_number(12332.123456, '##################.###'), \n  format_string('Hello World %d %s', 100, 'days'), \n  CAST(from_csv('1, 0.8', 'a INT, b DOUBLE') AS STRING), \n  CAST(from_json(\n    '{\"teacher\": \"Alice\", \"student\": [{\"name\": \"Bob\", \"rank\": 1}, {\"name\": \"Charlie\", \"rank\": 2}]}', \n    'STRUCT<teacher: STRING, student: ARRAY<STRUCT<name: STRING, rank: INT>>>') AS STRING), \n  CAST(from_unixtime(0, 'yyyy-MM-dd HH:mm:ss') AS STRING), \n  CAST(from_utc_timestamp('2016-08-31', 'Asia/Seoul') AS STRING), \n  CAST(get_json_object('{\"a\":\"b\"}', '$.a') AS STRING), \n  hash('Spark', ARRAY(123), 2), \n  hex(17), \n  CAST(hour('2009-07-30 12:58:59') AS STRING), \n  CAST(hypot(3, 4) AS STRING), \n  CAST(ilike('Spark', '_Park') AS STRING), \n  CAST(initcap('sPark sql') AS STRING), \n  CAST(last_day('2009-01-12') AS STRING), \n  CAST(lcase('SparkSql') AS STRING), \n  CAST(if(\n    1 < 2, \n    'a', \n    'b') AS STRING), \n  CAST(ifnull(NULL, ARRAY('2')) AS STRING), \n  LEFT('Spark SQL', 3), \n  lower('SparkSql'), \n  lpad('hi', 5, '??'), \n  ltrim('    SparkSQL   '), \n  CAST(make_date(2013, 7, 15) AS STRING), \n  CAST(make_dt_interval(1, 12, 30, 1.001001) AS STRING), \n  CAST(make_interval(100, 11, 1, 1, 12, 30, 1.001001) AS STRING), \n  CAST(make_timestamp(2019, 6, 30, 23, 59, 60) AS STRING), \n  CAST(make_ym_interval(1, 2) AS STRING), \n  md5('Spark'), \n  next_day('2015-01-14', 'TU'), \n  now(), \n  nullif(2, 2), \n  nvl(NULL, 'hello'), \n  CAST(overlay('Spark SQL' PLACING '_' FROM 6) AS STRING), \n  CAST(parse_url('http://spark.apache.org/path?query=1', 'HOST') AS STRING), \n  printf('Hello World %d %s', 100, 'days'), \n  CAST(regexp_extract('100-200', '(\\\\d+)-(\\\\d+)', 1) AS STRING), \n  CAST(regexp_replace('100-200', '(\\\\d+)', 'num') AS STRING), \n  repeat('123', 2), \n  replace('ABCabc', 'abc', 'DEF'), \n  reverse('Spark SQL'), \n  RIGHT('Spark SQL', 3), \n  rpad('hi', 5, '??'), \n  rtrim('    SparkSQL   '), \n  CAST(schema_of_json('[{\"col\":0}]') AS STRING), \n  sha('Spark'), \n  sha1('Spark'), \n  sha2('Spark', 256), \n  concat(space(2), '1'), \n  split_part('11.12.13', '.', 3), \n  substr('Spark SQL', 5), \n  substring('Spark SQL', 5), \n  substring_index('www.apache.org', '.', 2), \n  timestamp_micros(1230219000123123), \n  timestamp_millis(1230219000123), \n  timestamp_seconds(1.230219000123E9), \n  to_csv(named_struct('a', 1, 'b', 2)), \n  to_date('2009-07-30 04:17:52'), \n  to_timestamp('2016-12-31 00:12:00'), \n  to_unix_timestamp('2016-04-08', 'yyyy-MM-dd'), \n  to_utc_timestamp('2016-08-31', 'Asia/Seoul'), \n  translate('AaBbCc', 'abc', '123'), \n  trunc('2019-08-04', 'week'), \n  try_to_binary('abc', 'utf-8'), \n  try_to_number('454', '999'), \n  typeof(1), \n  ucase('SparkSql'), \n  unbase64('U3BhcmsgU1FM'), \n  decode(unhex('537061726B2053514C'), 'UTF-8'), \n  unix_date(DATE(\"1970-01-02\")), \n  unix_micros(TIMESTAMP('1970-01-01 00:00:01Z')), \n  unix_millis(TIMESTAMP('1970-01-01 00:00:01Z')), \n  unix_seconds(TIMESTAMP('1970-01-01 00:00:01Z')), \n  unix_timestamp('2016-04-08', 'yyyy-MM-dd'), \n  upper('SparkSql'), \n  uuid(), \n  xpath_string('<a><b>b</b><c>cc</c></a>', 'a/c'), \n  xxhash64('Spark', ARRAY(123), 2), \n  YEAR ('2016-07-30'), \n  to_json(ARRAY(named_struct('a', 1, 'b', 2))))"
@@ -283,14 +996,15 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 40
+      }
     },
     "SQLStatement_2_2##xVkUYeCO" : {
       "id" : "SQLStatement_2_2##xVkUYeCO",
       "component" : "Filter",
       "metadata" : {
         "label" : "SQLStatement_2_2_1",
+        "x" : 1540,
+        "y" : 1560,
         "phase" : 0,
         "macroDependencies" : [ ],
         "isLabelGrayed" : false
@@ -320,13 +1034,15 @@
       "component" : "OrderBy",
       "metadata" : {
         "label" : "map_contains_key",
+        "x" : 1080,
+        "y" : 3040,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Sorts filtered results based on specified criteria for better visibility.",
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "H1gl5VMS##LIMIT", "H1gl5VMS##JOIN" ],
         "orders" : [ {
           "expression" : {
             "expression" : "LIMIT"
@@ -350,14 +1066,15 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 22
+      }
     },
     "env_uitesting_ma##aEmozDC7" : {
       "id" : "env_uitesting_ma##aEmozDC7",
       "component" : "Model",
       "metadata" : {
         "label" : "env_uitesting_main_model_databricks_1",
+        "x" : 1800,
+        "y" : 2140,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -383,6 +1100,8 @@
       "component" : "Limit",
       "metadata" : {
         "label" : "Limit_1",
+        "x" : 1540,
+        "y" : 2560,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -410,6 +1129,8 @@
       "component" : "Subgraph",
       "metadata" : {
         "label" : "Subgraph_10",
+        "x" : 2080,
+        "y" : 2600,
         "phase" : 0
       },
       "processes" : {
@@ -431,7 +1152,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "Zh7LVQnU##customer_id", "Zh7LVQnU##last_name", "Zh7LVQnU##first_name" ],
                 "orders" : [ {
                   "expression" : {
                     "expression" : "customer_id"
@@ -527,8 +1248,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 10
+              }
             },
             "Reformat_3_1##gs2iJRWv" : {
               "id" : "Reformat_3_1##gs2iJRWv",
@@ -540,7 +1260,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "ykHromH5##customer_id" ],
                 "expressions" : [ {
                   "expression" : {
                     "expression" : "CAST(customer_id AS INT) > 5"
@@ -599,8 +1319,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 11
+              }
             },
             "SQLStatement_3##aB4zgOnw" : {
               "id" : "SQLStatement_3##aB4zgOnw",
@@ -608,6 +1327,7 @@
               "metadata" : {
                 "label" : "SQLStatement_3",
                 "phase" : 0,
+                "macroDependencies" : [ ],
                 "isLabelGrayed" : false
               },
               "properties" : {
@@ -794,8 +1514,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 6
+              }
             },
             "SQLStatement_2##TRqDupff" : {
               "id" : "SQLStatement_2##TRqDupff",
@@ -803,6 +1522,7 @@
               "metadata" : {
                 "label" : "SQLStatement_2",
                 "phase" : 0,
+                "macroDependencies" : [ ],
                 "isLabelGrayed" : false
               },
               "properties" : {
@@ -1250,8 +1970,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 7
+              }
             },
             "SQLStatement_1_1##g2tE4Yuu" : {
               "id" : "SQLStatement_1_1##g2tE4Yuu",
@@ -1259,6 +1978,7 @@
               "metadata" : {
                 "label" : "SQLStatement_1_1",
                 "phase" : 0,
+                "macroDependencies" : [ ],
                 "isLabelGrayed" : false
               },
               "properties" : {
@@ -1322,8 +2042,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 4
+              }
             },
             "Reformatfsdfdsf1##CSNTGhwF" : {
               "id" : "Reformatfsdfdsf1##CSNTGhwF",
@@ -1335,7 +2054,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "Da8Rxs5v##c_int", "Da8Rxs5v##c_string" ],
                 "expressions" : [ {
                   "expression" : {
                     "expression" : "CAST(c_int AS STRING)"
@@ -1468,8 +2187,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 1
+              }
             },
             "Join_1_1##Paev2xnT" : {
               "id" : "Join_1_1##Paev2xnT",
@@ -1546,7 +2264,7 @@
                   "alias" : "h8_30_to_9"
                 } ],
                 "activeTab" : "conditions",
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "CeXBUcL5##cc_name", "Fmmw0Cfj##i_item_desc", "Fmmw0Cfj##i_current_price", "SIThieCy##h8_30_to_9", "CeXBUcL5##substr(w_warehouse_name, 1, 20)", "CeXBUcL5##sm_type", "CeXBUcL5##cc_name", "CeXBUcL5##days_30", "CeXBUcL5##days_31_60", "CeXBUcL5##days_61_90", "CeXBUcL5##days_90_120", "CeXBUcL5##days_more_than_120", "Fmmw0Cfj##i_item_id", "SIThieCy##h8_30_to_9" ],
                 "headAlias" : "in0"
               },
               "ports" : {
@@ -1751,8 +2469,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 8
+              }
             },
             "Reformat_4_1##qrlQ497D" : {
               "id" : "Reformat_4_1##qrlQ497D",
@@ -1764,7 +2481,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "xODi7InC##customer_id", "xODi7InC##first_name", "xODi7InC##last_name" ],
                 "expressions" : [ {
                   "expression" : {
                     "expression" : "customer_id"
@@ -1833,8 +2550,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 2
+              }
             },
             "combine_multiple##Rpdq12vX" : {
               "id" : "combine_multiple##Rpdq12vX",
@@ -2241,7 +2957,7 @@
                   "expression" : ""
                 },
                 "activeTab" : "aggregate",
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "q9Sff3HR##last_name", "q9Sff3HR##first_name", "q9Sff3HR##customer_id" ],
                 "groupBy" : [ {
                   "expression" : {
                     "expression" : "last_name"
@@ -2302,8 +3018,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 12
+              }
             },
             "all_type_partiti##aCtQeGi1" : {
               "id" : "all_type_partiti##aCtQeGi1",
@@ -2425,7 +3140,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "qjnKRcuK##customer_id", "qjnKRcuK##last_name", "qjnKRcuK##first_name" ],
                 "condition" : {
                   "expression" : "CAST(customer_id AS INT) > 5\nand CAST(customer_id AS INT) != 0\nor first_name LIKE '%A%'\nor ((1 & 1) == 1)\nor ((2 | 2) == 2)\nand 10 * CAST(customer_id AS INT) == 20\nand last_name != first_name\nand (CAST(customer_id AS INT) BETWEEN 10 AND 20)\nand (ARRAY(10, 20, 30)[2] == 30)\nand (MAP(1, 'Hello', 2, 'World')[1] == 'Hello')\nand (10 ^ 20 == 50)\nand (MAP('three', 3).four == NULL)\nand (named_struct('a', 5, 'b', 'Spark').a == 5)\nand (1 = 2 and 1 == 2)\nand (1 >= 2 and 1 <= 2 and 1 != 3 or 2 > 4 or 4 < 5)\nand (\n      EXISTS(\n        ARRAY(1, NULL, 3), \n        x -> x % 2 == 0)\n    )\nor ilike('Spark', '_PARK')\nor (named_struct('a', 1, 'b', 2) IN (named_struct('a', 1, 'b', 1), named_struct('a', 1, 'b', 3)))\nand (1 IS DISTINCT FROM 5)\nand ('invalid' IS false)\nand isnull(1)\nand ('t' IS NOT true)\nand (1 <=> '1')\nand (1 <> CAST(customer_id AS INT))\nand (10 - 2 + 10 == 8)\nand (NOT true)\nand (false or true)\nand (2 % 0 == 0)\nand ('Spark' || 'SQL' == 'SparkSQL')\nand (r'%SystemDrive%\\Users\\John' LIKE r'%SystemDrive%\\\\Users%')\nand (r'%SystemDrive%\\Users\\John' RLIKE '%SystemDrive%\\\\\\\\Users.*')\nand (regexp_like('%SystemDrive%\\\\Users\\\\John', '%SystemDrive%\\\\\\\\Users.*'))\nand (2L / 2L == 10)\nand (~ 0 == -1)\nand (base64(aes_encrypt('Spark', 'abcdefghijklmnop')) == NULL)\nand (CAST(aes_decrypt(unbase64('4A5jOAh9FNGwoMeuJukfllrLdHEZxA2DyuSQAWz77dfn'), 'abcdefghijklmnop') AS STRING) == NULL)\nand (ascii('234') == 234)\nand (base64('Spark SQL') == NULL)\nand (bin(13) == NULL)\nand (binary('Spark SQL') == NULL)\nand (btrim('abcaabaSparkSQLabcaaba', 'abc') != NULL)\nand (char(65) != NULL)\nand (char_length('Spark SQL ') == 10)\nand (character_length('Spark SQL ') == 10)\nand (concat(customer_id, 'hello') != NULL)\nand (concat_ws(',', 'Spark', ARRAY('S', 'Q', NULL, 'L'), NULL) != NULL)\nand contains('SparkSQL', 'Spork')\nand (crc32('Spark') > 0)\nand chr(65) != NULL\nand (3 ^ 5 == 6)\nand (hex(encode('Spark SQL', 'US-ASCII')) != NULL)\nand endswith('SparkSQL', 'SQL')\nand (find_in_set('ab', 'abc,b,ab,c,def') == 2)\nand (format_number(12332.123456, 4) == 2)\nand (format_number(12332.123456, '#.###') == 10)\nand (format_string('Hello World %d %s', 100, 'days') != NULL)\nand (hex('Spark SQL') != NULL)\nand (r'%SystemDrive%\\Users\\John' LIKE '%SystemDrive%\\\\\\\\Users%')\nand (initcap('sPark sql') != NULL)\nand (instr('SparkSQL', 'R') == 2)\nand (lcase('LowerCase') != NULL)\nand (LEFT('Spark SQL', 3) != NULL)\nand (length('Spark SQL ') > 20)\nand (levenshtein('kitten', 'sitting') > 10)\nand (locate('bar', 'abcbarbar') > 2)\nand (locate('bar', 'abcbarbar', 5) > 2)\nand (lower('LowerCase') != NULL)\nand (lpad('hi', 1, '??') != NULL)\nand (hex(lpad(x'1020', 5, x'05')) != NULL)\nand (('+' || ltrim('abc', 'acbabSparkSQL   ') || '+') != NULL)\nand (md5('Spark') != NULL)\nand (octet_length('Spark SQL') != NULL)\nand (parse_url('http://spark.apache.org/path?query=1', 'HOST') != NULL)\nand (position('bar', 'abcbarbar') > 10)\nand (position('bar', 'abcbarbar', 5) > 5)\nand (printf('Hello World %d %s', 100, 'days') != NULL)\nand (r'%SystemDrive%\\Users\\John' RLIKE r'%SystemDrive%\\\\Users.*')\nand (r'%SystemDrive%\\Users\\John' RLIKE '%SystemDrive%\\\\\\\\Users.*')\nand (regexp_like('%SystemDrive%\\\\Users\\\\John', '%SystemDrive%\\\\\\\\Users.*'))\nand (regexp_extract('100-200', '(\\\\d+)-(\\\\d+)', 1) > 10)\nand (regexp_extract_all('100-200, 300-400', '(\\\\d+)-(\\\\d+)', 1) != NULL)\nand (regexp_replace('100-200', '(\\\\d+)', 'num') != NULL)\nand (repeat('123', 2) != NULL)\nand (replace('ABCabc', 'abc', 'DEF') != NULL)\nand (reverse('Spark SQL') != NULL)\nand (RIGHT('Spark SQL', 3) != NULL)\nand (rpad('hi', 5, 'ab') != NULL)\nand (hex(rpad(x'1020', 5, x'05')) != NULL)\nand (rtrim('ab', 'SparkSQLabcaaba') != NULL)\nand (sentences('Hi there! Good morning.', 'en', 'US') != NULL)\nand (sha('Spark') != NULL)\nand (sha1('Spark') != NULL)\nand (sha2('Spark', 256) != NULL)\nand (soundex('Miller') != NULL)\nand (concat('1', space(2), '1') != NULL)\nand (('->' || split_part('Hello,world,!', ',', 1) || '<-') != NULL)\nand (('->' || split_part('', ',', 1) || '<-') != NULL)\nand (('->' || split_part('Hello,World,!', ',', 0) || '<-') != NULL)\nand (startswith('SparkSQL', 'Spark'))\nand (startswith(NULL, 'Spark'))\nand (substr('Spark SQL', 5, 1) != NULL)\nand (substring_index('www.apache.org', '.', 2) != NULL)\nand (CAST(to_binary('537061726B') AS STRING) != NULL)\nand (CAST(to_binary('537061726B', 'hex') AS STRING) != NULL)\nand (CAST(try_to_binary('U3Bhxcms=', 'base64') AS STRING) != NULL)\nand (translate('AaBbCc', 'abc', '123') != NULL)\nand (CAST(try_to_binary('U3Bhxcms=', 'base64') AS STRING) != NULL)\nand (ucase('SparkSql') != NULL)\nand (CAST(unbase64('U3BhcmsgU1FM') AS STRING) != NULL)\nand (decode(unhex('537061726B2053514C'), 'UTF-8') != NULL)\nand (upper('SparkSql') != NULL)\nand (10 / 2 == 5)\nand ((3 | 5) == 2)\nand ((DATE'2021-03-20' - INTERVAL '2' MONTH) != NULL)\nand (10 - 2 + 2 == 4)\nand (2 % 1.8 == 2)\nand (3 ^ 5 == 3)\nand (3 & 5 == 2)\nand (3 * 2 == 2)\nand ((INTERVAL '3' YEAR * 3) != NULL)\nand (abs(-1) == 1)\nand (acos(1) == 1)\nand (acosh(1) == 1)\nand (asin(0) == 1)\nand (asinh(0) == 1)\nand (atan(0) == 1)\nand (atan2(0, 0) == 1)\nand (atanh(0) == 1)\nand (BIGINT(current_timestamp) > 1)\nand (bit_count(-1) > 1)\nand (bit_get(23Y, 1) == 1)\nand (bround(13.5, -1) == 1)\nand (round(13.5, -1) == 1)\nand (cbrt(27.0) == 3)\nand (ceil(3345.1, -2) == 1)\nand (ceiling(5.4) == 6)\nand (ceiling(3345.1, -2) == 1)\nand (conv('100', 2, 10) == 4)\nand (conv('FFFFFFFFFFFFFFFF', 16, 10) == 1)\nand (cos(pi()) == -1)\nand (cosh(0) == 1)\nand (cot(1) == 1)\nand (csc(pi() / 2) == 2)\nand (decimal('5.2') == 5)\nand (degrees(3.141592653589793) == 10)\nand (double('5.2') == 4)\nand (e() == 2)\nand (exp(1) == 2)\nand (expm1(0) == 1)\nand (factorial(2) == 2)\nand (FLOAT('5.2') == 5)\nand (floor(-0.1) == -1)\nand (floor(3345.1, -2) == 20)\nand (getbit(23Y, 0) == 1)\nand (hypot(3, 4) == 5)\nand (INT(-5.6) == 5)\nand (isnan(CAST('NaN' AS double)))\nand (ln(1) == 1)\nand (log(10, 100) == 2)\nand (log1p(0) == 1)\nand (log2(2) == 1)\nand (log10(10) == 1)\nand (nanvl(CAST('NaN' AS DOUBLE), 123) == 2)\nand (negative(1) == -1)\nand (pmod(-10, 3) == 2)\nand (positive(-1) == -1)\nand (pow(2, 3) * power(2, 3) == 8)\nand (radians(180) == 10)\nand (rand(0) * random(0) == 1)\nand (randn(0) == 1)\nand (rint(12.3456) == 1)\nand (round(2.5, 0) == 3)\nand (sec(pi()) == -1)\nand (sin(0) == 0)\nand (shiftleft(2, 1) == 2)\nand (shiftright(4, 1) == 2)\nand (shiftrightunsigned(4, 1) == 2)\nand (sign(40) == 1)\nand (signum(40) == 1)\nand (sinh(0) == 1)\nand (smallint(-5.6) == 5)\nand (sqrt(4) == 2)\nand (tan(0) == 1)\nand (tanh(0) == 1)\nand (tinyint('12') * tinyint(5.4) == 1)\nand (try_add(DATE'2021-03-20', INTERVAL '2' MONTH) != NULL)\nand (try_add(1, 2) == 3)\nand (try_divide(3, 2) == 3)\nand (try_divide(INTERVAL '3:15' HOUR TO MINUTE, 3) != NULL)\nand (try_subtract(1, 2) == 2)\nand (try_subtract(TIMESTAMP'2021-03-20 12:15:29', INTERVAL '3' SECOND) != NULL)\nand (try_subtract(-128Y, 1Y) != NULL)\nand (width_bucket(5.3, 0.2, 10.6, 5) + width_bucket(-0.9, 5.2, 0.5, 2) == 3)\nand (width_bucket(INTERVAL '1' DAY, INTERVAL '0' DAY, INTERVAL '10' DAY, 11) == 10)\nand (ARRAY(10, 20, 30) != NULL)\nand (\n      (\n        aggregate(\n          ARRAY(1, 2, 3), \n          0, \n          (acc, x) -> acc + x, \n          acc -> acc * 10)\n      ) == 1\n    )\nand (array_contains(ARRAY(1, 2, 3), 2))\nand (array_distinct(ARRAY(1, 2, 3, NULL, 3)) != NULL)\nand (array_except(ARRAY(1, 2, 2, 3), ARRAY(1, 1, 3, 5)) != NULL)\nand (array_intersect(ARRAY(1, 2, 3), ARRAY(1, 3, 3, 5)) != NULL)\nand (array_join(ARRAY('hello', 'world'), ',') != NULL)\nand (array_join(ARRAY('hello', NULL, 'world'), ',', '*') == NULL)\nand (array_max(ARRAY(1, 20, NULL, 3)) > 10)\nand (array_min(ARRAY(1, 20, NULL, 3)) == 1)\nand (array_position(ARRAY(3, 2, 1, 4, 1), 1) == 2)\nand (array_remove(ARRAY(1, 2, 3, NULL, 3, 2), 3) != NULL)\nand (array_repeat('123', 2) != NULL)\nand (array_size(ARRAY(1, NULL, 3, NULL)) == 2)\nand (array_sort(ARRAY('bc', 'ab', 'dc')) != NULL)\nand (array_union(ARRAY(1, 2, 2, 3), ARRAY(1, 3, 5)) != NULL)\nand (arrays_overlap(ARRAY(1, 2, NULL, 3), ARRAY(NULL, 4, 5)) == NULL)\nand (arrays_zip(ARRAY(1, 2), ARRAY('shoe', 'string', 'budget')) == NULL)\nand (cardinality(ARRAY('b', 'd', 'c', 'a')) == 2)\nand (concat(ARRAY(1, 2, 3), ARRAY(4, 5), ARRAY(6)) != NULL)\nand (element_at(MAP(1, 'a', 2, 'b'), 2) == NULL)\nand (\n      EXISTS(\n        ARRAY(1, 2, 3), \n        x -> x % 2 == 0)\n    )\nand (\n      EXISTS(\n        ARRAY(0, NULL, 2, 3, NULL), \n        x -> x IS NULL)\n    )\nand (\n      filter(\n        ARRAY(1, 2, 3), \n        x -> x % 2 == 1) != NULL\n    )\nand (flatten(ARRAY(ARRAY(1, 2), ARRAY(3, 4))) != NULL)\nand (\n      forall(\n        ARRAY(1, 2, 3), \n        x -> x % 2 == 0) == NULL\n    )\nand (reverse(ARRAY(2, 1, 4, 3)) != NULL)\nand (sequence(5, 1) != NULL)\nand (cardinality(ARRAY('b', 'd', 'c', 'a')) == 10)\nand (slice(ARRAY(1, 2, 3, 4), 2, 2) != NULL)\nand (sort_array(ARRAY('b', 'd', NULL, 'c', 'a'), true) != NULL)\nand (\n      transform(\n        ARRAY(1, 2, 3), \n        x -> x + 1) != NULL\n    )\nand (try_element_at(ARRAY(1, 2, 3), 2) == 2)\nand (\n      zip_with(\n        ARRAY('a', 'b', 'c'), \n        ARRAY('d', 'e', 'f'), \n        (x, y) -> concat(x, y)) != NULL\n    )\nand (MAP(1, 'Hello', 2, 'World')[1] != NULL)\nand (cardinality(MAP('a', 1, 'b', 2)) == 2)\nand (element_at(MAP(1, 'a', 2, 'b'), 3) == NULL)\nand (MAP(1.0, '2', 3.0, '4') IS NOT NULL)\nand (map_concat(MAP(1, 'a', 2, 'b'), MAP(3, 'c')) IS NOT NULL)\nand (map_contains_key(MAP(1, 'a', 2, 'b'), 2))\nand (map_entries(MAP(1, 'a', 2, 'b')) IS NOT NULL)\nand (\n      map_filter(\n        MAP(1, 0, 2, 2, 3, -1), \n        (k, v) -> k > v) IS NOT NULL\n    )\nand (map_from_arrays(ARRAY(1.0, 3.0), ARRAY('2', '4')) IS NOT NULL)\nand (map_from_entries(ARRAY(STRUCT(1, 'a'), STRUCT(2, 'b'))) IS NOT NULL)\nand (map_keys(MAP(1, 'a', 2, 'b')) IS NOT NULL)\nand (map_values(MAP(1, 'a', 2, 'b')) IS NOT NULL)\nand (\n      map_zip_with(\n        MAP(1, 'a', 2, 'b'), \n        MAP(1, 'x', 2, 'y'), \n        (k, v1, v2) -> concat(v1, v2)) IS NOT NULL\n    )\nand (cardinality(MAP('a', 1, 'b', 2)) == 2)\nand (str_to_map('a:1,b:2,c:3', ',', ':') IS NOT NULL)\nand (\n      transform_keys(\n        map_from_arrays(ARRAY(1, 2, 3), ARRAY(1, 2, 3)), \n        (k, v) -> k + 1) IS NOT NULL\n    )\nand (\n      transform_values(\n        map_from_arrays(ARRAY(1, 2, 3), ARRAY(1, 2, 3)), \n        (k, v) -> k + v) IS NOT NULL\n    )\nand (try_element_at(MAP(1, 'a', 2, 'b'), 2) IS NOT NULL)\nand ((INTERVAL '3:15' HOUR TO MINUTE / 3) IS NOT NULL)\nand ((DATE'2021-03-31' - INTERVAL '1' MONTH) != NULL)\nand (typeof(current_timestamp - (current_date + INTERVAL '1' DAY)) != NULL)\nand ((DATE'2021-03-31' + INTERVAL '1' MONTH) != NULL)\nand ((INTERVAL '3' YEAR * 3) != NULL)\nand (add_months('2016-08-31', -6) != NULL)\nand (current_date() != NULL)\nand (current_timestamp() != NULL)\nand (current_timezone() != NULL)\nand (DATE('2021-03-21') != NULL)\nand (date_add('2016-07-30', 1) != NULL)\nand (date_format('2016-04-08', 'y') == 2016)\nand (date_from_unix_date(1) != NULL)\nand (date_sub('2016-07-30', 1) != NULL)\nand (date_trunc('YEAR', '2015-03-05T09:32:05.359') != NULL)\nand (datediff('2009-07-31', '2009-07-30') == 1)\nand (day('2009-07-30') == 30)\nand (dayofmonth('2009-07-30') == 30)\nand (dayofweek('2009-07-30') == 5)\nand (dayofyear('2016-04-09') == 100)\nand (EXTRACT(SECONDS FROM INTERVAL '5:00:30.001' HOUR TO SECOND) == 30)\nand (EXTRACT(WEEK FROM TIMESTAMP'2019-08-12 01:00:00.123456') == 33)\nand (from_unixtime(0, 'yyyy-MM-dd HH:mm:ss') != NULL)\nand (from_utc_timestamp('2017-07-14 02:40:00.0', 'GMT+1') != NULL)\nand (from_utc_timestamp('2016-08-31', 'Asia/Seoul') != NULL)\nand (hour('2009-07-30 12:58:59') == 10)\nand (last_day('2009-01-12') IS NOT NULL)\nand (make_date(2013, 7, 15) IS NOT NULL)\nand (make_dt_interval(0, 0, 1, -0.1) IS NOT NULL)\nand (make_ym_interval(100, 5) IS NOT NULL)\nand (minute('2009-07-30 12:58:59') == 58)\nand (month('2016-07-30') == 7)\nand (months_between('1997-02-28 10:30:00', '1996-10-30') == 3)\nand (months_between('1997-02-28 10:30:00', '1996-10-30', false) == 2)\nand (next_day('2015-01-14', 'TU') != NULL)\nand (now() != NULL)\nand (quarter('2016-08-31') == 3)\nand (second('2009-07-30 12:58:59') == 59)\nand (TIMESTAMP(123) != NULL)\nand (TIMESTAMP('2020-04-30 12:25:13.45') != NULL)\nand (timestamp_micros(1230219000123123) != NULL)\nand (timestamp_millis(1230219000123) != NULL)\nand (timestamp_seconds(1230219000) != NULL)\nand (to_date('2016-12-31', 'yyyy-MM-dd') != NULL)\nand (to_timestamp('2016-12-31', 'yyyy-MM-dd') != NULL)\nand (to_utc_timestamp('2017-07-14 02:40:00.0', 'GMT+1') != NULL)\nand (trunc('2015-10-27', 'YEAR') != NULL)\nand (trunc('2019-08-04', 'quarter') != NULL)\nand (try_add(TIMESTAMP'2021-03-20 12:15:29', INTERVAL '3' SECOND) != NULL)\nand (try_add(DATE'2021-03-31', INTERVAL '1' MONTH) != NULL)\nand (try_divide(INTERVAL '3:15' HOUR TO MINUTE, 3) != NULL)\nand ((INTERVAL '3' YEAR * 3) != NULL)\nand (try_subtract(DATE'2021-03-20', INTERVAL '2' MONTH) != NULL)\nand (try_subtract(TIMESTAMP'2021-03-20 12:15:29', INTERVAL '3' SECOND) != NULL)\nand (unix_date(DATE('1970-01-02')) == 1)\nand (unix_micros(TIMESTAMP('1970-01-01 00:00:01Z')) == 1)\nand (unix_millis(TIMESTAMP('1970-01-01 00:00:01Z')) == 1)\nand (unix_seconds(TIMESTAMP('1970-01-01 00:00:01Z')) == 1)\nand (unix_timestamp('2016-04-08', 'yyyy-MM-dd') == 1)\nand (weekday(DATE'2009-07-30') == 1)\nand (EXTRACT(DAYOFWEEK_ISO FROM DATE'2009-07-30') == 4)\nand (weekofyear('2008-02-20') == 8)\nand (year('2016-07-30') == 2016)\nand (ARRAY(1, 2, 3) != NULL)\nand (BIGINT('5') == 5)\nand (binary('Spark SQL') != NULL)\nand (BOOLEAN(1))\nand (CAST(5.6 AS DECIMAL (2, 0)) != NULL)\nand (CAST(INTERVAL '1-2' YEAR TO MONTH AS INTEGER) == 12)\nand (DATE('2021-03-21') != NULL)\nand (decimal('5.2') == 5)\nand (double('5.2') / 2 == 5)\nand (FLOAT('5.2') / 2 == 2)\nand (INT('5') == 5)\nand (make_date(2013, 7, 15) != NULL)\nand (make_dt_interval(100, 13) != NULL)\nand (make_ym_interval(100, 5) == NULL)\nand (MAP(1.0, '2', 3.0, '4') IS NOT NULL)\nand (named_struct('a', 1, 'b', 2, 'c', 3) IS NOT NULL)\nand (smallint('5') == 5)\nand (STRUCT(1, 2, 3) IS NOT NULL)\nand (tinyint('12') == 12)\nand (TIMESTAMP('2020-04-30 12:25:13.45') != NULL)\nand (to_date('2016-12-31', 'yyyy-MM-dd') != NULL)\nand (to_timestamp('2016-12-31 00:12:00') != NULL)\nand (from_csv('1, 0.8', 'a INT, b DOUBLE') != NULL)\nand (schema_of_csv('1,abc') != NULL)\nand (json_array_length('[1,2,3,{\"f1\":1,\"f2\":[5,6]},4]') == 5)\nand (json_object_keys('{\"f1\":\"abc\",\"f2\":{\"f3\":\"a\", \"f4\":\"b\"}}') != NULL)\nand (schema_of_json('[{\"col\":01}]', MAP('allowNumericLeadingZeros', 'true')) != NULL)\nand (to_json(named_struct('a', 1, 'b', 2)) != NULL)\nand (to_json(MAP(named_struct('a', 1), named_struct('b', 2))) != NULL)\nand (to_json(ARRAY((MAP('a', 1)))) != NULL)\nand (xpath('<a><b>b1</b><b>b2</b><b>b3</b><c>c1</c><c>c2</c></a>', 'a/b/text()') != NULL)\nand (xpath_boolean('<a><b>1</b></a>', 'a/b'))\nand (xpath_double('<a><b>1</b><b>2</b></a>', 'sum(a/b)') != NULL)\nand (xpath_float('<a><b>1</b><b>2</b></a>', 'sum(a/b)') != NULL)\nand (xpath_int('<a><b>1</b><b>2</b></a>', 'sum(a/b)') == 2)\nand (xpath_long('<a><b>1</b><b>2</b></a>', 'sum(a/b)') == 3)\nand (xpath_number('<a><b>1</b><b>2</b></a>', 'sum(a/b)') == 2)\nand (xpath_int('<a><b>1</b><b>2</b></a>', 'sum(a/b)') == 2)\nand (xpath_string('<a><b>b</b><c>cc</c></a>', 'a/c') != NULL)\nand (\n      assert_true(\n        0 < 1) == NULL\n    )\nand (\n      (\n        CASE\n          WHEN 1 > 0\n            THEN 1\n          WHEN 2 > 0\n            THEN 2.0\n          ELSE 1.2\n        END\n      ) == 1\n    )\nand (\n      (\n        CASE 3\n          WHEN 1\n            THEN 'A'\n          WHEN 2\n            THEN 'B'\n          WHEN 3\n            THEN 'C'\n        END\n      ) != NULL\n    )\nand (coalesce(2, 5 / 0) == 2)\nand (current_catalog() != NULL)\nand (current_database() != NULL)\nand (current_user() != NULL)\nand (decode(5, 6, 'Spark', 5, 'SQL', 4, 'rocks') != NULL)\nand (elt(1, 'scala', 'java') != NULL)\nand (greatest(10, 9, 2, 4, 3) == 10)\nand (hash('Spark', ARRAY(123), 2) != NULL)\nand (\n      if(\n        1 < 2, \n        'a', \n        'b') != NULL\n    )\nand (ifnull(NULL, ARRAY('2')) != NULL)\nand (isnull(1))\nand (isnotnull(1))\nand (least(10, 9, 2, 4, 3) == 2)\nand (monotonically_increasing_id() > 10)\nand (nullif(2, 2) == NULL)\nand (nvl(NULL, 2) == 2)\nand (nvl2(NULL, 2, 1) == 1)\nand (typeof(1) != NULL)\nand (uuid() != NULL)\nand (xxhash64('Spark', ARRAY(123), 2) != NULL)\nand ('20'::INTEGER == 20)\nand like('Spark', '_park')\nand ('Spark' LIKE SOME('_park', '_ock'))\nand (bitmap_count(x'00') == 10)\nand (charindex('bar', 'abcbarbar') == 1)\nand (decode(x'FEFF0053007000610072006B002000530051004C', 'UTF-16') != NULL)\nand (like('Spark', '_park'))\nand (len('Spark SQL ') > 10)\nand (levenshtein('kitten', 'sitting', 4) > 10)\nand (('+' || ltrim('abc', 'acbabSparkSQL   ') || '+') != NULL)\nand (mask('AaBb123-&^ASDXYZ921312asd', 'Z', 'z', '9', 'X') != NULL)\nand (mask('AaBb123-&^ASDXYZ921312asd', lowerChar => 'z', upperChar => 'X') != NULL)\nand (mask('AaBb123-&ASDXYZ921312asd', NULL, NULL, NULL, NULL) != NULL)\nand (overlay('Spark SQL' PLACING '_' FROM 6) != NULL)\nand (overlay('Spark SQL' PLACING 'tructured' FROM 2 FOR 4) != NULL)\nand (overlay(encode('Spark SQL', 'utf-8') PLACING encode('_', 'utf-8') FROM 6) != NULL)\nand (position('bar' IN 'abcbarbar') > 2)\nand (regexp_count('Steven Jones and Stephen Smith are the best players', 'Ste(v|ph)en') > 2)\nand (regexp_instr('Mary had a little lamb', NULL) != NULL)\nand (regexp_substr(NULL, 'Ste(v|ph)en') != NULL)\nand (rtrim('ab', 'SparkSQLabcaaba') != NULL)\nand (STRING(4) != NULL)\nand (substr('Spark SQL', -3) != NULL)\nand (substr('Spark SQL' FROM 5 FOR 1) != NULL)\nand (substr('Spark SQL' FROM -3) != NULL)\nand (to_char(454, '000.00') != NULL)\nand (to_char(DATE'2016-04-08', 'y') != NULL)\nand (to_char(encode('abc', 'utf-8'), 'utf-8') != NULL)\nand (to_varchar(454, '999') != NULL)\nand (to_varchar(DATE'2016-04-08', 'y') != NULL)\nand (to_varchar(x'537061726b2053514c', 'hex') != NULL)\nand (TRIM( 'SL' FROM 'SSparkSQLS') != NULL)\nand (TRIM(BOTH 'SL' FROM 'SSparkSQLS') != NULL)\nand (TRIM(LEADING 'SL' FROM 'SSparkSQLS') != NULL)\nand (TRIM(TRAILING 'SL' FROM 'SSparkSQLS') != NULL)\nand (\n      CAST(try_aes_decrypt(\n        unbase64('MTIzNDU2Nzg5MDEyMdXvR41sJqwZ6hnTU8FRTTtXbL8yeChIZA=='), \n        '1234567890abcdef', \n        'GCM', \n        'DEFAULT', \n        'Some AAD') AS STRING) != NULL\n    )\nand (url_decode('http%3A%2F%2Fspark.apache.org%2Fpath%3Fquery%3D1') != NULL)\nand (url_encode('http://spark.apache.org/path?query=1') != NULL)\nand ((TIMESTAMP'2021-03-20 12:15:29' - INTERVAL '3' SECOND) != NULL)\nand ((TIMESTAMP'2021-03-20 12:15:29' + INTERVAL '3' SECOND) != NULL)\nand (bit_reverse(-1) == -1)\nand (bitmap_bit_position(-32768) == 1)\nand (bitmap_bucket_number(-32768) == 1)\nand (MOD(2, 1.8) == 2)\nand (array_append(ARRAY(1, 2, 3), 0) == NULL)\nand (array_compact(ARRAY(1, 2, NULL, 3, NULL, 3)) == NULL)\nand (array_insert(ARRAY('a', 'b', 'c'), 1, 'z') != NULL)\nand (array_prepend(ARRAY(1, 2, 3), 0) != NULL)\nand (get(ARRAY(1, 2, 3), 2) != NULL)\nand (\n      reduce(\n        ARRAY(1, 2, 3), \n        0, \n        (acc, x) -> acc + x) == 2\n    )\nand (shuffle(ARRAY(1, 20, 3, 5)) != NULL)\nand (map_contains_key(MAP(1, 'a', 2, 'b'), 2))\nand ((DATE'2021-03-31' - INTERVAL '1' MONTH) != NULL)\nand ((DATE'2021-03-31' + INTERVAL '1' MONTH) != NULL)\nand ((TIMESTAMP'2021-03-20 12:15:29' - INTERVAL '3' SECOND) != NULL)\nand (date_diff(MONTH, TIMESTAMP'2021-02-28 12:00:00', TIMESTAMP'2021-03-28 12:00:00') == 1)\nand (date_part('SECONDS', TIMESTAMP'2019-10-01 00:00:01.000001') == 1)\nand (date_part('Week', TIMESTAMP'2019-08-12 01:00:00.123456') == 33)\nand (dateadd('2016-07-30', 1) != NULL)\nand (dateadd(MICROSECOND, 5, TIMESTAMP'2022-02-28 00:00:00') != NULL)\nand (datediff(MONTH, TIMESTAMP'2021-02-28 12:00:00', TIMESTAMP'2021-03-28 11:59:59') == 0)\nand (make_interval(0, 0, 1, 1, 12, 30, 1.001001) IS NOT NULL)\nand (make_timestamp(2014, 12, 28, 6, 30, 45.887, 'CET') IS NOT NULL)\nand (make_timestamp(NULL, 7, 22, 15, 30, 0) IS NOT NULL)\nand (now() != NULL)\nand (timediff(MONTH, TIMESTAMP'2021-02-28 12:00:00', TIMESTAMP'2021-03-28 12:00:00') == 1)\nand (timestampdiff(MONTH, TIMESTAMP'2021-02-28 12:00:00', TIMESTAMP'2021-03-28 12:00:00') == 1)\nand (to_unix_timestamp('2016-04-08', 'yyyy-MM-dd') == 100)\nand (try_to_timestamp('2016-12-31', 'yyyy-MM-dd') != NULL)\nand ('20'::INTEGER == 20)\nand (make_interval(100, 11) IS NOT NULL)\nand (make_timestamp(2014, 12, 28, 6, 30, 45.887) IS NOT NULL)\nand (STRING(5) != NULL)\nand (to_char(454, '000.00') != NULL)\nand (to_varchar(454, '999') IS NOT NULL)\nand (from_json('{\"a\":1, \"b\":0.8}', 'a INT, b DOUBLE') IS NOT NULL)\nand (get_json_object('{\"a\":\"b\"}', '$.a') IS NOT NULL)\nand (to_csv(named_struct('time', to_timestamp('2015-08-26', 'yyyy-MM-dd')), MAP('timestampFormat', 'dd/MM/yyyy')) IS NOT NULL)\nand (to_csv(named_struct('a', 1, 'b', 2)) IS NOT NULL)\nand (from_xml('<p><time>26/08/2015</time></p>', 'time Timestamp', MAP('timestampFormat', 'dd/MM/yyyy')) != NULL)\nand (schema_of_xml('<p><a attr=\"2\">1</a><a>3</a></p>', MAP('excludeAttribute', 'true')) IS NOT NULL)\nand (current_metastore() != NULL)\nand (current_schema() != NULL)\nand (current_version() != NULL)\nand (equal_null(2, 2))\nand (\n      iff(\n        1 < 2, \n        'a', \n        'b') == 'a'\n    )\nand (is_account_group_member('admins'))\nand (is_member('admins'))\nand (luhn_check('12345') == NULL)\nand (user() != NULL)\nand (h3_coverash3('POLYGON((-122.4194 37.7749,-118.2437 34.0522,-74.0060 40.7128,-122.4194 37.7749))', 0) != NULL)\nand (h3_coverash3string('{\"type\":\"LineString\",\"coordinates\":[[-122.4194,37.7749],[-118.2437,34.0522],[-74.0060,40.7128]]}', 1) != NULL)\nand (h3_longlatash3(-122.4783, 37.8199, 13) > 0)\nand (h3_longlatash3string(-122.4783, 37.8199, 13) != NULL)\nand (h3_pointash3('POINT(-122.4783 37.8199)', 13) > 0)\nand (h3_pointash3string('{\"type\":\"Point\",\"coordinates\":[]}', 15) == NULL)\nand (h3_pointash3string('POINT(-122.4783 37.8199)', 13) != NULL)\nand (\n      h3_polyfillash3(\n        unhex(\n          '0103000000010000000400000050fc1873d79a5ec0d0d556ec2fe342404182e2c7988f5dc0f46c567dae064140aaf1d24d628052c05e4bc8073d5b444050fc1873d79a5ec0d0d556ec2fe34240'), \n        2) != NULL\n    )\nand (h3_polyfillash3('POLYGON((-122.4194 37.7749,-118.2437 34.0522,-74.0060 40.7128,-122.4194 37.7749))', 2) != NULL)\nand (h3_polyfillash3string('POLYGON((-122.4194 37.7749,-118.2437 34.0522,-74.0060 40.7128,-122.4194 37.7749))', 2) != NULL)\nand (h3_try_polyfillash3('Not-a-valid-rep', 2) == NULL)\nand (h3_try_polyfillash3('POLYGON((-122.4194 37.7749,-118.2437 34.0522,-74.0060 40.7128,-122.4194 37.7749))', 2) != NULL)\nand (h3_try_polyfillash3string('POLYGON((-122.4194 37.7749,-118.2437 34.0522,-74.0060 40.7128,-122.4194 37.7749))', 2) != NULL)\nand (h3_boundaryasgeojson('8009fffffffffff') != NULL)\nand (h3_boundaryasgeojson(599686042433355775) != NULL)\nand (hex(h3_boundaryaswkb(599686042433355775)) != NULL)\nand (h3_boundaryaswkt(599686042433355775) != NULL)\nand (h3_centerasgeojson(599686042433355775) != NULL)\nand (hex(h3_centeraswkb('8009fffffffffff')) == NULL)\nand (h3_centeraswkt('8009fffffffffff') != NULL)\nand (h3_h3tostring(599686042433355775) != NULL)\nand (h3_stringtoh3('85283473fffffff') == NULL)\nand (h3_ischildof('88283471b9fffff', '85283473fffffff'))\nand (h3_ispentagon(590112357393367039))\nand (h3_isvalid('85283473fffffff'))\nand (h3_try_validate(590112357393367039) != NULL)\nand (h3_validate(590112357393367039) != NULL)\nand (h3_distance(599686030622195711, 599686015589810175) == 2)\nand (h3_hexring(599686042433355775, 1) != NULL)\nand (h3_kring(599686042433355775, 1) != NULL)\nand (h3_kringdistances(599686042433355775, 1) != NULL)\nand (h3_distance(599686030622195711, 599686015589810175) == 2)\nand (h3_maxchild(599686042433355775, 10) != NULL)\nand (h3_minchild(599686042433355775, 10) != NULL)\nand (h3_resolution(599686042433355775) == 5)\nand (h3_tochildren(599686042433355775, 6) != NULL)\nand (h3_toparent(599686042433355775, 0) != NULL)\nand (\n      h3_compact(\n        ARRAY(\n          599686042433355775, \n          599686030622195711, \n          599686044580839423, \n          599686038138388479, \n          599686043507097599, \n          599686015589810175, \n          599686014516068351, \n          599686034917163007, \n          599686029548453887, \n          599686032769679359, \n          599686198125920255, \n          599686040285872127, \n          599686041359613951, \n          599686039212130303, \n          599686023106002943, \n          599686027400970239, \n          599686013442326527, \n          599686012368584703, \n          599686018811035647)) != NULL\n    )\nand (\n      h3_uncompact(\n        ARRAY(\n          599686030622195711, \n          599686015589810175, \n          599686014516068351, \n          599686034917163007, \n          599686029548453887, \n          599686032769679359, \n          599686198125920255, \n          599686023106002943, \n          599686027400970239, \n          599686013442326527, \n          599686012368584703, \n          599686018811035647, \n          595182446027210751), \n        5) != NULL\n    )"
                 }
@@ -2481,8 +3196,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 9
+              }
             },
             "Join_2##NxfBB4DB" : {
               "id" : "Join_2##NxfBB4DB",
@@ -2513,7 +3227,7 @@
                   "alias" : "c2"
                 } ],
                 "activeTab" : "conditions",
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "U2vPhzoI##customer_id", "zD4HuFMH##customer_id1", "U2vPhzoI##customer_id", "U2vPhzoI##last_name", "U2vPhzoI##first_name" ],
                 "headAlias" : "in0"
               },
               "ports" : {
@@ -2585,8 +3299,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 3
+              }
             }
           },
           "connections" : [ {
@@ -3068,6 +3781,36 @@
             "inputs" : [ ],
             "outputs" : [ {
               "id" : "a91Vu3Dw",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "country_code",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "country_label",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "code_1",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "service_label_1",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "c_macro2",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                } ]
+              },
               "slug" : "out"
             } ],
             "isCustomOutputSchema" : false,
@@ -3081,6 +3824,7 @@
           "metadata" : {
             "label" : "SQLStatementtest15",
             "phase" : 0,
+            "macroDependencies" : [ ],
             "comment" : "Filters records from a partitioned dataset based on a specific count condition.",
             "isLabelGrayed" : false
           },
@@ -3271,8 +4015,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 1
+          }
         },
         "Subgraph_1##uG670Gc6" : {
           "id" : "Subgraph_1##uG670Gc6",
@@ -3510,7 +4253,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "AwNMRMgf##IB_INCOME_BAND_SK", "AwNMRMgf##IB_LOWER_BOUND", "AwNMRMgf##IB_UPPER_BOUND" ],
                 "expressions" : [ {
                   "expression" : {
                     "expression" : "IB_INCOME_BAND_SK"
@@ -3579,8 +4322,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 2
+              }
             },
             "Reformat_4##ZKnP2nnB" : {
               "id" : "Reformat_4##ZKnP2nnB",
@@ -3592,7 +4334,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "WSDH7OaC##T_TIME_SK", "WSDH7OaC##T_TIME_ID", "WSDH7OaC##T_TIME", "WSDH7OaC##T_HOUR", "WSDH7OaC##T_MINUTE", "WSDH7OaC##T_SECOND", "WSDH7OaC##T_AM_PM", "WSDH7OaC##T_SHIFT", "WSDH7OaC##T_SUB_SHIFT", "WSDH7OaC##T_MEAL_TIME" ],
                 "expressions" : [ {
                   "expression" : {
                     "expression" : "T_TIME_SK"
@@ -3766,8 +4508,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 10
+              }
             },
             "orders##JuftyhoB" : {
               "id" : "orders##JuftyhoB",
@@ -3843,7 +4584,7 @@
                   }
                 } ],
                 "dedupType" : "distinct",
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "d496nH2u##SR_RETURNED_Date_SK", "d496nH2u##SR_RETURN_TIME_SK", "d496nH2u##SR_RETURN_amt_INC_TAX" ],
                 "orders" : [ ],
                 "useOrderBy" : false
               },
@@ -3983,8 +4724,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 9
+              }
             },
             "payments##Z2TBdxLE" : {
               "id" : "payments##Z2TBdxLE",
@@ -4047,7 +4787,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "b8KzQvgu##ID", "b8KzQvgu##USER_ID", "b8KzQvgu##ORDER_DATE", "b8KzQvgu##STATUS" ],
                 "expressions" : [ {
                   "expression" : {
                     "expression" : "ID"
@@ -4131,8 +4871,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 5
+              }
             },
             "Reformat_6##IXbQGckX" : {
               "id" : "Reformat_6##IXbQGckX",
@@ -4144,7 +4883,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "jlVdTcTr##SR_RETURNED_DATE_SK", "jlVdTcTr##SR_RETURN_TIME_SK" ],
                 "expressions" : [ {
                   "expression" : {
                     "expression" : "SR_RETURNED_DATE_SK"
@@ -4203,8 +4942,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 11
+              }
             },
             "SQLStatement_4##if77MaQb" : {
               "id" : "SQLStatement_4##if77MaQb",
@@ -4229,7 +4967,7 @@
                   }
                 } ],
                 "dedupType" : "distinct",
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "rv3YrvrN##IB_INCOME_BAND_SK", "rv3YrvrN##IB_Lower_boUND", "rv3YrvrN##IB_UPPER_BOUND" ],
                 "orders" : [ ],
                 "useOrderBy" : false
               },
@@ -4284,8 +5022,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 1
+              }
             },
             "store_returns##qSVMfwSA" : {
               "id" : "store_returns##qSVMfwSA",
@@ -4474,7 +5211,7 @@
                 "isLabelGrayed" : false
               },
               "properties" : {
-                "columnsSelector" : [ ],
+                "columnsSelector" : [ "ATgSAPqJ##ID", "ATgSAPqJ##ORDER_ID", "ATgSAPqJ##PAYMENT_METHOD", "ATgSAPqJ##AMOUNT" ],
                 "expressions" : [ {
                   "expression" : {
                     "expression" : "ID"
@@ -4558,8 +5295,7 @@
                 } ],
                 "isCustomOutputSchema" : false,
                 "autoUpdateOnRun" : false
-              },
-              "index" : 7
+              }
             },
             "time_dim##ApHYDWtA" : {
               "id" : "time_dim##ApHYDWtA",
@@ -4867,15 +5603,134 @@
               "alias" : "c_struct_pin"
             } ],
             "activeTab" : "conditions",
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "U7XyPKp5##country_code", "sENva6aF##p_string", "kwIrRQgQ##sm_type", "e0gjtG0k##p_string", "M7rJbuqQ##IB_INCOME_BAND_SK", "sENva6aF##p_int", "sENva6aF##p_string", "sENva6aF##c_string", "sENva6aF##c_int", "sENva6aF##c_bigint", "sENva6aF##c_smallint", "sENva6aF##c_tinyint", "sENva6aF##c_float", "sENva6aF##c_boolean", "sENva6aF##c_array", "sENva6aF##c_double", "sENva6aF##c_struct", "sENva6aF##c_struct.city", "sENva6aF##c_struct.state", "sENva6aF##c_struct.pin" ],
             "headAlias" : "in0"
           },
           "ports" : {
             "inputs" : [ {
               "id" : "U7XyPKp5",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "country_code",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "country_label",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "code_1",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "service_label_1",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "c_macro2",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                } ]
+              },
               "slug" : "in0"
             }, {
               "id" : "sENva6aF",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "p_int",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "p_string",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "c_string",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "c_int",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "c_bigint",
+                  "dataType" : {
+                    "type" : "Double"
+                  }
+                }, {
+                  "name" : "c_smallint",
+                  "dataType" : {
+                    "type" : "SmallInt"
+                  }
+                }, {
+                  "name" : "c_tinyint",
+                  "dataType" : {
+                    "type" : "TinyInt"
+                  }
+                }, {
+                  "name" : "c_float",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "c_boolean",
+                  "dataType" : {
+                    "type" : "Boolean"
+                  }
+                }, {
+                  "name" : "c_array",
+                  "dataType" : {
+                    "type" : "Array",
+                    "dataType" : {
+                      "type" : "String"
+                    }
+                  }
+                }, {
+                  "name" : "c_double",
+                  "dataType" : {
+                    "type" : "Double"
+                  }
+                }, {
+                  "name" : "c_struct",
+                  "dataType" : {
+                    "type" : "Struct",
+                    "fields" : [ {
+                      "name" : "city",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "state",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "pin",
+                      "dataType" : {
+                        "type" : "Bigint"
+                      }
+                    } ]
+                  }
+                }, {
+                  "name" : "c_id",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                } ]
+              },
               "slug" : "in1"
             }, {
               "id" : "kwIrRQgQ",
@@ -5048,12 +5903,110 @@
             } ],
             "outputs" : [ {
               "id" : "XB8YnIcC",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "p_int",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "p_string",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "c_string",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "c_int",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "c_bigint",
+                  "dataType" : {
+                    "type" : "Double"
+                  }
+                }, {
+                  "name" : "c_smallint",
+                  "dataType" : {
+                    "type" : "SmallInt"
+                  }
+                }, {
+                  "name" : "c_tinyint",
+                  "dataType" : {
+                    "type" : "TinyInt"
+                  }
+                }, {
+                  "name" : "c_float",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "c_boolean",
+                  "dataType" : {
+                    "type" : "Boolean"
+                  }
+                }, {
+                  "name" : "c_array",
+                  "dataType" : {
+                    "type" : "Array",
+                    "dataType" : {
+                      "type" : "String"
+                    }
+                  }
+                }, {
+                  "name" : "c_double",
+                  "dataType" : {
+                    "type" : "Double"
+                  }
+                }, {
+                  "name" : "c_struct",
+                  "dataType" : {
+                    "type" : "Struct",
+                    "fields" : [ {
+                      "name" : "city",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "state",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "pin",
+                      "dataType" : {
+                        "type" : "Bigint"
+                      }
+                    } ]
+                  }
+                }, {
+                  "name" : "c_struct_city",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "c_struct_state",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "c_struct_pin",
+                  "dataType" : {
+                    "type" : "Bigint"
+                  }
+                } ]
+              },
               "slug" : "out"
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 7
+          }
         },
         "OrderBy_2_1##qhA9yFL7" : {
           "id" : "OrderBy_2_1##qhA9yFL7",
@@ -5065,7 +6018,7 @@
             "isLabelGrayed" : false
           },
           "properties" : {
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "no4FlUCE##c_string", "no4FlUCE##c_int", "no4FlUCE##c_tinyint" ],
             "orders" : [ {
               "expression" : {
                 "expression" : "concat(c_string, c_int)"
@@ -5258,8 +6211,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 2
+          }
         },
         "all_type_partiti##hvXQ7GgC" : {
           "id" : "all_type_partiti##hvXQ7GgC",
@@ -5387,10 +6339,188 @@
           "ports" : {
             "inputs" : [ {
               "id" : "r35ohsXp",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "p_int",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "p_string",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "c_string",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "c_int",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "c_bigint",
+                  "dataType" : {
+                    "type" : "Double"
+                  }
+                }, {
+                  "name" : "c_smallint",
+                  "dataType" : {
+                    "type" : "SmallInt"
+                  }
+                }, {
+                  "name" : "c_tinyint",
+                  "dataType" : {
+                    "type" : "TinyInt"
+                  }
+                }, {
+                  "name" : "c_float",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "c_boolean",
+                  "dataType" : {
+                    "type" : "Boolean"
+                  }
+                }, {
+                  "name" : "c_array",
+                  "dataType" : {
+                    "type" : "Array",
+                    "dataType" : {
+                      "type" : "String"
+                    }
+                  }
+                }, {
+                  "name" : "c_double",
+                  "dataType" : {
+                    "type" : "Double"
+                  }
+                }, {
+                  "name" : "c_struct",
+                  "dataType" : {
+                    "type" : "Struct",
+                    "fields" : [ {
+                      "name" : "city",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "state",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "pin",
+                      "dataType" : {
+                        "type" : "Bigint"
+                      }
+                    } ]
+                  }
+                }, {
+                  "name" : "c_id",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                } ]
+              },
               "slug" : "env_uitesting_main_model_databricks_1"
             } ],
             "outputs" : [ {
               "id" : "JoIRNbiV",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "p_int",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "p_string",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "c_string",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "c_int",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "c_bigint",
+                  "dataType" : {
+                    "type" : "Double"
+                  }
+                }, {
+                  "name" : "c_smallint",
+                  "dataType" : {
+                    "type" : "SmallInt"
+                  }
+                }, {
+                  "name" : "c_tinyint",
+                  "dataType" : {
+                    "type" : "TinyInt"
+                  }
+                }, {
+                  "name" : "c_float",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "c_boolean",
+                  "dataType" : {
+                    "type" : "Boolean"
+                  }
+                }, {
+                  "name" : "c_array",
+                  "dataType" : {
+                    "type" : "Array",
+                    "dataType" : {
+                      "type" : "String"
+                    }
+                  }
+                }, {
+                  "name" : "c_double",
+                  "dataType" : {
+                    "type" : "Double"
+                  }
+                }, {
+                  "name" : "c_struct",
+                  "dataType" : {
+                    "type" : "Struct",
+                    "fields" : [ {
+                      "name" : "city",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "state",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "pin",
+                      "dataType" : {
+                        "type" : "Bigint"
+                      }
+                    } ]
+                  }
+                }, {
+                  "name" : "c_id",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                } ]
+              },
               "slug" : "out"
             } ],
             "isCustomOutputSchema" : false,
@@ -5493,6 +6623,8 @@
       "component" : "WindowFunction",
       "metadata" : {
         "label" : "win_range",
+        "x" : 1080,
+        "y" : 3240,
         "phase" : 0,
         "comment" : "Calculates maximum IDs and average values for grouped data, enhancing insights into trends.",
         "isLabelGrayed" : false
@@ -5513,7 +6645,7 @@
         } ],
         "frameType" : "range",
         "activeTab" : "partitionTab",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "u2GM45oe##array_of_mixed_structs", "u2GM45oe##array_of_mixed_structs.nested", "u2GM45oe##array_of_mixed_structs.nested.value", "u2GM45oe##id", "u2GM45oe##id1", "u2GM45oe##name1" ],
         "partitionExpressions" : [ {
           "expression" : {
             "expression" : "array_of_mixed_structs.nested.value"
@@ -5554,14 +6686,15 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 26
+      }
     },
     "UNPIVOT##bazZhA8B" : {
       "id" : "UNPIVOT##bazZhA8B",
       "component" : "Limit",
       "metadata" : {
         "label" : "UNPIVOT",
+        "x" : 620,
+        "y" : 3040,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -5589,6 +6722,8 @@
       "component" : "Deduplicate",
       "metadata" : {
         "label" : "distinct_all_types",
+        "x" : 880,
+        "y" : 420,
         "phase" : 0,
         "comment" : "Extracts unique combinations of tiny integer values and concatenated integer-string pairs.",
         "isLabelGrayed" : false
@@ -5605,7 +6740,7 @@
           "alias" : "c_int_string"
         } ],
         "dedupType" : "distinct",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "FXFE0sPt##c_tinyint", "FXFE0sPt##c_int", "FXFE0sPt##c_string" ],
         "orders" : [ ],
         "useOrderBy" : false
       },
@@ -5620,20 +6755,21 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 53
+      }
     },
     "Reformat_1_2_1_1##EIXp7KBU" : {
       "id" : "Reformat_1_2_1_1##EIXp7KBU",
       "component" : "Reformat",
       "metadata" : {
         "label" : "Reformat_1_2_1_1",
+        "x" : 880,
+        "y" : 1020,
         "phase" : 0,
         "macroDependencies" : [ ],
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "uOdNyzMQ##c_int", "uOdNyzMQ##c_string" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "CAST(c_int AS STRING)"
@@ -5662,14 +6798,15 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 44
+      }
     },
     "Subgraph_2##xsC6OAhd" : {
       "id" : "Subgraph_2##xsC6OAhd",
       "component" : "Subgraph",
       "metadata" : {
         "label" : "Subgraph_2",
+        "x" : 1800,
+        "y" : 20,
         "phase" : 0
       },
       "processes" : {
@@ -5986,6 +7123,7 @@
                   "metadata" : {
                     "label" : "Reformat_7",
                     "phase" : 0,
+                    "macroDependencies" : [ ],
                     "isLabelGrayed" : false
                   },
                   "properties" : {
@@ -6161,8 +7299,7 @@
                     } ],
                     "isCustomOutputSchema" : false,
                     "autoUpdateOnRun" : false
-                  },
-                  "index" : 0
+                  }
                 },
                 "TestSubgraph_6Te##eIJbWmax" : {
                   "id" : "TestSubgraph_6Te##eIJbWmax",
@@ -6373,6 +7510,7 @@
                           "metadata" : {
                             "label" : "Reformat_8",
                             "phase" : 0,
+                            "macroDependencies" : [ ],
                             "isLabelGrayed" : false
                           },
                           "properties" : {
@@ -6548,8 +7686,7 @@
                             } ],
                             "isCustomOutputSchema" : false,
                             "autoUpdateOnRun" : false
-                          },
-                          "index" : 0
+                          }
                         },
                         "Subgraph_6##p0etOOwZ" : {
                           "id" : "Subgraph_6##p0etOOwZ",
@@ -7142,6 +8279,7 @@
                                       "metadata" : {
                                         "label" : "Reformat_9",
                                         "phase" : 0,
+                                        "macroDependencies" : [ ],
                                         "isLabelGrayed" : false
                                       },
                                       "properties" : {
@@ -7317,8 +8455,7 @@
                                         } ],
                                         "isCustomOutputSchema" : false,
                                         "autoUpdateOnRun" : false
-                                      },
-                                      "index" : 1
+                                      }
                                     }
                                   },
                                   "connections" : [ {
@@ -8901,6 +10038,8 @@
       "component" : "Source",
       "metadata" : {
         "label" : "all_type_parquet_1_2",
+        "x" : 1540,
+        "y" : 2160,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -8927,14 +10066,17 @@
       "component" : "TargetModel",
       "metadata" : {
         "label" : "env_uitesting_shared_useallmodel_1",
+        "x" : 2860,
+        "y" : 2160,
         "phase" : 0,
+        "macroDependencies" : [ ],
         "isLabelGrayed" : false
       },
       "properties" : {
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "SELECT *\n\nFROM combine_multiple_tables_1\n",
+        "query" : "SELECT * \n\nFROM combine_multiple_tables_1\n",
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true"
@@ -8951,14 +10093,15 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 71
+      }
     },
     "Aggregate_1##h9m0aOSd" : {
       "id" : "Aggregate_1##h9m0aOSd",
       "component" : "Aggregate",
       "metadata" : {
         "label" : "Aggregate_1",
+        "x" : 2080,
+        "y" : 1760,
         "phase" : 0,
         "macroDependencies" : [ ],
         "isLabelGrayed" : false
@@ -9075,7 +10218,7 @@
           "expression" : ""
         },
         "activeTab" : "aggregate",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "LY2KpsOJ##c_boolean", "LY2KpsOJ##c_bool_expr", "LY2KpsOJ##c_concat_expr", "LY2KpsOJ##c_add_expr", "LY2KpsOJ##c_tinyint", "LY2KpsOJ##c_smallint", "LY2KpsOJ##c_int", "LY2KpsOJ##c_bigint", "LY2KpsOJ##c_float", "LY2KpsOJ##c_double", "LY2KpsOJ##c_string", "LY2KpsOJ##c_macro", "LY2KpsOJ##c_if", "LY2KpsOJ##cfor_col_0", "LY2KpsOJ##cfor_col_1", "LY2KpsOJ##cfor_col_2", "LY2KpsOJ##cfor_col_3", "LY2KpsOJ##cfor_col_4", "LY2KpsOJ##c_databricks_project_main", "LY2KpsOJ##c_base_project", "LY2KpsOJ##c_dbt_utils_functions" ],
         "groupBy" : [ {
           "expression" : {
             "expression" : "c_boolean"
@@ -9093,21 +10236,22 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 41
+      }
     },
     "Reformat_11##OjINULkG" : {
       "id" : "Reformat_11##OjINULkG",
       "component" : "Reformat",
       "metadata" : {
         "label" : "Reformat_11",
+        "x" : 1080,
+        "y" : 1420,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Retrieves and organizes various data types from a specific testing dataset for analysis.",
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "zMSKVyGe##c_tinyint", "zMSKVyGe##c_smallint", "zMSKVyGe##c_int", "zMSKVyGe##c_bigint", "zMSKVyGe##c_float", "zMSKVyGe##c_double", "zMSKVyGe##c_string", "zMSKVyGe##c_boolean", "zMSKVyGe##c_array", "zMSKVyGe##c_struct", "zMSKVyGe##c_id", "zMSKVyGe##c_date", "zMSKVyGe##dbt_scd_id", "zMSKVyGe##dbt_updated_at", "zMSKVyGe##dbt_valid_from", "zMSKVyGe##dbt_valid_to" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "c_tinyint"
@@ -9201,14 +10345,15 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 4
+      }
     },
     "item##nhHzlL7g" : {
       "id" : "item##nhHzlL7g",
       "component" : "Source",
       "metadata" : {
         "label" : "item",
+        "x" : 1800,
+        "y" : 2560,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -9235,13 +10380,15 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "Reformattest312312",
+        "x" : 220,
+        "y" : 3040,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Demonstrates a variety of SQL keywords and their usage in a structured format.",
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "yK4JXXbc##LIMIT", "yK4JXXbc##JOIN", "yK4JXXbc##ASC", "yK4JXXbc##DESC", "yK4JXXbc##INNER", "yK4JXXbc##FULL", "yK4JXXbc##CROSS", "yK4JXXbc##SEMI", "yK4JXXbc##ANTI", "yK4JXXbc##ESCAPE", "yK4JXXbc##INTERVAL", "yK4JXXbc##LEFT", "yK4JXXbc##RIGHT", "yK4JXXbc##OUTER", "yK4JXXbc##TIMESTAMP", "yK4JXXbc##DATETIME", "yK4JXXbc##END", "yK4JXXbc##OVER", "yK4JXXbc##RANGE", "yK4JXXbc##PRECEDING", "yK4JXXbc##FORMAT", "yK4JXXbc##ARRAY", "yK4JXXbc##PARTITION", "yK4JXXbc##UNBOUNDED", "yK4JXXbc##JSON", "yK4JXXbc##TYPE", "yK4JXXbc##IGNORE", "yK4JXXbc##RESPECT", "yK4JXXbc##VERSION", "yK4JXXbc##FILTER", "yK4JXXbc##CLUSTER", "yK4JXXbc##DISTRIBUTE", "yK4JXXbc##ROLLUP", "yK4JXXbc##CUBE", "yK4JXXbc##GROUPING", "yK4JXXbc##SETS", "yK4JXXbc##LATERAL", "yK4JXXbc##OFFSET", "yK4JXXbc##SORT", "yK4JXXbc##WINDOW", "yK4JXXbc##FETCH", "yK4JXXbc##case", "yK4JXXbc##catch", "yK4JXXbc##finally", "yK4JXXbc##object", "yK4JXXbc##protected", "yK4JXXbc##return", "yK4JXXbc##else", "yK4JXXbc##final", "yK4JXXbc##new", "yK4JXXbc##while", "yK4JXXbc##yield", "yK4JXXbc##with", "yK4JXXbc##trait", "yK4JXXbc##except", "yK4JXXbc##do", "yK4JXXbc##extends", "yK4JXXbc##assert", "yK4JXXbc##global", "yK4JXXbc##import" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "LIMIT"
@@ -9590,21 +10737,22 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 18
+      }
     },
     "Reformat_2_1##DZcr0B8J" : {
       "id" : "Reformat_2_1##DZcr0B8J",
       "component" : "Reformat",
       "metadata" : {
         "label" : "Reformat_2_1",
+        "x" : 1340,
+        "y" : 220,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Filters customer data based on various complex criteria for targeted analysis.",
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "FExTfULV##customer_id", "FExTfULV##first_name", "FExTfULV##last_name" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "customer_id"
@@ -9638,14 +10786,15 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 59
+      }
     },
     "combine_multiple##eQifpDdf" : {
       "id" : "combine_multiple##eQifpDdf",
       "component" : "Macro",
       "metadata" : {
         "label" : "combine_multiple_tables_1",
+        "x" : 2620,
+        "y" : 2140,
         "phase" : 0,
         "macroDependencies" : [ "SQL_DatabricksSharedBasic.combine_multiple_tables" ],
         "isLabelGrayed" : false
@@ -9696,14 +10845,15 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 70
+      }
     },
     "SetOperation_1##skwqCQLR" : {
       "id" : "SetOperation_1##skwqCQLR",
       "component" : "SetOperation",
       "metadata" : {
         "label" : "SetOperation_1",
+        "x" : 1800,
+        "y" : 3220,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -9735,6 +10885,8 @@
       "component" : "Source",
       "metadata" : {
         "label" : "date_dim",
+        "x" : 1800,
+        "y" : 2760,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -9761,7 +10913,10 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "SQLStatement_1_4",
+        "x" : 1080,
+        "y" : 1820,
         "phase" : 0,
+        "macroDependencies" : [ ],
         "isLabelGrayed" : false
       },
       "properties" : {
@@ -9779,14 +10934,15 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 2
+      }
     },
     "Join_1_3##DH93necM" : {
       "id" : "Join_1_3##DH93necM",
       "component" : "Join",
       "metadata" : {
         "label" : "Join_1_3",
+        "x" : 1540,
+        "y" : 1200,
         "phase" : 0,
         "macroDependencies" : [ ],
         "isLabelGrayed" : false
@@ -9826,7 +10982,7 @@
           "alias" : "c1"
         } ],
         "activeTab" : "conditions",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "g9g7lqc0##customer_id", "xY6irVHG##customer_id", "g9g7lqc0##customer_id", "xY6irVHG##first_name", "g9g7lqc0##first_name", "g9g7lqc0##c1", "xY6irVHG##c1" ],
         "headAlias" : "in0"
       },
       "ports" : {
@@ -9843,14 +10999,15 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 50
+      }
     },
     "Subgraph_9##LN3oyy1e" : {
       "id" : "Subgraph_9##LN3oyy1e",
       "component" : "Subgraph",
       "metadata" : {
         "label" : "Subgraph_9",
+        "x" : 1800,
+        "y" : 2340,
         "phase" : 0
       },
       "processes" : {
@@ -9890,6 +11047,26 @@
           "ports" : {
             "inputs" : [ {
               "id" : "kqCSlvFn",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "first_name",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "last_name",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "id",
+                  "dataType" : {
+                    "type" : "Bigint"
+                  }
+                } ]
+              },
               "slug" : "Limit_4"
             }, {
               "id" : "EgR3eoWB",
@@ -12485,6 +13662,26 @@
             } ],
             "outputs" : [ {
               "id" : "tV94BB3j",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "first_name",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "last_name",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "id",
+                  "dataType" : {
+                    "type" : "Bigint"
+                  }
+                } ]
+              },
               "slug" : "out"
             } ],
             "isCustomOutputSchema" : false,
@@ -12502,7 +13699,7 @@
             "isLabelGrayed" : false
           },
           "properties" : {
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "CdZzqCcz##customer_id", "CdZzqCcz##first_name", "CdZzqCcz##last_name" ],
             "expressions" : [ {
               "expression" : {
                 "expression" : "CAST(customer_id AS INT) > 5"
@@ -17123,8 +18320,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 4
+          }
         },
         "SQLStatement_1_3##l15K1g2B" : {
           "id" : "SQLStatement_1_3##l15K1g2B",
@@ -17132,6 +18328,7 @@
           "metadata" : {
             "label" : "SQLStatement_1_3",
             "phase" : 0,
+            "macroDependencies" : [ ],
             "isLabelGrayed" : false
           },
           "properties" : {
@@ -17160,8 +18357,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 6
+          }
         },
         "SQLStatement_6##iLayqGUu" : {
           "id" : "SQLStatement_6##iLayqGUu",
@@ -17169,6 +18365,7 @@
           "metadata" : {
             "label" : "SQLStatement_6",
             "phase" : 0,
+            "macroDependencies" : [ ],
             "isLabelGrayed" : false
           },
           "properties" : {
@@ -17334,8 +18531,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 0
+          }
         },
         "SQLStatement_4_2##V3YxxUk8" : {
           "id" : "SQLStatement_4_2##V3YxxUk8",
@@ -17343,6 +18539,7 @@
           "metadata" : {
             "label" : "SQLStatement_4_2",
             "phase" : 0,
+            "macroDependencies" : [ ],
             "isLabelGrayed" : false
           },
           "properties" : {
@@ -17502,8 +18699,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 1
+          }
         },
         "Reformat_1_2_1##piHmw916" : {
           "id" : "Reformat_1_2_1##piHmw916",
@@ -17515,7 +18711,7 @@
             "isLabelGrayed" : false
           },
           "properties" : {
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "awUNNFND##c_int", "awUNNFND##c_string" ],
             "expressions" : [ {
               "expression" : {
                 "expression" : "CAST(c_int AS STRING)"
@@ -17638,8 +18834,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 3
+          }
         },
         "Filter_1_1_1##mRduvvky" : {
           "id" : "Filter_1_1_1##mRduvvky",
@@ -17651,7 +18846,7 @@
             "isLabelGrayed" : false
           },
           "properties" : {
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "fF0iKw90##customer_id", "fF0iKw90##last_name", "fF0iKw90##first_name" ],
             "condition" : {
               "expression" : "CAST(customer_id AS INT) > 5\nand CAST(customer_id AS INT) != 0\nor first_name LIKE '%A%'\nor ((1 & 1) == 1)\nor ((2 | 2) == 2)\nand 10 * CAST(customer_id AS INT) == 20\nand last_name != first_name\nand (CAST(customer_id AS INT) BETWEEN 10 AND 20)\nand (ARRAY(10, 20, 30)[2] == 30)\nand (MAP(1, 'Hello', 2, 'World')[1] == 'Hello')\nand (10 ^ 20 == 50)\nand (MAP('three', 3).four == NULL)\nand (named_struct('a', 5, 'b', 'Spark').a == 5)\nand (1 = 2 and 1 == 2)\nand (1 >= 2 and 1 <= 2 and 1 != 3 or 2 > 4 or 4 < 5)\nand (\n      EXISTS(\n        ARRAY(1, NULL, 3), \n        x -> x % 2 == 0)\n    )\nor ilike('Spark', '_PARK')\nor (named_struct('a', 1, 'b', 2) IN (named_struct('a', 1, 'b', 1), named_struct('a', 1, 'b', 3)))\nand (1 IS DISTINCT FROM 5)\nand ('invalid' IS false)\nand isnull(1)\nand ('t' IS NOT true)\nand (1 <=> '1')\nand (1 <> CAST(customer_id AS INT))\nand (10 - 2 + 10 == 8)\nand (NOT true)\nand (false or true)\nand (2 % 0 == 0)\nand ('Spark' || 'SQL' == 'SparkSQL')\nand (r'%SystemDrive%\\Users\\John' LIKE r'%SystemDrive%\\\\Users%')\nand (r'%SystemDrive%\\Users\\John' RLIKE '%SystemDrive%\\\\\\\\Users.*')\nand (regexp_like('%SystemDrive%\\\\Users\\\\John', '%SystemDrive%\\\\\\\\Users.*'))\nand (2L / 2L == 10)\nand (~ 0 == -1)\nand (base64(aes_encrypt('Spark', 'abcdefghijklmnop')) == NULL)\nand (CAST(aes_decrypt(unbase64('4A5jOAh9FNGwoMeuJukfllrLdHEZxA2DyuSQAWz77dfn'), 'abcdefghijklmnop') AS STRING) == NULL)\nand (ascii('234') == 234)\nand (base64('Spark SQL') == NULL)\nand (bin(13) == NULL)\nand (binary('Spark SQL') == NULL)\nand (btrim('abcaabaSparkSQLabcaaba', 'abc') != NULL)\nand (char(65) != NULL)\nand (char_length('Spark SQL ') == 10)\nand (character_length('Spark SQL ') == 10)\nand (concat(customer_id, 'hello') != NULL)\nand (concat_ws(',', 'Spark', ARRAY('S', 'Q', NULL, 'L'), NULL) != NULL)\nand contains('SparkSQL', 'Spork')\nand (crc32('Spark') > 0)\nand chr(65) != NULL\nand (3 ^ 5 == 6)\nand (hex(encode('Spark SQL', 'US-ASCII')) != NULL)\nand endswith('SparkSQL', 'SQL')\nand (find_in_set('ab', 'abc,b,ab,c,def') == 2)\nand (format_number(12332.123456, 4) == 2)\nand (format_number(12332.123456, '#.###') == 10)\nand (format_string('Hello World %d %s', 100, 'days') != NULL)\nand (hex('Spark SQL') != NULL)\nand (r'%SystemDrive%\\Users\\John' LIKE '%SystemDrive%\\\\\\\\Users%')\nand (initcap('sPark sql') != NULL)\nand (instr('SparkSQL', 'R') == 2)\nand (lcase('LowerCase') != NULL)\nand (LEFT('Spark SQL', 3) != NULL)\nand (length('Spark SQL ') > 20)\nand (levenshtein('kitten', 'sitting') > 10)\nand (locate('bar', 'abcbarbar') > 2)\nand (locate('bar', 'abcbarbar', 5) > 2)\nand (lower('LowerCase') != NULL)\nand (lpad('hi', 1, '??') != NULL)\nand (hex(lpad(x'1020', 5, x'05')) != NULL)\nand (('+' || ltrim('abc', 'acbabSparkSQL   ') || '+') != NULL)\nand (md5('Spark') != NULL)\nand (octet_length('Spark SQL') != NULL)\nand (parse_url('http://spark.apache.org/path?query=1', 'HOST') != NULL)\nand (position('bar', 'abcbarbar') > 10)\nand (position('bar', 'abcbarbar', 5) > 5)\nand (printf('Hello World %d %s', 100, 'days') != NULL)\nand (r'%SystemDrive%\\Users\\John' RLIKE r'%SystemDrive%\\\\Users.*')\nand (r'%SystemDrive%\\Users\\John' RLIKE '%SystemDrive%\\\\\\\\Users.*')\nand (regexp_like('%SystemDrive%\\\\Users\\\\John', '%SystemDrive%\\\\\\\\Users.*'))\nand (regexp_extract('100-200', '(\\\\d+)-(\\\\d+)', 1) > 10)\nand (regexp_extract_all('100-200, 300-400', '(\\\\d+)-(\\\\d+)', 1) != NULL)\nand (regexp_replace('100-200', '(\\\\d+)', 'num') != NULL)\nand (repeat('123', 2) != NULL)\nand (replace('ABCabc', 'abc', 'DEF') != NULL)\nand (reverse('Spark SQL') != NULL)\nand (RIGHT('Spark SQL', 3) != NULL)\nand (rpad('hi', 5, 'ab') != NULL)\nand (hex(rpad(x'1020', 5, x'05')) != NULL)\nand (rtrim('ab', 'SparkSQLabcaaba') != NULL)\nand (sentences('Hi there! Good morning.', 'en', 'US') != NULL)\nand (sha('Spark') != NULL)\nand (sha1('Spark') != NULL)\nand (sha2('Spark', 256) != NULL)\nand (soundex('Miller') != NULL)\nand (concat('1', space(2), '1') != NULL)\nand (('->' || split_part('Hello,world,!', ',', 1) || '<-') != NULL)\nand (('->' || split_part('', ',', 1) || '<-') != NULL)\nand (('->' || split_part('Hello,World,!', ',', 0) || '<-') != NULL)\nand (startswith('SparkSQL', 'Spark'))\nand (startswith(NULL, 'Spark'))\nand (substr('Spark SQL', 5, 1) != NULL)\nand (substring_index('www.apache.org', '.', 2) != NULL)\nand (CAST(to_binary('537061726B') AS STRING) != NULL)\nand (CAST(to_binary('537061726B', 'hex') AS STRING) != NULL)\nand (CAST(try_to_binary('U3Bhxcms=', 'base64') AS STRING) != NULL)\nand (translate('AaBbCc', 'abc', '123') != NULL)\nand (CAST(try_to_binary('U3Bhxcms=', 'base64') AS STRING) != NULL)\nand (ucase('SparkSql') != NULL)\nand (CAST(unbase64('U3BhcmsgU1FM') AS STRING) != NULL)\nand (decode(unhex('537061726B2053514C'), 'UTF-8') != NULL)\nand (upper('SparkSql') != NULL)\nand (10 / 2 == 5)\nand ((3 | 5) == 2)\nand ((DATE'2021-03-20' - INTERVAL '2' MONTH) != NULL)\nand (10 - 2 + 2 == 4)\nand (2 % 1.8 == 2)\nand (3 ^ 5 == 3)\nand (3 & 5 == 2)\nand (3 * 2 == 2)\nand ((INTERVAL '3' YEAR * 3) != NULL)\nand (abs(-1) == 1)\nand (acos(1) == 1)\nand (acosh(1) == 1)\nand (asin(0) == 1)\nand (asinh(0) == 1)\nand (atan(0) == 1)\nand (atan2(0, 0) == 1)\nand (atanh(0) == 1)\nand (BIGINT(current_timestamp) > 1)\nand (bit_count(-1) > 1)\nand (bit_get(23Y, 1) == 1)\nand (bround(13.5, -1) == 1)\nand (round(13.5, -1) == 1)\nand (cbrt(27.0) == 3)\nand (ceil(3345.1, -2) == 1)\nand (ceiling(5.4) == 6)\nand (ceiling(3345.1, -2) == 1)\nand (conv('100', 2, 10) == 4)\nand (conv('FFFFFFFFFFFFFFFF', 16, 10) == 1)\nand (cos(pi()) == -1)\nand (cosh(0) == 1)\nand (cot(1) == 1)\nand (csc(pi() / 2) == 2)\nand (decimal('5.2') == 5)\nand (degrees(3.141592653589793) == 10)\nand (double('5.2') == 4)\nand (e() == 2)\nand (exp(1) == 2)\nand (expm1(0) == 1)\nand (factorial(2) == 2)\nand (FLOAT('5.2') == 5)\nand (floor(-0.1) == -1)\nand (floor(3345.1, -2) == 20)\nand (getbit(23Y, 0) == 1)\nand (hypot(3, 4) == 5)\nand (INT(-5.6) == 5)\nand (isnan(CAST('NaN' AS double)))\nand (ln(1) == 1)\nand (log(10, 100) == 2)\nand (log1p(0) == 1)\nand (log2(2) == 1)\nand (log10(10) == 1)\nand (nanvl(CAST('NaN' AS DOUBLE), 123) == 2)\nand (negative(1) == -1)\nand (pmod(-10, 3) == 2)\nand (positive(-1) == -1)\nand (pow(2, 3) * power(2, 3) == 8)\nand (radians(180) == 10)\nand (rand(0) * random(0) == 1)\nand (randn(0) == 1)\nand (rint(12.3456) == 1)\nand (round(2.5, 0) == 3)\nand (sec(pi()) == -1)\nand (sin(0) == 0)\nand (shiftleft(2, 1) == 2)\nand (shiftright(4, 1) == 2)\nand (shiftrightunsigned(4, 1) == 2)\nand (sign(40) == 1)\nand (signum(40) == 1)\nand (sinh(0) == 1)\nand (smallint(-5.6) == 5)\nand (sqrt(4) == 2)\nand (tan(0) == 1)\nand (tanh(0) == 1)\nand (tinyint('12') * tinyint(5.4) == 1)\nand (try_add(DATE'2021-03-20', INTERVAL '2' MONTH) != NULL)\nand (try_add(1, 2) == 3)\nand (try_divide(3, 2) == 3)\nand (try_divide(INTERVAL '3:15' HOUR TO MINUTE, 3) != NULL)\nand (try_subtract(1, 2) == 2)\nand (try_subtract(TIMESTAMP'2021-03-20 12:15:29', INTERVAL '3' SECOND) != NULL)\nand (try_subtract(-128Y, 1Y) != NULL)\nand (width_bucket(5.3, 0.2, 10.6, 5) + width_bucket(-0.9, 5.2, 0.5, 2) == 3)\nand (width_bucket(INTERVAL '1' DAY, INTERVAL '0' DAY, INTERVAL '10' DAY, 11) == 10)\nand (ARRAY(10, 20, 30) != NULL)\nand (\n      (\n        aggregate(\n          ARRAY(1, 2, 3), \n          0, \n          (acc, x) -> acc + x, \n          acc -> acc * 10)\n      ) == 1\n    )\nand (array_contains(ARRAY(1, 2, 3), 2))\nand (array_distinct(ARRAY(1, 2, 3, NULL, 3)) != NULL)\nand (array_except(ARRAY(1, 2, 2, 3), ARRAY(1, 1, 3, 5)) != NULL)\nand (array_intersect(ARRAY(1, 2, 3), ARRAY(1, 3, 3, 5)) != NULL)\nand (array_join(ARRAY('hello', 'world'), ',') != NULL)\nand (array_join(ARRAY('hello', NULL, 'world'), ',', '*') == NULL)\nand (array_max(ARRAY(1, 20, NULL, 3)) > 10)\nand (array_min(ARRAY(1, 20, NULL, 3)) == 1)\nand (array_position(ARRAY(3, 2, 1, 4, 1), 1) == 2)\nand (array_remove(ARRAY(1, 2, 3, NULL, 3, 2), 3) != NULL)\nand (array_repeat('123', 2) != NULL)\nand (array_size(ARRAY(1, NULL, 3, NULL)) == 2)\nand (array_sort(ARRAY('bc', 'ab', 'dc')) != NULL)\nand (array_union(ARRAY(1, 2, 2, 3), ARRAY(1, 3, 5)) != NULL)\nand (arrays_overlap(ARRAY(1, 2, NULL, 3), ARRAY(NULL, 4, 5)) == NULL)\nand (arrays_zip(ARRAY(1, 2), ARRAY('shoe', 'string', 'budget')) == NULL)\nand (cardinality(ARRAY('b', 'd', 'c', 'a')) == 2)\nand (concat(ARRAY(1, 2, 3), ARRAY(4, 5), ARRAY(6)) != NULL)\nand (element_at(MAP(1, 'a', 2, 'b'), 2) == NULL)\nand (\n      EXISTS(\n        ARRAY(1, 2, 3), \n        x -> x % 2 == 0)\n    )\nand (\n      EXISTS(\n        ARRAY(0, NULL, 2, 3, NULL), \n        x -> x IS NULL)\n    )\nand (\n      filter(\n        ARRAY(1, 2, 3), \n        x -> x % 2 == 1) != NULL\n    )\nand (flatten(ARRAY(ARRAY(1, 2), ARRAY(3, 4))) != NULL)\nand (\n      forall(\n        ARRAY(1, 2, 3), \n        x -> x % 2 == 0) == NULL\n    )\nand (reverse(ARRAY(2, 1, 4, 3)) != NULL)\nand (sequence(5, 1) != NULL)\nand (cardinality(ARRAY('b', 'd', 'c', 'a')) == 10)\nand (slice(ARRAY(1, 2, 3, 4), 2, 2) != NULL)\nand (sort_array(ARRAY('b', 'd', NULL, 'c', 'a'), true) != NULL)\nand (\n      transform(\n        ARRAY(1, 2, 3), \n        x -> x + 1) != NULL\n    )\nand (try_element_at(ARRAY(1, 2, 3), 2) == 2)\nand (\n      zip_with(\n        ARRAY('a', 'b', 'c'), \n        ARRAY('d', 'e', 'f'), \n        (x, y) -> concat(x, y)) != NULL\n    )\nand (MAP(1, 'Hello', 2, 'World')[1] != NULL)\nand (cardinality(MAP('a', 1, 'b', 2)) == 2)\nand (element_at(MAP(1, 'a', 2, 'b'), 3) == NULL)\nand (MAP(1.0, '2', 3.0, '4') IS NOT NULL)\nand (map_concat(MAP(1, 'a', 2, 'b'), MAP(3, 'c')) IS NOT NULL)\nand (map_contains_key(MAP(1, 'a', 2, 'b'), 2))\nand (map_entries(MAP(1, 'a', 2, 'b')) IS NOT NULL)\nand (\n      map_filter(\n        MAP(1, 0, 2, 2, 3, -1), \n        (k, v) -> k > v) IS NOT NULL\n    )\nand (map_from_arrays(ARRAY(1.0, 3.0), ARRAY('2', '4')) IS NOT NULL)\nand (map_from_entries(ARRAY(STRUCT(1, 'a'), STRUCT(2, 'b'))) IS NOT NULL)\nand (map_keys(MAP(1, 'a', 2, 'b')) IS NOT NULL)\nand (map_values(MAP(1, 'a', 2, 'b')) IS NOT NULL)\nand (\n      map_zip_with(\n        MAP(1, 'a', 2, 'b'), \n        MAP(1, 'x', 2, 'y'), \n        (k, v1, v2) -> concat(v1, v2)) IS NOT NULL\n    )\nand (cardinality(MAP('a', 1, 'b', 2)) == 2)\nand (str_to_map('a:1,b:2,c:3', ',', ':') IS NOT NULL)\nand (\n      transform_keys(\n        map_from_arrays(ARRAY(1, 2, 3), ARRAY(1, 2, 3)), \n        (k, v) -> k + 1) IS NOT NULL\n    )\nand (\n      transform_values(\n        map_from_arrays(ARRAY(1, 2, 3), ARRAY(1, 2, 3)), \n        (k, v) -> k + v) IS NOT NULL\n    )\nand (try_element_at(MAP(1, 'a', 2, 'b'), 2) IS NOT NULL)\nand ((INTERVAL '3:15' HOUR TO MINUTE / 3) IS NOT NULL)\nand ((DATE'2021-03-31' - INTERVAL '1' MONTH) != NULL)\nand (typeof(current_timestamp - (current_date + INTERVAL '1' DAY)) != NULL)\nand ((DATE'2021-03-31' + INTERVAL '1' MONTH) != NULL)\nand ((INTERVAL '3' YEAR * 3) != NULL)\nand (add_months('2016-08-31', -6) != NULL)\nand (current_date() != NULL)\nand (current_timestamp() != NULL)\nand (current_timezone() != NULL)\nand (DATE('2021-03-21') != NULL)\nand (date_add('2016-07-30', 1) != NULL)\nand (date_format('2016-04-08', 'y') == 2016)\nand (date_from_unix_date(1) != NULL)\nand (date_sub('2016-07-30', 1) != NULL)\nand (date_trunc('YEAR', '2015-03-05T09:32:05.359') != NULL)\nand (datediff('2009-07-31', '2009-07-30') == 1)\nand (day('2009-07-30') == 30)\nand (dayofmonth('2009-07-30') == 30)\nand (dayofweek('2009-07-30') == 5)\nand (dayofyear('2016-04-09') == 100)\nand (EXTRACT(SECONDS FROM INTERVAL '5:00:30.001' HOUR TO SECOND) == 30)\nand (EXTRACT(WEEK FROM TIMESTAMP'2019-08-12 01:00:00.123456') == 33)\nand (from_unixtime(0, 'yyyy-MM-dd HH:mm:ss') != NULL)\nand (from_utc_timestamp('2017-07-14 02:40:00.0', 'GMT+1') != NULL)\nand (from_utc_timestamp('2016-08-31', 'Asia/Seoul') != NULL)\nand (hour('2009-07-30 12:58:59') == 10)\nand (last_day('2009-01-12') IS NOT NULL)\nand (make_date(2013, 7, 15) IS NOT NULL)\nand (make_dt_interval(0, 0, 1, -0.1) IS NOT NULL)\nand (make_ym_interval(100, 5) IS NOT NULL)\nand (minute('2009-07-30 12:58:59') == 58)\nand (month('2016-07-30') == 7)\nand (months_between('1997-02-28 10:30:00', '1996-10-30') == 3)\nand (months_between('1997-02-28 10:30:00', '1996-10-30', false) == 2)\nand (next_day('2015-01-14', 'TU') != NULL)\nand (now() != NULL)\nand (quarter('2016-08-31') == 3)\nand (second('2009-07-30 12:58:59') == 59)\nand (TIMESTAMP(123) != NULL)\nand (TIMESTAMP('2020-04-30 12:25:13.45') != NULL)\nand (timestamp_micros(1230219000123123) != NULL)\nand (timestamp_millis(1230219000123) != NULL)\nand (timestamp_seconds(1230219000) != NULL)\nand (to_date('2016-12-31', 'yyyy-MM-dd') != NULL)\nand (to_timestamp('2016-12-31', 'yyyy-MM-dd') != NULL)\nand (to_utc_timestamp('2017-07-14 02:40:00.0', 'GMT+1') != NULL)\nand (trunc('2015-10-27', 'YEAR') != NULL)\nand (trunc('2019-08-04', 'quarter') != NULL)\nand (try_add(TIMESTAMP'2021-03-20 12:15:29', INTERVAL '3' SECOND) != NULL)\nand (try_add(DATE'2021-03-31', INTERVAL '1' MONTH) != NULL)\nand (try_divide(INTERVAL '3:15' HOUR TO MINUTE, 3) != NULL)\nand ((INTERVAL '3' YEAR * 3) != NULL)\nand (try_subtract(DATE'2021-03-20', INTERVAL '2' MONTH) != NULL)\nand (try_subtract(TIMESTAMP'2021-03-20 12:15:29', INTERVAL '3' SECOND) != NULL)\nand (unix_date(DATE('1970-01-02')) == 1)\nand (unix_micros(TIMESTAMP('1970-01-01 00:00:01Z')) == 1)\nand (unix_millis(TIMESTAMP('1970-01-01 00:00:01Z')) == 1)\nand (unix_seconds(TIMESTAMP('1970-01-01 00:00:01Z')) == 1)\nand (unix_timestamp('2016-04-08', 'yyyy-MM-dd') == 1)\nand (weekday(DATE'2009-07-30') == 1)\nand (EXTRACT(DAYOFWEEK_ISO FROM DATE'2009-07-30') == 4)\nand (weekofyear('2008-02-20') == 8)\nand (year('2016-07-30') == 2016)\nand (ARRAY(1, 2, 3) != NULL)\nand (BIGINT('5') == 5)\nand (binary('Spark SQL') != NULL)\nand (BOOLEAN(1))\nand (CAST(5.6 AS DECIMAL (2, 0)) != NULL)\nand (CAST(INTERVAL '1-2' YEAR TO MONTH AS INTEGER) == 12)\nand (DATE('2021-03-21') != NULL)\nand (decimal('5.2') == 5)\nand (double('5.2') / 2 == 5)\nand (FLOAT('5.2') / 2 == 2)\nand (INT('5') == 5)\nand (make_date(2013, 7, 15) != NULL)\nand (make_dt_interval(100, 13) != NULL)\nand (make_ym_interval(100, 5) == NULL)\nand (MAP(1.0, '2', 3.0, '4') IS NOT NULL)\nand (named_struct('a', 1, 'b', 2, 'c', 3) IS NOT NULL)\nand (smallint('5') == 5)\nand (STRUCT(1, 2, 3) IS NOT NULL)\nand (tinyint('12') == 12)\nand (TIMESTAMP('2020-04-30 12:25:13.45') != NULL)\nand (to_date('2016-12-31', 'yyyy-MM-dd') != NULL)\nand (to_timestamp('2016-12-31 00:12:00') != NULL)\nand (from_csv('1, 0.8', 'a INT, b DOUBLE') != NULL)\nand (schema_of_csv('1,abc') != NULL)\nand (json_array_length('[1,2,3,{\"f1\":1,\"f2\":[5,6]},4]') == 5)\nand (json_object_keys('{\"f1\":\"abc\",\"f2\":{\"f3\":\"a\", \"f4\":\"b\"}}') != NULL)\nand (schema_of_json('[{\"col\":01}]', MAP('allowNumericLeadingZeros', 'true')) != NULL)\nand (to_json(named_struct('a', 1, 'b', 2)) != NULL)\nand (to_json(MAP(named_struct('a', 1), named_struct('b', 2))) != NULL)\nand (to_json(ARRAY((MAP('a', 1)))) != NULL)\nand (xpath('<a><b>b1</b><b>b2</b><b>b3</b><c>c1</c><c>c2</c></a>', 'a/b/text()') != NULL)\nand (xpath_boolean('<a><b>1</b></a>', 'a/b'))\nand (xpath_double('<a><b>1</b><b>2</b></a>', 'sum(a/b)') != NULL)\nand (xpath_float('<a><b>1</b><b>2</b></a>', 'sum(a/b)') != NULL)\nand (xpath_int('<a><b>1</b><b>2</b></a>', 'sum(a/b)') == 2)\nand (xpath_long('<a><b>1</b><b>2</b></a>', 'sum(a/b)') == 3)\nand (xpath_number('<a><b>1</b><b>2</b></a>', 'sum(a/b)') == 2)\nand (xpath_int('<a><b>1</b><b>2</b></a>', 'sum(a/b)') == 2)\nand (xpath_string('<a><b>b</b><c>cc</c></a>', 'a/c') != NULL)\nand (\n      assert_true(\n        0 < 1) == NULL\n    )\nand (\n      (\n        CASE\n          WHEN 1 > 0\n            THEN 1\n          WHEN 2 > 0\n            THEN 2.0\n          ELSE 1.2\n        END\n      ) == 1\n    )\nand (\n      (\n        CASE 3\n          WHEN 1\n            THEN 'A'\n          WHEN 2\n            THEN 'B'\n          WHEN 3\n            THEN 'C'\n        END\n      ) != NULL\n    )\nand (coalesce(2, 5 / 0) == 2)\nand (current_catalog() != NULL)\nand (current_database() != NULL)\nand (current_user() != NULL)\nand (decode(5, 6, 'Spark', 5, 'SQL', 4, 'rocks') != NULL)\nand (elt(1, 'scala', 'java') != NULL)\nand (greatest(10, 9, 2, 4, 3) == 10)\nand (hash('Spark', ARRAY(123), 2) != NULL)\nand (\n      if(\n        1 < 2, \n        'a', \n        'b') != NULL\n    )\nand (ifnull(NULL, ARRAY('2')) != NULL)\nand (isnull(1))\nand (isnotnull(1))\nand (least(10, 9, 2, 4, 3) == 2)\nand (monotonically_increasing_id() > 10)\nand (nullif(2, 2) == NULL)\nand (nvl(NULL, 2) == 2)\nand (nvl2(NULL, 2, 1) == 1)\nand (typeof(1) != NULL)\nand (uuid() != NULL)\nand (xxhash64('Spark', ARRAY(123), 2) != NULL)\nand ('20'::INTEGER == 20)\nand like('Spark', '_park')\nand ('Spark' LIKE SOME('_park', '_ock'))\nand (bitmap_count(x'00') == 10)\nand (charindex('bar', 'abcbarbar') == 1)\nand (decode(x'FEFF0053007000610072006B002000530051004C', 'UTF-16') != NULL)\nand (like('Spark', '_park'))\nand (len('Spark SQL ') > 10)\nand (levenshtein('kitten', 'sitting', 4) > 10)\nand (('+' || ltrim('abc', 'acbabSparkSQL   ') || '+') != NULL)\nand (mask('AaBb123-&^ASDXYZ921312asd', 'Z', 'z', '9', 'X') != NULL)\nand (mask('AaBb123-&^ASDXYZ921312asd', lowerChar => 'z', upperChar => 'X') != NULL)\nand (mask('AaBb123-&ASDXYZ921312asd', NULL, NULL, NULL, NULL) != NULL)\nand (overlay('Spark SQL' PLACING '_' FROM 6) != NULL)\nand (overlay('Spark SQL' PLACING 'tructured' FROM 2 FOR 4) != NULL)\nand (overlay(encode('Spark SQL', 'utf-8') PLACING encode('_', 'utf-8') FROM 6) != NULL)\nand (position('bar' IN 'abcbarbar') > 2)\nand (regexp_count('Steven Jones and Stephen Smith are the best players', 'Ste(v|ph)en') > 2)\nand (regexp_instr('Mary had a little lamb', NULL) != NULL)\nand (regexp_substr(NULL, 'Ste(v|ph)en') != NULL)\nand (rtrim('ab', 'SparkSQLabcaaba') != NULL)\nand (STRING(4) != NULL)\nand (substr('Spark SQL', -3) != NULL)\nand (substr('Spark SQL' FROM 5 FOR 1) != NULL)\nand (substr('Spark SQL' FROM -3) != NULL)\nand (to_char(454, '000.00') != NULL)\nand (to_char(DATE'2016-04-08', 'y') != NULL)\nand (to_char(encode('abc', 'utf-8'), 'utf-8') != NULL)\nand (to_varchar(454, '999') != NULL)\nand (to_varchar(DATE'2016-04-08', 'y') != NULL)\nand (to_varchar(x'537061726b2053514c', 'hex') != NULL)\nand (TRIM( 'SL' FROM 'SSparkSQLS') != NULL)\nand (TRIM(BOTH 'SL' FROM 'SSparkSQLS') != NULL)\nand (TRIM(LEADING 'SL' FROM 'SSparkSQLS') != NULL)\nand (TRIM(TRAILING 'SL' FROM 'SSparkSQLS') != NULL)\nand (\n      CAST(try_aes_decrypt(\n        unbase64('MTIzNDU2Nzg5MDEyMdXvR41sJqwZ6hnTU8FRTTtXbL8yeChIZA=='), \n        '1234567890abcdef', \n        'GCM', \n        'DEFAULT', \n        'Some AAD') AS STRING) != NULL\n    )\nand (url_decode('http%3A%2F%2Fspark.apache.org%2Fpath%3Fquery%3D1') != NULL)\nand (url_encode('http://spark.apache.org/path?query=1') != NULL)\nand ((TIMESTAMP'2021-03-20 12:15:29' - INTERVAL '3' SECOND) != NULL)\nand ((TIMESTAMP'2021-03-20 12:15:29' + INTERVAL '3' SECOND) != NULL)\nand (bit_reverse(-1) == -1)\nand (bitmap_bit_position(-32768) == 1)\nand (bitmap_bucket_number(-32768) == 1)\nand (MOD(2, 1.8) == 2)\nand (array_append(ARRAY(1, 2, 3), 0) == NULL)\nand (array_compact(ARRAY(1, 2, NULL, 3, NULL, 3)) == NULL)\nand (array_insert(ARRAY('a', 'b', 'c'), 1, 'z') != NULL)\nand (array_prepend(ARRAY(1, 2, 3), 0) != NULL)\nand (get(ARRAY(1, 2, 3), 2) != NULL)\nand (\n      reduce(\n        ARRAY(1, 2, 3), \n        0, \n        (acc, x) -> acc + x) == 2\n    )\nand (shuffle(ARRAY(1, 20, 3, 5)) != NULL)\nand (map_contains_key(MAP(1, 'a', 2, 'b'), 2))\nand ((DATE'2021-03-31' - INTERVAL '1' MONTH) != NULL)\nand ((DATE'2021-03-31' + INTERVAL '1' MONTH) != NULL)\nand ((TIMESTAMP'2021-03-20 12:15:29' - INTERVAL '3' SECOND) != NULL)\nand (date_diff(MONTH, TIMESTAMP'2021-02-28 12:00:00', TIMESTAMP'2021-03-28 12:00:00') == 1)\nand (date_part('SECONDS', TIMESTAMP'2019-10-01 00:00:01.000001') == 1)\nand (date_part('Week', TIMESTAMP'2019-08-12 01:00:00.123456') == 33)\nand (dateadd('2016-07-30', 1) != NULL)\nand (dateadd(MICROSECOND, 5, TIMESTAMP'2022-02-28 00:00:00') != NULL)\nand (datediff(MONTH, TIMESTAMP'2021-02-28 12:00:00', TIMESTAMP'2021-03-28 11:59:59') == 0)\nand (make_interval(0, 0, 1, 1, 12, 30, 1.001001) IS NOT NULL)\nand (make_timestamp(2014, 12, 28, 6, 30, 45.887, 'CET') IS NOT NULL)\nand (make_timestamp(NULL, 7, 22, 15, 30, 0) IS NOT NULL)\nand (now() != NULL)\nand (timediff(MONTH, TIMESTAMP'2021-02-28 12:00:00', TIMESTAMP'2021-03-28 12:00:00') == 1)\nand (timestampdiff(MONTH, TIMESTAMP'2021-02-28 12:00:00', TIMESTAMP'2021-03-28 12:00:00') == 1)\nand (to_unix_timestamp('2016-04-08', 'yyyy-MM-dd') == 100)\nand (try_to_timestamp('2016-12-31', 'yyyy-MM-dd') != NULL)\nand ('20'::INTEGER == 20)\nand (make_interval(100, 11) IS NOT NULL)\nand (make_timestamp(2014, 12, 28, 6, 30, 45.887) IS NOT NULL)\nand (STRING(5) != NULL)\nand (to_char(454, '000.00') != NULL)\nand (to_varchar(454, '999') IS NOT NULL)\nand (from_json('{\"a\":1, \"b\":0.8}', 'a INT, b DOUBLE') IS NOT NULL)\nand (get_json_object('{\"a\":\"b\"}', '$.a') IS NOT NULL)\nand (to_csv(named_struct('time', to_timestamp('2015-08-26', 'yyyy-MM-dd')), MAP('timestampFormat', 'dd/MM/yyyy')) IS NOT NULL)\nand (to_csv(named_struct('a', 1, 'b', 2)) IS NOT NULL)\nand (from_xml('<p><time>26/08/2015</time></p>', 'time Timestamp', MAP('timestampFormat', 'dd/MM/yyyy')) != NULL)\nand (schema_of_xml('<p><a attr=\"2\">1</a><a>3</a></p>', MAP('excludeAttribute', 'true')) IS NOT NULL)\nand (current_metastore() != NULL)\nand (current_schema() != NULL)\nand (current_version() != NULL)\nand (equal_null(2, 2))\nand (\n      iff(\n        1 < 2, \n        'a', \n        'b') == 'a'\n    )\nand (is_account_group_member('admins'))\nand (is_member('admins'))\nand (luhn_check('12345') == NULL)\nand (user() != NULL)\nand (h3_coverash3('POLYGON((-122.4194 37.7749,-118.2437 34.0522,-74.0060 40.7128,-122.4194 37.7749))', 0) != NULL)\nand (h3_coverash3string('{\"type\":\"LineString\",\"coordinates\":[[-122.4194,37.7749],[-118.2437,34.0522],[-74.0060,40.7128]]}', 1) != NULL)\nand (h3_longlatash3(-122.4783, 37.8199, 13) > 0)\nand (h3_longlatash3string(-122.4783, 37.8199, 13) != NULL)\nand (h3_pointash3('POINT(-122.4783 37.8199)', 13) > 0)\nand (h3_pointash3string('{\"type\":\"Point\",\"coordinates\":[]}', 15) == NULL)\nand (h3_pointash3string('POINT(-122.4783 37.8199)', 13) != NULL)\nand (\n      h3_polyfillash3(\n        unhex(\n          '0103000000010000000400000050fc1873d79a5ec0d0d556ec2fe342404182e2c7988f5dc0f46c567dae064140aaf1d24d628052c05e4bc8073d5b444050fc1873d79a5ec0d0d556ec2fe34240'), \n        2) != NULL\n    )\nand (h3_polyfillash3('POLYGON((-122.4194 37.7749,-118.2437 34.0522,-74.0060 40.7128,-122.4194 37.7749))', 2) != NULL)\nand (h3_polyfillash3string('POLYGON((-122.4194 37.7749,-118.2437 34.0522,-74.0060 40.7128,-122.4194 37.7749))', 2) != NULL)\nand (h3_try_polyfillash3('Not-a-valid-rep', 2) == NULL)\nand (h3_try_polyfillash3('POLYGON((-122.4194 37.7749,-118.2437 34.0522,-74.0060 40.7128,-122.4194 37.7749))', 2) != NULL)\nand (h3_try_polyfillash3string('POLYGON((-122.4194 37.7749,-118.2437 34.0522,-74.0060 40.7128,-122.4194 37.7749))', 2) != NULL)\nand (h3_boundaryasgeojson('8009fffffffffff') != NULL)\nand (h3_boundaryasgeojson(599686042433355775) != NULL)\nand (hex(h3_boundaryaswkb(599686042433355775)) != NULL)\nand (h3_boundaryaswkt(599686042433355775) != NULL)\nand (h3_centerasgeojson(599686042433355775) != NULL)\nand (hex(h3_centeraswkb('8009fffffffffff')) == NULL)\nand (h3_centeraswkt('8009fffffffffff') != NULL)\nand (h3_h3tostring(599686042433355775) != NULL)\nand (h3_stringtoh3('85283473fffffff') == NULL)\nand (h3_ischildof('88283471b9fffff', '85283473fffffff'))\nand (h3_ispentagon(590112357393367039))\nand (h3_isvalid('85283473fffffff'))\nand (h3_try_validate(590112357393367039) != NULL)\nand (h3_validate(590112357393367039) != NULL)\nand (h3_distance(599686030622195711, 599686015589810175) == 2)\nand (h3_hexring(599686042433355775, 1) != NULL)\nand (h3_kring(599686042433355775, 1) != NULL)\nand (h3_kringdistances(599686042433355775, 1) != NULL)\nand (h3_distance(599686030622195711, 599686015589810175) == 2)\nand (h3_maxchild(599686042433355775, 10) != NULL)\nand (h3_minchild(599686042433355775, 10) != NULL)\nand (h3_resolution(599686042433355775) == 5)\nand (h3_tochildren(599686042433355775, 6) != NULL)\nand (h3_toparent(599686042433355775, 0) != NULL)\nand (\n      h3_compact(\n        ARRAY(\n          599686042433355775, \n          599686030622195711, \n          599686044580839423, \n          599686038138388479, \n          599686043507097599, \n          599686015589810175, \n          599686014516068351, \n          599686034917163007, \n          599686029548453887, \n          599686032769679359, \n          599686198125920255, \n          599686040285872127, \n          599686041359613951, \n          599686039212130303, \n          599686023106002943, \n          599686027400970239, \n          599686013442326527, \n          599686012368584703, \n          599686018811035647)) != NULL\n    )\nand (\n      h3_uncompact(\n        ARRAY(\n          599686030622195711, \n          599686015589810175, \n          599686014516068351, \n          599686034917163007, \n          599686029548453887, \n          599686032769679359, \n          599686198125920255, \n          599686023106002943, \n          599686027400970239, \n          599686013442326527, \n          599686012368584703, \n          599686018811035647, \n          595182446027210751), \n        5) != NULL\n    )"
             }
@@ -17707,8 +18902,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 7
+          }
         },
         "Reformat_1_2_2##zugy882b" : {
           "id" : "Reformat_1_2_2##zugy882b",
@@ -17720,7 +18914,7 @@
             "isLabelGrayed" : false
           },
           "properties" : {
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "jK9k1hvQ##c_int", "jK9k1hvQ##c_string" ],
             "expressions" : [ {
               "expression" : {
                 "expression" : "CAST(c_int AS STRING)"
@@ -17843,8 +19037,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 2
+          }
         },
         "Limit_4##UH3aihpQ" : {
           "id" : "Limit_4##UH3aihpQ",
@@ -17862,10 +19055,50 @@
           "ports" : {
             "inputs" : [ {
               "id" : "aKEHSs0M",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "first_name",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "last_name",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "id",
+                  "dataType" : {
+                    "type" : "Bigint"
+                  }
+                } ]
+              },
               "slug" : "in0"
             } ],
             "outputs" : [ {
               "id" : "AKRN9yDQ",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "first_name",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "last_name",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "id",
+                  "dataType" : {
+                    "type" : "Bigint"
+                  }
+                } ]
+              },
               "slug" : "out"
             } ],
             "isCustomOutputSchema" : false,
@@ -17883,7 +19116,7 @@
             "isLabelGrayed" : false
           },
           "properties" : {
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "eWpnUhhX##first_name" ],
             "orders" : [ {
               "expression" : {
                 "expression" : "first_name"
@@ -17895,16 +19128,55 @@
           "ports" : {
             "inputs" : [ {
               "id" : "eWpnUhhX",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "first_name",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "last_name",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "id",
+                  "dataType" : {
+                    "type" : "Bigint"
+                  }
+                } ]
+              },
               "slug" : "in0"
             } ],
             "outputs" : [ {
               "id" : "ugE8UwXe",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "first_name",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "last_name",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "id",
+                  "dataType" : {
+                    "type" : "Bigint"
+                  }
+                } ]
+              },
               "slug" : "out"
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 5
+          }
         }
       },
       "connections" : [ {
@@ -18022,12 +19294,14 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "AllExReformat",
+        "x" : 1080,
+        "y" : 1020,
         "phase" : 0,
         "macroDependencies" : [ ],
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "IoFJ3l8S##customer_id", "IoFJ3l8S##first_name", "IoFJ3l8S##last_name" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "customer_id"
@@ -18166,15 +19440,17 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 45
+      }
     },
     "SQLStatement31##DcVF68sV" : {
       "id" : "SQLStatement31##DcVF68sV",
       "component" : "SQLStatement",
       "metadata" : {
         "label" : "SQLStatement31",
+        "x" : 1340,
+        "y" : 1220,
         "phase" : 0,
+        "macroDependencies" : [ ],
         "isLabelGrayed" : false
       },
       "properties" : {
@@ -18202,14 +19478,15 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 49
+      }
     },
     "child_deduplicat##zQjvWMfZ" : {
       "id" : "child_deduplicat##zQjvWMfZ",
       "component" : "Macro",
       "metadata" : {
         "label" : "child_deduplicate_custom_1",
+        "x" : 2300,
+        "y" : 2340,
         "phase" : 0,
         "macroDependencies" : [ "SQL_DatabricksSharedBasic.child_deduplicate_custom" ],
         "comment" : "Removes duplicate child records to ensure data accuracy.",
@@ -18240,15 +19517,17 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 16
+      }
     },
     "SQLStatement1##RVB84Y89" : {
       "id" : "SQLStatement1##RVB84Y89",
       "component" : "SQLStatement",
       "metadata" : {
         "label" : "SQLStatement1",
+        "x" : 1340,
+        "y" : 3140,
         "phase" : 0,
+        "macroDependencies" : [ ],
         "isLabelGrayed" : false
       },
       "properties" : {
@@ -18276,20 +19555,21 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 28
+      }
     },
     "SQLStatement_3_2##kFzH1BpS" : {
       "id" : "SQLStatement_3_2##kFzH1BpS",
       "component" : "Filter",
       "metadata" : {
         "label" : "SQLStatement_3_2",
+        "x" : 1540,
+        "y" : 1960,
         "phase" : 0,
         "macroDependencies" : [ ],
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "ui6CYOLg##c_smallint" ],
         "condition" : {
           "expression" : "c_smallint > 10"
         }
@@ -18305,14 +19585,15 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 6
+      }
     },
     "raw_customers##hc8zynrq" : {
       "id" : "raw_customers##hc8zynrq",
       "component" : "Seed",
       "metadata" : {
         "label" : "raw_customers",
+        "x" : 20,
+        "y" : 3240,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -18338,6 +19619,8 @@
       "component" : "Limit",
       "metadata" : {
         "label" : "Limit_1_1",
+        "x" : 1800,
+        "y" : 1200,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -18365,6 +19648,8 @@
       "component" : "Model",
       "metadata" : {
         "label" : "env_uitesting_shared_parent_model_1",
+        "x" : 1540,
+        "y" : 1760,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -18390,12 +19675,14 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "Reformatsnapshot_parent_main",
+        "x" : 1080,
+        "y" : 1220,
         "phase" : 0,
         "macroDependencies" : [ ],
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "qYT3ZWQo##c_tinyint", "qYT3ZWQo##c_smallint", "qYT3ZWQo##c_int", "qYT3ZWQo##c_bigint", "qYT3ZWQo##c_float", "qYT3ZWQo##c_double", "qYT3ZWQo##c_string", "qYT3ZWQo##c_boolean", "qYT3ZWQo##c_array", "qYT3ZWQo##c_struct", "qYT3ZWQo##p_int", "qYT3ZWQo##p_string", "qYT3ZWQo##c_date", "qYT3ZWQo##dbt_scd_id", "qYT3ZWQo##dbt_updated_at", "qYT3ZWQo##dbt_valid_from", "qYT3ZWQo##dbt_valid_to" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "c_tinyint"
@@ -18494,14 +19781,15 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 48
+      }
     },
     "Limit_5##aaGu0N1q" : {
       "id" : "Limit_5##aaGu0N1q",
       "component" : "Limit",
       "metadata" : {
         "label" : "Limit_5",
+        "x" : 2300,
+        "y" : 1760,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -18529,6 +19817,8 @@
       "component" : "Limit",
       "metadata" : {
         "label" : "Limit_3",
+        "x" : 2300,
+        "y" : 2600,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -18556,6 +19846,8 @@
       "component" : "Model",
       "metadata" : {
         "label" : "env_uitesting_shared_mid_model_1",
+        "x" : 1800,
+        "y" : 220,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -18581,6 +19873,8 @@
       "component" : "Source",
       "metadata" : {
         "label" : "all_type_partitioned",
+        "x" : 1080,
+        "y" : 2840,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -18607,12 +19901,14 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "SQLStatement_2_1",
+        "x" : 1340,
+        "y" : 1020,
         "phase" : 0,
         "macroDependencies" : [ ],
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "EzQwJIzY##customer_id", "EzQwJIzY##first_name", "EzQwJIzY##c1", "EzQwJIzY##c3", "EzQwJIzY##c6", "EzQwJIzY##c13", "EzQwJIzY##c14" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "customer_id"
@@ -18654,21 +19950,22 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 46
+      }
     },
     "PIVOT##dcgqMoaJ" : {
       "id" : "PIVOT##dcgqMoaJ",
       "component" : "Reformat",
       "metadata" : {
         "label" : "PIVOT",
+        "x" : 420,
+        "y" : 3040,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Generates a comprehensive list of SQL keywords and their definitions for reference.",
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "UwYExbYW##LIMIT", "UwYExbYW##JOIN", "UwYExbYW##ASC", "UwYExbYW##DESC", "UwYExbYW##INNER", "UwYExbYW##FULL", "UwYExbYW##CROSS", "UwYExbYW##SEMI", "UwYExbYW##ANTI", "UwYExbYW##ESCAPE", "UwYExbYW##INTERVAL", "UwYExbYW##LEFT", "UwYExbYW##RIGHT", "UwYExbYW##OUTER", "UwYExbYW##TIMESTAMP", "UwYExbYW##DATETIME", "UwYExbYW##END", "UwYExbYW##OVER", "UwYExbYW##RANGE", "UwYExbYW##PRECEDING", "UwYExbYW##FORMAT", "UwYExbYW##ARRAY", "UwYExbYW##PARTITION", "UwYExbYW##UNBOUNDED", "UwYExbYW##JSON", "UwYExbYW##TYPE", "UwYExbYW##IGNORE", "UwYExbYW##RESPECT", "UwYExbYW##VERSION", "UwYExbYW##FILTER", "UwYExbYW##CLUSTER", "UwYExbYW##DISTRIBUTE", "UwYExbYW##ROLLUP", "UwYExbYW##CUBE", "UwYExbYW##GROUPING", "UwYExbYW##SETS", "UwYExbYW##LATERAL", "UwYExbYW##OFFSET", "UwYExbYW##SORT", "UwYExbYW##WINDOW", "UwYExbYW##FETCH", "UwYExbYW##catch", "UwYExbYW##finally", "UwYExbYW##object", "UwYExbYW##protected", "UwYExbYW##return", "UwYExbYW##final", "UwYExbYW##new", "UwYExbYW##while", "UwYExbYW##yield", "UwYExbYW##trait", "UwYExbYW##except", "UwYExbYW##do", "UwYExbYW##extends", "UwYExbYW##assert", "UwYExbYW##global", "UwYExbYW##import", "UwYExbYW##cast", "UwYExbYW##add", "UwYExbYW##allocate", "UwYExbYW##at", "UwYExbYW##both", "UwYExbYW##limit" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "LIMIT"
@@ -18982,14 +20279,15 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 19
+      }
     },
     "all_type_parquet##KwSrbh0b" : {
       "id" : "all_type_parquet##KwSrbh0b",
       "component" : "Source",
       "metadata" : {
         "label" : "all_type_parquet_1_1_1",
+        "x" : 620,
+        "y" : 1600,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -19016,6 +20314,8 @@
       "component" : "Deduplicate",
       "metadata" : {
         "label" : "distinct_rows_by_partition",
+        "x" : 880,
+        "y" : 620,
         "phase" : 0,
         "comment" : "Identifies unique entries based on city, state, and a boolean flag, prioritizing specific numeric values.",
         "isLabelGrayed" : false
@@ -19035,7 +20335,7 @@
           }
         } ],
         "dedupType" : "first",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "m42y7mW9##c_struct", "m42y7mW9##c_struct.city", "m42y7mW9##c_struct.state", "m42y7mW9##c_boolean" ],
         "orders" : [ {
           "expression" : {
             "expression" : {
@@ -19064,14 +20364,15 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 55
+      }
     },
     "IS_INCREMENTAL##Nq3Z5y1u" : {
       "id" : "IS_INCREMENTAL##Nq3Z5y1u",
       "component" : "Source",
       "metadata" : {
         "label" : "IS_INCREMENTAL",
+        "x" : 20,
+        "y" : 3040,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -19098,12 +20399,14 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "Reformat_1_1",
+        "x" : 1080,
+        "y" : 220,
         "phase" : 0,
         "macroDependencies" : [ ],
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "LmhmNLUp##c_int", "LmhmNLUp##c_string" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "CAST(c_int AS STRING)"
@@ -19132,14 +20435,15 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 58
+      }
     },
     "distinct_rows_by##SCwdfJx8" : {
       "id" : "distinct_rows_by##SCwdfJx8",
       "component" : "Deduplicate",
       "metadata" : {
         "label" : "distinct_rows_by_partition_1",
+        "x" : 880,
+        "y" : 820,
         "phase" : 0,
         "comment" : "Identifies unique entries based on specific city and state attributes, ensuring data integrity.",
         "isLabelGrayed" : false
@@ -19163,7 +20467,7 @@
           }
         } ],
         "dedupType" : "last",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "NuNga7wj##c_struct", "NuNga7wj##c_struct.city", "NuNga7wj##c_boolean", "NuNga7wj##c_struct.state", "NuNga7wj##c_struct.pin" ],
         "orders" : [ {
           "expression" : {
             "expression" : {
@@ -19192,14 +20496,15 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 56
+      }
     },
     "unique_tinyint_r##JX6jyU2K" : {
       "id" : "unique_tinyint_r##JX6jyU2K",
       "component" : "Deduplicate",
       "metadata" : {
         "label" : "unique_tinyint_records",
+        "x" : 1080,
+        "y" : 420,
         "phase" : 0,
         "comment" : "Identifies unique records based on a specific small integer value.",
         "isLabelGrayed" : false
@@ -19211,7 +20516,7 @@
           }
         } ],
         "dedupType" : "unique_only",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "OmB5fvMb##c_tinyint" ],
         "orders" : [ ],
         "useOrderBy" : false
       },
@@ -19226,14 +20531,15 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 54
+      }
     },
     "SetOperation_2##Lnzerd03" : {
       "id" : "SetOperation_2##Lnzerd03",
       "component" : "SetOperation",
       "metadata" : {
         "label" : "SetOperation_2",
+        "x" : 2080,
+        "y" : 3160,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -19265,7 +20571,10 @@
       "component" : "SQLStatement",
       "metadata" : {
         "label" : "parent_transform_deduplicate_1",
+        "x" : 2080,
+        "y" : 2340,
         "phase" : 0,
+        "macroDependencies" : [ "SQL_DatabricksParentProjectMain.parent_transform_deduplicate" ],
         "comment" : "Removes duplicate entries from a dataset based on first names and IDs to ensure data integrity.",
         "isLabelGrayed" : false
       },
@@ -19278,22 +20587,27 @@
         } ]
       },
       "ports" : {
-        "inputs" : [ ],
+        "inputs" : [ {
+          "id" : "q1zi12utM3DSY6AWe2CaW$$CA0WyV5MsY5KAZyaV9hOX",
+          "slug" : "Subgraph_9"
+        } ],
         "outputs" : [ {
           "id" : "zjpiP4XT",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 15
+      }
     },
     "SQLStatement_3_1##woePrzOa" : {
       "id" : "SQLStatement_3_1##woePrzOa",
       "component" : "Reformat",
       "metadata" : {
         "label" : "SQLStatement_3_1_1",
+        "x" : 1340,
+        "y" : 1960,
         "phase" : 0,
+        "macroDependencies" : [ ],
         "isLabelGrayed" : false
       },
       "properties" : {
@@ -19311,14 +20625,15 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 5
+      }
     },
     "win_row##NdSoas8Q" : {
       "id" : "win_row##NdSoas8Q",
       "component" : "WindowFunction",
       "metadata" : {
         "label" : "win_row",
+        "x" : 880,
+        "y" : 3240,
         "phase" : 0,
         "comment" : "Organizes complex data into ranked entries for better analysis and reporting.",
         "isLabelGrayed" : false
@@ -19338,7 +20653,7 @@
         } ],
         "frameType" : "row",
         "activeTab" : "partitionTab",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "jJ7ljDij##id", "jJ7ljDij##name", "jJ7ljDij##array_of_mixed_structs", "jJ7ljDij##array_of_mixed_structs.nested", "jJ7ljDij##array_of_mixed_structs.nested.value", "jJ7ljDij##array_of_mixed_structs.nested.flag", "jJ7ljDij##description", "jJ7ljDij##details" ],
         "partitionExpressions" : [ {
           "expression" : {
             "expression" : "id"
@@ -19389,14 +20704,15 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 25
+      }
     },
     "all_type_parquet##Awwszv5j" : {
       "id" : "all_type_parquet##Awwszv5j",
       "component" : "Source",
       "metadata" : {
         "label" : "all_type_parquet",
+        "x" : 620,
+        "y" : 1020,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -19423,6 +20739,8 @@
       "component" : "SetOperation",
       "metadata" : {
         "label" : "SetOperation_3",
+        "x" : 2300,
+        "y" : 3120,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -19454,6 +20772,8 @@
       "component" : "Limit",
       "metadata" : {
         "label" : "Limit_2",
+        "x" : 2300,
+        "y" : 420,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -19481,6 +20801,8 @@
       "component" : "Limit",
       "metadata" : {
         "label" : "Limit_4_1",
+        "x" : 1540,
+        "y" : 3240,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -19508,6 +20830,8 @@
       "component" : "Join",
       "metadata" : {
         "label" : "Join_1_2",
+        "x" : 1540,
+        "y" : 420,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Combines customer data with additional records while excluding certain matches for deeper insights.",
@@ -19559,7 +20883,7 @@
           "alias" : "c_tinyint"
         } ],
         "activeTab" : "conditions",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "Rcdmtf4a##customer_id", "jmmAWaRb##c1", "g4gTn1YY##c_string", "Rcdmtf4a##customer_id", "Rcdmtf4a##first_name", "Rcdmtf4a##last_name", "Rcdmtf4a##c_expressions", "jmmAWaRb##c1", "g4gTn1YY##c_tinyint" ],
         "headAlias" : "in0"
       },
       "ports" : {
@@ -19579,14 +20903,15 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 61
+      }
     },
     "Filter_1##vDenE9rU" : {
       "id" : "Filter_1##vDenE9rU",
       "component" : "Filter",
       "metadata" : {
         "label" : "Filter_1",
+        "x" : 1340,
+        "y" : 2560,
         "phase" : 0,
         "macroDependencies" : [ ],
         "isLabelGrayed" : false
@@ -19616,6 +20941,8 @@
       "component" : "Snapshot",
       "metadata" : {
         "label" : "uitesting_scd2_timestamp",
+        "x" : 880,
+        "y" : 1420,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -19641,6 +20968,8 @@
       "component" : "Join",
       "metadata" : {
         "label" : "joined_records",
+        "x" : 1340,
+        "y" : 620,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Combines various unique records to create a comprehensive dataset for analysis.",
@@ -19697,7 +21026,7 @@
           "alias" : "c_double"
         } ],
         "activeTab" : "conditions",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "hEIrZs2E##c_tinyint", "kAVIeu3r##c_tinyint", "aiZzx5sa##c_smallint", "hEIrZs2E##c_tinyint", "hEIrZs2E##c_int_string", "kAVIeu3r##c_bigint", "kAVIeu3r##c_array", "aiZzx5sa##c_struct", "aiZzx5sa##c_string", "aiZzx5sa##c_double" ],
         "headAlias" : "in0"
       },
       "ports" : {
@@ -19717,21 +21046,22 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 57
+      }
     },
     "exploded_complex##KkWx3VNa" : {
       "id" : "exploded_complex##KkWx3VNa",
       "component" : "FlattenSchema",
       "metadata" : {
         "label" : "exploded_complex_data",
+        "x" : 620,
+        "y" : 3240,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Breaks down complex data structures into individual components for detailed analysis.",
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "XpYvoqOM##array_of_integers", "XpYvoqOM##array_of_strings", "XpYvoqOM##nested_array_of_strings", "XpYvoqOM##array_of_structs", "XpYvoqOM##array_of_mixed_structs", "XpYvoqOM##id", "XpYvoqOM##name" ],
         "flattenExpressions" : [ {
           "expression" : {
             "expression" : "array_of_integers"
@@ -19816,21 +21146,22 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 24
+      }
     },
     "Reformat_1##Kee3Nap1" : {
       "id" : "Reformat_1##Kee3Nap1",
       "component" : "Reformat",
       "metadata" : {
         "label" : "Reformat_1",
+        "x" : 1080,
+        "y" : 2560,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Formats names and generates unique identifiers from a dataset.",
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "Xcighpjb##col_int" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "concat('This is my first name', CAST(NULL AS STRING))"
@@ -19859,15 +21190,17 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 9
+      }
     },
     "qa_complex_macro##GbhVf7ph" : {
       "id" : "qa_complex_macro##GbhVf7ph",
       "component" : "SQLStatement",
       "metadata" : {
         "label" : "qa_complex_macro_1",
+        "x" : 880,
+        "y" : 2560,
         "phase" : 0,
+        "macroDependencies" : [ "SQL_DatabricksParentProjectMain.qa_complex_macro" ],
         "isLabelGrayed" : false
       },
       "properties" : {
@@ -19886,14 +21219,15 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 8
+      }
     },
     "Limit8Test1##KwwKXDCS" : {
       "id" : "Limit8Test1##KwwKXDCS",
       "component" : "Limit",
       "metadata" : {
         "label" : "Limit8Test1",
+        "x" : 1800,
+        "y" : 420,
         "phase" : 0,
         "comment" : "Extracts a sample of five records from the combined customer and asset data for review.",
         "isLabelGrayed" : false
@@ -19922,6 +21256,8 @@
       "component" : "Model",
       "metadata" : {
         "label" : "snapshot_parent_main",
+        "x" : 880,
+        "y" : 1220,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -19947,7 +21283,10 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "all_type_parquet_2",
+        "x" : 880,
+        "y" : 1820,
         "phase" : 0,
+        "macroDependencies" : [ ],
         "isLabelGrayed" : false
       },
       "properties" : {
@@ -19965,20 +21304,21 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 1
+      }
     },
     "OrderBy_2##uXEPrKTe" : {
       "id" : "OrderBy_2##uXEPrKTe",
       "component" : "OrderBy",
       "metadata" : {
         "label" : "OrderBy_2",
+        "x" : 1540,
+        "y" : 3040,
         "phase" : 0,
         "macroDependencies" : [ ],
         "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "iMqPIV0d##c_string", "iMqPIV0d##c_int", "iMqPIV0d##c_tinyint" ],
         "orders" : [ {
           "expression" : {
             "expression" : "concat(c_string, c_int)"
@@ -20003,14 +21343,15 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 29
+      }
     },
     "all_type_non_par##Gg1kQO7y" : {
       "id" : "all_type_non_par##Gg1kQO7y",
       "component" : "Source",
       "metadata" : {
         "label" : "all_type_non_partitioned",
+        "x" : 620,
+        "y" : 420,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -20037,6 +21378,8 @@
       "component" : "Join",
       "metadata" : {
         "label" : "Join_1",
+        "x" : 2060,
+        "y" : 400,
         "phase" : 0,
         "macroDependencies" : [ ],
         "isLabelGrayed" : false
@@ -20119,7 +21462,7 @@
           "alias" : "c_struct"
         } ],
         "activeTab" : "conditions",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "dwrIPsMf##c_smallint", "VuM8Iv2v##c_int", "VuM8Iv2v##c_string", "TwRnolsr##customer_id", "VKrAcQty##customer_id", "aiehN388##c1", "dwrIPsMf##c_tinyint", "dwrIPsMf##c_smallint", "VuM8Iv2v##c_int", "dwrIPsMf##c_bigint", "dwrIPsMf##c_float", "dwrIPsMf##c_double", "dwrIPsMf##c_string", "dwrIPsMf##c_boolean", "dwrIPsMf##c_array", "dwrIPsMf##c_struct" ],
         "headAlias" : "in0"
       },
       "ports" : {
@@ -20145,14 +21488,15 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "index" : 68
+      }
     },
     "SQLStatement_1_1##q7bXznzN" : {
       "id" : "SQLStatement_1_1##q7bXznzN",
       "component" : "Deduplicate",
       "metadata" : {
         "label" : "SQLStatement_1_1_1",
+        "x" : 1340,
+        "y" : 1520,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -20182,6 +21526,8 @@
       "component" : "Subgraph",
       "metadata" : {
         "label" : "Subgraph_3",
+        "x" : 1800,
+        "y" : 1520,
         "phase" : 0
       },
       "processes" : {
@@ -20195,7 +21541,7 @@
             "isLabelGrayed" : false
           },
           "properties" : {
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "IrCzUvGT##c_int", "IrCzUvGT##c_string" ],
             "expressions" : [ {
               "expression" : {
                 "expression" : "c_int * 2"
@@ -20308,8 +21654,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 1
+          }
         },
         "SQLStatement_5##yzWvO3A9" : {
           "id" : "SQLStatement_5##yzWvO3A9",
@@ -20395,7 +21740,7 @@
             "isLabelGrayed" : false
           },
           "properties" : {
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "LvPPOqD5##c_int", "LvPPOqD5##c_string" ],
             "expressions" : [ {
               "expression" : {
                 "expression" : "c_int * 2"
@@ -20541,8 +21886,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 2
+          }
         },
         "SQLStatementtest##zWgy88YH" : {
           "id" : "SQLStatementtest##zWgy88YH",
@@ -20550,6 +21894,7 @@
           "metadata" : {
             "label" : "SQLStatementtest1232134",
             "phase" : 0,
+            "macroDependencies" : [ ],
             "comment" : "Filters specific performance records based on defined criteria.",
             "isLabelGrayed" : false
           },
@@ -20751,8 +22096,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 5
+          }
         },
         "pvt##DClMJMxS" : {
           "id" : "pvt##DClMJMxS",
@@ -20760,6 +22104,7 @@
           "metadata" : {
             "label" : "pvt",
             "phase" : 0,
+            "macroDependencies" : [ ],
             "isLabelGrayed" : false
           },
           "properties" : {
@@ -20842,8 +22187,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 7
+          }
         },
         "SQLStatement_1_1##EYiVC0By" : {
           "id" : "SQLStatement_1_1##EYiVC0By",
@@ -20860,7 +22204,7 @@
               }
             } ],
             "dedupType" : "distinct",
-            "columnsSelector" : [ ],
+            "columnsSelector" : [ "N20RdQJb##c_tinyint" ],
             "orders" : [ ],
             "useOrderBy" : false
           },
@@ -20959,8 +22303,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 4
+          }
         },
         "Reformat_10##qWm5ZtDD" : {
           "id" : "Reformat_10##qWm5ZtDD",
@@ -20968,6 +22311,7 @@
           "metadata" : {
             "label" : "Reformat_10",
             "phase" : 0,
+            "macroDependencies" : [ ],
             "isLabelGrayed" : false
           },
           "properties" : {
@@ -21133,8 +22477,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 0
+          }
         },
         "pvt1##XhpcBbtg" : {
           "id" : "pvt1##XhpcBbtg",
@@ -21142,6 +22485,7 @@
           "metadata" : {
             "label" : "pvt1",
             "phase" : 0,
+            "macroDependencies" : [ ],
             "isLabelGrayed" : false
           },
           "properties" : {
@@ -21224,8 +22568,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 3
+          }
         },
         "pvt2##b8GCmeRr" : {
           "id" : "pvt2##b8GCmeRr",
@@ -21233,6 +22576,7 @@
           "metadata" : {
             "label" : "pvt2",
             "phase" : 0,
+            "macroDependencies" : [ ],
             "isLabelGrayed" : false
           },
           "properties" : {
@@ -21333,8 +22677,7 @@
             } ],
             "isCustomOutputSchema" : false,
             "autoUpdateOnRun" : false
-          },
-          "index" : 6
+          }
         }
       },
       "connections" : [ {
@@ -21470,6 +22813,8 @@
       "component" : "Source",
       "metadata" : {
         "label" : "all_type_parquet_1_1",
+        "x" : 1540,
+        "y" : 2360,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -21960,6 +23305,12 @@
     "sourcePort" : "NHdEW7C2",
     "target" : "final##pR9rkrRU",
     "targetPort" : "Y1c4hUIL"
+  }, {
+    "id" : "2TrtUcf5ATM0e1fwGcjTV",
+    "source" : "Subgraph_9##LN3oyy1e",
+    "sourcePort" : "IoZnjxY9",
+    "target" : "parent_transform##ump19QTO",
+    "targetPort" : "q1zi12utM3DSY6AWe2CaW$$CA0WyV5MsY5KAZyaV9hOX"
   } ],
   "component" : "Model"
 }
