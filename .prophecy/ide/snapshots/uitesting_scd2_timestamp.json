@@ -19,8 +19,7 @@
       },
       "userDefinedConfig" : {
         "vars" : { }
-      },
-      "mergeApproach" : "scd2"
+      }
     },
     "version" : 3
   },
@@ -145,7 +144,7 @@
     },
     "final##ogmLCVOv" : {
       "id" : "final##ogmLCVOv",
-      "component" : "TargetModel",
+      "component" : "TargetSnapshot",
       "metadata" : {
         "label" : "uitesting_scd2_timestamp",
         "x" : 420,
@@ -158,7 +157,6 @@
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
         "query" : "SELECT *\n\nFROM all_type_non_partitioned_columns\n",
-        "isModel" : false,
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true"
