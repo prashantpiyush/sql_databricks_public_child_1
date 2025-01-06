@@ -152,40 +152,7 @@ subgraphs: {}
 sqlModels:
   .prophecy/metadata/sqlmodels/tpcds_uitesting_shared_1:
     name: tpcds_uitesting_shared_1
-    schema:
-      entityType: ''
-      providerType: Databricks
-      fields:
-      - name: substrw_warehouse_name120
-        dataType:
-          type: String
-      - name: sm_type
-        dataType:
-          type: String
-      - name: cc_name
-        dataType:
-          type: String
-      - name: days_30
-        dataType:
-          type: Bigint
-      - name: days_31_60
-        dataType:
-          type: Bigint
-      - name: days_61_90
-        dataType:
-          type: Bigint
-      - name: days_90_120
-        dataType:
-          type: Bigint
-      - name: days_more_than_120
-        dataType:
-          type: Bigint
-      - name: h8_30_to_9
-        dataType:
-          type: Bigint
-      - name: i_item_id
-        dataType:
-          type: String
+    schema: null
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
