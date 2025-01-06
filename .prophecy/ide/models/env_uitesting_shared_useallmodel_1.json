@@ -19482,7 +19482,7 @@
     },
     "child_deduplicat##zQjvWMfZ" : {
       "id" : "child_deduplicat##zQjvWMfZ",
-      "component" : "Macro",
+      "component" : "child_deduplicate_custom",
       "metadata" : {
         "label" : "child_deduplicate_custom_1",
         "x" : 2300,
@@ -19493,18 +19493,23 @@
         "isLabelGrayed" : false
       },
       "properties" : {
-        "macroName" : "child_deduplicate_custom",
-        "parameters" : [ {
-          "name" : "relation",
-          "value" : "'parent_transform_deduplicate_1'"
-        }, {
-          "name" : "partition_by",
-          "value" : "'id'"
-        }, {
-          "name" : "order_by",
-          "value" : "'first_name'"
-        } ],
-        "projectName" : "SQL_DatabricksSharedBasic"
+        "relation" : "parent_transform_deduplicate_1",
+        "order_by" : "first_name",
+        "partition_by" : "id",
+        "_oldMacroProperties" : {
+          "macroName" : "child_deduplicate_custom",
+          "projectName" : "SQL_DatabricksSharedBasic",
+          "parameters" : [ {
+            "name" : "relation",
+            "value" : "'parent_transform_deduplicate_1'"
+          }, {
+            "name" : "order_by",
+            "value" : "'first_name'"
+          }, {
+            "name" : "partition_by",
+            "value" : "'id'"
+          } ]
+        }
       },
       "ports" : {
         "inputs" : [ {
@@ -19517,6 +19522,12 @@
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
+      },
+      "componentInfo" : {
+        "gemId" : "child_deduplicate_custom_SQL_DatabricksSharedBasic",
+        "name" : "child_deduplicate_custom",
+        "projectName" : "SQL_DatabricksSharedBasic",
+        "sourceProjectName" : "SQL_DatabricksSharedBasic"
       }
     },
     "SQLStatement1##RVB84Y89" : {
