@@ -90269,7 +90269,7 @@
   },
   "dependenciesContainer" : {
     "dependencies" : { },
-    "lastError" : "Building dependency project SQL_DatabricksParentProjectMain failed. env_uitesting_main_model_databricks_1: Component parent_transform_deduplicate not found,\nenv_uitesting_main_model_databricks_1: Component parent_transform_deduplicate not found,\nenv_uitesting_main_model_databricks_1: Error updating 'env_uitesting_main_model_databricks_1' file: Component parent_transform_deduplicate not found",
+    "lastError" : "Building dependency project dbt_utils failed. Databricks exception: Failed with HTTP Code `400`, Error: statusCode: 400, response: {\"error\":\"invalid_request\",\"error_description\":\"Refresh token is invalid\"}",
     "prophecyProjectDependencies" : { }
   },
   "entitiesToSync" : [ {
