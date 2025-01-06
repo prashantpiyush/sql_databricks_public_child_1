@@ -4245,9 +4245,9 @@ child_deduplicate_custom_1 AS (
   {#Removes duplicate child records to ensure data accuracy.#}
   {{
     SQL_DatabricksSharedBasic.child_deduplicate_custom(
-      relation = 'parent_transform_deduplicate_1', 
-      partition_by = 'id', 
-      order_by = 'first_name'
+      'parent_transform_deduplicate_1', 
+      'first_name', 
+      'id'
     )
   }}
 
