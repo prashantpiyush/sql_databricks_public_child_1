@@ -249,7 +249,6 @@
   },
   "dependenciesContainer" : {
     "dependencies" : { },
-    "lastError" : "Building dependency project SQL_DatabricksParentProjectMain failed. env_uitesting_main_model_databricks_1: Component parent_transform_deduplicate not found,\nenv_uitesting_main_model_databricks_1: Component parent_transform_deduplicate not found,\nenv_uitesting_main_model_databricks_1: Error updating 'env_uitesting_main_model_databricks_1' file: Component parent_transform_deduplicate not found",
     "prophecyProjectDependencies" : {
       "https://github.com/abhisheks-prophecy/sql_databricks_public_parent" : "66"
     }
@@ -267,11 +266,11 @@
     "type" : "Model",
     "syncedOnce" : false
   }, {
-    "name" : "sanity_simple_model_1",
+    "name" : "env_uitesting_shared_useallmodel_1",
     "type" : "Model",
-    "syncedOnce" : false
+    "syncedOnce" : true
   }, {
-    "name" : "test_model_1",
+    "name" : "sanity_simple_model_1",
     "type" : "Model",
     "syncedOnce" : false
   }, {

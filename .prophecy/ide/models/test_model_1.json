@@ -2,7 +2,7 @@
   "id" : "test_model_1",
   "metainfo" : {
     "label" : "test_model_1",
-    "autoLayout" : true,
+    "autoLayout" : false,
     "staleState" : "none",
     "sourceSuggestions" : {
       "sources" : [ ]
@@ -20,6 +20,8 @@
       "component" : "Source",
       "metadata" : {
         "label" : "very_complex_table",
+        "x" : 20,
+        "y" : 220,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -46,6 +48,8 @@
       "component" : "Deduplicate",
       "metadata" : {
         "label" : "distinct_asthma_medications",
+        "x" : 220,
+        "y" : 220,
         "phase" : 0,
         "comment" : "Identifies unique classes of asthma medications for better treatment options.",
         "isLabelGrayed" : false
@@ -80,6 +84,8 @@
       "component" : "WindowFunction",
       "metadata" : {
         "label" : "win_row",
+        "x" : 420,
+        "y" : 20,
         "phase" : 0,
         "comment" : "Organizes complex data into ranked entries for better analysis and reporting.",
         "isLabelGrayed" : false
@@ -158,6 +164,8 @@
       "component" : "TargetModel",
       "metadata" : {
         "label" : "test_model_1",
+        "x" : 420,
+        "y" : 220,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -190,6 +198,8 @@
       "component" : "Source",
       "metadata" : {
         "label" : "qa_complex_array_data",
+        "x" : 20,
+        "y" : 20,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -216,6 +226,8 @@
       "component" : "WindowFunction",
       "metadata" : {
         "label" : "win_range",
+        "x" : 620,
+        "y" : 20,
         "phase" : 0,
         "comment" : "Calculates maximum IDs and average values for grouped data, enhancing insights into trends.",
         "isLabelGrayed" : false
@@ -285,6 +297,8 @@
       "component" : "FlattenSchema",
       "metadata" : {
         "label" : "exploded_complex_data",
+        "x" : 220,
+        "y" : 20,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Breaks down complex data structures into individual components for detailed analysis.",
