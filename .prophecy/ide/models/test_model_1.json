@@ -20,7 +20,7 @@
       "component" : "Source",
       "metadata" : {
         "label" : "very_complex_table",
-        "x" : 20,
+        "x" : 0,
         "y" : 220,
         "phase" : 0,
         "isLabelGrayed" : false
