@@ -9,6 +9,8 @@
     },
     "graphConfig" : {
       "entityConfig" : {
+        "database" : "'hive_metastore'",
+        "schema" : "\"qa_schema\"",
         "type" : "ModelConfig"
       },
       "userDefinedConfig" : {

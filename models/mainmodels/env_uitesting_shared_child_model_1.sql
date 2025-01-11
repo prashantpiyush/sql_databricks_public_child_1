@@ -1,8 +1,15 @@
 {{
   config({    
+    "database":  var('PROJECT_DATABASE') ,
+    "schema":  var('PROJECT_SCHEMA_DB_WAREHOUSE') ,
     "tags": ["tag1", "tag2"]
   })
 }}
+
+{% set MODEL_SCHEMA_DB_WAREHOUSE = "qa_db_warehouse" %}
+{% set MODEL_SCHEMA = "qa_schema" %}
+{% set MODEL_DATABASE = "hive_metastore" %}
+{% set MODEL_ALIAS = "env_uitesting_shared_child_model_1" %}
 
 WITH env_uitesting_shared_parent_model_1 AS (
 
