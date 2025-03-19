@@ -14,8 +14,6 @@
     "path" : "",
     "editable" : true
   },
-  "datasets" : { },
-  "pipelines" : { },
   "externalSources" : {
     "type" : "Project",
     "name" : "",
@@ -25,7 +23,7 @@
       "children" : [ ]
     }, {
       "type" : "Catalog",
-      "name" : "aman",
+      "name" : "1_2_3",
       "children" : [ ]
     }, {
       "type" : "Catalog",
@@ -81,7 +79,7 @@
       "children" : [ ]
     }, {
       "type" : "Catalog",
-      "name" : "kaustubh",
+      "name" : "iam-cat",
       "children" : [ ]
     }, {
       "type" : "Catalog",
@@ -97,15 +95,7 @@
       "children" : [ ]
     }, {
       "type" : "Catalog",
-      "name" : "mei_dev",
-      "children" : [ ]
-    }, {
-      "type" : "Catalog",
       "name" : "newcata_1",
-      "children" : [ ]
-    }, {
-      "type" : "Catalog",
-      "name" : "no_permission",
       "children" : [ ]
     }, {
       "type" : "Catalog",
@@ -241,25 +231,27 @@
       "children" : [ ]
     }, {
       "type" : "Catalog",
-      "name" : "sony",
-      "children" : [ ]
-    }, {
-      "type" : "Catalog",
       "name" : "system",
-      "children" : [ ]
-    }, {
-      "type" : "Catalog",
-      "name" : "tanmay",
       "children" : [ ]
     }, {
       "type" : "Catalog",
       "name" : "testcata",
       "children" : [ ]
+    }, {
+      "type" : "Catalog",
+      "name" : "testcatalog",
+      "children" : [ ]
+    }, {
+      "type" : "Catalog",
+      "name" : "testkt2",
+      "children" : [ ]
     } ]
   },
   "dependenciesContainer" : {
     "dependencies" : { },
-    "prophecyProjectDependencies" : { }
+    "prophecyProjectDependencies" : {
+      "https://github.com/abhisheks-prophecy/sql_databricks_public_parent" : "66"
+    }
   },
   "entitiesToSync" : [ {
     "name" : "env_uitesting_shared_child_model_1",
