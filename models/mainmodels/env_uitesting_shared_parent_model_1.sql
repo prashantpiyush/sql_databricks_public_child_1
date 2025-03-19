@@ -10,7 +10,7 @@ Reformat_1 AS (
 
   SELECT * 
   
-  FROM all_type_parquet AS in0
+  FROM all_type_parquet
 
 ),
 
@@ -32,6 +32,7 @@ spark_catalog_qa_database_ungrouped_table_1 AS (
 
 Join_1 AS (
 
+  {#Combines customer data with reformatted information, ensuring diverse data types are included for comprehensive analysis.#}
   SELECT 
     in1.c_tinyint AS c_tinyint,
     in1.c_smallint AS c_smallint,

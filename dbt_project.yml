@@ -29,8 +29,8 @@ target-path: "target"
 # Variable Configs
 # ==================
 vars:
-  v_project_int: "20"
   v_project_dict: "{'a': 2, 'b': 'hello'}"
+  v_project_int: "20"
 
 # ============
 # Misc
