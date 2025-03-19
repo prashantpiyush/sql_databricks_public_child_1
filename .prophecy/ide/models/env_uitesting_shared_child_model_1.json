@@ -1,0 +1,352 @@
+{
+  "id" : "env_uitesting_shared_child_model_1",
+  "metainfo" : {
+    "label" : "env_uitesting_shared_child_model_1",
+    "autoLayout" : false,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "database" : " var('PROJECT_DATABASE') ",
+        "schema" : " var('PROJECT_SCHEMA_DB_WAREHOUSE') ",
+        "tags" : [ "\"tag1\"", "\"tag2\"" ],
+        "type" : "ModelConfig"
+      },
+      "userDefinedConfig" : {
+        "vars" : {
+          "MODEL_SCHEMA_DB_WAREHOUSE" : "\"qa_db_warehouse\"",
+          "MODEL_SCHEMA" : "\"qa_schema\"",
+          "MODEL_DATABASE" : "\"hive_metastore\"",
+          "MODEL_ALIAS" : "\"env_uitesting_shared_child_model_1\""
+        }
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "env_uitesting_shared_child_model_1##IYgFeMqJ" : {
+      "id" : "env_uitesting_shared_child_model_1##IYgFeMqJ",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "env_uitesting_shared_child_model_1",
+        "x" : 880,
+        "y" : 200,
+        "phase" : 0,
+        "macroDependencies" : [ "SQL_DatabricksSharedBasic.qa_concat_function_main" ],
+        "comment" : "Validates data integrity by comparing a specific integer field against the sum of counts from related datasets.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "customQueryDisabled" : false,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT \n  Join_1.c_tinyint,\n  Join_1.c_smallint,\n  Join_1.c_int,\n  Join_1.c_bigint,\n  Join_1.c_float,\n  Join_1.c_double,\n  Join_1.c_string,\n  Join_1.c_boolean,\n  Join_1.c_array,\n  Join_1.c_struct,\n  concat(\n    Join_1.c_array[0], \n    Join_1.c_struct.city, \n    {{ SQL_DatabricksSharedBasic.qa_concat_function_main('c_string', 'c_boolean') }}) AS c_test\n\nFROM Join_1\n\nWHERE c_int != (\n        (\n          SELECT count(*)\n          \n          FROM Limit_2\n         )\n        + (\n            SELECT count(*)\n            \n            FROM env_uitesting_shared_parent_model_1\n           )\n        + (\n            SELECT count(*)\n            \n            FROM Limit_1\n           )\n      )\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true",
+          "_row_id" : "480423782"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "dC9BqQh2",
+          "slug" : "Join_1"
+        }, {
+          "id" : "wNdBl4hw",
+          "slug" : "Limit_2"
+        }, {
+          "id" : "aUqjHTFQ",
+          "slug" : "env_uitesting_shared_parent_model_1"
+        }, {
+          "id" : "r5UUO7w2",
+          "slug" : "Limit_1"
+        } ],
+        "outputs" : [ {
+          "id" : "RrP8HN1F",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "env_uitesting_shared_parent_model_1##EcVhT0ej" : {
+      "id" : "env_uitesting_shared_parent_model_1##EcVhT0ej",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "env_uitesting_shared_parent_model_1",
+        "x" : 220,
+        "y" : 260,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "env_uitesting_shared_parent_model_1",
+          "sourceType" : "Model"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "dyGZKU1u",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "Limit_1##RYlOlm8s" : {
+      "id" : "Limit_1##RYlOlm8s",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "Limit_1",
+        "x" : 420,
+        "y" : 220,
+        "phase" : 0
+      },
+      "properties" : {
+        "limit" : {
+          "expression" : "10"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "PCexPoCa",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "fcm7waIj",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "env_uitesting_shared_mid_model_1##tkHHyeWb" : {
+      "id" : "env_uitesting_shared_mid_model_1##tkHHyeWb",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "env_uitesting_shared_mid_model_1",
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "env_uitesting_shared_mid_model_1",
+          "sourceType" : "Model"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "j3w8nrvO",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "Join_1##DDrEl7kV" : {
+      "id" : "Join_1##DDrEl7kV",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "Join_1",
+        "x" : 620,
+        "y" : 120,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "in1",
+          "expression" : {
+            "expression" : "in0.c_bigint = in1.c_bigint"
+          },
+          "joinType" : "INNER"
+        } ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "in0.c_tinyint"
+          },
+          "alias" : "c_tinyint"
+        }, {
+          "expression" : {
+            "expression" : "in0.c_smallint"
+          },
+          "alias" : "c_smallint"
+        }, {
+          "expression" : {
+            "expression" : "in0.c_int"
+          },
+          "alias" : "c_int"
+        }, {
+          "expression" : {
+            "expression" : "in0.c_bigint"
+          },
+          "alias" : "c_bigint"
+        }, {
+          "expression" : {
+            "expression" : "in0.c_float"
+          },
+          "alias" : "c_float"
+        }, {
+          "expression" : {
+            "expression" : "in0.c_double"
+          },
+          "alias" : "c_double"
+        }, {
+          "expression" : {
+            "expression" : "in0.c_string"
+          },
+          "alias" : "c_string"
+        }, {
+          "expression" : {
+            "expression" : "in0.c_boolean"
+          },
+          "alias" : "c_boolean"
+        }, {
+          "expression" : {
+            "expression" : "in0.c_array"
+          },
+          "alias" : "c_array"
+        }, {
+          "expression" : {
+            "expression" : "in0.c_struct"
+          },
+          "alias" : "c_struct"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ "b9f7Vcsq##c_bigint", "gmStuapZ##c_bigint", "b9f7Vcsq##c_tinyint", "b9f7Vcsq##c_smallint", "b9f7Vcsq##c_int", "b9f7Vcsq##c_bigint", "b9f7Vcsq##c_float", "b9f7Vcsq##c_double", "b9f7Vcsq##c_string", "b9f7Vcsq##c_boolean", "b9f7Vcsq##c_array", "b9f7Vcsq##c_struct" ],
+        "headAlias" : "in0"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "b9f7Vcsq",
+          "slug" : "in0"
+        }, {
+          "id" : "gmStuapZ",
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "NWoMmNDJ",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "Reformat_1##MaFK6xoE" : {
+      "id" : "Reformat_1##MaFK6xoE",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "x" : 220,
+        "y" : 20,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "G2D1T5Xb",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "IaFEaw5F",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "Limit_2##JIDMXo67" : {
+      "id" : "Limit_2##JIDMXo67",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "Limit_2",
+        "x" : 420,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "limit" : {
+          "expression" : "10"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "WO2uPkTK",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "uH2Mq8zf",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "fzfwyocp",
+    "source" : "env_uitesting_shared_parent_model_1##EcVhT0ej",
+    "sourcePort" : "dyGZKU1u",
+    "target" : "Limit_1##RYlOlm8s",
+    "targetPort" : "PCexPoCa"
+  }, {
+    "id" : "Og877hLZ",
+    "source" : "env_uitesting_shared_mid_model_1##tkHHyeWb",
+    "sourcePort" : "j3w8nrvO",
+    "target" : "Reformat_1##MaFK6xoE",
+    "targetPort" : "G2D1T5Xb"
+  }, {
+    "id" : "lgbbZdEV",
+    "source" : "Reformat_1##MaFK6xoE",
+    "sourcePort" : "IaFEaw5F",
+    "target" : "Limit_2##JIDMXo67",
+    "targetPort" : "WO2uPkTK"
+  }, {
+    "id" : "wPoHuSP2",
+    "source" : "Limit_2##JIDMXo67",
+    "sourcePort" : "uH2Mq8zf",
+    "target" : "Join_1##DDrEl7kV",
+    "targetPort" : "b9f7Vcsq"
+  }, {
+    "id" : "hMERl9g9",
+    "source" : "Limit_1##RYlOlm8s",
+    "sourcePort" : "fcm7waIj",
+    "target" : "Join_1##DDrEl7kV",
+    "targetPort" : "gmStuapZ"
+  }, {
+    "id" : "btPvOHci",
+    "source" : "Join_1##DDrEl7kV",
+    "sourcePort" : "NWoMmNDJ",
+    "target" : "env_uitesting_shared_child_model_1##IYgFeMqJ",
+    "targetPort" : "dC9BqQh2"
+  }, {
+    "id" : "SYKVnLst",
+    "source" : "Limit_2##JIDMXo67",
+    "sourcePort" : "uH2Mq8zf",
+    "target" : "env_uitesting_shared_child_model_1##IYgFeMqJ",
+    "targetPort" : "wNdBl4hw"
+  }, {
+    "id" : "EsRlw8vD",
+    "source" : "env_uitesting_shared_parent_model_1##EcVhT0ej",
+    "sourcePort" : "dyGZKU1u",
+    "target" : "env_uitesting_shared_child_model_1##IYgFeMqJ",
+    "targetPort" : "aUqjHTFQ"
+  }, {
+    "id" : "FugJtUb4",
+    "source" : "Limit_1##RYlOlm8s",
+    "sourcePort" : "fcm7waIj",
+    "target" : "env_uitesting_shared_child_model_1##IYgFeMqJ",
+    "targetPort" : "r5UUO7w2"
+  } ],
+  "component" : "Model"
+}

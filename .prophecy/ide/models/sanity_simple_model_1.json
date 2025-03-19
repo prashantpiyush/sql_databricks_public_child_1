@@ -1,0 +1,153 @@
+{
+  "id" : "sanity_simple_model_1",
+  "metainfo" : {
+    "label" : "sanity_simple_model_1",
+    "autoLayout" : false,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "sanity_simple_model_1##Vap9FOXK" : {
+      "id" : "sanity_simple_model_1##Vap9FOXK",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "sanity_simple_model_1",
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM Limit_1\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ZV006Ehl",
+          "slug" : "Limit_1"
+        } ],
+        "outputs" : [ {
+          "id" : "u83hTm5G",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "RLcgOE918CguHJ5GUg8a8" : {
+      "id" : "RLcgOE918CguHJ5GUg8a8",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "all_type_parquet",
+        "slug" : "all_type_parquet",
+        "x" : -800,
+        "y" : -180,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "all_type_parquet",
+          "sourceType" : "Source",
+          "sourceName" : "spark_catalog.qa_database",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "h8IoRiVvQT1ES-vBB_PUo",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "LY41I0ghblbSMZJncNVdI$$36WntmWfNcEuD3bR9Niya" : {
+      "id" : "LY41I0ghblbSMZJncNVdI$$36WntmWfNcEuD3bR9Niya",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "slug" : "Reformat_1",
+        "x" : -500,
+        "y" : -100,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Y72s5X9t-MQrKhAb304zn$$ej_-miEomEwrCUNNObrlc",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "9eZrJDcbQunNwy50UGn5V$$PtXyU09n2n9aOnwUkUrTm",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "foYvYuqwpngiO48mXCBaw$$-2Le9nzdaozHq0OrD4VZX" : {
+      "id" : "foYvYuqwpngiO48mXCBaw$$-2Le9nzdaozHq0OrD4VZX",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "Limit_1",
+        "slug" : "Limit_1",
+        "x" : -200,
+        "y" : -60,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "limit" : {
+          "expression" : "10"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "77nnHZ1NSMEH1JcoU6ZZq$$aPDQu8zy6ZZMlj-6gwvq8",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "keuLnOfYmHCNjBwzVSUrM$$a57dnB8wmNHtgx4iXdCLT",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "fMy_ZD2ME0-qoIJgH9CJz$$D9FAkATTKtpa2xdh3WJh4",
+    "source" : "RLcgOE918CguHJ5GUg8a8",
+    "sourcePort" : "h8IoRiVvQT1ES-vBB_PUo",
+    "target" : "LY41I0ghblbSMZJncNVdI$$36WntmWfNcEuD3bR9Niya",
+    "targetPort" : "Y72s5X9t-MQrKhAb304zn$$ej_-miEomEwrCUNNObrlc"
+  }, {
+    "id" : "vTDZQSKN8PafC4knGTevz$$_Ya9VztdKH8aIuAmGjkUY",
+    "source" : "LY41I0ghblbSMZJncNVdI$$36WntmWfNcEuD3bR9Niya",
+    "sourcePort" : "9eZrJDcbQunNwy50UGn5V$$PtXyU09n2n9aOnwUkUrTm",
+    "target" : "foYvYuqwpngiO48mXCBaw$$-2Le9nzdaozHq0OrD4VZX",
+    "targetPort" : "77nnHZ1NSMEH1JcoU6ZZq$$aPDQu8zy6ZZMlj-6gwvq8"
+  }, {
+    "id" : "huKbTw_9A5SjU9V-nzSyF",
+    "source" : "foYvYuqwpngiO48mXCBaw$$-2Le9nzdaozHq0OrD4VZX",
+    "sourcePort" : "keuLnOfYmHCNjBwzVSUrM$$a57dnB8wmNHtgx4iXdCLT",
+    "target" : "sanity_simple_model_1##Vap9FOXK",
+    "targetPort" : "ZV006Ehl"
+  } ],
+  "component" : "Model"
+}

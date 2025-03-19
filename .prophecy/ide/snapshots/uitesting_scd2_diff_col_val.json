@@ -1,7 +1,7 @@
 {
-  "id" : "uitesting_specifycolumns",
+  "id" : "uitesting_scd2_diff_col_val",
   "metainfo" : {
-    "label" : "uitesting_specifycolumns",
+    "label" : "uitesting_scd2_diff_col_val",
     "autoLayout" : false,
     "staleState" : "none",
     "sourceSuggestions" : {
@@ -9,32 +9,28 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "incremental_predicates" : [ "\"DBT_INTERNAL_SOURCE.c_tinyint > -10\"" ],
-        "materialized" : "incremental",
-        "on_schema_change" : "'sync_all_columns'",
-        "merge_update_columns" : [ "'c_tinyint'", "'c_smallint'", "'c_int'" ],
-        "unique_key" : [ "'c_id'" ],
-        "incremental_strategy" : "'merge'",
-        "type" : "ModelConfig"
+        "strategy" : "'timestamp'",
+        "updated_at" : "\"c_float\"",
+        "target_schema" : " var('qa_schema') ",
+        "unique_key" : "'c_id'",
+        "type" : "SnapshotConfig"
       },
       "userDefinedConfig" : {
-        "vars" : {
-          "v_model_int_real" : "22",
-          "v_model_string_real" : "\"modelstr\""
-        }
+        "vars" : { }
       }
     },
     "version" : 3
   },
   "processes" : {
-    "all_type_non_partitioned_1##p4tdrBnz" : {
-      "id" : "all_type_non_partitioned_1##p4tdrBnz",
+    "all_type_non_par##pLtaCujd" : {
+      "id" : "all_type_non_par##pLtaCujd",
       "component" : "Source",
       "metadata" : {
         "label" : "all_type_non_partitioned_1",
         "x" : 20,
         "y" : 20,
-        "phase" : 0
+        "phase" : 0,
+        "isLabelGrayed" : false
       },
       "properties" : {
         "table" : {
@@ -46,15 +42,16 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "zpC0nj2f",
+          "id" : "BChKfcnw",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      }
+      },
+      "index" : 0
     },
-    "all_type_non_partitioned_columns##IahbvI1A" : {
-      "id" : "all_type_non_partitioned_columns##IahbvI1A",
+    "all_type_non_par##zyH6Up4w" : {
+      "id" : "all_type_non_par##zyH6Up4w",
       "component" : "Reformat",
       "metadata" : {
         "label" : "all_type_non_partitioned_columns",
@@ -62,10 +59,11 @@
         "y" : 20,
         "phase" : 0,
         "macroDependencies" : [ ],
-        "comment" : "Retrieves a comprehensive dataset of various data types for analysis."
+        "comment" : "Extracts all non-partitioned columns from the 'all_type_non_partitioned' table.",
+        "isLabelGrayed" : false
       },
       "properties" : {
-        "columnsSelector" : [ "D5AB8Dyg##c_tinyint", "D5AB8Dyg##c_smallint", "D5AB8Dyg##c_int", "D5AB8Dyg##c_bigint", "D5AB8Dyg##c_float", "D5AB8Dyg##c_double", "D5AB8Dyg##c_string", "D5AB8Dyg##c_boolean", "D5AB8Dyg##c_array", "D5AB8Dyg##c_struct" ],
+        "columnsSelector" : [ ],
         "expressions" : [ {
           "expression" : {
             "expression" : "c_tinyint"
@@ -121,49 +119,38 @@
             "expression" : "monotonically_increasing_id()"
           },
           "alias" : "c_id"
-        }, {
-          "expression" : {
-            "expression" : "CURRENT_DATE"
-          },
-          "alias" : "c_date"
-        }, {
-          "expression" : {
-            "expression" : "CURRENT_TIMESTAMP()"
-          },
-          "alias" : "c_timestamp"
         } ]
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "D5AB8Dyg",
+          "id" : "Ix48SQ8P",
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "DVzLoPnF",
+          "id" : "JnTxGlNc",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      }
+      },
+      "index" : 1
     },
-    "uitesting_specifycolumns##c7XO27YD" : {
-      "id" : "uitesting_specifycolumns##c7XO27YD",
+    "final##mNu0qXUY" : {
+      "id" : "final##mNu0qXUY",
       "component" : "TargetModel",
       "metadata" : {
-        "label" : "uitesting_specifycolumns",
+        "label" : "uitesting_scd2_diff_col_val",
         "x" : 420,
         "y" : 20,
         "phase" : 0,
-        "macroDependencies" : [ ],
-        "comment" : "Retrieves all data from a table containing various column types for testing purposes.",
-        "autoUpdateComment" : true
+        "isLabelGrayed" : false
       },
       "properties" : {
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "SELECT * \n\nFROM all_type_non_partitioned_columns\n",
-        "isModel" : true,
+        "query" : "SELECT *\n\nFROM all_type_non_partitioned_columns\n",
+        "isModel" : false,
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true"
@@ -171,11 +158,11 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "fHCeTI7o",
+          "id" : "oh8O4602",
           "slug" : "all_type_non_partitioned_columns"
         } ],
         "outputs" : [ {
-          "id" : "PMybgZ57",
+          "id" : "yyq0UFfp",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -184,17 +171,17 @@
     }
   },
   "connections" : [ {
-    "id" : "ZBMXcHVk",
-    "source" : "all_type_non_partitioned_1##p4tdrBnz",
-    "sourcePort" : "zpC0nj2f",
-    "target" : "all_type_non_partitioned_columns##IahbvI1A",
-    "targetPort" : "D5AB8Dyg"
+    "id" : "y5X4CDXs",
+    "source" : "all_type_non_par##pLtaCujd",
+    "sourcePort" : "BChKfcnw",
+    "target" : "all_type_non_par##zyH6Up4w",
+    "targetPort" : "Ix48SQ8P"
   }, {
-    "id" : "b16o9KWd",
-    "source" : "all_type_non_partitioned_columns##IahbvI1A",
-    "sourcePort" : "DVzLoPnF",
-    "target" : "uitesting_specifycolumns##c7XO27YD",
-    "targetPort" : "fHCeTI7o"
+    "id" : "hnWSqSaK",
+    "source" : "all_type_non_par##zyH6Up4w",
+    "sourcePort" : "JnTxGlNc",
+    "target" : "final##mNu0qXUY",
+    "targetPort" : "oh8O4602"
   } ],
-  "component" : "Model"
+  "component" : "Snapshot"
 }

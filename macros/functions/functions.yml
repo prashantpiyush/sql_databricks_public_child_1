@@ -1,0 +1,10 @@
+---
+version: 2
+macros:
+- name: "qa_concat_function_main"
+  arguments:
+  - name: "param_1"
+    type: "unknown"
+  - name: "param_2"
+    type: "unknown"
+  macroType: "expression"
