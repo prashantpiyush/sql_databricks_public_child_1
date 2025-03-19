@@ -24,6 +24,7 @@
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
         "query" : "",
+        "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true"
