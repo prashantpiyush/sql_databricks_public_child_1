@@ -137,7 +137,7 @@
     },
     "final##mNu0qXUY" : {
       "id" : "final##mNu0qXUY",
-      "component" : "TargetModel",
+      "component" : "TargetSnapshot",
       "metadata" : {
         "label" : "uitesting_scd2_diff_col_val",
         "x" : 420,
@@ -150,7 +150,6 @@
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
         "query" : "SELECT *\n\nFROM all_type_non_partitioned_columns\n",
-        "isModel" : false,
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true"

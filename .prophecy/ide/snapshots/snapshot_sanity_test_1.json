@@ -166,7 +166,7 @@
     },
     "snapshot_sanity_test_1##MOwgzCcF" : {
       "id" : "snapshot_sanity_test_1##MOwgzCcF",
-      "component" : "TargetModel",
+      "component" : "TargetSnapshot",
       "metadata" : {
         "label" : "snapshot_sanity_test_1",
         "x" : 620,
@@ -179,7 +179,6 @@
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
         "query" : "SELECT * \n\nFROM OrderBy_1\n",
-        "isModel" : false,
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true"
