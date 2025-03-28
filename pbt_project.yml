@@ -513,21 +513,6 @@ sqlModels:
       sources: []
       snapshots: []
     createdAt: '2023-04-12 09:20:35'
-  .prophecy/metadata/sqlmodels/test2:
-    name: test2
-    schema: null
-    description: null
-    author: abhisheks+shared@prophecy.io
-    files:
-    - models/test2.sql
-    - .prophecy/ide/models/test2.json
-    sqlDependencies:
-      models: []
-      datasets: []
-      seeds: []
-      sources: []
-      snapshots: []
-    createdAt: '2025-03-10 04:25:59'
   .prophecy/metadata/sqlmodels/env_uitesting_shared_mid_model_1:
     name: env_uitesting_shared_mid_model_1
     schema:
@@ -4254,7 +4239,23 @@ sqlPipeline:
   author: abhisheks+e2etests@prophecy.io
   createdAt: '2023-04-12 09:18:21'
 dependencies: '[]'
-projectDependencies: {}
+projectDependencies:
+  '22363':
+    projectUID: 22363
+    projectName: ProphecyDatabricksSqlBasics
+    repositoryPath: gitUri=https://github.com/prophecy-io/databricks-sql-basics&subPath=
+    version: 0.0.1
+    isDefault: true
+    author: null
+    createdAt: '2025-03-21 07:39:32'
+  '22364':
+    projectUID: 22364
+    projectName: ProphecySnowflakeSqlBasics
+    repositoryPath: gitUri=https://github.com/prophecy-io/snowflake-sql-basics&subPath=
+    version: 0.0.1
+    isDefault: true
+    author: null
+    createdAt: '2025-03-21 07:39:32'
 flags:
   shouldAddDefaultDependenciesIfAbsent: true
 pipelineConfigurations: {}

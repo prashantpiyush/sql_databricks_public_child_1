@@ -12,7 +12,62 @@
         "vars" : { }
       }
     },
-    "version" : 3
+    "version" : 3,
+    "properties" : {
+      "name" : "test_model_1",
+      "columns" : [ {
+        "name" : "associated-Drug",
+        "dataType" : {
+          "type" : "Array",
+          "dataType" : {
+            "type" : "Array",
+            "dataType" : {
+              "type" : "Array",
+              "dataType" : {
+                "type" : "Array",
+                "dataType" : {
+                  "type" : "Array",
+                  "dataType" : {
+                    "type" : "Array",
+                    "dataType" : {
+                      "type" : "Struct",
+                      "fields" : [ {
+                        "name" : "name",
+                        "dataType" : {
+                          "type" : "String"
+                        }
+                      }, {
+                        "name" : "dose",
+                        "dataType" : {
+                          "type" : "Integer"
+                        }
+                      }, {
+                        "name" : "cf-use",
+                        "dataType" : {
+                          "type" : "Double"
+                        }
+                      }, {
+                        "name" : "take-it_on",
+                        "dataType" : {
+                          "type" : "Boolean"
+                        }
+                      }, {
+                        "name" : "strength",
+                        "dataType" : {
+                          "type" : "String"
+                        }
+                      } ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      } ],
+      "tests" : [ ],
+      "providerType" : "databricks"
+    }
   },
   "processes" : {
     "very_complex_tab##YnbAHZW5" : {
@@ -174,6 +229,7 @@
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
         "query" : "SELECT *\n\nFROM distinct_asthma_medications\n",
+        "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true"
