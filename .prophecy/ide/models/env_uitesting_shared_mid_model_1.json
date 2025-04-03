@@ -467,7 +467,6 @@
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
         "query" : "{#Utilizes combined customer and asset data for testing purposes.#}\nSELECT *\n\nFROM Join_1\n",
-        "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true"
