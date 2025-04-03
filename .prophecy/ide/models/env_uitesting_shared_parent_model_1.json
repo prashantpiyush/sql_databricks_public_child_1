@@ -237,6 +237,7 @@
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
         "query" : "SELECT * \n\nFROM Limit_1\n",
+        "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true"
@@ -260,7 +261,7 @@
       "component" : "UnreferencedSource",
       "metadata" : {
         "label" : "spark_catalog_qa_database_ungrouped_table_1",
-        "x" : 160,
+        "x" : 80,
         "y" : 420,
         "phase" : 0
       },

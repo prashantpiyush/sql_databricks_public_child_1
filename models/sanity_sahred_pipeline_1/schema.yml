@@ -1,0 +1,24 @@
+---
+version: 2
+models:
+- name: "model_sanity_sahred_pipeline_1_non_matching_int_count"
+  tags:
+  - "prophecy_temp"
+sources:
+- name: "prophecy__temp_sanity_sahred_pipeline_1_source"
+  database: "hive_metastore"
+  schema: "qa_db_warehouse"
+  tags:
+  - "prophecy_temp"
+  config:
+    enabled: true
+  tables:
+  - name: "prophecy__temp_sanity_sahred_pipeline_1_post_non_matching_int_count_0"
+    tags:
+    - "prophecy_temp"
+  - name: "prophecy__temp_sanity_sahred_pipeline_1_pre_non_matching_int_count_0"
+    tags:
+    - "prophecy_temp"
+  - name: "prophecy__temp_sanity_sahred_pipeline_1_pre_non_matching_int_count_1"
+    tags:
+    - "prophecy_temp"
