@@ -126,11 +126,11 @@
         }
       } ],
       "sources" : [ {
-        "id" : "cseZGNGjF5FABkXCzvPDY",
-        "label" : "S3Source_1"
-      }, {
         "id" : "M4_2G1ZJ45COddSADP6Z3",
         "label" : "S_MSSQLALL"
+      }, {
+        "id" : "X8avZ-B5nSGHy-pKL23K7",
+        "label" : "industry_statistics_csv"
       } ]
     }
   },

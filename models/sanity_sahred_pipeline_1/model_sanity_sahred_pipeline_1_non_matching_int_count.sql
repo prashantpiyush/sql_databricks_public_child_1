@@ -15,7 +15,7 @@ WITH shared_seed_basic AS (
 
 ),
 
-S_MSSQLALL AS (
+industry_statistics_csv AS (
 
   SELECT * 
   
@@ -31,7 +31,7 @@ env_uitesting_shared_useallmodel_1_1 AS (
 
 ),
 
-S3Source_1 AS (
+S_MSSQLALL AS (
 
   SELECT * 
   
@@ -62,7 +62,7 @@ non_matching_int_count AS (
           + (
               SELECT count(*)
               
-              FROM S3Source_1
+              FROM industry_statistics_csv
              )
           + (
               SELECT count(*)

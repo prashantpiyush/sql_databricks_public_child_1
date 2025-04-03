@@ -104,6 +104,7 @@
         "gitEntityValue" : "dev_staging",
         "runModelWithChildren" : true,
         "execDeps" : true,
+        "sqlProjectType" : "databricks",
         "noAnonymousUsageStats" : false,
         "execTest" : false,
         "currentProjectModels" : [ {
@@ -176,6 +177,8 @@
         "runModelWithParents" : true,
         "execRun" : true,
         "gitEntity" : "branch",
+        "model" : "74/.prophecy/metadata/sqlmodels/env_uitesting_shared_useallmodel_1",
+        "customVersion" : true,
         "projectId" : "74",
         "runOnlyModel" : "true",
         "loadingModels" : false,
@@ -183,19 +186,14 @@
         "gitEntityValueTag" : null,
         "profile" : "run_profile",
         "sqlFabricId" : "7",
-        "gitEntityValue" : null,
+        "gitEntityValue" : "dev_staging",
         "runModelWithChildren" : true,
         "execDeps" : true,
         "gitEntityValueCommit" : null,
         "sqlProjectType" : "databricks",
-        "gitEntityValueBranch" : null,
+        "gitEntityValueBranch" : "dev_staging",
         "execTest" : true,
         "currentProjectModels" : [ {
-          "label" : "test2",
-          "value" : "test2",
-          "id" : "74/.prophecy/metadata/sqlmodels/test2",
-          "name" : "test2"
-        }, {
           "label" : "test_model_1",
           "value" : "test_model_1",
           "id" : "74/.prophecy/metadata/sqlmodels/test_model_1",

@@ -24,8 +24,8 @@
       "component" : "Source",
       "metadata" : {
         "label" : "shared_seed_basic",
-        "x" : 140,
-        "y" : 520,
+        "x" : 120,
+        "y" : 460,
         "phase" : 0
       },
       "properties" : {
@@ -49,7 +49,7 @@
       "id" : "prophecy__temp_sanity_sahred_pipeline_1_pre_non_matching_int_count_1",
       "component" : "Source",
       "metadata" : {
-        "label" : "S_MSSQLALL",
+        "label" : "industry_statistics_csv",
         "phase" : 0
       },
       "properties" : {
@@ -115,7 +115,7 @@
           "path" : "out",
           "id" : "out",
           "language" : "sql",
-          "content" : "select * from all_type_non_partitioned where c_int != (\n    (select count(*) from S_MSSQLALL) \n    + (select count(*) from S3Source_1) \n    + (select count(*) from env_uitesting_shared_useallmodel_1_1)\n    + (select count(*) from shared_seed_basic)\n)"
+          "content" : "select * from all_type_non_partitioned where c_int != (\n    (select count(*) from S_MSSQLALL) \n    + (select count(*) from industry_statistics_csv) \n    + (select count(*) from env_uitesting_shared_useallmodel_1_1)\n    + (select count(*) from shared_seed_basic)\n)"
         } ]
       },
       "ports" : {
@@ -148,8 +148,8 @@
       "component" : "Model",
       "metadata" : {
         "label" : "env_uitesting_shared_useallmodel_1_1",
-        "x" : -260,
-        "y" : 460,
+        "x" : -40,
+        "y" : 320,
         "phase" : 0
       },
       "properties" : {
@@ -176,7 +176,7 @@
       "id" : "prophecy__temp_sanity_sahred_pipeline_1_pre_non_matching_int_count_0",
       "component" : "Source",
       "metadata" : {
-        "label" : "S3Source_1",
+        "label" : "S_MSSQLALL",
         "phase" : 0
       },
       "properties" : {
@@ -250,17 +250,17 @@
     "target" : "wM5DYp4fGw-4ExQ5xVQi0$$A5Qqce1xrVuCHMLv2yVGq",
     "targetPort" : "TPGmoHyELcC33h9taYuBj$$J4rHztrHktLSlYKlGQiox"
   }, {
-    "id" : "conn_prophecy__temp_sanity_sahred_pipeline_1_pre_non_matching_int_count_0_wM5DYp4fGw-4ExQ5xVQi0$$A5Qqce1xrVuCHMLv2yVGq_Z4yqIEKbqd-aCf8KAEQpA$$elK1buAsiNfsNr4CLbSa7",
+    "id" : "conn_prophecy__temp_sanity_sahred_pipeline_1_pre_non_matching_int_count_0_wM5DYp4fGw-4ExQ5xVQi0$$A5Qqce1xrVuCHMLv2yVGq_z8MWyvgeNlzN_SJD0HYTR$$oJfoVchYo7wpWMNShGS1N",
     "source" : "prophecy__temp_sanity_sahred_pipeline_1_pre_non_matching_int_count_0",
     "sourcePort" : "output_port_0_1",
     "target" : "wM5DYp4fGw-4ExQ5xVQi0$$A5Qqce1xrVuCHMLv2yVGq",
-    "targetPort" : "Z4yqIEKbqd-aCf8KAEQpA$$elK1buAsiNfsNr4CLbSa7"
+    "targetPort" : "z8MWyvgeNlzN_SJD0HYTR$$oJfoVchYo7wpWMNShGS1N"
   }, {
-    "id" : "conn_prophecy__temp_sanity_sahred_pipeline_1_pre_non_matching_int_count_1_wM5DYp4fGw-4ExQ5xVQi0$$A5Qqce1xrVuCHMLv2yVGq_z8MWyvgeNlzN_SJD0HYTR$$oJfoVchYo7wpWMNShGS1N",
+    "id" : "conn_prophecy__temp_sanity_sahred_pipeline_1_pre_non_matching_int_count_1_wM5DYp4fGw-4ExQ5xVQi0$$A5Qqce1xrVuCHMLv2yVGq_Z4yqIEKbqd-aCf8KAEQpA$$elK1buAsiNfsNr4CLbSa7",
     "source" : "prophecy__temp_sanity_sahred_pipeline_1_pre_non_matching_int_count_1",
     "sourcePort" : "output_port_1_1",
     "target" : "wM5DYp4fGw-4ExQ5xVQi0$$A5Qqce1xrVuCHMLv2yVGq",
-    "targetPort" : "z8MWyvgeNlzN_SJD0HYTR$$oJfoVchYo7wpWMNShGS1N"
+    "targetPort" : "Z4yqIEKbqd-aCf8KAEQpA$$elK1buAsiNfsNr4CLbSa7"
   } ],
   "component" : "Model"
 }
