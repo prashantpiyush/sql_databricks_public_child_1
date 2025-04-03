@@ -249,7 +249,7 @@
     },
     "final##ogmLCVOv" : {
       "id" : "final##ogmLCVOv",
-      "component" : "TargetSnapshot",
+      "component" : "TargetModel",
       "metadata" : {
         "label" : "uitesting_scd2_timestamp",
         "x" : 420,
@@ -262,6 +262,7 @@
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
         "query" : "SELECT *\n\nFROM all_type_non_partitioned_columns\n",
+        "isModel" : false,
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true"

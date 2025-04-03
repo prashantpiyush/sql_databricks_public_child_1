@@ -74,7 +74,7 @@
       "id" : "prophecy__temp_sanity_sahred_pipeline_1_post_non_matching_int_count_0",
       "component" : "TargetModel",
       "metadata" : {
-        "label" : "prophecy__temp_sanity_sahred_pipeline_1_post_non_matching_int_count_0",
+        "label" : "non_matching_int_count",
         "phase" : 0
       },
       "properties" : {
