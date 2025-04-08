@@ -90,28 +90,47 @@
         "onFailure" : false
       },
       "properties" : {
+        "entityId" : "74/.prophecy/metadata/sqlmodels/env_uitesting_shared_mid_model_1",
         "execSeed" : true,
         "runModelWithParents" : true,
         "execRun" : true,
         "gitEntity" : "branch",
         "model" : "env_uitesting_shared_mid_model_1",
+        "customVersion" : true,
         "projectId" : "74",
         "runOnlyModel" : "true",
         "loadingModels" : false,
         "fullRefresh" : true,
+        "entityName" : "env_uitesting_shared_mid_model_1",
         "profile" : "run_profile",
         "sqlFabricId" : "4353",
         "gitEntityValue" : "dev_staging",
         "runModelWithChildren" : true,
         "execDeps" : true,
         "sqlProjectType" : "databricks",
+        "gitEntityValueBranch" : "dev_staging",
         "noAnonymousUsageStats" : false,
         "execTest" : false,
         "currentProjectModels" : [ {
-          "label" : "env_uitesting_expressions",
-          "value" : "env_uitesting_expressions",
-          "id" : "74/.prophecy/metadata/sqlmodels/env_uitesting_expressions",
-          "name" : "env_uitesting_expressions"
+          "label" : "test_model_1",
+          "value" : "test_model_1",
+          "id" : "74/.prophecy/metadata/sqlmodels/test_model_1",
+          "name" : "test_model_1"
+        }, {
+          "label" : "uitesting_specifycolumns",
+          "value" : "uitesting_specifycolumns",
+          "id" : "74/.prophecy/metadata/sqlmodels/uitesting_specifycolumns",
+          "name" : "uitesting_specifycolumns"
+        }, {
+          "label" : "sanity_simple_model_1",
+          "value" : "sanity_simple_model_1",
+          "id" : "74/.prophecy/metadata/sqlmodels/sanity_simple_model_1",
+          "name" : "sanity_simple_model_1"
+        }, {
+          "label" : "uitesting_expressions_1",
+          "value" : "uitesting_expressions_1",
+          "id" : "74/.prophecy/metadata/sqlmodels/uitesting_expressions_1",
+          "name" : "uitesting_expressions_1"
         }, {
           "label" : "tpcds_uitesting_shared_1",
           "value" : "tpcds_uitesting_shared_1",
@@ -137,7 +156,23 @@
           "value" : "env_uitesting_shared_mid_model_1",
           "id" : "74/.prophecy/metadata/sqlmodels/env_uitesting_shared_mid_model_1",
           "name" : "env_uitesting_shared_mid_model_1"
-        } ]
+        }, {
+          "label" : "uitesting_scd2_diff_col_val",
+          "value" : "uitesting_scd2_diff_col_val",
+          "id" : "74/.prophecy/metadata/sqlsnapshots/uitesting_scd2_diff_col_val",
+          "name" : "uitesting_scd2_diff_col_val"
+        }, {
+          "label" : "uitesting_scd2_timestamp",
+          "value" : "uitesting_scd2_timestamp",
+          "id" : "74/.prophecy/metadata/sqlsnapshots/uitesting_scd2_timestamp",
+          "name" : "uitesting_scd2_timestamp"
+        }, {
+          "label" : "snapshot_sanity_test_1",
+          "value" : "snapshot_sanity_test_1",
+          "id" : "74/.prophecy/metadata/sqlsnapshots/snapshot_sanity_test_1",
+          "name" : "snapshot_sanity_test_1"
+        } ],
+        "entityKind" : "model"
       }
     },
     "Xppz2IXrogl8DfAAIwEl4$$TGheeRsUCqJAbGktxGv9D" : {
@@ -172,7 +207,7 @@
         "onFailure" : false
       },
       "properties" : {
-        "entityId" : null,
+        "entityId" : "74/.prophecy/metadata/sqlmodels/env_uitesting_shared_mid_model_1",
         "execSeed" : true,
         "runModelWithParents" : true,
         "execRun" : true,
@@ -182,7 +217,7 @@
         "projectId" : "74",
         "runOnlyModel" : "true",
         "loadingModels" : false,
-        "entityName" : null,
+        "entityName" : "env_uitesting_shared_mid_model_1",
         "gitEntityValueTag" : null,
         "profile" : "run_profile",
         "sqlFabricId" : "7",
@@ -253,7 +288,8 @@
           "value" : "snapshot_sanity_test_1",
           "id" : "74/.prophecy/metadata/sqlsnapshots/snapshot_sanity_test_1",
           "name" : "snapshot_sanity_test_1"
-        } ]
+        } ],
+        "entityKind" : "model"
       }
     }
   },

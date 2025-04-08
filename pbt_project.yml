@@ -153,7 +153,40 @@ subgraphs: {}
 sqlModels:
   .prophecy/metadata/sqlmodels/tpcds_uitesting_shared_1:
     name: tpcds_uitesting_shared_1
-    schema: null
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: substrw_warehouse_name120
+        dataType:
+          type: String
+      - name: sm_type
+        dataType:
+          type: String
+      - name: cc_name
+        dataType:
+          type: String
+      - name: days_30
+        dataType:
+          type: Bigint
+      - name: days_31_60
+        dataType:
+          type: Bigint
+      - name: days_61_90
+        dataType:
+          type: Bigint
+      - name: days_90_120
+        dataType:
+          type: Bigint
+      - name: days_more_than_120
+        dataType:
+          type: Bigint
+      - name: h8_30_to_9
+        dataType:
+          type: Bigint
+      - name: i_item_id
+        dataType:
+          type: String
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -169,7 +202,52 @@ sqlModels:
     createdAt: '2023-04-19 14:31:39'
   .prophecy/metadata/sqlmodels/uitesting_expressions_1:
     name: uitesting_expressions_1
-    schema: null
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: c_tinyint
+        dataType:
+          type: TinyInt
+      - name: c_smallint
+        dataType:
+          type: SmallInt
+      - name: c_int
+        dataType:
+          type: Integer
+      - name: c_bigint
+        dataType:
+          type: Bigint
+      - name: c_float
+        dataType:
+          type: Float
+      - name: c_double
+        dataType:
+          type: Double
+      - name: c_string
+        dataType:
+          type: String
+      - name: c_boolean
+        dataType:
+          type: Boolean
+      - name: c_array
+        dataType:
+          type: Array
+          dataType:
+            type: String
+      - name: c_struct
+        dataType:
+          type: Struct
+          fields:
+          - name: city
+            dataType:
+              type: String
+          - name: state
+            dataType:
+              type: String
+          - name: pin
+            dataType:
+              type: Bigint
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -184,7 +262,61 @@ sqlModels:
     createdAt: '2023-12-27 12:59:52'
   .prophecy/metadata/sqlmodels/uitesting_specifycolumns:
     name: uitesting_specifycolumns
-    schema: null
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: c_tinyint
+        dataType:
+          type: TinyInt
+      - name: c_smallint
+        dataType:
+          type: SmallInt
+      - name: c_int
+        dataType:
+          type: Integer
+      - name: c_bigint
+        dataType:
+          type: Bigint
+      - name: c_float
+        dataType:
+          type: Float
+      - name: c_double
+        dataType:
+          type: Double
+      - name: c_string
+        dataType:
+          type: String
+      - name: c_boolean
+        dataType:
+          type: Boolean
+      - name: c_array
+        dataType:
+          type: Array
+          dataType:
+            type: String
+      - name: c_struct
+        dataType:
+          type: Struct
+          fields:
+          - name: city
+            dataType:
+              type: String
+          - name: state
+            dataType:
+              type: String
+          - name: pin
+            dataType:
+              type: Bigint
+      - name: c_id
+        dataType:
+          type: Bigint
+      - name: c_date
+        dataType:
+          type: Date
+      - name: c_timestamp
+        dataType:
+          type: Timestamp
     description: null
     author: abhisheks+shared@prophecy.io
     files:
@@ -200,7 +332,52 @@ sqlModels:
     createdAt: '2024-07-22 05:22:36'
   .prophecy/metadata/sqlmodels/sanity_simple_model_1:
     name: sanity_simple_model_1
-    schema: null
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: c_tinyint
+        dataType:
+          type: TinyInt
+      - name: c_smallint
+        dataType:
+          type: SmallInt
+      - name: c_int
+        dataType:
+          type: Integer
+      - name: c_bigint
+        dataType:
+          type: Bigint
+      - name: c_float
+        dataType:
+          type: Float
+      - name: c_double
+        dataType:
+          type: Double
+      - name: c_string
+        dataType:
+          type: String
+      - name: c_boolean
+        dataType:
+          type: Boolean
+      - name: c_array
+        dataType:
+          type: Array
+          dataType:
+            type: String
+      - name: c_struct
+        dataType:
+          type: Struct
+          fields:
+          - name: city
+            dataType:
+              type: String
+          - name: state
+            dataType:
+              type: String
+          - name: pin
+            dataType:
+              type: Bigint
     description: null
     author: abhisheks+shared@prophecy.io
     files:
@@ -215,7 +392,52 @@ sqlModels:
     createdAt: '2024-05-15 11:52:55'
   .prophecy/metadata/sqlmodels/env_uitesting_shared_parent_model_1:
     name: env_uitesting_shared_parent_model_1
-    schema: null
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: c_tinyint
+        dataType:
+          type: TinyInt
+      - name: c_smallint
+        dataType:
+          type: SmallInt
+      - name: c_int
+        dataType:
+          type: Integer
+      - name: c_bigint
+        dataType:
+          type: Bigint
+      - name: c_float
+        dataType:
+          type: Float
+      - name: c_double
+        dataType:
+          type: Double
+      - name: c_string
+        dataType:
+          type: String
+      - name: c_boolean
+        dataType:
+          type: Boolean
+      - name: c_array
+        dataType:
+          type: Array
+          dataType:
+            type: String
+      - name: c_struct
+        dataType:
+          type: Struct
+          fields:
+          - name: city
+            dataType:
+              type: String
+          - name: state
+            dataType:
+              type: String
+          - name: pin
+            dataType:
+              type: Bigint
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -230,7 +452,55 @@ sqlModels:
     createdAt: '2023-04-12 09:20:52'
   .prophecy/metadata/sqlmodels/env_uitesting_shared_child_model_1:
     name: env_uitesting_shared_child_model_1
-    schema: null
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: c_tinyint
+        dataType:
+          type: TinyInt
+      - name: c_smallint
+        dataType:
+          type: SmallInt
+      - name: c_int
+        dataType:
+          type: Integer
+      - name: c_bigint
+        dataType:
+          type: Bigint
+      - name: c_float
+        dataType:
+          type: Float
+      - name: c_double
+        dataType:
+          type: Double
+      - name: c_string
+        dataType:
+          type: String
+      - name: c_boolean
+        dataType:
+          type: Boolean
+      - name: c_array
+        dataType:
+          type: Array
+          dataType:
+            type: String
+      - name: c_struct
+        dataType:
+          type: Struct
+          fields:
+          - name: city
+            dataType:
+              type: String
+          - name: state
+            dataType:
+              type: String
+          - name: pin
+            dataType:
+              type: Bigint
+      - name: c_test
+        dataType:
+          type: String
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -246,7 +516,52 @@ sqlModels:
     createdAt: '2023-04-12 09:20:35'
   .prophecy/metadata/sqlmodels/env_uitesting_shared_mid_model_1:
     name: env_uitesting_shared_mid_model_1
-    schema: null
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: c_tinyint
+        dataType:
+          type: TinyInt
+      - name: c_smallint
+        dataType:
+          type: SmallInt
+      - name: c_int
+        dataType:
+          type: Integer
+      - name: c_bigint
+        dataType:
+          type: Bigint
+      - name: c_float
+        dataType:
+          type: Float
+      - name: c_double
+        dataType:
+          type: Double
+      - name: c_string
+        dataType:
+          type: String
+      - name: c_boolean
+        dataType:
+          type: Boolean
+      - name: c_array
+        dataType:
+          type: Array
+          dataType:
+            type: String
+      - name: c_struct
+        dataType:
+          type: Struct
+          fields:
+          - name: city
+            dataType:
+              type: String
+          - name: state
+            dataType:
+              type: String
+          - name: pin
+            dataType:
+              type: Bigint
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -262,7 +577,52 @@ sqlModels:
     createdAt: '2023-04-12 09:19:50'
   .prophecy/metadata/sqlmodels/env_uitesting_shared_useallmodel_1:
     name: env_uitesting_shared_useallmodel_1
-    schema: null
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: c_tinyint
+        dataType:
+          type: TinyInt
+      - name: c_smallint
+        dataType:
+          type: SmallInt
+      - name: c_int
+        dataType:
+          type: Integer
+      - name: c_bigint
+        dataType:
+          type: Bigint
+      - name: c_float
+        dataType:
+          type: Float
+      - name: c_double
+        dataType:
+          type: Double
+      - name: c_string
+        dataType:
+          type: String
+      - name: c_boolean
+        dataType:
+          type: Boolean
+      - name: c_array
+        dataType:
+          type: Array
+          dataType:
+            type: String
+      - name: c_struct
+        dataType:
+          type: Struct
+          fields:
+          - name: city
+            dataType:
+              type: String
+          - name: state
+            dataType:
+              type: String
+          - name: pin
+            dataType:
+              type: Bigint
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -278,7 +638,41 @@ sqlModels:
     createdAt: '2023-04-12 10:03:43'
   .prophecy/metadata/sqlmodels/test_model_1:
     name: test_model_1
-    schema: null
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: associated-Drug
+        dataType:
+          type: Array
+          dataType:
+            type: Array
+            dataType:
+              type: Array
+              dataType:
+                type: Array
+                dataType:
+                  type: Array
+                  dataType:
+                    type: Array
+                    dataType:
+                      type: Struct
+                      fields:
+                      - name: name
+                        dataType:
+                          type: String
+                      - name: dose
+                        dataType:
+                          type: Integer
+                      - name: cf-use
+                        dataType:
+                          type: Double
+                      - name: take-it_on
+                        dataType:
+                          type: Boolean
+                      - name: strength
+                        dataType:
+                          type: String
     description: null
     author: abhisheks+shared@prophecy.io
     files:
@@ -295,7 +689,64 @@ sqlModels:
 sqlSnapshots:
   .prophecy/metadata/sqlsnapshots/snapshot_sanity_test_1:
     name: snapshot_sanity_test_1
-    schema: null
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: c_tinyint
+        dataType:
+          type: TinyInt
+      - name: c_smallint
+        dataType:
+          type: SmallInt
+      - name: c_int
+        dataType:
+          type: Integer
+      - name: c_bigint
+        dataType:
+          type: Bigint
+      - name: c_float
+        dataType:
+          type: Float
+      - name: c_double
+        dataType:
+          type: Double
+      - name: c_string
+        dataType:
+          type: String
+      - name: c_boolean
+        dataType:
+          type: Boolean
+      - name: c_array
+        dataType:
+          type: Array
+          dataType:
+            type: String
+      - name: c_struct
+        dataType:
+          type: Struct
+          fields:
+          - name: city
+            dataType:
+              type: String
+          - name: state
+            dataType:
+              type: String
+          - name: pin
+            dataType:
+              type: Bigint
+      - name: dbt_scd_id
+        dataType:
+          type: String
+      - name: dbt_updated_at
+        dataType:
+          type: Float
+      - name: dbt_valid_from
+        dataType:
+          type: Float
+      - name: dbt_valid_to
+        dataType:
+          type: Float
     description: null
     author: abhisheks+shared@prophecy.io
     files:
@@ -311,7 +762,67 @@ sqlSnapshots:
     createdAt: '2024-05-15 11:59:54'
   .prophecy/metadata/sqlsnapshots/uitesting_scd2_diff_col_val:
     name: uitesting_scd2_diff_col_val
-    schema: null
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: c_tinyint
+        dataType:
+          type: TinyInt
+      - name: c_smallint
+        dataType:
+          type: SmallInt
+      - name: c_int
+        dataType:
+          type: Integer
+      - name: c_bigint
+        dataType:
+          type: Bigint
+      - name: c_float
+        dataType:
+          type: Float
+      - name: c_double
+        dataType:
+          type: Double
+      - name: c_string
+        dataType:
+          type: String
+      - name: c_boolean
+        dataType:
+          type: Boolean
+      - name: c_array
+        dataType:
+          type: Array
+          dataType:
+            type: String
+      - name: c_struct
+        dataType:
+          type: Struct
+          fields:
+          - name: city
+            dataType:
+              type: String
+          - name: state
+            dataType:
+              type: String
+          - name: pin
+            dataType:
+              type: Bigint
+      - name: c_id
+        dataType:
+          type: Bigint
+      - name: dbt_scd_id
+        dataType:
+          type: String
+      - name: dbt_updated_at
+        dataType:
+          type: Float
+      - name: dbt_valid_from
+        dataType:
+          type: Float
+      - name: dbt_valid_to
+        dataType:
+          type: Float
     description: null
     author: abhisheks+shared@prophecy.io
     files:
@@ -327,7 +838,70 @@ sqlSnapshots:
     createdAt: '2024-07-22 07:15:16'
   .prophecy/metadata/sqlsnapshots/uitesting_scd2_timestamp:
     name: uitesting_scd2_timestamp
-    schema: null
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: c_tinyint
+        dataType:
+          type: TinyInt
+      - name: c_smallint
+        dataType:
+          type: SmallInt
+      - name: c_int
+        dataType:
+          type: Integer
+      - name: c_bigint
+        dataType:
+          type: Bigint
+      - name: c_float
+        dataType:
+          type: Float
+      - name: c_double
+        dataType:
+          type: Double
+      - name: c_string
+        dataType:
+          type: String
+      - name: c_boolean
+        dataType:
+          type: Boolean
+      - name: c_array
+        dataType:
+          type: Array
+          dataType:
+            type: String
+      - name: c_struct
+        dataType:
+          type: Struct
+          fields:
+          - name: city
+            dataType:
+              type: String
+          - name: state
+            dataType:
+              type: String
+          - name: pin
+            dataType:
+              type: Bigint
+      - name: c_id
+        dataType:
+          type: Bigint
+      - name: c_date
+        dataType:
+          type: Date
+      - name: dbt_scd_id
+        dataType:
+          type: String
+      - name: dbt_updated_at
+        dataType:
+          type: Date
+      - name: dbt_valid_from
+        dataType:
+          type: Date
+      - name: dbt_valid_to
+        dataType:
+          type: Date
     description: null
     author: abhisheks+shared@prophecy.io
     files:

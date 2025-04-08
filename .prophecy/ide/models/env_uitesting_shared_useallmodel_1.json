@@ -2935,328 +2935,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "ucXJSWeR",
-              "schema" : {
-                "entityType" : "",
-                "providerType" : "databricks",
-                "fields" : [ {
-                  "name" : "I_ITEM_SK",
-                  "dataType" : {
-                    "type" : "Decimal"
-                  }
-                }, {
-                  "name" : "I_ITEM_ID",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "I_REC_START_DATE",
-                  "dataType" : {
-                    "type" : "Date"
-                  }
-                }, {
-                  "name" : "I_REC_END_DATE",
-                  "dataType" : {
-                    "type" : "Date"
-                  }
-                }, {
-                  "name" : "I_ITEM_DESC",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "I_CURRENT_PRICE",
-                  "dataType" : {
-                    "type" : "Decimal"
-                  }
-                }, {
-                  "name" : "I_WHOLESALE_COST",
-                  "dataType" : {
-                    "type" : "Decimal"
-                  }
-                }, {
-                  "name" : "I_BRAND_ID",
-                  "dataType" : {
-                    "type" : "Decimal"
-                  }
-                }, {
-                  "name" : "I_BRAND",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "I_CLASS_ID",
-                  "dataType" : {
-                    "type" : "Decimal"
-                  }
-                }, {
-                  "name" : "I_CLASS",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "I_CATEGORY_ID",
-                  "dataType" : {
-                    "type" : "Decimal"
-                  }
-                }, {
-                  "name" : "I_CATEGORY",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "I_MANUFACT_ID",
-                  "dataType" : {
-                    "type" : "Decimal"
-                  }
-                }, {
-                  "name" : "I_MANUFACT",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "I_SIZE",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "I_FORMULATION",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "I_COLOR",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "I_UNITS",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "I_CONTAINER",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "I_MANAGER_ID",
-                  "dataType" : {
-                    "type" : "Decimal"
-                  }
-                }, {
-                  "name" : "I_PRODUCT_NAME",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                } ]
-              },
               "slug" : "item"
             }, {
               "id" : "dBG2pIeq",
-              "schema" : {
-                "entityType" : "",
-                "providerType" : "databricks",
-                "fields" : [ {
-                  "name" : "D_DATE_SK",
-                  "dataType" : {
-                    "type" : "Decimal"
-                  }
-                }, {
-                  "name" : "D_DATE_ID",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "D_DATE",
-                  "dataType" : {
-                    "type" : "Date"
-                  }
-                }, {
-                  "name" : "D_MONTH_SEQ",
-                  "dataType" : {
-                    "type" : "Decimal"
-                  }
-                }, {
-                  "name" : "D_WEEK_SEQ",
-                  "dataType" : {
-                    "type" : "Decimal"
-                  }
-                }, {
-                  "name" : "D_QUARTER_SEQ",
-                  "dataType" : {
-                    "type" : "Decimal"
-                  }
-                }, {
-                  "name" : "D_YEAR",
-                  "dataType" : {
-                    "type" : "Decimal"
-                  }
-                }, {
-                  "name" : "D_DOW",
-                  "dataType" : {
-                    "type" : "Decimal"
-                  }
-                }, {
-                  "name" : "D_MOY",
-                  "dataType" : {
-                    "type" : "Decimal"
-                  }
-                }, {
-                  "name" : "D_DOM",
-                  "dataType" : {
-                    "type" : "Decimal"
-                  }
-                }, {
-                  "name" : "D_QOY",
-                  "dataType" : {
-                    "type" : "Decimal"
-                  }
-                }, {
-                  "name" : "D_FY_YEAR",
-                  "dataType" : {
-                    "type" : "Decimal"
-                  }
-                }, {
-                  "name" : "D_FY_QUARTER_SEQ",
-                  "dataType" : {
-                    "type" : "Decimal"
-                  }
-                }, {
-                  "name" : "D_FY_WEEK_SEQ",
-                  "dataType" : {
-                    "type" : "Decimal"
-                  }
-                }, {
-                  "name" : "D_DAY_NAME",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "D_QUARTER_NAME",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "D_HOLIDAY",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "D_WEEKEND",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "D_FOLLOWING_HOLIDAY",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "D_FIRST_DOM",
-                  "dataType" : {
-                    "type" : "Decimal"
-                  }
-                }, {
-                  "name" : "D_LAST_DOM",
-                  "dataType" : {
-                    "type" : "Decimal"
-                  }
-                }, {
-                  "name" : "D_SAME_DAY_LY",
-                  "dataType" : {
-                    "type" : "Decimal"
-                  }
-                }, {
-                  "name" : "D_SAME_DAY_LQ",
-                  "dataType" : {
-                    "type" : "Decimal"
-                  }
-                }, {
-                  "name" : "D_CURRENT_DAY",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "D_CURRENT_WEEK",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "D_CURRENT_MONTH",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "D_CURRENT_QUARTER",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "D_CURRENT_YEAR",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                } ]
-              },
               "slug" : "date_dim"
             } ],
             "outputs" : [ {
               "id" : "slGqL0AH",
-              "schema" : {
-                "entityType" : "",
-                "providerType" : "Databricks",
-                "fields" : [ {
-                  "name" : "substrw_warehouse_name120",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "sm_type",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "cc_name",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "days_30",
-                  "dataType" : {
-                    "type" : "Bigint"
-                  }
-                }, {
-                  "name" : "days_31_60",
-                  "dataType" : {
-                    "type" : "Bigint"
-                  }
-                }, {
-                  "name" : "days_61_90",
-                  "dataType" : {
-                    "type" : "Bigint"
-                  }
-                }, {
-                  "name" : "days_90_120",
-                  "dataType" : {
-                    "type" : "Bigint"
-                  }
-                }, {
-                  "name" : "days_more_than_120",
-                  "dataType" : {
-                    "type" : "Bigint"
-                  }
-                }, {
-                  "name" : "i_item_id",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "h8_30_to_9",
-                  "dataType" : {
-                    "type" : "Bigint"
-                  }
-                } ]
-              },
               "slug" : "out"
             } ],
             "isCustomOutputSchema" : false,
@@ -4999,26 +4684,6 @@
             "inputs" : [ ],
             "outputs" : [ {
               "id" : "Q3CrqZsq",
-              "schema" : {
-                "entityType" : "",
-                "providerType" : "Databricks",
-                "fields" : [ {
-                  "name" : "IB_INCOME_BAND_SK",
-                  "dataType" : {
-                    "type" : "Decimal"
-                  }
-                }, {
-                  "name" : "IB_LOWER_BOUND",
-                  "dataType" : {
-                    "type" : "Decimal"
-                  }
-                }, {
-                  "name" : "IB_UPPER_BOUND",
-                  "dataType" : {
-                    "type" : "Decimal"
-                  }
-                } ]
-              },
               "slug" : "out"
             } ],
             "isCustomOutputSchema" : false,
@@ -6397,6 +6062,85 @@
             "inputs" : [ ],
             "outputs" : [ {
               "id" : "h1pMhfzd",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "c_tinyint",
+                  "dataType" : {
+                    "type" : "TinyInt"
+                  }
+                }, {
+                  "name" : "c_smallint",
+                  "dataType" : {
+                    "type" : "SmallInt"
+                  }
+                }, {
+                  "name" : "c_int",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "c_bigint",
+                  "dataType" : {
+                    "type" : "Bigint"
+                  }
+                }, {
+                  "name" : "c_float",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "c_double",
+                  "dataType" : {
+                    "type" : "Double"
+                  }
+                }, {
+                  "name" : "c_string",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "c_boolean",
+                  "dataType" : {
+                    "type" : "Boolean"
+                  }
+                }, {
+                  "name" : "c_array",
+                  "dataType" : {
+                    "type" : "Array",
+                    "dataType" : {
+                      "type" : "String"
+                    }
+                  }
+                }, {
+                  "name" : "c_struct",
+                  "dataType" : {
+                    "type" : "Struct",
+                    "fields" : [ {
+                      "name" : "city",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "state",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "pin",
+                      "dataType" : {
+                        "type" : "Bigint"
+                      }
+                    } ]
+                  }
+                }, {
+                  "name" : "c_test",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                } ]
+              },
               "slug" : "out"
             } ],
             "isCustomOutputSchema" : false,
@@ -6430,10 +6174,168 @@
               "ports" : {
                 "inputs" : [ {
                   "id" : "f82ZWs48",
+                  "schema" : {
+                    "entityType" : "",
+                    "providerType" : "Databricks",
+                    "fields" : [ {
+                      "name" : "c_tinyint",
+                      "dataType" : {
+                        "type" : "TinyInt"
+                      }
+                    }, {
+                      "name" : "c_smallint",
+                      "dataType" : {
+                        "type" : "SmallInt"
+                      }
+                    }, {
+                      "name" : "c_int",
+                      "dataType" : {
+                        "type" : "Integer"
+                      }
+                    }, {
+                      "name" : "c_bigint",
+                      "dataType" : {
+                        "type" : "Bigint"
+                      }
+                    }, {
+                      "name" : "c_float",
+                      "dataType" : {
+                        "type" : "Float"
+                      }
+                    }, {
+                      "name" : "c_double",
+                      "dataType" : {
+                        "type" : "Double"
+                      }
+                    }, {
+                      "name" : "c_string",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "c_boolean",
+                      "dataType" : {
+                        "type" : "Boolean"
+                      }
+                    }, {
+                      "name" : "c_array",
+                      "dataType" : {
+                        "type" : "Array",
+                        "dataType" : {
+                          "type" : "String"
+                        }
+                      }
+                    }, {
+                      "name" : "c_struct",
+                      "dataType" : {
+                        "type" : "Struct",
+                        "fields" : [ {
+                          "name" : "city",
+                          "dataType" : {
+                            "type" : "String"
+                          }
+                        }, {
+                          "name" : "state",
+                          "dataType" : {
+                            "type" : "String"
+                          }
+                        }, {
+                          "name" : "pin",
+                          "dataType" : {
+                            "type" : "Bigint"
+                          }
+                        } ]
+                      }
+                    }, {
+                      "name" : "c_test",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    } ]
+                  },
                   "slug" : "in0"
                 } ],
                 "outputs" : [ {
                   "id" : "lOAHemn3",
+                  "schema" : {
+                    "entityType" : "",
+                    "providerType" : "Databricks",
+                    "fields" : [ {
+                      "name" : "c_tinyint",
+                      "dataType" : {
+                        "type" : "TinyInt"
+                      }
+                    }, {
+                      "name" : "c_smallint",
+                      "dataType" : {
+                        "type" : "SmallInt"
+                      }
+                    }, {
+                      "name" : "c_int",
+                      "dataType" : {
+                        "type" : "Integer"
+                      }
+                    }, {
+                      "name" : "c_bigint",
+                      "dataType" : {
+                        "type" : "Bigint"
+                      }
+                    }, {
+                      "name" : "c_float",
+                      "dataType" : {
+                        "type" : "Float"
+                      }
+                    }, {
+                      "name" : "c_double",
+                      "dataType" : {
+                        "type" : "Double"
+                      }
+                    }, {
+                      "name" : "c_string",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "c_boolean",
+                      "dataType" : {
+                        "type" : "Boolean"
+                      }
+                    }, {
+                      "name" : "c_array",
+                      "dataType" : {
+                        "type" : "Array",
+                        "dataType" : {
+                          "type" : "String"
+                        }
+                      }
+                    }, {
+                      "name" : "c_struct",
+                      "dataType" : {
+                        "type" : "Struct",
+                        "fields" : [ {
+                          "name" : "city",
+                          "dataType" : {
+                            "type" : "String"
+                          }
+                        }, {
+                          "name" : "state",
+                          "dataType" : {
+                            "type" : "String"
+                          }
+                        }, {
+                          "name" : "pin",
+                          "dataType" : {
+                            "type" : "Bigint"
+                          }
+                        } ]
+                      }
+                    }, {
+                      "name" : "c_test",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    } ]
+                  },
                   "slug" : "out"
                 } ],
                 "isCustomOutputSchema" : false,
@@ -6464,10 +6366,168 @@
                   "ports" : {
                     "inputs" : [ {
                       "id" : "EvDhrHBs",
+                      "schema" : {
+                        "entityType" : "",
+                        "providerType" : "Databricks",
+                        "fields" : [ {
+                          "name" : "c_tinyint",
+                          "dataType" : {
+                            "type" : "TinyInt"
+                          }
+                        }, {
+                          "name" : "c_smallint",
+                          "dataType" : {
+                            "type" : "SmallInt"
+                          }
+                        }, {
+                          "name" : "c_int",
+                          "dataType" : {
+                            "type" : "Integer"
+                          }
+                        }, {
+                          "name" : "c_bigint",
+                          "dataType" : {
+                            "type" : "Bigint"
+                          }
+                        }, {
+                          "name" : "c_float",
+                          "dataType" : {
+                            "type" : "Float"
+                          }
+                        }, {
+                          "name" : "c_double",
+                          "dataType" : {
+                            "type" : "Double"
+                          }
+                        }, {
+                          "name" : "c_string",
+                          "dataType" : {
+                            "type" : "String"
+                          }
+                        }, {
+                          "name" : "c_boolean",
+                          "dataType" : {
+                            "type" : "Boolean"
+                          }
+                        }, {
+                          "name" : "c_array",
+                          "dataType" : {
+                            "type" : "Array",
+                            "dataType" : {
+                              "type" : "String"
+                            }
+                          }
+                        }, {
+                          "name" : "c_struct",
+                          "dataType" : {
+                            "type" : "Struct",
+                            "fields" : [ {
+                              "name" : "city",
+                              "dataType" : {
+                                "type" : "String"
+                              }
+                            }, {
+                              "name" : "state",
+                              "dataType" : {
+                                "type" : "String"
+                              }
+                            }, {
+                              "name" : "pin",
+                              "dataType" : {
+                                "type" : "Bigint"
+                              }
+                            } ]
+                          }
+                        }, {
+                          "name" : "c_test",
+                          "dataType" : {
+                            "type" : "String"
+                          }
+                        } ]
+                      },
                       "slug" : "Filter_2"
                     } ],
                     "outputs" : [ {
                       "id" : "V61Wvyru",
+                      "schema" : {
+                        "entityType" : "",
+                        "providerType" : "Databricks",
+                        "fields" : [ {
+                          "name" : "c_tinyint",
+                          "dataType" : {
+                            "type" : "TinyInt"
+                          }
+                        }, {
+                          "name" : "c_smallint",
+                          "dataType" : {
+                            "type" : "SmallInt"
+                          }
+                        }, {
+                          "name" : "c_int",
+                          "dataType" : {
+                            "type" : "Integer"
+                          }
+                        }, {
+                          "name" : "c_bigint",
+                          "dataType" : {
+                            "type" : "Bigint"
+                          }
+                        }, {
+                          "name" : "c_float",
+                          "dataType" : {
+                            "type" : "Float"
+                          }
+                        }, {
+                          "name" : "c_double",
+                          "dataType" : {
+                            "type" : "Double"
+                          }
+                        }, {
+                          "name" : "c_string",
+                          "dataType" : {
+                            "type" : "String"
+                          }
+                        }, {
+                          "name" : "c_boolean",
+                          "dataType" : {
+                            "type" : "Boolean"
+                          }
+                        }, {
+                          "name" : "c_array",
+                          "dataType" : {
+                            "type" : "Array",
+                            "dataType" : {
+                              "type" : "String"
+                            }
+                          }
+                        }, {
+                          "name" : "c_struct",
+                          "dataType" : {
+                            "type" : "Struct",
+                            "fields" : [ {
+                              "name" : "city",
+                              "dataType" : {
+                                "type" : "String"
+                              }
+                            }, {
+                              "name" : "state",
+                              "dataType" : {
+                                "type" : "String"
+                              }
+                            }, {
+                              "name" : "pin",
+                              "dataType" : {
+                                "type" : "Bigint"
+                              }
+                            } ]
+                          }
+                        }, {
+                          "name" : "c_test",
+                          "dataType" : {
+                            "type" : "String"
+                          }
+                        } ]
+                      },
                       "slug" : "out"
                     } ],
                     "isCustomOutputSchema" : false,
@@ -6500,10 +6560,168 @@
                       "ports" : {
                         "inputs" : [ {
                           "id" : "fhPtEPSb",
+                          "schema" : {
+                            "entityType" : "",
+                            "providerType" : "Databricks",
+                            "fields" : [ {
+                              "name" : "c_tinyint",
+                              "dataType" : {
+                                "type" : "TinyInt"
+                              }
+                            }, {
+                              "name" : "c_smallint",
+                              "dataType" : {
+                                "type" : "SmallInt"
+                              }
+                            }, {
+                              "name" : "c_int",
+                              "dataType" : {
+                                "type" : "Integer"
+                              }
+                            }, {
+                              "name" : "c_bigint",
+                              "dataType" : {
+                                "type" : "Bigint"
+                              }
+                            }, {
+                              "name" : "c_float",
+                              "dataType" : {
+                                "type" : "Float"
+                              }
+                            }, {
+                              "name" : "c_double",
+                              "dataType" : {
+                                "type" : "Double"
+                              }
+                            }, {
+                              "name" : "c_string",
+                              "dataType" : {
+                                "type" : "String"
+                              }
+                            }, {
+                              "name" : "c_boolean",
+                              "dataType" : {
+                                "type" : "Boolean"
+                              }
+                            }, {
+                              "name" : "c_array",
+                              "dataType" : {
+                                "type" : "Array",
+                                "dataType" : {
+                                  "type" : "String"
+                                }
+                              }
+                            }, {
+                              "name" : "c_struct",
+                              "dataType" : {
+                                "type" : "Struct",
+                                "fields" : [ {
+                                  "name" : "city",
+                                  "dataType" : {
+                                    "type" : "String"
+                                  }
+                                }, {
+                                  "name" : "state",
+                                  "dataType" : {
+                                    "type" : "String"
+                                  }
+                                }, {
+                                  "name" : "pin",
+                                  "dataType" : {
+                                    "type" : "Bigint"
+                                  }
+                                } ]
+                              }
+                            }, {
+                              "name" : "c_test",
+                              "dataType" : {
+                                "type" : "String"
+                              }
+                            } ]
+                          },
                           "slug" : "in0"
                         } ],
                         "outputs" : [ {
                           "id" : "A3pdmlXf",
+                          "schema" : {
+                            "entityType" : "",
+                            "providerType" : "Databricks",
+                            "fields" : [ {
+                              "name" : "c_tinyint",
+                              "dataType" : {
+                                "type" : "TinyInt"
+                              }
+                            }, {
+                              "name" : "c_smallint",
+                              "dataType" : {
+                                "type" : "SmallInt"
+                              }
+                            }, {
+                              "name" : "c_int",
+                              "dataType" : {
+                                "type" : "Integer"
+                              }
+                            }, {
+                              "name" : "c_bigint",
+                              "dataType" : {
+                                "type" : "Bigint"
+                              }
+                            }, {
+                              "name" : "c_float",
+                              "dataType" : {
+                                "type" : "Float"
+                              }
+                            }, {
+                              "name" : "c_double",
+                              "dataType" : {
+                                "type" : "Double"
+                              }
+                            }, {
+                              "name" : "c_string",
+                              "dataType" : {
+                                "type" : "String"
+                              }
+                            }, {
+                              "name" : "c_boolean",
+                              "dataType" : {
+                                "type" : "Boolean"
+                              }
+                            }, {
+                              "name" : "c_array",
+                              "dataType" : {
+                                "type" : "Array",
+                                "dataType" : {
+                                  "type" : "String"
+                                }
+                              }
+                            }, {
+                              "name" : "c_struct",
+                              "dataType" : {
+                                "type" : "Struct",
+                                "fields" : [ {
+                                  "name" : "city",
+                                  "dataType" : {
+                                    "type" : "String"
+                                  }
+                                }, {
+                                  "name" : "state",
+                                  "dataType" : {
+                                    "type" : "String"
+                                  }
+                                }, {
+                                  "name" : "pin",
+                                  "dataType" : {
+                                    "type" : "Bigint"
+                                  }
+                                } ]
+                              }
+                            }, {
+                              "name" : "c_test",
+                              "dataType" : {
+                                "type" : "String"
+                              }
+                            } ]
+                          },
                           "slug" : "out"
                         } ],
                         "isCustomOutputSchema" : false,
@@ -6534,10 +6752,168 @@
                           "ports" : {
                             "inputs" : [ {
                               "id" : "bioW4VQP",
+                              "schema" : {
+                                "entityType" : "",
+                                "providerType" : "Databricks",
+                                "fields" : [ {
+                                  "name" : "c_tinyint",
+                                  "dataType" : {
+                                    "type" : "TinyInt"
+                                  }
+                                }, {
+                                  "name" : "c_smallint",
+                                  "dataType" : {
+                                    "type" : "SmallInt"
+                                  }
+                                }, {
+                                  "name" : "c_int",
+                                  "dataType" : {
+                                    "type" : "Integer"
+                                  }
+                                }, {
+                                  "name" : "c_bigint",
+                                  "dataType" : {
+                                    "type" : "Bigint"
+                                  }
+                                }, {
+                                  "name" : "c_float",
+                                  "dataType" : {
+                                    "type" : "Float"
+                                  }
+                                }, {
+                                  "name" : "c_double",
+                                  "dataType" : {
+                                    "type" : "Double"
+                                  }
+                                }, {
+                                  "name" : "c_string",
+                                  "dataType" : {
+                                    "type" : "String"
+                                  }
+                                }, {
+                                  "name" : "c_boolean",
+                                  "dataType" : {
+                                    "type" : "Boolean"
+                                  }
+                                }, {
+                                  "name" : "c_array",
+                                  "dataType" : {
+                                    "type" : "Array",
+                                    "dataType" : {
+                                      "type" : "String"
+                                    }
+                                  }
+                                }, {
+                                  "name" : "c_struct",
+                                  "dataType" : {
+                                    "type" : "Struct",
+                                    "fields" : [ {
+                                      "name" : "city",
+                                      "dataType" : {
+                                        "type" : "String"
+                                      }
+                                    }, {
+                                      "name" : "state",
+                                      "dataType" : {
+                                        "type" : "String"
+                                      }
+                                    }, {
+                                      "name" : "pin",
+                                      "dataType" : {
+                                        "type" : "Bigint"
+                                      }
+                                    } ]
+                                  }
+                                }, {
+                                  "name" : "c_test",
+                                  "dataType" : {
+                                    "type" : "String"
+                                  }
+                                } ]
+                              },
                               "slug" : "Filter_3"
                             } ],
                             "outputs" : [ {
                               "id" : "gHIwIZrO",
+                              "schema" : {
+                                "entityType" : "",
+                                "providerType" : "Databricks",
+                                "fields" : [ {
+                                  "name" : "c_tinyint",
+                                  "dataType" : {
+                                    "type" : "TinyInt"
+                                  }
+                                }, {
+                                  "name" : "c_smallint",
+                                  "dataType" : {
+                                    "type" : "SmallInt"
+                                  }
+                                }, {
+                                  "name" : "c_int",
+                                  "dataType" : {
+                                    "type" : "Integer"
+                                  }
+                                }, {
+                                  "name" : "c_bigint",
+                                  "dataType" : {
+                                    "type" : "Bigint"
+                                  }
+                                }, {
+                                  "name" : "c_float",
+                                  "dataType" : {
+                                    "type" : "Float"
+                                  }
+                                }, {
+                                  "name" : "c_double",
+                                  "dataType" : {
+                                    "type" : "Double"
+                                  }
+                                }, {
+                                  "name" : "c_string",
+                                  "dataType" : {
+                                    "type" : "String"
+                                  }
+                                }, {
+                                  "name" : "c_boolean",
+                                  "dataType" : {
+                                    "type" : "Boolean"
+                                  }
+                                }, {
+                                  "name" : "c_array",
+                                  "dataType" : {
+                                    "type" : "Array",
+                                    "dataType" : {
+                                      "type" : "String"
+                                    }
+                                  }
+                                }, {
+                                  "name" : "c_struct",
+                                  "dataType" : {
+                                    "type" : "Struct",
+                                    "fields" : [ {
+                                      "name" : "city",
+                                      "dataType" : {
+                                        "type" : "String"
+                                      }
+                                    }, {
+                                      "name" : "state",
+                                      "dataType" : {
+                                        "type" : "String"
+                                      }
+                                    }, {
+                                      "name" : "pin",
+                                      "dataType" : {
+                                        "type" : "Bigint"
+                                      }
+                                    } ]
+                                  }
+                                }, {
+                                  "name" : "c_test",
+                                  "dataType" : {
+                                    "type" : "String"
+                                  }
+                                } ]
+                              },
                               "slug" : "out"
                             } ],
                             "isCustomOutputSchema" : false,
@@ -6570,10 +6946,168 @@
                               "ports" : {
                                 "inputs" : [ {
                                   "id" : "c8UVHApC",
+                                  "schema" : {
+                                    "entityType" : "",
+                                    "providerType" : "Databricks",
+                                    "fields" : [ {
+                                      "name" : "c_tinyint",
+                                      "dataType" : {
+                                        "type" : "TinyInt"
+                                      }
+                                    }, {
+                                      "name" : "c_smallint",
+                                      "dataType" : {
+                                        "type" : "SmallInt"
+                                      }
+                                    }, {
+                                      "name" : "c_int",
+                                      "dataType" : {
+                                        "type" : "Integer"
+                                      }
+                                    }, {
+                                      "name" : "c_bigint",
+                                      "dataType" : {
+                                        "type" : "Bigint"
+                                      }
+                                    }, {
+                                      "name" : "c_float",
+                                      "dataType" : {
+                                        "type" : "Float"
+                                      }
+                                    }, {
+                                      "name" : "c_double",
+                                      "dataType" : {
+                                        "type" : "Double"
+                                      }
+                                    }, {
+                                      "name" : "c_string",
+                                      "dataType" : {
+                                        "type" : "String"
+                                      }
+                                    }, {
+                                      "name" : "c_boolean",
+                                      "dataType" : {
+                                        "type" : "Boolean"
+                                      }
+                                    }, {
+                                      "name" : "c_array",
+                                      "dataType" : {
+                                        "type" : "Array",
+                                        "dataType" : {
+                                          "type" : "String"
+                                        }
+                                      }
+                                    }, {
+                                      "name" : "c_struct",
+                                      "dataType" : {
+                                        "type" : "Struct",
+                                        "fields" : [ {
+                                          "name" : "city",
+                                          "dataType" : {
+                                            "type" : "String"
+                                          }
+                                        }, {
+                                          "name" : "state",
+                                          "dataType" : {
+                                            "type" : "String"
+                                          }
+                                        }, {
+                                          "name" : "pin",
+                                          "dataType" : {
+                                            "type" : "Bigint"
+                                          }
+                                        } ]
+                                      }
+                                    }, {
+                                      "name" : "c_test",
+                                      "dataType" : {
+                                        "type" : "String"
+                                      }
+                                    } ]
+                                  },
                                   "slug" : "in0"
                                 } ],
                                 "outputs" : [ {
                                   "id" : "Uv72Uvyh",
+                                  "schema" : {
+                                    "entityType" : "",
+                                    "providerType" : "Databricks",
+                                    "fields" : [ {
+                                      "name" : "c_tinyint",
+                                      "dataType" : {
+                                        "type" : "TinyInt"
+                                      }
+                                    }, {
+                                      "name" : "c_smallint",
+                                      "dataType" : {
+                                        "type" : "SmallInt"
+                                      }
+                                    }, {
+                                      "name" : "c_int",
+                                      "dataType" : {
+                                        "type" : "Integer"
+                                      }
+                                    }, {
+                                      "name" : "c_bigint",
+                                      "dataType" : {
+                                        "type" : "Bigint"
+                                      }
+                                    }, {
+                                      "name" : "c_float",
+                                      "dataType" : {
+                                        "type" : "Float"
+                                      }
+                                    }, {
+                                      "name" : "c_double",
+                                      "dataType" : {
+                                        "type" : "Double"
+                                      }
+                                    }, {
+                                      "name" : "c_string",
+                                      "dataType" : {
+                                        "type" : "String"
+                                      }
+                                    }, {
+                                      "name" : "c_boolean",
+                                      "dataType" : {
+                                        "type" : "Boolean"
+                                      }
+                                    }, {
+                                      "name" : "c_array",
+                                      "dataType" : {
+                                        "type" : "Array",
+                                        "dataType" : {
+                                          "type" : "String"
+                                        }
+                                      }
+                                    }, {
+                                      "name" : "c_struct",
+                                      "dataType" : {
+                                        "type" : "Struct",
+                                        "fields" : [ {
+                                          "name" : "city",
+                                          "dataType" : {
+                                            "type" : "String"
+                                          }
+                                        }, {
+                                          "name" : "state",
+                                          "dataType" : {
+                                            "type" : "String"
+                                          }
+                                        }, {
+                                          "name" : "pin",
+                                          "dataType" : {
+                                            "type" : "Bigint"
+                                          }
+                                        } ]
+                                      }
+                                    }, {
+                                      "name" : "c_test",
+                                      "dataType" : {
+                                        "type" : "String"
+                                      }
+                                    } ]
+                                  },
                                   "slug" : "out"
                                 } ],
                                 "isCustomOutputSchema" : false,
@@ -6606,10 +7140,168 @@
                                   "ports" : {
                                     "inputs" : [ {
                                       "id" : "kK9Uaz6p",
+                                      "schema" : {
+                                        "entityType" : "",
+                                        "providerType" : "Databricks",
+                                        "fields" : [ {
+                                          "name" : "c_tinyint",
+                                          "dataType" : {
+                                            "type" : "TinyInt"
+                                          }
+                                        }, {
+                                          "name" : "c_smallint",
+                                          "dataType" : {
+                                            "type" : "SmallInt"
+                                          }
+                                        }, {
+                                          "name" : "c_int",
+                                          "dataType" : {
+                                            "type" : "Integer"
+                                          }
+                                        }, {
+                                          "name" : "c_bigint",
+                                          "dataType" : {
+                                            "type" : "Bigint"
+                                          }
+                                        }, {
+                                          "name" : "c_float",
+                                          "dataType" : {
+                                            "type" : "Float"
+                                          }
+                                        }, {
+                                          "name" : "c_double",
+                                          "dataType" : {
+                                            "type" : "Double"
+                                          }
+                                        }, {
+                                          "name" : "c_string",
+                                          "dataType" : {
+                                            "type" : "String"
+                                          }
+                                        }, {
+                                          "name" : "c_boolean",
+                                          "dataType" : {
+                                            "type" : "Boolean"
+                                          }
+                                        }, {
+                                          "name" : "c_array",
+                                          "dataType" : {
+                                            "type" : "Array",
+                                            "dataType" : {
+                                              "type" : "String"
+                                            }
+                                          }
+                                        }, {
+                                          "name" : "c_struct",
+                                          "dataType" : {
+                                            "type" : "Struct",
+                                            "fields" : [ {
+                                              "name" : "city",
+                                              "dataType" : {
+                                                "type" : "String"
+                                              }
+                                            }, {
+                                              "name" : "state",
+                                              "dataType" : {
+                                                "type" : "String"
+                                              }
+                                            }, {
+                                              "name" : "pin",
+                                              "dataType" : {
+                                                "type" : "Bigint"
+                                              }
+                                            } ]
+                                          }
+                                        }, {
+                                          "name" : "c_test",
+                                          "dataType" : {
+                                            "type" : "String"
+                                          }
+                                        } ]
+                                      },
                                       "slug" : "in0"
                                     } ],
                                     "outputs" : [ {
                                       "id" : "kUdvrmGD",
+                                      "schema" : {
+                                        "entityType" : "",
+                                        "providerType" : "Databricks",
+                                        "fields" : [ {
+                                          "name" : "c_tinyint",
+                                          "dataType" : {
+                                            "type" : "TinyInt"
+                                          }
+                                        }, {
+                                          "name" : "c_smallint",
+                                          "dataType" : {
+                                            "type" : "SmallInt"
+                                          }
+                                        }, {
+                                          "name" : "c_int",
+                                          "dataType" : {
+                                            "type" : "Integer"
+                                          }
+                                        }, {
+                                          "name" : "c_bigint",
+                                          "dataType" : {
+                                            "type" : "Bigint"
+                                          }
+                                        }, {
+                                          "name" : "c_float",
+                                          "dataType" : {
+                                            "type" : "Float"
+                                          }
+                                        }, {
+                                          "name" : "c_double",
+                                          "dataType" : {
+                                            "type" : "Double"
+                                          }
+                                        }, {
+                                          "name" : "c_string",
+                                          "dataType" : {
+                                            "type" : "String"
+                                          }
+                                        }, {
+                                          "name" : "c_boolean",
+                                          "dataType" : {
+                                            "type" : "Boolean"
+                                          }
+                                        }, {
+                                          "name" : "c_array",
+                                          "dataType" : {
+                                            "type" : "Array",
+                                            "dataType" : {
+                                              "type" : "String"
+                                            }
+                                          }
+                                        }, {
+                                          "name" : "c_struct",
+                                          "dataType" : {
+                                            "type" : "Struct",
+                                            "fields" : [ {
+                                              "name" : "city",
+                                              "dataType" : {
+                                                "type" : "String"
+                                              }
+                                            }, {
+                                              "name" : "state",
+                                              "dataType" : {
+                                                "type" : "String"
+                                              }
+                                            }, {
+                                              "name" : "pin",
+                                              "dataType" : {
+                                                "type" : "Bigint"
+                                              }
+                                            } ]
+                                          }
+                                        }, {
+                                          "name" : "c_test",
+                                          "dataType" : {
+                                            "type" : "String"
+                                          }
+                                        } ]
+                                      },
                                       "slug" : "out"
                                     } ],
                                     "isCustomOutputSchema" : false,
@@ -6642,10 +7334,168 @@
                                       "ports" : {
                                         "inputs" : [ {
                                           "id" : "b1XsKGEZ",
+                                          "schema" : {
+                                            "entityType" : "",
+                                            "providerType" : "Databricks",
+                                            "fields" : [ {
+                                              "name" : "c_tinyint",
+                                              "dataType" : {
+                                                "type" : "TinyInt"
+                                              }
+                                            }, {
+                                              "name" : "c_smallint",
+                                              "dataType" : {
+                                                "type" : "SmallInt"
+                                              }
+                                            }, {
+                                              "name" : "c_int",
+                                              "dataType" : {
+                                                "type" : "Integer"
+                                              }
+                                            }, {
+                                              "name" : "c_bigint",
+                                              "dataType" : {
+                                                "type" : "Bigint"
+                                              }
+                                            }, {
+                                              "name" : "c_float",
+                                              "dataType" : {
+                                                "type" : "Float"
+                                              }
+                                            }, {
+                                              "name" : "c_double",
+                                              "dataType" : {
+                                                "type" : "Double"
+                                              }
+                                            }, {
+                                              "name" : "c_string",
+                                              "dataType" : {
+                                                "type" : "String"
+                                              }
+                                            }, {
+                                              "name" : "c_boolean",
+                                              "dataType" : {
+                                                "type" : "Boolean"
+                                              }
+                                            }, {
+                                              "name" : "c_array",
+                                              "dataType" : {
+                                                "type" : "Array",
+                                                "dataType" : {
+                                                  "type" : "String"
+                                                }
+                                              }
+                                            }, {
+                                              "name" : "c_struct",
+                                              "dataType" : {
+                                                "type" : "Struct",
+                                                "fields" : [ {
+                                                  "name" : "city",
+                                                  "dataType" : {
+                                                    "type" : "String"
+                                                  }
+                                                }, {
+                                                  "name" : "state",
+                                                  "dataType" : {
+                                                    "type" : "String"
+                                                  }
+                                                }, {
+                                                  "name" : "pin",
+                                                  "dataType" : {
+                                                    "type" : "Bigint"
+                                                  }
+                                                } ]
+                                              }
+                                            }, {
+                                              "name" : "c_test",
+                                              "dataType" : {
+                                                "type" : "String"
+                                              }
+                                            } ]
+                                          },
                                           "slug" : "in0"
                                         } ],
                                         "outputs" : [ {
                                           "id" : "S0WtbdId",
+                                          "schema" : {
+                                            "entityType" : "",
+                                            "providerType" : "Databricks",
+                                            "fields" : [ {
+                                              "name" : "c_tinyint",
+                                              "dataType" : {
+                                                "type" : "TinyInt"
+                                              }
+                                            }, {
+                                              "name" : "c_smallint",
+                                              "dataType" : {
+                                                "type" : "SmallInt"
+                                              }
+                                            }, {
+                                              "name" : "c_int",
+                                              "dataType" : {
+                                                "type" : "Integer"
+                                              }
+                                            }, {
+                                              "name" : "c_bigint",
+                                              "dataType" : {
+                                                "type" : "Bigint"
+                                              }
+                                            }, {
+                                              "name" : "c_float",
+                                              "dataType" : {
+                                                "type" : "Float"
+                                              }
+                                            }, {
+                                              "name" : "c_double",
+                                              "dataType" : {
+                                                "type" : "Double"
+                                              }
+                                            }, {
+                                              "name" : "c_string",
+                                              "dataType" : {
+                                                "type" : "String"
+                                              }
+                                            }, {
+                                              "name" : "c_boolean",
+                                              "dataType" : {
+                                                "type" : "Boolean"
+                                              }
+                                            }, {
+                                              "name" : "c_array",
+                                              "dataType" : {
+                                                "type" : "Array",
+                                                "dataType" : {
+                                                  "type" : "String"
+                                                }
+                                              }
+                                            }, {
+                                              "name" : "c_struct",
+                                              "dataType" : {
+                                                "type" : "Struct",
+                                                "fields" : [ {
+                                                  "name" : "city",
+                                                  "dataType" : {
+                                                    "type" : "String"
+                                                  }
+                                                }, {
+                                                  "name" : "state",
+                                                  "dataType" : {
+                                                    "type" : "String"
+                                                  }
+                                                }, {
+                                                  "name" : "pin",
+                                                  "dataType" : {
+                                                    "type" : "Bigint"
+                                                  }
+                                                } ]
+                                              }
+                                            }, {
+                                              "name" : "c_test",
+                                              "dataType" : {
+                                                "type" : "String"
+                                              }
+                                            } ]
+                                          },
                                           "slug" : "out"
                                         } ],
                                         "isCustomOutputSchema" : false,
@@ -6668,10 +7518,168 @@
                                       "ports" : {
                                         "inputs" : [ {
                                           "id" : "BZLegXnU",
+                                          "schema" : {
+                                            "entityType" : "",
+                                            "providerType" : "Databricks",
+                                            "fields" : [ {
+                                              "name" : "c_tinyint",
+                                              "dataType" : {
+                                                "type" : "TinyInt"
+                                              }
+                                            }, {
+                                              "name" : "c_smallint",
+                                              "dataType" : {
+                                                "type" : "SmallInt"
+                                              }
+                                            }, {
+                                              "name" : "c_int",
+                                              "dataType" : {
+                                                "type" : "Integer"
+                                              }
+                                            }, {
+                                              "name" : "c_bigint",
+                                              "dataType" : {
+                                                "type" : "Bigint"
+                                              }
+                                            }, {
+                                              "name" : "c_float",
+                                              "dataType" : {
+                                                "type" : "Float"
+                                              }
+                                            }, {
+                                              "name" : "c_double",
+                                              "dataType" : {
+                                                "type" : "Double"
+                                              }
+                                            }, {
+                                              "name" : "c_string",
+                                              "dataType" : {
+                                                "type" : "String"
+                                              }
+                                            }, {
+                                              "name" : "c_boolean",
+                                              "dataType" : {
+                                                "type" : "Boolean"
+                                              }
+                                            }, {
+                                              "name" : "c_array",
+                                              "dataType" : {
+                                                "type" : "Array",
+                                                "dataType" : {
+                                                  "type" : "String"
+                                                }
+                                              }
+                                            }, {
+                                              "name" : "c_struct",
+                                              "dataType" : {
+                                                "type" : "Struct",
+                                                "fields" : [ {
+                                                  "name" : "city",
+                                                  "dataType" : {
+                                                    "type" : "String"
+                                                  }
+                                                }, {
+                                                  "name" : "state",
+                                                  "dataType" : {
+                                                    "type" : "String"
+                                                  }
+                                                }, {
+                                                  "name" : "pin",
+                                                  "dataType" : {
+                                                    "type" : "Bigint"
+                                                  }
+                                                } ]
+                                              }
+                                            }, {
+                                              "name" : "c_test",
+                                              "dataType" : {
+                                                "type" : "String"
+                                              }
+                                            } ]
+                                          },
                                           "slug" : "Filter_6"
                                         } ],
                                         "outputs" : [ {
                                           "id" : "O6igdPco",
+                                          "schema" : {
+                                            "entityType" : "",
+                                            "providerType" : "Databricks",
+                                            "fields" : [ {
+                                              "name" : "c_tinyint",
+                                              "dataType" : {
+                                                "type" : "TinyInt"
+                                              }
+                                            }, {
+                                              "name" : "c_smallint",
+                                              "dataType" : {
+                                                "type" : "SmallInt"
+                                              }
+                                            }, {
+                                              "name" : "c_int",
+                                              "dataType" : {
+                                                "type" : "Integer"
+                                              }
+                                            }, {
+                                              "name" : "c_bigint",
+                                              "dataType" : {
+                                                "type" : "Bigint"
+                                              }
+                                            }, {
+                                              "name" : "c_float",
+                                              "dataType" : {
+                                                "type" : "Float"
+                                              }
+                                            }, {
+                                              "name" : "c_double",
+                                              "dataType" : {
+                                                "type" : "Double"
+                                              }
+                                            }, {
+                                              "name" : "c_string",
+                                              "dataType" : {
+                                                "type" : "String"
+                                              }
+                                            }, {
+                                              "name" : "c_boolean",
+                                              "dataType" : {
+                                                "type" : "Boolean"
+                                              }
+                                            }, {
+                                              "name" : "c_array",
+                                              "dataType" : {
+                                                "type" : "Array",
+                                                "dataType" : {
+                                                  "type" : "String"
+                                                }
+                                              }
+                                            }, {
+                                              "name" : "c_struct",
+                                              "dataType" : {
+                                                "type" : "Struct",
+                                                "fields" : [ {
+                                                  "name" : "city",
+                                                  "dataType" : {
+                                                    "type" : "String"
+                                                  }
+                                                }, {
+                                                  "name" : "state",
+                                                  "dataType" : {
+                                                    "type" : "String"
+                                                  }
+                                                }, {
+                                                  "name" : "pin",
+                                                  "dataType" : {
+                                                    "type" : "Bigint"
+                                                  }
+                                                } ]
+                                              }
+                                            }, {
+                                              "name" : "c_test",
+                                              "dataType" : {
+                                                "type" : "String"
+                                              }
+                                            } ]
+                                          },
                                           "slug" : "out"
                                         } ],
                                         "isCustomOutputSchema" : false,
@@ -6946,10 +7954,168 @@
           "ports" : {
             "inputs" : [ {
               "id" : "EDiw5TSP",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "c_tinyint",
+                  "dataType" : {
+                    "type" : "TinyInt"
+                  }
+                }, {
+                  "name" : "c_smallint",
+                  "dataType" : {
+                    "type" : "SmallInt"
+                  }
+                }, {
+                  "name" : "c_int",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "c_bigint",
+                  "dataType" : {
+                    "type" : "Bigint"
+                  }
+                }, {
+                  "name" : "c_float",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "c_double",
+                  "dataType" : {
+                    "type" : "Double"
+                  }
+                }, {
+                  "name" : "c_string",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "c_boolean",
+                  "dataType" : {
+                    "type" : "Boolean"
+                  }
+                }, {
+                  "name" : "c_array",
+                  "dataType" : {
+                    "type" : "Array",
+                    "dataType" : {
+                      "type" : "String"
+                    }
+                  }
+                }, {
+                  "name" : "c_struct",
+                  "dataType" : {
+                    "type" : "Struct",
+                    "fields" : [ {
+                      "name" : "city",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "state",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "pin",
+                      "dataType" : {
+                        "type" : "Bigint"
+                      }
+                    } ]
+                  }
+                }, {
+                  "name" : "c_test",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                } ]
+              },
               "slug" : "in0"
             } ],
             "outputs" : [ {
               "id" : "vmX26m4X",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "c_tinyint",
+                  "dataType" : {
+                    "type" : "TinyInt"
+                  }
+                }, {
+                  "name" : "c_smallint",
+                  "dataType" : {
+                    "type" : "SmallInt"
+                  }
+                }, {
+                  "name" : "c_int",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "c_bigint",
+                  "dataType" : {
+                    "type" : "Bigint"
+                  }
+                }, {
+                  "name" : "c_float",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "c_double",
+                  "dataType" : {
+                    "type" : "Double"
+                  }
+                }, {
+                  "name" : "c_string",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "c_boolean",
+                  "dataType" : {
+                    "type" : "Boolean"
+                  }
+                }, {
+                  "name" : "c_array",
+                  "dataType" : {
+                    "type" : "Array",
+                    "dataType" : {
+                      "type" : "String"
+                    }
+                  }
+                }, {
+                  "name" : "c_struct",
+                  "dataType" : {
+                    "type" : "Struct",
+                    "fields" : [ {
+                      "name" : "city",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "state",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "pin",
+                      "dataType" : {
+                        "type" : "Bigint"
+                      }
+                    } ]
+                  }
+                }, {
+                  "name" : "c_test",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                } ]
+              },
               "slug" : "out"
             } ],
             "isCustomOutputSchema" : false,
