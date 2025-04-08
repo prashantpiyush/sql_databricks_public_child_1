@@ -72,6 +72,7 @@
         "gitEntityValue" : "dev_staging",
         "runModelWithChildren" : true,
         "execDeps" : true,
+        "sqlProjectType" : "databricks",
         "noAnonymousUsageStats" : false,
         "execTest" : false,
         "currentProjectModels" : [ {
@@ -180,6 +181,7 @@
         "gitEntityValue" : "dev_staging",
         "runModelWithChildren" : true,
         "execDeps" : true,
+        "sqlProjectType" : "databricks",
         "noAnonymousUsageStats" : false,
         "execTest" : false,
         "currentProjectModels" : [ {

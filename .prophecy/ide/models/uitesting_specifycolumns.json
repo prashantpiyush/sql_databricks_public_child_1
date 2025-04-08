@@ -24,7 +24,96 @@
         }
       }
     },
-    "version" : 3
+    "version" : 3,
+    "properties" : {
+      "name" : "uitesting_specifycolumns",
+      "columns" : [ {
+        "name" : "c_tinyint",
+        "dataType" : {
+          "type" : "TinyInt"
+        }
+      }, {
+        "name" : "c_smallint",
+        "dataType" : {
+          "type" : "SmallInt"
+        }
+      }, {
+        "name" : "c_int",
+        "dataType" : {
+          "type" : "Integer"
+        }
+      }, {
+        "name" : "c_bigint",
+        "dataType" : {
+          "type" : "Bigint"
+        }
+      }, {
+        "name" : "c_float",
+        "dataType" : {
+          "type" : "Float"
+        }
+      }, {
+        "name" : "c_double",
+        "dataType" : {
+          "type" : "Float"
+        }
+      }, {
+        "name" : "c_string",
+        "dataType" : {
+          "type" : "String"
+        }
+      }, {
+        "name" : "c_boolean",
+        "dataType" : {
+          "type" : "Boolean"
+        }
+      }, {
+        "name" : "c_array",
+        "dataType" : {
+          "type" : "Array",
+          "dataType" : {
+            "type" : "String"
+          }
+        }
+      }, {
+        "name" : "c_struct",
+        "dataType" : {
+          "type" : "Struct",
+          "fields" : [ {
+            "name" : "city",
+            "dataType" : {
+              "type" : "String"
+            }
+          }, {
+            "name" : "state",
+            "dataType" : {
+              "type" : "String"
+            }
+          }, {
+            "name" : "pin",
+            "dataType" : {
+              "type" : "Bigint"
+            }
+          } ]
+        }
+      }, {
+        "name" : "c_id",
+        "dataType" : {
+          "type" : "Bigint"
+        }
+      }, {
+        "name" : "c_date",
+        "dataType" : {
+          "type" : "Date"
+        }
+      }, {
+        "name" : "c_timestamp",
+        "dataType" : {
+          "type" : "Timestamp"
+        }
+      } ],
+      "providerType" : "databricks"
+    }
   },
   "processes" : {
     "all_type_non_partitioned_1##p4tdrBnz" : {
@@ -163,6 +252,7 @@
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
         "query" : "SELECT * \n\nFROM all_type_non_partitioned_columns\n",
+        "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true"

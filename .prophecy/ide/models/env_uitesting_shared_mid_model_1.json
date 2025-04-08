@@ -24,7 +24,134 @@
         }
       }
     },
-    "version" : 3
+    "version" : 3,
+    "properties" : {
+      "name" : "env_uitesting_shared_mid_model_1",
+      "columns" : [ {
+        "name" : "c_tinyint",
+        "tests" : [ {
+          "relationships" : {
+            "config" : {
+              "fail_calc" : "count(*)",
+              "warn_if" : "",
+              "severity" : "warn"
+            },
+            "to" : "\"ref('raw_payments')\"",
+            "field" : "\"id\"",
+            "column_name" : "\"c_tinyint\""
+          }
+        }, {
+          "accepted_values" : {
+            "config" : {
+              "fail_calc" : "count(*)",
+              "severity" : "warn"
+            },
+            "values" : [ "\"1\"", "\"2\"", "\"3\"", "\"4\"", "\"5\"", "\"6\"", "\"7\"", "\"8\"", "\"9\"", "\"10\"" ]
+          }
+        } ],
+        "dataType" : {
+          "type" : "TinyInt"
+        }
+      }, {
+        "name" : "c_smallint",
+        "dataType" : {
+          "type" : "SmallInt"
+        }
+      }, {
+        "name" : "c_int",
+        "dataType" : {
+          "type" : "Integer"
+        }
+      }, {
+        "name" : "c_bigint",
+        "dataType" : {
+          "type" : "Bigint"
+        }
+      }, {
+        "name" : "c_float",
+        "tests" : [ {
+          "not_null" : {
+            "config" : {
+              "fail_calc" : "count(*)",
+              "warn_if" : ""
+            },
+            "column_name" : "\"\"c_float\"\""
+          }
+        } ],
+        "dataType" : {
+          "type" : "Float"
+        }
+      }, {
+        "name" : "c_double",
+        "dataType" : {
+          "type" : "Float"
+        }
+      }, {
+        "name" : "c_string",
+        "tests" : [ {
+          "unique" : {
+            "config" : {
+              "fail_calc" : "count(*)",
+              "warn_if" : "",
+              "severity" : "warn"
+            },
+            "column_name" : "\"c_string\""
+          }
+        } ],
+        "dataType" : {
+          "type" : "String"
+        }
+      }, {
+        "name" : "c_boolean",
+        "dataType" : {
+          "type" : "Boolean"
+        }
+      }, {
+        "name" : "c_array",
+        "dataType" : {
+          "type" : "Array",
+          "dataType" : {
+            "type" : "String"
+          }
+        }
+      }, {
+        "name" : "c_struct",
+        "dataType" : {
+          "type" : "Struct",
+          "fields" : [ {
+            "name" : "city",
+            "dataType" : {
+              "type" : "String"
+            }
+          }, {
+            "name" : "state",
+            "dataType" : {
+              "type" : "String"
+            }
+          }, {
+            "name" : "pin",
+            "dataType" : {
+              "type" : "Bigint"
+            }
+          } ]
+        }
+      } ],
+      "tests" : [ {
+        "not_null" : {
+          "config" : {
+            "store_failures" : true,
+            "warn_if" : " <= 1",
+            "fail_calc" : "CASE\n  WHEN count('*') > 0\n    THEN sum(c_smallint)\n  ELSE 0\nEND",
+            "error_if" : " BETWEEN 10 AND 100",
+            "severity" : "warn",
+            "where" : "c_struct.state != 'New York'",
+            "limit" : 10
+          },
+          "column_name" : "\"c_struct.city\""
+        }
+      } ],
+      "providerType" : "databricks"
+    }
   },
   "processes" : {
     "Join_1##s7mlze0O" : {
@@ -340,6 +467,7 @@
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
         "query" : "{#Utilizes combined customer and asset data for testing purposes.#}\nSELECT *\n\nFROM Join_1\n",
+        "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true"

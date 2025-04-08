@@ -8,81 +8,6 @@
       "sources" : [ {
         "source" : {
           "table" : {
-            "name" : "customerdata",
-            "sourceName" : "hive_metastore.qa_db_warehouse",
-            "sourceType" : "ExternalSource"
-          }
-        },
-        "sourceComponentKind" : "ExternalSource",
-        "sourceLabel" : "customerdata",
-        "canJoinWith" : [ {
-          "processLabel" : "raw_customers",
-          "processId" : "raw_customers##hc8zynrq",
-          "properties" : {
-            "activeTab" : "conditions",
-            "columnsSelector" : [ "first_name", "last_name" ],
-            "conditions" : [ {
-              "alias" : "customerdata",
-              "expression" : {
-                "expression" : "customerdata.first_name = raw_customers.first_name AND customerdata.last_name = raw_customers.last_name"
-              },
-              "joinType" : "inner"
-            } ],
-            "expressions" : [ {
-              "expression" : {
-                "expression" : "customerdata.customer_id"
-              },
-              "alias" : "customer_id"
-            }, {
-              "expression" : {
-                "expression" : "customerdata.phone"
-              },
-              "alias" : "phone"
-            }, {
-              "expression" : {
-                "expression" : "customerdata.email"
-              },
-              "alias" : "email"
-            }, {
-              "expression" : {
-                "expression" : "customerdata.country_code"
-              },
-              "alias" : "country_code"
-            }, {
-              "expression" : {
-                "expression" : "customerdata.account_open_date"
-              },
-              "alias" : "account_open_date"
-            }, {
-              "expression" : {
-                "expression" : "customerdata.account_flags"
-              },
-              "alias" : "account_flags"
-            }, {
-              "expression" : {
-                "expression" : "raw_customers.id"
-              },
-              "alias" : "id"
-            }, {
-              "expression" : {
-                "expression" : "raw_customers.first_name"
-              },
-              "alias" : "first_name"
-            }, {
-              "expression" : {
-                "expression" : "raw_customers.last_name"
-              },
-              "alias" : "last_name"
-            } ],
-            "headAlias" : "customerdata",
-            "allowSelection" : false
-          },
-          "joinColumns" : [ "first_name", "last_name" ],
-          "isRecommended" : true
-        } ]
-      }, {
-        "source" : {
-          "table" : {
             "name" : "customers",
             "sourceName" : "spark_catalog.qa_suggestion_database",
             "sourceType" : "Source"
@@ -125,66 +50,6 @@
               "alias" : "last_name"
             } ],
             "headAlias" : "customers",
-            "allowSelection" : false
-          },
-          "joinColumns" : [ "first_name", "last_name" ],
-          "isRecommended" : true
-        } ]
-      }, {
-        "source" : {
-          "table" : {
-            "name" : "env_uitesting_expressions",
-            "sourceName" : "hive_metastore.qa_db_warehouse",
-            "sourceType" : "ExternalSource"
-          }
-        },
-        "sourceComponentKind" : "ExternalSource",
-        "sourceLabel" : "env_uitesting_expressions",
-        "canJoinWith" : [ {
-          "processLabel" : "raw_customers",
-          "processId" : "raw_customers##hc8zynrq",
-          "properties" : {
-            "activeTab" : "conditions",
-            "columnsSelector" : [ "first_name", "last_name" ],
-            "conditions" : [ {
-              "alias" : "env_uitesting_expressions",
-              "expression" : {
-                "expression" : "env_uitesting_expressions.first_name = raw_customers.first_name AND env_uitesting_expressions.last_name = raw_customers.last_name"
-              },
-              "joinType" : "inner"
-            } ],
-            "expressions" : [ {
-              "expression" : {
-                "expression" : "env_uitesting_expressions.customer_id"
-              },
-              "alias" : "customer_id"
-            }, {
-              "expression" : {
-                "expression" : "env_uitesting_expressions.c_expressions"
-              },
-              "alias" : "c_expressions"
-            }, {
-              "expression" : {
-                "expression" : "env_uitesting_expressions.c1"
-              },
-              "alias" : "c1"
-            }, {
-              "expression" : {
-                "expression" : "raw_customers.id"
-              },
-              "alias" : "id"
-            }, {
-              "expression" : {
-                "expression" : "raw_customers.first_name"
-              },
-              "alias" : "first_name"
-            }, {
-              "expression" : {
-                "expression" : "raw_customers.last_name"
-              },
-              "alias" : "last_name"
-            } ],
-            "headAlias" : "env_uitesting_expressions",
             "allowSelection" : false
           },
           "joinColumns" : [ "first_name", "last_name" ],
@@ -300,416 +165,6 @@
           "joinColumns" : [ "id" ],
           "isRecommended" : true
         } ]
-      }, {
-        "source" : {
-          "table" : {
-            "name" : "stg_customers",
-            "sourceName" : "hive_metastore.qa_database",
-            "sourceType" : "ExternalSource"
-          }
-        },
-        "sourceComponentKind" : "ExternalSource",
-        "sourceLabel" : "stg_customers",
-        "canJoinWith" : [ {
-          "processLabel" : "raw_customers",
-          "processId" : "raw_customers##hc8zynrq",
-          "properties" : {
-            "activeTab" : "conditions",
-            "columnsSelector" : [ "first_name", "last_name" ],
-            "conditions" : [ {
-              "alias" : "stg_customers",
-              "expression" : {
-                "expression" : "stg_customers.first_name = raw_customers.first_name AND stg_customers.last_name = raw_customers.last_name"
-              },
-              "joinType" : "inner"
-            } ],
-            "expressions" : [ {
-              "expression" : {
-                "expression" : "stg_customers.customer_id"
-              },
-              "alias" : "customer_id"
-            }, {
-              "expression" : {
-                "expression" : "raw_customers.id"
-              },
-              "alias" : "id"
-            }, {
-              "expression" : {
-                "expression" : "raw_customers.first_name"
-              },
-              "alias" : "first_name"
-            }, {
-              "expression" : {
-                "expression" : "raw_customers.last_name"
-              },
-              "alias" : "last_name"
-            } ],
-            "headAlias" : "stg_customers",
-            "allowSelection" : false
-          },
-          "joinColumns" : [ "first_name", "last_name" ],
-          "isRecommended" : true
-        } ]
-      }, {
-        "source" : {
-          "table" : {
-            "name" : "customerorders",
-            "sourceName" : "hive_metastore.qa_db_warehouse",
-            "sourceType" : "ExternalSource"
-          }
-        },
-        "sourceComponentKind" : "ExternalSource",
-        "sourceLabel" : "customerorders",
-        "canJoinWith" : [ {
-          "processLabel" : "raw_customers",
-          "processId" : "raw_customers##hc8zynrq",
-          "properties" : {
-            "activeTab" : "conditions",
-            "columnsSelector" : [ "first_name", "last_name" ],
-            "conditions" : [ {
-              "alias" : "customerorders",
-              "expression" : {
-                "expression" : "customerorders.first_name = raw_customers.first_name AND customerorders.last_name = raw_customers.last_name"
-              },
-              "joinType" : "inner"
-            } ],
-            "expressions" : [ {
-              "expression" : {
-                "expression" : "customerorders.customer_id"
-              },
-              "alias" : "customer_id"
-            }, {
-              "expression" : {
-                "expression" : "customerorders.revenue"
-              },
-              "alias" : "revenue"
-            }, {
-              "expression" : {
-                "expression" : "raw_customers.id"
-              },
-              "alias" : "id"
-            }, {
-              "expression" : {
-                "expression" : "raw_customers.first_name"
-              },
-              "alias" : "first_name"
-            }, {
-              "expression" : {
-                "expression" : "raw_customers.last_name"
-              },
-              "alias" : "last_name"
-            } ],
-            "headAlias" : "customerorders",
-            "allowSelection" : false
-          },
-          "joinColumns" : [ "first_name", "last_name" ],
-          "isRecommended" : false
-        } ]
-      }, {
-        "source" : {
-          "table" : {
-            "name" : "customers_data",
-            "sourceName" : "hive_metastore.qa_db_warehouse",
-            "sourceType" : "ExternalSource"
-          }
-        },
-        "sourceComponentKind" : "ExternalSource",
-        "sourceLabel" : "customers_data",
-        "canJoinWith" : [ {
-          "processLabel" : "raw_customers",
-          "processId" : "raw_customers##hc8zynrq",
-          "properties" : {
-            "activeTab" : "conditions",
-            "columnsSelector" : [ "first_name", "last_name" ],
-            "conditions" : [ {
-              "alias" : "customers_data",
-              "expression" : {
-                "expression" : "customers_data.first_name = raw_customers.first_name AND customers_data.last_name = raw_customers.last_name"
-              },
-              "joinType" : "inner"
-            } ],
-            "expressions" : [ {
-              "expression" : {
-                "expression" : "customers_data.customer_id"
-              },
-              "alias" : "customer_id"
-            }, {
-              "expression" : {
-                "expression" : "customers_data.phone"
-              },
-              "alias" : "phone"
-            }, {
-              "expression" : {
-                "expression" : "customers_data.email"
-              },
-              "alias" : "email"
-            }, {
-              "expression" : {
-                "expression" : "customers_data.country_code"
-              },
-              "alias" : "country_code"
-            }, {
-              "expression" : {
-                "expression" : "customers_data.account_open_date"
-              },
-              "alias" : "account_open_date"
-            }, {
-              "expression" : {
-                "expression" : "customers_data.account_flags"
-              },
-              "alias" : "account_flags"
-            }, {
-              "expression" : {
-                "expression" : "raw_customers.id"
-              },
-              "alias" : "id"
-            }, {
-              "expression" : {
-                "expression" : "raw_customers.first_name"
-              },
-              "alias" : "first_name"
-            }, {
-              "expression" : {
-                "expression" : "raw_customers.last_name"
-              },
-              "alias" : "last_name"
-            } ],
-            "headAlias" : "customers_data",
-            "allowSelection" : false
-          },
-          "joinColumns" : [ "first_name", "last_name" ],
-          "isRecommended" : false
-        } ]
-      }, {
-        "source" : {
-          "table" : {
-            "name" : "enhancedexpmodel_2",
-            "sourceName" : "hive_metastore.qa_db_warehouse",
-            "sourceType" : "ExternalSource"
-          }
-        },
-        "sourceComponentKind" : "ExternalSource",
-        "sourceLabel" : "enhancedexpmodel_2",
-        "canJoinWith" : [ {
-          "processLabel" : "raw_customers",
-          "processId" : "raw_customers##hc8zynrq",
-          "properties" : {
-            "activeTab" : "conditions",
-            "columnsSelector" : [ "first_name", "last_name" ],
-            "conditions" : [ {
-              "alias" : "enhancedexpmodel_2",
-              "expression" : {
-                "expression" : "enhancedexpmodel_2.first_name = raw_customers.first_name AND enhancedexpmodel_2.last_name = raw_customers.last_name"
-              },
-              "joinType" : "inner"
-            } ],
-            "expressions" : [ {
-              "expression" : {
-                "expression" : "enhancedexpmodel_2.credit_card_amount"
-              },
-              "alias" : "credit_card_amount"
-            }, {
-              "expression" : {
-                "expression" : "enhancedexpmodel_2.amount"
-              },
-              "alias" : "amount"
-            }, {
-              "expression" : {
-                "expression" : "enhancedexpmodel_2.first_order"
-              },
-              "alias" : "first_order"
-            }, {
-              "expression" : {
-                "expression" : "enhancedexpmodel_2.gift_card_amount"
-              },
-              "alias" : "gift_card_amount"
-            }, {
-              "expression" : {
-                "expression" : "enhancedexpmodel_2.order_date"
-              },
-              "alias" : "order_date"
-            }, {
-              "expression" : {
-                "expression" : "enhancedexpmodel_2.order_id"
-              },
-              "alias" : "order_id"
-            }, {
-              "expression" : {
-                "expression" : "enhancedexpmodel_2.coupon_amount"
-              },
-              "alias" : "coupon_amount"
-            }, {
-              "expression" : {
-                "expression" : "enhancedexpmodel_2.customer_lifetime_value"
-              },
-              "alias" : "customer_lifetime_value"
-            }, {
-              "expression" : {
-                "expression" : "enhancedexpmodel_2.number_of_orders"
-              },
-              "alias" : "number_of_orders"
-            }, {
-              "expression" : {
-                "expression" : "enhancedexpmodel_2.bank_transfer_amount"
-              },
-              "alias" : "bank_transfer_amount"
-            }, {
-              "expression" : {
-                "expression" : "enhancedexpmodel_2.customer_id"
-              },
-              "alias" : "customer_id"
-            }, {
-              "expression" : {
-                "expression" : "enhancedexpmodel_2.most_recent_order"
-              },
-              "alias" : "most_recent_order"
-            }, {
-              "expression" : {
-                "expression" : "enhancedexpmodel_2.status"
-              },
-              "alias" : "status"
-            }, {
-              "expression" : {
-                "expression" : "raw_customers.id"
-              },
-              "alias" : "id"
-            }, {
-              "expression" : {
-                "expression" : "raw_customers.first_name"
-              },
-              "alias" : "first_name"
-            }, {
-              "expression" : {
-                "expression" : "raw_customers.last_name"
-              },
-              "alias" : "last_name"
-            } ],
-            "headAlias" : "enhancedexpmodel_2",
-            "allowSelection" : false
-          },
-          "joinColumns" : [ "first_name", "last_name" ],
-          "isRecommended" : false
-        } ]
-      }, {
-        "source" : {
-          "table" : {
-            "name" : "genericdatatestmodel",
-            "sourceName" : "hive_metastore.qa_db_warehouse",
-            "sourceType" : "ExternalSource"
-          }
-        },
-        "sourceComponentKind" : "ExternalSource",
-        "sourceLabel" : "genericdatatestmodel",
-        "canJoinWith" : [ {
-          "processLabel" : "raw_customers",
-          "processId" : "raw_customers##hc8zynrq",
-          "properties" : {
-            "activeTab" : "conditions",
-            "columnsSelector" : [ "first_name", "last_name" ],
-            "conditions" : [ {
-              "alias" : "genericdatatestmodel",
-              "expression" : {
-                "expression" : "genericdatatestmodel.first_name = raw_customers.first_name AND genericdatatestmodel.last_name = raw_customers.last_name"
-              },
-              "joinType" : "inner"
-            } ],
-            "expressions" : [ {
-              "expression" : {
-                "expression" : "raw_customers.id"
-              },
-              "alias" : "id"
-            }, {
-              "expression" : {
-                "expression" : "raw_customers.first_name"
-              },
-              "alias" : "first_name"
-            }, {
-              "expression" : {
-                "expression" : "raw_customers.last_name"
-              },
-              "alias" : "last_name"
-            } ],
-            "headAlias" : "genericdatatestmodel",
-            "allowSelection" : false
-          },
-          "joinColumns" : [ "first_name", "last_name" ],
-          "isRecommended" : false
-        } ]
-      }, {
-        "source" : {
-          "table" : {
-            "name" : "newmodel",
-            "sourceName" : "hive_metastore.qa_db_warehouse",
-            "sourceType" : "ExternalSource"
-          }
-        },
-        "sourceComponentKind" : "ExternalSource",
-        "sourceLabel" : "newmodel",
-        "canJoinWith" : [ {
-          "processLabel" : "raw_customers",
-          "processId" : "raw_customers##hc8zynrq",
-          "properties" : {
-            "activeTab" : "conditions",
-            "columnsSelector" : [ "first_name", "last_name" ],
-            "conditions" : [ {
-              "alias" : "newmodel",
-              "expression" : {
-                "expression" : "newmodel.first_name = raw_customers.first_name AND newmodel.last_name = raw_customers.last_name"
-              },
-              "joinType" : "inner"
-            } ],
-            "expressions" : [ {
-              "expression" : {
-                "expression" : "newmodel.customer_id"
-              },
-              "alias" : "customer_id"
-            }, {
-              "expression" : {
-                "expression" : "newmodel.phone"
-              },
-              "alias" : "phone"
-            }, {
-              "expression" : {
-                "expression" : "newmodel.email"
-              },
-              "alias" : "email"
-            }, {
-              "expression" : {
-                "expression" : "newmodel.country_code"
-              },
-              "alias" : "country_code"
-            }, {
-              "expression" : {
-                "expression" : "newmodel.account_open_date"
-              },
-              "alias" : "account_open_date"
-            }, {
-              "expression" : {
-                "expression" : "newmodel.account_flags"
-              },
-              "alias" : "account_flags"
-            }, {
-              "expression" : {
-                "expression" : "raw_customers.id"
-              },
-              "alias" : "id"
-            }, {
-              "expression" : {
-                "expression" : "raw_customers.first_name"
-              },
-              "alias" : "first_name"
-            }, {
-              "expression" : {
-                "expression" : "raw_customers.last_name"
-              },
-              "alias" : "last_name"
-            } ],
-            "headAlias" : "newmodel",
-            "allowSelection" : false
-          },
-          "joinColumns" : [ "first_name", "last_name" ],
-          "isRecommended" : false
-        } ]
       } ]
     },
     "graphConfig" : {
@@ -731,7 +186,163 @@
         }
       }
     },
-    "version" : 3
+    "version" : 3,
+    "properties" : {
+      "name" : "env_uitesting_shared_useallmodel_1",
+      "columns" : [ {
+        "name" : "c_tinyint",
+        "tests" : [ {
+          "unique" : {
+            "config" : {
+              "store_failures" : true,
+              "warn_if" : "",
+              "fail_calc" : "count(*)",
+              "severity" : "warn",
+              "where" : "c_int != 2",
+              "limit" : 2
+            }
+          }
+        }, {
+          "accepted_values" : {
+            "config" : {
+              "fail_calc" : "count(*)"
+            },
+            "values" : [ "\"0\"", "\"1\"", "\"2\"", "\"3\"", "\"4\"", "\"5\"", "\"6\"", "\"7\"", "\"8\"", "\"9\"", "\"10\"", "\"11\"", "\"12\"" ]
+          }
+        }, {
+          "accepted_values" : {
+            "config" : {
+              "fail_calc" : "count(*)",
+              "warn_if" : "",
+              "severity" : "warn"
+            },
+            "values" : [ "\"100\"", "\"200\"" ],
+            "column_name" : "\"c_tinyint\""
+          }
+        } ],
+        "dataType" : {
+          "type" : "TinyInt"
+        }
+      }, {
+        "name" : "c_smallint",
+        "tests" : [ {
+          "relationships" : {
+            "config" : {
+              "store_failures" : true,
+              "warn_if" : "",
+              "fail_calc" : "count(*)",
+              "where" : "c_string IS NOT NULL",
+              "limit" : 2
+            },
+            "to" : "\"source(\"alias_son_hive_metastore_qa_database\", \"all_type_partitioned\")\"",
+            "field" : "\"c_smallint\""
+          }
+        } ],
+        "dataType" : {
+          "type" : "SmallInt"
+        }
+      }, {
+        "name" : "c_int",
+        "dataType" : {
+          "type" : "Integer"
+        }
+      }, {
+        "name" : "c_bigint",
+        "dataType" : {
+          "type" : "Bigint"
+        }
+      }, {
+        "name" : "c_float",
+        "dataType" : {
+          "type" : "Float"
+        }
+      }, {
+        "name" : "c_double",
+        "dataType" : {
+          "type" : "Float"
+        }
+      }, {
+        "name" : "c_string",
+        "tests" : [ {
+          "not_null" : {
+            "config" : {
+              "fail_calc" : "count(*)",
+              "severity" : "error"
+            }
+          }
+        } ],
+        "dataType" : {
+          "type" : "String"
+        }
+      }, {
+        "name" : "c_boolean",
+        "dataType" : {
+          "type" : "Boolean"
+        }
+      }, {
+        "name" : "c_array",
+        "dataType" : {
+          "type" : "Array",
+          "dataType" : {
+            "type" : "String"
+          }
+        }
+      }, {
+        "name" : "c_struct",
+        "dataType" : {
+          "type" : "Struct",
+          "fields" : [ {
+            "name" : "city",
+            "dataType" : {
+              "type" : "String"
+            }
+          }, {
+            "name" : "state",
+            "dataType" : {
+              "type" : "String"
+            }
+          }, {
+            "name" : "pin",
+            "dataType" : {
+              "type" : "Bigint"
+            }
+          } ]
+        }
+      } ],
+      "tests" : [ {
+        "new_multi_model_not_null" : {
+          "column_name_model_2" : "\"c_tinyint\"",
+          "column_name_model_1" : "\"c_tinyint\"",
+          "model1" : "\"env_uitesting_main_model_databricks_2\"",
+          "config" : {
+            "fail_calc" : "count(*)",
+            "warn_if" : "",
+            "where" : "c_double IS NOT NULL AND c_int BETWEEN -10000 AND 10000"
+          },
+          "column_name_mode1_2" : "\"c_int\"",
+          "column_name_mode1_1" : "\"c_int\""
+        }
+      }, {
+        "not_null" : {
+          "config" : {
+            "fail_calc" : "count(*)"
+          },
+          "column_name" : "\"c_struct.state\""
+        }
+      }, {
+        "SQL_DatabricksParentProjectMain.parent_multi_model_not_null1" : {
+          "column_name_model_2" : "\"c_tinyint\"",
+          "column_name_model_1" : "\"c_tinyint\"",
+          "model1" : "\"env_uitesting_main_model_databricks_2\"",
+          "config" : {
+            "fail_calc" : "count(*)"
+          },
+          "column_name_mode1_2" : "\"c_int\"",
+          "column_name_mode1_1" : "\"c_int\""
+        }
+      } ],
+      "providerType" : "databricks"
+    }
   },
   "processes" : {
     "SQLStatement_1_2##taFeqgmI" : {
@@ -10077,6 +9688,7 @@
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
         "query" : "SELECT * \n\nFROM combine_multiple_tables_1\n",
+        "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true"
@@ -12919,7 +12531,7 @@
                     "type" : "Boolean"
                   }
                 }, {
-                  "name" : "(NOT (abhisheks@prophecy.io = NULL))",
+                  "name" : "(NOT (sony@prophecy.io = NULL))",
                   "dataType" : {
                     "type" : "Boolean"
                   }
@@ -17600,7 +17212,7 @@
                     "type" : "Boolean"
                   }
                 }, {
-                  "name" : "(NOT (abhisheks@prophecy.io = NULL))",
+                  "name" : "(NOT (sony@prophecy.io = NULL))",
                   "dataType" : {
                     "type" : "Boolean"
                   }

@@ -14,6 +14,8 @@
     "path" : "",
     "editable" : true
   },
+  "datasets" : { },
+  "pipelines" : { },
   "externalSources" : {
     "type" : "Project",
     "name" : "",
@@ -23,11 +25,15 @@
       "children" : [ ]
     }, {
       "type" : "Catalog",
-      "name" : "1_2_3",
+      "name" : "aman",
       "children" : [ ]
     }, {
       "type" : "Catalog",
       "name" : "apollo11",
+      "children" : [ ]
+    }, {
+      "type" : "Catalog",
+      "name" : "ash",
       "children" : [ ]
     }, {
       "type" : "Catalog",
@@ -79,7 +85,7 @@
       "children" : [ ]
     }, {
       "type" : "Catalog",
-      "name" : "iam-cat",
+      "name" : "kaustubh",
       "children" : [ ]
     }, {
       "type" : "Catalog",
@@ -95,7 +101,15 @@
       "children" : [ ]
     }, {
       "type" : "Catalog",
+      "name" : "mei_dev",
+      "children" : [ ]
+    }, {
+      "type" : "Catalog",
       "name" : "newcata_1",
+      "children" : [ ]
+    }, {
+      "type" : "Catalog",
+      "name" : "no_permission",
       "children" : [ ]
     }, {
       "type" : "Catalog",
@@ -231,27 +245,25 @@
       "children" : [ ]
     }, {
       "type" : "Catalog",
+      "name" : "sony",
+      "children" : [ ]
+    }, {
+      "type" : "Catalog",
       "name" : "system",
+      "children" : [ ]
+    }, {
+      "type" : "Catalog",
+      "name" : "tanmay",
       "children" : [ ]
     }, {
       "type" : "Catalog",
       "name" : "testcata",
       "children" : [ ]
-    }, {
-      "type" : "Catalog",
-      "name" : "testcatalog",
-      "children" : [ ]
-    }, {
-      "type" : "Catalog",
-      "name" : "testkt2",
-      "children" : [ ]
     } ]
   },
   "dependenciesContainer" : {
     "dependencies" : { },
-    "prophecyProjectDependencies" : {
-      "https://github.com/abhisheks-prophecy/sql_databricks_public_parent" : "66"
-    }
+    "prophecyProjectDependencies" : { }
   },
   "entitiesToSync" : [ {
     "name" : "env_uitesting_shared_child_model_1",
