@@ -60,7 +60,7 @@
         "subject" : "Test Airflow",
         "emailBCC" : null,
         "emailTo" : "abhisheks@propehcy.io",
-        "emailConnectionId" : "M5banLoWc5-970zwOKU3V",
+        "emailConnectionId" : "d8CjYosdwdveGN9xrwtU3",
         "htmlContent" : "Test Airflow",
         "taskId" : null
       },

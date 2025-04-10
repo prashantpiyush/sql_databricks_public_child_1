@@ -13,5 +13,5 @@ def Email_2():
         bcc = None,
         mime_subtype = "mixed",
         mime_charset = "utf-8",
-        conn_id = "M5banLoWc5-970zwOKU3V",
+        conn_id = "d8CjYosdwdveGN9xrwtU3",
     )
