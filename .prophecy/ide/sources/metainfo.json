@@ -132,6 +132,19 @@
         "id" : "X8avZ-B5nSGHy-pKL23K7",
         "label" : "industry_statistics_csv"
       } ]
+    },
+    "test" : {
+      "id" : "test",
+      "name" : "test",
+      "path" : "SQL_DatabricksSharedBasic/.prophecy/ide/pipelines/test.json",
+      "config" : {
+        "schema" : {
+          "type" : "record",
+          "fields" : [ ]
+        }
+      },
+      "preview" : [ ],
+      "sources" : [ ]
     }
   },
   "externalSources" : {

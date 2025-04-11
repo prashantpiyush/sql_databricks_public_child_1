@@ -27,8 +27,8 @@
       "kind" : "MSSQLSource",
       "metadata" : {
         "label" : "S_MSSQLALL",
-        "x" : 80,
-        "y" : -20,
+        "x" : 300,
+        "y" : 40,
         "phase" : 0
       },
       "properties" : {

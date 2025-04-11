@@ -1,6 +1,6 @@
 name: SQL_DatabricksSharedBasic
 description: ''
-version: 4.0.0-3
+version: 4.0.0-2
 author: null
 language: sql
 buildSystem: ''
@@ -330,6 +330,67 @@ sqlModels:
       sources: []
       snapshots: []
     createdAt: '2024-07-22 05:22:36'
+  .prophecy/metadata/sqlmodels/env_uitesting_shared_useallmodel_1:
+    name: env_uitesting_shared_useallmodel_1
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: c_tinyint
+        dataType:
+          type: TinyInt
+      - name: c_smallint
+        dataType:
+          type: SmallInt
+      - name: c_int
+        dataType:
+          type: Integer
+      - name: c_bigint
+        dataType:
+          type: Bigint
+      - name: c_float
+        dataType:
+          type: Float
+      - name: c_double
+        dataType:
+          type: Double
+      - name: c_string
+        dataType:
+          type: String
+      - name: c_boolean
+        dataType:
+          type: Boolean
+      - name: c_array
+        dataType:
+          type: Array
+          dataType:
+            type: String
+      - name: c_struct
+        dataType:
+          type: Struct
+          fields:
+          - name: city
+            dataType:
+              type: String
+          - name: state
+            dataType:
+              type: String
+          - name: pin
+            dataType:
+              type: Bigint
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/env_uitesting_shared_useallmodel_1.sql
+    - .prophecy/ide/models/env_uitesting_shared_useallmodel_1.json
+    - models/schema.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
+    createdAt: '2023-04-12 10:03:43'
   .prophecy/metadata/sqlmodels/sanity_simple_model_1:
     name: sanity_simple_model_1
     schema:
@@ -575,117 +636,6 @@ sqlModels:
       sources: []
       snapshots: []
     createdAt: '2023-04-12 09:19:50'
-  .prophecy/metadata/sqlmodels/env_uitesting_shared_useallmodel_1:
-    name: env_uitesting_shared_useallmodel_1
-    schema:
-      entityType: ''
-      providerType: Databricks
-      fields:
-      - name: c_tinyint
-        dataType:
-          type: TinyInt
-      - name: c_smallint
-        dataType:
-          type: SmallInt
-      - name: c_int
-        dataType:
-          type: Integer
-      - name: c_bigint
-        dataType:
-          type: Bigint
-      - name: c_float
-        dataType:
-          type: Float
-      - name: c_double
-        dataType:
-          type: Double
-      - name: c_string
-        dataType:
-          type: String
-      - name: c_boolean
-        dataType:
-          type: Boolean
-      - name: c_array
-        dataType:
-          type: Array
-          dataType:
-            type: String
-      - name: c_struct
-        dataType:
-          type: Struct
-          fields:
-          - name: city
-            dataType:
-              type: String
-          - name: state
-            dataType:
-              type: String
-          - name: pin
-            dataType:
-              type: Bigint
-    description: null
-    author: abhisheks+e2etests@prophecy.io
-    files:
-    - models/env_uitesting_shared_useallmodel_1.sql
-    - .prophecy/ide/models/env_uitesting_shared_useallmodel_1.json
-    - models/schema.yml
-    sqlDependencies:
-      models: []
-      datasets: []
-      seeds: []
-      sources: []
-      snapshots: []
-    createdAt: '2023-04-12 10:03:43'
-  .prophecy/metadata/sqlmodels/test_model_1:
-    name: test_model_1
-    schema:
-      entityType: ''
-      providerType: Databricks
-      fields:
-      - name: associated-Drug
-        dataType:
-          type: Array
-          dataType:
-            type: Array
-            dataType:
-              type: Array
-              dataType:
-                type: Array
-                dataType:
-                  type: Array
-                  dataType:
-                    type: Array
-                    dataType:
-                      type: Struct
-                      fields:
-                      - name: name
-                        dataType:
-                          type: String
-                      - name: dose
-                        dataType:
-                          type: Integer
-                      - name: cf-use
-                        dataType:
-                          type: Double
-                      - name: take-it_on
-                        dataType:
-                          type: Boolean
-                      - name: strength
-                        dataType:
-                          type: String
-    description: null
-    author: abhisheks+shared@prophecy.io
-    files:
-    - models/test_model_1.sql
-    - .prophecy/ide/models/test_model_1.json
-    - models/schema.yml
-    sqlDependencies:
-      models: []
-      datasets: []
-      seeds: []
-      sources: []
-      snapshots: []
-    createdAt: '2024-10-15 12:14:31'
 sqlSnapshots:
   .prophecy/metadata/sqlsnapshots/snapshot_sanity_test_1:
     name: snapshot_sanity_test_1
@@ -4301,6 +4251,17 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/sanity_sahred_pipeline_1.json
     - pipelines/sanity_sahred_pipeline_1.py
     createdAt: '2025-03-28 10:16:00'
+  .prophecy/metadata/sqlorchestratorpipeline/test:
+    name: test
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/test/model_test_web_page_catalog_join.sql
+    - models/test/schema.yml
+    - .prophecy/ide/pipelines/test.json
+    - pipelines/test.py
+    createdAt: '2025-04-10 07:26:28'
 sqlBusinessApps: {}
 sqlPipeline:
   name: sqlPipeline

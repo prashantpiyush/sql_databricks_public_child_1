@@ -11155,7 +11155,7 @@
                     "type" : "Boolean"
                   }
                 }, {
-                  "name" : "(NOT (abhisheks@prophecy.io = NULL))",
+                  "name" : "(NOT (sony@prophecy.io = NULL))",
                   "dataType" : {
                     "type" : "Boolean"
                   }
@@ -16331,7 +16331,7 @@
                     "type" : "Boolean"
                   }
                 }, {
-                  "name" : "(NOT (abhisheks@prophecy.io = NULL))",
+                  "name" : "(NOT (sony@prophecy.io = NULL))",
                   "dataType" : {
                     "type" : "Boolean"
                   }

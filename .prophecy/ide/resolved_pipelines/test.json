@@ -1,0 +1,45 @@
+{
+  "id" : "test",
+  "metainfo" : {
+    "label" : "test",
+    "autoLayout" : true,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    }
+  },
+  "processes" : {
+    "web_page_catalog##iDSlLDgy" : {
+      "id" : "web_page_catalog##iDSlLDgy",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "model_test_web_page_catalog_join",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "model_test_web_page_catalog_join"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "prophecy__temp_test_post_web_page_catalog_join_0", "web_page_catalog##iDSlLDgy", "spark_catalog_qa##I5ZSwXk2", "spark_catalog_qa##rape0mvc" ],
+        "type" : "table",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "model_test_web_page_catalog_join_in_1",
+          "slug" : "in_1"
+        } ],
+        "outputs" : [ {
+          "id" : "model_test_web_page_catalog_join_out_1",
+          "slug" : "out_1"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Pipeline"
+}
