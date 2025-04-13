@@ -1,5 +1,5 @@
 ---
 packages:
-- revision: "SQL_ParentDatabricks/v3.4.4.1-1"
+- revision: "SQL_ParentDatabricks/v4.0.0.0-2"
   git: "https://github.com/abhisheks-prophecy/sql_databricks_public_parent"
   subdirectory: ""

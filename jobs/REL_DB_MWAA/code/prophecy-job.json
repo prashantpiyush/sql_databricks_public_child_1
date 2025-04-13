@@ -15,7 +15,7 @@
     },
     "maxConcurrentRuns" : 1,
     "processDefaultSettings" : {
-      "retries" : 0,
+      "retries" : 3,
       "retry_delay" : 1,
       "ignore_first_depends_on_past" : true,
       "do_xcom_push" : true
@@ -103,6 +103,7 @@
         "target" : null,
         "exclude" : null,
         "runDeps" : true,
+        "sqlProjectType" : "databricks",
         "gitEntityValueBranch" : "dev_staging",
         "noAnonymousUsageStats" : null,
         "selector" : null,
@@ -305,6 +306,7 @@
         "target" : null,
         "exclude" : null,
         "runDeps" : true,
+        "sqlProjectType" : "databricks",
         "gitEntityValueBranch" : "dev_staging",
         "noAnonymousUsageStats" : null,
         "selector" : null,

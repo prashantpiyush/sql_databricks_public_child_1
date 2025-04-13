@@ -19,7 +19,107 @@
         "vars" : { }
       }
     },
-    "version" : 3
+    "version" : 3,
+    "properties" : {
+      "name" : "uitesting_scd2_diff_col_val",
+      "columns" : [ {
+        "name" : "c_float",
+        "dataType" : {
+          "type" : "Float"
+        }
+      }, {
+        "name" : "dbt_valid_to",
+        "dataType" : {
+          "type" : "Float"
+        }
+      }, {
+        "name" : "dbt_updated_at",
+        "dataType" : {
+          "type" : "Float"
+        }
+      }, {
+        "name" : "c_boolean",
+        "dataType" : {
+          "type" : "Boolean"
+        }
+      }, {
+        "name" : "c_smallint",
+        "dataType" : {
+          "type" : "SmallInt"
+        }
+      }, {
+        "name" : "c_array",
+        "dataType" : {
+          "type" : "Array",
+          "dataType" : {
+            "type" : "String"
+          }
+        }
+      }, {
+        "name" : "c_double",
+        "dataType" : {
+          "type" : "Double"
+        }
+      }, {
+        "name" : "c_struct",
+        "dataType" : {
+          "type" : "Struct",
+          "fields" : [ {
+            "name" : "city",
+            "dataType" : {
+              "type" : "String"
+            }
+          }, {
+            "name" : "state",
+            "dataType" : {
+              "type" : "String"
+            }
+          }, {
+            "name" : "pin",
+            "dataType" : {
+              "type" : "Bigint"
+            }
+          } ]
+        }
+      }, {
+        "name" : "dbt_valid_from",
+        "dataType" : {
+          "type" : "Float"
+        }
+      }, {
+        "name" : "c_bigint",
+        "dataType" : {
+          "type" : "Bigint"
+        }
+      }, {
+        "name" : "c_int",
+        "dataType" : {
+          "type" : "Integer"
+        }
+      }, {
+        "name" : "c_id",
+        "dataType" : {
+          "type" : "Bigint"
+        }
+      }, {
+        "name" : "dbt_scd_id",
+        "dataType" : {
+          "type" : "String"
+        }
+      }, {
+        "name" : "c_string",
+        "dataType" : {
+          "type" : "String"
+        }
+      }, {
+        "name" : "c_tinyint",
+        "dataType" : {
+          "type" : "TinyInt"
+        }
+      } ],
+      "tests" : [ ],
+      "providerType" : "databricks"
+    }
   },
   "processes" : {
     "all_type_non_par##pLtaCujd" : {
