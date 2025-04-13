@@ -1,5 +1,0 @@
----
-version: 2
-seeds:
-- name: "shared_seed_basic"
-  columns: []

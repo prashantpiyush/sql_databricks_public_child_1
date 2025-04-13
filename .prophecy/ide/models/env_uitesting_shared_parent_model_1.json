@@ -152,65 +152,55 @@
           "expression" : {
             "expression" : "in1.c_tinyint"
           },
-          "alias" : "c_tinyint",
-          "_row_id" : "1871243164"
+          "alias" : "c_tinyint"
         }, {
           "expression" : {
             "expression" : "in1.c_smallint"
           },
-          "alias" : "c_smallint",
-          "_row_id" : "1743012357"
+          "alias" : "c_smallint"
         }, {
           "expression" : {
             "expression" : "in1.c_int"
           },
-          "alias" : "c_int",
-          "_row_id" : "515684390"
+          "alias" : "c_int"
         }, {
           "expression" : {
             "expression" : "in1.c_bigint"
           },
-          "alias" : "c_bigint",
-          "_row_id" : "1245800463"
+          "alias" : "c_bigint"
         }, {
           "expression" : {
             "expression" : "in1.c_float"
           },
-          "alias" : "c_float",
-          "_row_id" : "1670063122"
+          "alias" : "c_float"
         }, {
           "expression" : {
             "expression" : "in1.c_double"
           },
-          "alias" : "c_double",
-          "_row_id" : "904100380"
+          "alias" : "c_double"
         }, {
           "expression" : {
             "expression" : "in1.c_string"
           },
-          "alias" : "c_string",
-          "_row_id" : "1082465956"
+          "alias" : "c_string"
         }, {
           "expression" : {
             "expression" : "in1.c_boolean"
           },
-          "alias" : "c_boolean",
-          "_row_id" : "1434202667"
+          "alias" : "c_boolean"
         }, {
           "expression" : {
             "expression" : "in1.c_array"
           },
-          "alias" : "c_array",
-          "_row_id" : "1760785340"
+          "alias" : "c_array"
         }, {
           "expression" : {
             "expression" : "in1.c_struct"
           },
-          "alias" : "c_struct",
-          "_row_id" : "1096629942"
+          "alias" : "c_struct"
         } ],
         "activeTab" : "conditions",
-        "columnsSelector" : [ "Q7NivZaQ##first_name", "PzbBLhK3##c_string", "PzbBLhK3##c_tinyint", "PzbBLhK3##c_tinyint", "PzbBLhK3##c_smallint", "PzbBLhK3##c_int", "PzbBLhK3##c_bigint", "PzbBLhK3##c_float", "PzbBLhK3##c_double", "PzbBLhK3##c_string", "PzbBLhK3##c_boolean", "PzbBLhK3##c_array", "PzbBLhK3##c_struct" ],
+        "columnsSelector" : [ "Q7NivZaQ##first_name", "PzbBLhK3##c_string", "PzbBLhK3##c_tinyint", "KtBTbHeW##c_int", "PzbBLhK3##c_tinyint", "PzbBLhK3##c_smallint", "PzbBLhK3##c_int", "PzbBLhK3##c_bigint", "PzbBLhK3##c_float", "PzbBLhK3##c_double", "PzbBLhK3##c_string", "PzbBLhK3##c_boolean", "PzbBLhK3##c_array", "PzbBLhK3##c_struct" ],
         "headAlias" : "in0"
       },
       "ports" : {
@@ -270,7 +260,7 @@
       "component" : "UnreferencedSource",
       "metadata" : {
         "label" : "spark_catalog_qa_database_ungrouped_table_1",
-        "x" : 80,
+        "x" : 160,
         "y" : 420,
         "phase" : 0
       },
