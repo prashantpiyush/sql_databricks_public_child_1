@@ -3710,17 +3710,6 @@ sqlOrchestratorPipelines:
     - models/sanity_sahred_pipeline_1/schema.yml
     - pipelines/sanity_sahred_pipeline_1.py
     createdAt: '2025-03-28 10:16:00'
-  .prophecy/metadata/sqlorchestratorpipeline/test:
-    name: test
-    schema: null
-    description: null
-    author: abhisheks+e2etests@prophecy.io
-    files:
-    - models/test/model_test_web_page_catalog_join.sql
-    - models/test/schema.yml
-    - .prophecy/ide/pipelines/test.json
-    - pipelines/test.py
-    createdAt: '2025-04-10 07:26:28'
 sqlBusinessApps: {}
 sqlPipeline:
   name: sqlPipeline

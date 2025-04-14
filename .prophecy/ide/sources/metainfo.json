@@ -15,21 +15,7 @@
     "editable" : true
   },
   "datasets" : { },
-  "pipelines" : {
-    "test" : {
-      "id" : "test",
-      "name" : "test",
-      "path" : "SQL_DatabricksSharedBasic/.prophecy/ide/pipelines/test.json",
-      "config" : {
-        "schema" : {
-          "type" : "record",
-          "fields" : [ ]
-        }
-      },
-      "preview" : [ ],
-      "sources" : [ ]
-    }
-  },
+  "pipelines" : { },
   "externalSources" : {
     "type" : "Project",
     "name" : "",
@@ -273,6 +259,7 @@
   },
   "dependenciesContainer" : {
     "dependencies" : { },
+    "lastError" : "Building dependency project SQL_DatabricksParentProjectMain failed. sanity_parent_orchestration_pipeline_1: File format cannot be empty, please select one from the dropdown",
     "prophecyProjectDependencies" : {
       "https://github.com/abhisheks-prophecy/sql_databricks_public_parent" : "66"
     }
