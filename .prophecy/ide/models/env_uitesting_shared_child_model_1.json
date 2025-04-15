@@ -43,7 +43,6 @@
         "customQuery" : true,
         "incrementalEditorDisabled" : true,
         "query" : "SELECT \n  Join_1.c_tinyint,\n  Join_1.c_smallint,\n  Join_1.c_int,\n  Join_1.c_bigint,\n  Join_1.c_float,\n  Join_1.c_double,\n  Join_1.c_string,\n  Join_1.c_boolean,\n  Join_1.c_array,\n  Join_1.c_struct,\n  concat(\n    Join_1.c_array[0], \n    Join_1.c_struct.city, \n    {{ SQL_DatabricksSharedBasic.qa_concat_function_main('c_string', 'c_boolean') }}) AS c_test\n\nFROM Join_1\n\nWHERE c_int != (\n        (\n          SELECT count(*)\n          \n          FROM Limit_2\n         )\n        + (\n            SELECT count(*)\n            \n            FROM env_uitesting_shared_parent_model_1\n           )\n        + (\n            SELECT count(*)\n            \n            FROM Limit_1\n           )\n      )\n",
-        "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true",

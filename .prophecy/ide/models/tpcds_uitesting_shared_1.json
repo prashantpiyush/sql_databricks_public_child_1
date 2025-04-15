@@ -33,7 +33,6 @@
         "incrementalQuery" : "true",
         "incrementalEditorDisabled" : true,
         "query" : "SELECT Join_1.substrw_warehouse_name120,Join_1.sm_type,Join_1.cc_name, Join_1.days_30, Join_1.days_31_60, Join_1.days_61_90, Join_1.days_90_120, Join_1.days_more_than_120,\nSQLStatement_3.h8_30_to_9, SQLStatement_2.i_item_id\nFROM Join_1, SQLStatement_3, SQLStatement_2 where SQLStatement_2.i_item_desc is not null and SQLStatement_3.h10_30_to_11 is not null\n",
-        "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true"
