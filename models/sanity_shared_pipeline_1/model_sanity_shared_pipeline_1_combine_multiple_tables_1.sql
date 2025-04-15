@@ -367,7 +367,7 @@ Transpose_1 AS (
 
 child_deduplicate_custom_1 AS (
 
-  {{ SQL_DatabricksSharedBasic.child_deduplicate_custom('''','''','''') }}
+  {{ SQL_DatabricksSharedBasic.child_deduplicate_custom(''RestAPI_1'',''c_smallint'',''c_string'') }}
 
 ),
 

@@ -693,21 +693,21 @@
         "phase" : 0
       },
       "properties" : {
-        "relation" : "''",
-        "order_by" : "''",
-        "partition_by" : "''",
+        "relation" : "'RestAPI_1'",
+        "order_by" : "'c_smallint'",
+        "partition_by" : "'c_string'",
         "_oldMacroProperties" : {
           "macroName" : "child_deduplicate_custom",
           "projectName" : "SQL_DatabricksSharedBasic",
           "parameters" : [ {
             "name" : "relation",
-            "value" : "''''"
+            "value" : "''RestAPI_1''"
           }, {
             "name" : "order_by",
-            "value" : "''''"
+            "value" : "''c_smallint''"
           }, {
             "name" : "partition_by",
-            "value" : "''''"
+            "value" : "''c_string''"
           } ]
         }
       },
