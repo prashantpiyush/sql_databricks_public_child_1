@@ -19489,8 +19489,7 @@
         "y" : 2340,
         "phase" : 0,
         "macroDependencies" : [ "SQL_DatabricksSharedBasic.child_deduplicate_custom" ],
-        "comment" : "Removes duplicate child records to ensure data accuracy.",
-        "isLabelGrayed" : false
+        "comment" : "Removes duplicate child records to ensure data accuracy."
       },
       "properties" : {
         "relation" : "parent_transform_deduplicate_1",
