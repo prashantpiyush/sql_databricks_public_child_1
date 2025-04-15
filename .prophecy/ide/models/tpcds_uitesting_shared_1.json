@@ -12,62 +12,7 @@
         "vars" : { }
       }
     },
-    "version" : 3,
-    "properties" : {
-      "name" : "tpcds_uitesting_shared_1",
-      "columns" : [ {
-        "name" : "substrw_warehouse_name120",
-        "dataType" : {
-          "type" : "String"
-        }
-      }, {
-        "name" : "sm_type",
-        "dataType" : {
-          "type" : "String"
-        }
-      }, {
-        "name" : "cc_name",
-        "dataType" : {
-          "type" : "String"
-        }
-      }, {
-        "name" : "days_30",
-        "dataType" : {
-          "type" : "Bigint"
-        }
-      }, {
-        "name" : "days_31_60",
-        "dataType" : {
-          "type" : "Bigint"
-        }
-      }, {
-        "name" : "days_61_90",
-        "dataType" : {
-          "type" : "Bigint"
-        }
-      }, {
-        "name" : "days_90_120",
-        "dataType" : {
-          "type" : "Bigint"
-        }
-      }, {
-        "name" : "days_more_than_120",
-        "dataType" : {
-          "type" : "Bigint"
-        }
-      }, {
-        "name" : "h8_30_to_9",
-        "dataType" : {
-          "type" : "Bigint"
-        }
-      }, {
-        "name" : "i_item_id",
-        "dataType" : {
-          "type" : "String"
-        }
-      } ],
-      "providerType" : "databricks"
-    }
+    "version" : 3
   },
   "processes" : {
     "final##UWGVPcDt" : {
@@ -83,6 +28,7 @@
         "customQuery" : true,
         "incrementalEditorDisabled" : true,
         "query" : "SELECT \n  Join_1.substrw_warehouse_name120,\n  Join_1.sm_type,\n  Join_1.cc_name,\n  Join_1.days_30,\n  Join_1.days_31_60,\n  Join_1.days_61_90,\n  Join_1.days_90_120,\n  Join_1.days_more_than_120,\n  SQLStatement_3.h8_30_to_9,\n  SQLStatement_2.i_item_id\n\nFROM Join_1, SQLStatement_3, SQLStatement_2\n\nWHERE SQLStatement_2.i_item_desc IS NOT NULL and SQLStatement_3.h10_30_to_11 IS NOT NULL\n",
+        "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true"

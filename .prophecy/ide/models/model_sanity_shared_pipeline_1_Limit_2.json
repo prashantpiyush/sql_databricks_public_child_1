@@ -1,0 +1,125 @@
+{
+  "id" : "model_sanity_shared_pipeline_1_Limit_2",
+  "metainfo" : {
+    "label" : "model_sanity_shared_pipeline_1_Limit_2",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "alias" : "\"prophecy__temp_sanity_shared_pipeline_1_post_Limit_2_0\"",
+        "materialized" : "table",
+        "database" : "\"hive_metastore\"",
+        "schema" : "\"qa_db_warehouse\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "prophecy__temp_sanity_shared_pipeline_1_post_Limit_2_0" : {
+      "id" : "prophecy__temp_sanity_shared_pipeline_1_post_Limit_2_0",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "Limit_2",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM Limit_2\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0_1",
+          "slug" : "input_port_0_1"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0_1",
+          "slug" : "output_port_0_1"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "AP54Ot4hBzO3roY-e5KkE$$nhyETPgPRCwdNFPfG71L4" : {
+      "id" : "AP54Ot4hBzO3roY-e5KkE$$nhyETPgPRCwdNFPfG71L4",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "Limit_2",
+        "x" : 540,
+        "y" : 540,
+        "phase" : 0
+      },
+      "properties" : {
+        "limit" : {
+          "expression" : "10"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "BoyQ2_qGiq6fNgMUGpyfN$$SczuqCh__9gdxqbi7tvGk",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "5xzS5Gre0UUFxlIveLSmZ$$pmUjdCvGX51zffFrDYFfy",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "KwXjRsjkX9PCfrCXg0hat" : {
+      "id" : "KwXjRsjkX9PCfrCXg0hat",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "all_type_parquet",
+        "x" : 180,
+        "y" : 520,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "all_type_parquet",
+          "sourceType" : "Table",
+          "sourceName" : "spark_catalog.qa_database",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "AVVIU7q7XGsbe1eYpFjRb",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_AP54Ot4hBzO3roY-e5KkE$$nhyETPgPRCwdNFPfG71L4_prophecy__temp_sanity_shared_pipeline_1_post_Limit_2_0",
+    "source" : "AP54Ot4hBzO3roY-e5KkE$$nhyETPgPRCwdNFPfG71L4",
+    "sourcePort" : "5xzS5Gre0UUFxlIveLSmZ$$pmUjdCvGX51zffFrDYFfy",
+    "target" : "prophecy__temp_sanity_shared_pipeline_1_post_Limit_2_0",
+    "targetPort" : "input_port_0_1"
+  }, {
+    "id" : "T7ZdKwEYaV4rljCPcT1QZ",
+    "source" : "KwXjRsjkX9PCfrCXg0hat",
+    "sourcePort" : "AVVIU7q7XGsbe1eYpFjRb",
+    "target" : "AP54Ot4hBzO3roY-e5KkE$$nhyETPgPRCwdNFPfG71L4",
+    "targetPort" : "BoyQ2_qGiq6fNgMUGpyfN$$SczuqCh__9gdxqbi7tvGk"
+  } ],
+  "component" : "Model"
+}
