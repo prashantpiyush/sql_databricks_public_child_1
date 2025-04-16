@@ -274,17 +274,13 @@
     "type" : "Model",
     "syncedOnce" : false
   }, {
-    "name" : "env_uitesting_shared_useallmodel_1",
-    "type" : "Model",
-    "syncedOnce" : true
-  }, {
     "name" : "sanity_simple_model_1",
     "type" : "Model",
     "syncedOnce" : false
   }, {
     "name" : "test_model_1",
     "type" : "Model",
-    "syncedOnce" : true
+    "syncedOnce" : false
   }, {
     "name" : "uitesting_expressions_1",
     "type" : "Model",
