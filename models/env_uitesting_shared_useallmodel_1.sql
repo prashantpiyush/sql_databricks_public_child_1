@@ -26,13 +26,13 @@ fuzzy_match_purge_1 AS (
 
   {{
     DatabricksSqlBasics.FuzzyMatch(
-      'all_type_non_partitioned_1', 
-      'PURGE', 
-      '', 
-      'c_smallint', 
-      { 'custom': ['c_smallint'], 'exact': ['c_int', 'c_float'], 'equals': ['c_double'] }, 
-      80, 
-      false
+      relation = 'all_type_non_partitioned_1', 
+      mode = 'PURGE', 
+      sourceIdCol = '', 
+      recordIdCol = 'c_smallint', 
+      matchFields = { 'custom': ['c_smallint'], 'exact': ['c_int', 'c_float'], 'equals': ['c_double'] }, 
+      matchThresholdPercentage = 80, 
+      includeSimilarityScore = false
     )
   }}
 
@@ -300,8 +300,8 @@ field_data_types_1 AS (
 
   {{
     DatabricksSqlBasics.DynamicSelect(
-      'all_type_non_partitioned_1', 
-      [
+      relation = 'all_type_non_partitioned_1', 
+      schema = [
         { "name": "c_tinyint", "dataType": "TinyInt" }, 
         { "name": "c_smallint", "dataType": "SmallInt" }, 
         { "name": "c_int", "dataType": "Integer" }, 
@@ -313,9 +313,19 @@ field_data_types_1 AS (
         { "name": "c_array", "dataType": "Array" }, 
         { "name": "c_struct", "dataType": "Struct" }
       ], 
-      ["Boolean", "String", "Integer", "Short", "Float", "Decimal", "Date", "Timestamp", "Struct"], 
-      'SELECT_FIELD_TYPES', 
-      ""
+      targetTypes = [
+        "Boolean", 
+        "String", 
+        "Integer", 
+        "Short", 
+        "Float", 
+        "Decimal", 
+        "Date", 
+        "Timestamp", 
+        "Struct"
+      ], 
+      selectUsing = 'SELECT_FIELD_TYPES', 
+      customExpression = ""
     )
   }}
 
@@ -325,13 +335,13 @@ MultiColumnEdit_1_1 AS (
 
   {{
     DatabricksSqlBasics.MultiColumnEdit(
-      'field_data_types_1', 
-      "concat(column_name, column_value)", 
-      ['c_int', 'c_float', 'c_string', 'c_boolean', 'c_struct'], 
-      ['c_int', 'c_float', 'c_string', 'c_boolean'], 
-      false, 
-      'Prefix', 
-      'PRE_'
+      relation = 'field_data_types_1', 
+      expressionToBeApplied = "concat(column_name, column_value)", 
+      allColumnNames = ['c_int', 'c_float', 'c_string', 'c_boolean', 'c_struct'], 
+      columnNames = ['c_int', 'c_float', 'c_string', 'c_boolean'], 
+      changeOutputFieldName = false, 
+      prefixSuffixOption = 'Prefix', 
+      prefixSuffixToBeAdded = 'PRE_'
     )
   }}
 
@@ -341,13 +351,13 @@ MultiColumnRename_1_1 AS (
 
   {{
     DatabricksSqlBasics.MultiColumnRename(
-      'MultiColumnEdit_1_1', 
-      ['c_int', 'c_float', 'c_string', 'c_boolean', 'c_struct'], 
-      'advancedRename', 
-      ['c_int', 'c_float', 'c_string', 'c_boolean', 'c_struct'], 
-      '', 
-      '', 
-      "concat(column_name,'_new')"
+      relation_name = 'MultiColumnEdit_1_1', 
+      columnNames = ['c_int', 'c_float', 'c_string', 'c_boolean', 'c_struct'], 
+      renameMethod = 'advancedRename', 
+      schema = ['c_int', 'c_float', 'c_string', 'c_boolean', 'c_struct'], 
+      editType = '', 
+      editWith = '', 
+      customExpression = "concat(column_name,'_new')"
     )
   }}
 
@@ -357,27 +367,27 @@ DataCleansing_1_1 AS (
 
   {{
     DatabricksSqlBasics.DataCleansing(
-      'MultiColumnRename_1_1', 
-      [
+      relation_name = 'MultiColumnRename_1_1', 
+      schema = [
         { "name": "c_int", "dataType": "String" }, 
         { "name": "c_float", "dataType": "String" }, 
         { "name": "c_string", "dataType": "String" }, 
         { "name": "c_boolean", "dataType": "String" }, 
         { "name": "c_struct", "dataType": "Struct" }
       ], 
-      'makeLowercase', 
-      ['c_int', 'c_float', 'c_string', 'c_boolean'], 
-      true, 
-      'NA', 
-      true, 
-      0, 
-      true, 
-      true, 
-      true, 
-      true, 
-      true, 
-      true, 
-      true
+      modifyCase = 'makeLowercase', 
+      columnNames = ['c_int', 'c_float', 'c_string', 'c_boolean'], 
+      replaceNullTextFields = true, 
+      replaceNullTextWith = 'NA', 
+      replaceNullForNumericFields = true, 
+      replaceNullNumericWith = 0, 
+      trimWhiteSpace = true, 
+      removeTabsLineBreaksAndDuplicateWhitespace = true, 
+      allWhiteSpace = true, 
+      cleanLetters = true, 
+      cleanPunctuations = true, 
+      cleanNumbers = true, 
+      removeRowNullAllCols = true
     )
   }}
 
@@ -387,22 +397,22 @@ UnionByName_1_1 AS (
 
   {{
     DatabricksSqlBasics.UnionByName(
-      'DataCleansing_1_1,DataCleansing_1_1', 
-      [
+      relation_name = 'DataCleansing_1_1,DataCleansing_1_1', 
+      firstSchema = [
         { "name": "c_int", "dataType": "String" }, 
         { "name": "c_float", "dataType": "String" }, 
         { "name": "c_string", "dataType": "String" }, 
         { "name": "c_boolean", "dataType": "String" }, 
         { "name": "c_struct", "dataType": "Struct" }
       ], 
-      [
+      secondSchema = [
         { "name": "c_int", "dataType": "String" }, 
         { "name": "c_float", "dataType": "String" }, 
         { "name": "c_string", "dataType": "String" }, 
         { "name": "c_boolean", "dataType": "String" }, 
         { "name": "c_struct", "dataType": "Struct" }
       ], 
-      'nameBasedUnionOperation'
+      missingColumnOps = 'nameBasedUnionOperation'
     )
   }}
 
@@ -412,15 +422,15 @@ TextToColumns_1_1 AS (
 
   {{
     DatabricksSqlBasics.TextToColumns(
-      'UnionByName_1_1', 
-      'C_STRING', 
-      "a", 
-      'splitColumns', 
-      2, 
-      'Leave extra in last column', 
-      'root', 
-      'generated', 
-      'generated_column'
+      relation_name = 'UnionByName_1_1', 
+      columnName = 'C_STRING', 
+      delimiter = "a", 
+      split_strategy = 'splitColumns', 
+      noOfColumns = 2, 
+      leaveExtraCharLastCol = 'Leave extra in last column', 
+      splitColumnPrefix = 'root', 
+      splitColumnSuffix = 'generated', 
+      splitRowsColumnName = 'generated_column'
     )
   }}
 
@@ -9707,9 +9717,9 @@ child_deduplicate_custom_1 AS (
   {#Removes duplicate child records to ensure data accuracy.#}
   {{
     SQL_DatabricksSharedBasic.child_deduplicate_custom(
-      'parent_transform_deduplicate_1', 
-      'id', 
-      'first_name'
+      relation = 'parent_transform_deduplicate_1', 
+      partition_by = 'id', 
+      order_by = 'first_name'
     )
   }}
 
