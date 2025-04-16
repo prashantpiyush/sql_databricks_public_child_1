@@ -2,7 +2,7 @@
   "id" : "test",
   "metainfo" : {
     "label" : "test",
-    "autoLayout" : true,
+    "autoLayout" : false,
     "version" : 1,
     "configuration" : {
       "schema" : {

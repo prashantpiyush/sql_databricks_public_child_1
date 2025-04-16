@@ -2,7 +2,7 @@
   "id" : "test",
   "metainfo" : {
     "label" : "test",
-    "autoLayout" : true,
+    "autoLayout" : false,
     "version" : 1,
     "configuration" : {
       "schema" : {
@@ -17,6 +17,8 @@
       "component" : "Source",
       "metadata" : {
         "label" : "spark_catalog_qa_suggestion_database_catalog_page",
+        "x" : 20,
+        "y" : 220,
         "phase" : 0
       },
       "properties" : {
@@ -90,6 +92,8 @@
       "component" : "Source",
       "metadata" : {
         "label" : "spark_catalog_qa_suggestion_database_web_page",
+        "x" : 20,
+        "y" : 20,
         "phase" : 0
       },
       "properties" : {
@@ -188,6 +192,8 @@
       "component" : "Join",
       "metadata" : {
         "label" : "web_page_catalog_join",
+        "x" : 220,
+        "y" : 120,
         "phase" : 0
       },
       "properties" : {
