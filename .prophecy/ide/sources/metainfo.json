@@ -282,6 +282,10 @@
     "type" : "Model",
     "syncedOnce" : false
   }, {
+    "name" : "test_model_1",
+    "type" : "Model",
+    "syncedOnce" : true
+  }, {
     "name" : "uitesting_expressions_1",
     "type" : "Model",
     "syncedOnce" : false

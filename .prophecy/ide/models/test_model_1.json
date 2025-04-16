@@ -1,0 +1,672 @@
+{
+  "id" : "test_model_1",
+  "metainfo" : {
+    "label" : "test_model_1",
+    "autoLayout" : false,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "odo3QrpAfE75kcyUDUywE$$F5eQxxwUkyDKNJQ06mSUB" : {
+      "id" : "odo3QrpAfE75kcyUDUywE$$F5eQxxwUkyDKNJQ06mSUB",
+      "component" : "DynamicSelect",
+      "metadata" : {
+        "label" : "field_data_types_1",
+        "slug" : "field_data_types_1",
+        "x" : -740,
+        "y" : -360,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "targetTypes" : "[\"Boolean\", \"String\", \"Integer\", \"Short\", \"Float\", \"Decimal\", \"Date\", \"Timestamp\", \"Struct\"]",
+        "structTypeChecked" : true,
+        "relation_name" : [ "all_type_non_partitioned" ],
+        "_oldMacroProperties" : {
+          "macroName" : "DynamicSelect",
+          "projectName" : "DatabricksSqlBasics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['all_type_non_partitioned']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"c_tinyint\", \"dataType\": \"TinyInt\"}, {\"name\": \"c_smallint\", \"dataType\": \"SmallInt\"}, {\"name\": \"c_int\", \"dataType\": \"Integer\"}, {\"name\": \"c_bigint\", \"dataType\": \"Bigint\"}, {\"name\": \"c_float\", \"dataType\": \"Float\"}, {\"name\": \"c_double\", \"dataType\": \"Double\"}, {\"name\": \"c_string\", \"dataType\": \"String\"}, {\"name\": \"c_boolean\", \"dataType\": \"Boolean\"}, {\"name\": \"c_array\", \"dataType\": \"Array\"}, {\"name\": \"c_struct\", \"dataType\": \"Struct\"}]"
+          }, {
+            "name" : "targetTypes",
+            "value" : "[\"Boolean\", \"String\", \"Integer\", \"Short\", \"Float\", \"Decimal\", \"Date\", \"Timestamp\", \"Struct\"]"
+          }, {
+            "name" : "customExpression",
+            "value" : ""
+          }, {
+            "name" : "selectUsing",
+            "value" : "SELECT_FIELD_TYPES"
+          } ]
+        },
+        "dateTypeChecked" : true,
+        "binaryTypeChecked" : false,
+        "strTypeChecked" : true,
+        "floatTypeChecked" : true,
+        "timestampTypeChecked" : true,
+        "boolTypeChecked" : true,
+        "schema" : "[{\"name\": \"c_tinyint\", \"dataType\": \"TinyInt\"}, {\"name\": \"c_smallint\", \"dataType\": \"SmallInt\"}, {\"name\": \"c_int\", \"dataType\": \"Integer\"}, {\"name\": \"c_bigint\", \"dataType\": \"Bigint\"}, {\"name\": \"c_float\", \"dataType\": \"Float\"}, {\"name\": \"c_double\", \"dataType\": \"Double\"}, {\"name\": \"c_string\", \"dataType\": \"String\"}, {\"name\": \"c_boolean\", \"dataType\": \"Boolean\"}, {\"name\": \"c_array\", \"dataType\": \"Array\"}, {\"name\": \"c_struct\", \"dataType\": \"Struct\"}]",
+        "customExpression" : "",
+        "longTypeChecked" : false,
+        "doubleTypeChecked" : false,
+        "intTypeChecked" : true,
+        "byteTypeChecked" : false,
+        "decimalTypeChecked" : true,
+        "selectUsing" : "SELECT_FIELD_TYPES",
+        "shortTypeChecked" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "7Sy0XrATJHWL-9iaBz35u$$usuDwebR-xPlXDz7euF-Q",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "nCXtpoxO9C-SBOEdMHGzo$$w_JK83yAbf0y2aCHHERzB",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "componentInfo" : {
+        "gemId" : "DynamicSelect_DatabricksSqlBasics",
+        "name" : "DynamicSelect",
+        "projectName" : "DatabricksSqlBasics",
+        "sourceProjectName" : "DatabricksSqlBasics",
+        "sourceProjectVersion" : "0.0.4"
+      }
+    },
+    "2GTIJlzr9qA26KHSL9Y5g$$9z49pyxUUyLK7IRep7OkR" : {
+      "id" : "2GTIJlzr9qA26KHSL9Y5g$$9z49pyxUUyLK7IRep7OkR",
+      "component" : "DataCleansing",
+      "metadata" : {
+        "label" : "DataCleansing_1_1",
+        "slug" : "DataCleansing_1_1",
+        "x" : -380,
+        "y" : -360,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "trimWhiteSpace" : true,
+        "replaceNullForNumericFields" : true,
+        "cleanLetters" : true,
+        "replaceNullTextWith" : "NA",
+        "removeRowNullAllCols" : true,
+        "replaceNullTextFields" : true,
+        "relation_name" : [ "MultiColumnRename_1_1" ],
+        "columnNames" : [ "c_int", "c_float", "c_string", "c_boolean" ],
+        "_oldMacroProperties" : {
+          "macroName" : "DataCleansing",
+          "projectName" : "DatabricksSqlBasics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['MultiColumnRename_1_1']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"c_int\", \"dataType\": \"String\"}, {\"name\": \"c_float\", \"dataType\": \"String\"}, {\"name\": \"c_string\", \"dataType\": \"String\"}, {\"name\": \"c_boolean\", \"dataType\": \"String\"}, {\"name\": \"c_struct\", \"dataType\": \"Struct\"}]"
+          }, {
+            "name" : "modifyCase",
+            "value" : "makeLowercase"
+          }, {
+            "name" : "columnNames",
+            "value" : "[\"c_int\", \"c_float\", \"c_string\", \"c_boolean\"]"
+          }, {
+            "name" : "replaceNullTextFields",
+            "value" : "true"
+          }, {
+            "name" : "replaceNullTextWith",
+            "value" : "NA"
+          }, {
+            "name" : "replaceNullForNumericFields",
+            "value" : "true"
+          }, {
+            "name" : "replaceNullNumericWith",
+            "value" : "0"
+          }, {
+            "name" : "trimWhiteSpace",
+            "value" : "true"
+          }, {
+            "name" : "removeTabsLineBreaksAndDuplicateWhitespace",
+            "value" : "true"
+          }, {
+            "name" : "allWhiteSpace",
+            "value" : "true"
+          }, {
+            "name" : "cleanLetters",
+            "value" : "true"
+          }, {
+            "name" : "cleanPunctuations",
+            "value" : "true"
+          }, {
+            "name" : "cleanNumbers",
+            "value" : "true"
+          }, {
+            "name" : "removeRowNullAllCols",
+            "value" : "true"
+          } ]
+        },
+        "schema" : "[{\"name\": \"c_int\", \"dataType\": \"String\"}, {\"name\": \"c_float\", \"dataType\": \"String\"}, {\"name\": \"c_string\", \"dataType\": \"String\"}, {\"name\": \"c_boolean\", \"dataType\": \"String\"}, {\"name\": \"c_struct\", \"dataType\": \"Struct\"}]",
+        "allWhiteSpace" : true,
+        "removeTabsLineBreaksAndDuplicateWhitespace" : true,
+        "modifyCase" : "makeLowercase",
+        "cleanPunctuations" : true,
+        "cleanNumbers" : true,
+        "replaceNullNumericWith" : 0
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "2kk2rjfpWeqbHLwri_SAt$$K7blYOPAsW3dP-yzbDym9",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "m1McPFDq-Jj0JyJuioHJq$$fYhqNglc97Bm8CKbHMgo1",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "componentInfo" : {
+        "gemId" : "DataCleansing_DatabricksSqlBasics",
+        "name" : "DataCleansing",
+        "projectName" : "DatabricksSqlBasics",
+        "sourceProjectName" : "DatabricksSqlBasics",
+        "sourceProjectVersion" : "0.0.4"
+      }
+    },
+    "test_model_1##EJOotCkh" : {
+      "id" : "test_model_1##EJOotCkh",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "test_model_1",
+        "x" : 180,
+        "y" : -280,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM text_to_columns_filter\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Ay7Kz62C",
+          "slug" : "text_to_columns_filter"
+        } ],
+        "outputs" : [ {
+          "id" : "xXtd0wit",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "vipmYyEreiPFAGS5DzZZE$$p6gfTyJIn18nYSmAptjYS" : {
+      "id" : "vipmYyEreiPFAGS5DzZZE$$p6gfTyJIn18nYSmAptjYS",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "text_to_columns_filter",
+        "slug" : "text_to_columns_filter",
+        "x" : 60,
+        "y" : -280,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "isLabelGrayed" : false
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "out",
+          "id" : "out",
+          "language" : "sql",
+          "content" : "select * from TextToColumns_1_1 where C_INT != (\n    (select count(*) from fuzzy_match_purge_1)\n)"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "IiGHT8YsnTHiQzJBE__HN$$x-v0Ot4eqf7R8EHe7SDo2",
+          "slug" : "TextToColumns_1_1"
+        }, {
+          "id" : "LWpStBeFRyu7rW4REBLc_$$KKuXMXcDJMy3bDSvRHtoA",
+          "slug" : "fuzzy_match_purge_1"
+        } ],
+        "outputs" : [ {
+          "id" : "4T121O3D-aOXg3dQhEM94$$_ljRUBiD9caWDROJBdI-a",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "aQdfflGSUiyfvVzTaulxZ$$-QNHmhm5y9YMvtihcxF8V" : {
+      "id" : "aQdfflGSUiyfvVzTaulxZ$$-QNHmhm5y9YMvtihcxF8V",
+      "component" : "MultiColumnRename",
+      "metadata" : {
+        "label" : "MultiColumnRename_1_1",
+        "slug" : "MultiColumnRename_1_1",
+        "x" : -500,
+        "y" : -360,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "relation_name" : [ "MultiColumnEdit_1_1" ],
+        "columnNames" : [ "c_int", "c_float", "c_string", "c_boolean", "c_struct" ],
+        "suffix" : "",
+        "_oldMacroProperties" : {
+          "macroName" : "MultiColumnRename",
+          "projectName" : "DatabricksSqlBasics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['MultiColumnEdit_1_1']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"c_int\", \"dataType\": \"String\"}, {\"name\": \"c_float\", \"dataType\": \"String\"}, {\"name\": \"c_string\", \"dataType\": \"String\"}, {\"name\": \"c_boolean\", \"dataType\": \"String\"}, {\"name\": \"c_struct\", \"dataType\": \"Struct\"}]"
+          }, {
+            "name" : "columnNames",
+            "value" : "[\"c_int\", \"c_float\", \"c_string\", \"c_boolean\", \"c_struct\"]"
+          }, {
+            "name" : "renameMethod",
+            "value" : "advancedRename"
+          }, {
+            "name" : "editOperation",
+            "value" : "Add"
+          }, {
+            "name" : "editType",
+            "value" : ""
+          }, {
+            "name" : "editWith",
+            "value" : ""
+          }, {
+            "name" : "customExpression",
+            "value" : "concat(column_name,'_new')"
+          } ]
+        },
+        "editOperation" : "Add",
+        "editWith" : "",
+        "schema" : "[{\"name\": \"c_int\", \"dataType\": \"String\"}, {\"name\": \"c_float\", \"dataType\": \"String\"}, {\"name\": \"c_string\", \"dataType\": \"String\"}, {\"name\": \"c_boolean\", \"dataType\": \"String\"}, {\"name\": \"c_struct\", \"dataType\": \"Struct\"}]",
+        "customExpression" : "concat(column_name,'_new')",
+        "renameMethod" : "advancedRename",
+        "editType" : ""
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Mhy5eX01--34JiTQlU8OQ$$6wWdLWjcTXjP9fksV1Hkm",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "tyYL5pQ4z9bbLhoWhUqed$$wGhMAMWCkKRmlDbpIYBUw",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "componentInfo" : {
+        "gemId" : "MultiColumnRename_DatabricksSqlBasics",
+        "name" : "MultiColumnRename",
+        "projectName" : "DatabricksSqlBasics",
+        "sourceProjectName" : "DatabricksSqlBasics",
+        "sourceProjectVersion" : "0.0.4"
+      }
+    },
+    "b1OHn_6oE8m2jBW2I2hfR$$O6nNjGFoi3DSiz382nMcp" : {
+      "id" : "b1OHn_6oE8m2jBW2I2hfR$$O6nNjGFoi3DSiz382nMcp",
+      "component" : "TextToColumns",
+      "metadata" : {
+        "label" : "TextToColumns_1_1",
+        "slug" : "TextToColumns_1_1",
+        "x" : -80,
+        "y" : -360,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "split_strategy" : "splitColumns",
+        "splitColumnPrefix" : "root",
+        "relation_name" : [ "UnionByName_1_1" ],
+        "columnNames" : "C_STRING",
+        "noOfColumns" : 2,
+        "splitColumnSuffix" : "generated",
+        "splitRowsColumnName" : "generated_column",
+        "leaveExtraCharLastCol" : "Leave extra in last column",
+        "delimiter" : "a"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "NlHNqyPS3EDkDeQp0iPTE$$xw8oygQ2bUCHLvQYgRTpR",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "7VDB0lvW6eKZYSQgm_uYB$$CTysuACTsOkvMg3kWp5u-",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "componentInfo" : {
+        "gemId" : "TextToColumns_DatabricksSqlBasics",
+        "name" : "TextToColumns",
+        "projectName" : "DatabricksSqlBasics",
+        "sourceProjectName" : "DatabricksSqlBasics",
+        "sourceProjectVersion" : "0.0.4"
+      }
+    },
+    "4dGTykXtZ7nrTKoMu-FLQ$$y3MT3voijbFh1j7mfEtD0" : {
+      "id" : "4dGTykXtZ7nrTKoMu-FLQ$$y3MT3voijbFh1j7mfEtD0",
+      "component" : "UnionByName",
+      "metadata" : {
+        "label" : "UnionByName_1_1",
+        "slug" : "UnionByName_1_1",
+        "x" : -220,
+        "y" : -360,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "missingColumnOps" : "nameBasedUnionOperation",
+        "relation_name" : [ "DataCleansing_1_1", "DataCleansing_1_1" ],
+        "_oldMacroProperties" : {
+          "macroName" : "UnionByName",
+          "projectName" : "DatabricksSqlBasics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['DataCleansing_1_1', 'DataCleansing_1_1']"
+          }, {
+            "name" : "firstSchema",
+            "value" : "[{\"name\": \"c_int\", \"dataType\": \"String\"}, {\"name\": \"c_float\", \"dataType\": \"String\"}, {\"name\": \"c_string\", \"dataType\": \"String\"}, {\"name\": \"c_boolean\", \"dataType\": \"String\"}, {\"name\": \"c_struct\", \"dataType\": \"Struct\"}]"
+          }, {
+            "name" : "secondSchema",
+            "value" : "[{\"name\": \"c_int\", \"dataType\": \"String\"}, {\"name\": \"c_float\", \"dataType\": \"String\"}, {\"name\": \"c_string\", \"dataType\": \"String\"}, {\"name\": \"c_boolean\", \"dataType\": \"String\"}, {\"name\": \"c_struct\", \"dataType\": \"Struct\"}]"
+          }, {
+            "name" : "missingColumnOps",
+            "value" : "nameBasedUnionOperation"
+          } ]
+        },
+        "secondSchema" : "[{\"name\": \"c_int\", \"dataType\": \"String\"}, {\"name\": \"c_float\", \"dataType\": \"String\"}, {\"name\": \"c_string\", \"dataType\": \"String\"}, {\"name\": \"c_boolean\", \"dataType\": \"String\"}, {\"name\": \"c_struct\", \"dataType\": \"Struct\"}]",
+        "firstSchema" : "[{\"name\": \"c_int\", \"dataType\": \"String\"}, {\"name\": \"c_float\", \"dataType\": \"String\"}, {\"name\": \"c_string\", \"dataType\": \"String\"}, {\"name\": \"c_boolean\", \"dataType\": \"String\"}, {\"name\": \"c_struct\", \"dataType\": \"Struct\"}]"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "mu_EQaJvoPMRylPKIkRBs$$e5rbok4XaPA7aYyaJ2sLT",
+          "slug" : "in0"
+        }, {
+          "id" : "nPnAeEzzpB7Zbo4yzMXBu$$InokOtQApQBOwDnd8V5Bn",
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "trBh6d26Ub6Bw8dH8GR9N$$oZbT_V1UP8rXJs3t1A1g8",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "componentInfo" : {
+        "gemId" : "UnionByName_DatabricksSqlBasics",
+        "name" : "UnionByName",
+        "projectName" : "DatabricksSqlBasics",
+        "sourceProjectName" : "DatabricksSqlBasics",
+        "sourceProjectVersion" : "0.0.4"
+      }
+    },
+    "1W_FMgdYfnpVF8QCrBPzO$$jmjEOjqLlEWAXY7IXaFb_" : {
+      "id" : "1W_FMgdYfnpVF8QCrBPzO$$jmjEOjqLlEWAXY7IXaFb_",
+      "component" : "FuzzyMatch",
+      "metadata" : {
+        "label" : "fuzzy_match_purge_1",
+        "slug" : "fuzzy_match_purge_1",
+        "x" : -460,
+        "y" : -200,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "relation_name" : [ "all_type_non_partitioned" ],
+        "includeSimilarityScore" : false,
+        "_oldMacroProperties" : {
+          "macroName" : "FuzzyMatch",
+          "projectName" : "DatabricksSqlBasics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['all_type_non_partitioned']"
+          }, {
+            "name" : "mode",
+            "value" : "PURGE"
+          }, {
+            "name" : "sourceIdCol",
+            "value" : ""
+          }, {
+            "name" : "recordIdCol",
+            "value" : "c_smallint"
+          }, {
+            "name" : "matchThresholdPercentage",
+            "value" : "80"
+          }, {
+            "name" : "includeSimilarityScore",
+            "value" : "false"
+          } ]
+        },
+        "matchFields" : [ {
+          "kind" : "AddMatchField",
+          "AddMatchField" : {
+            "columnName" : "c_smallint",
+            "matchFunction" : "custom"
+          }
+        }, {
+          "kind" : "AddMatchField",
+          "AddMatchField" : {
+            "columnName" : "c_int",
+            "matchFunction" : "exact"
+          }
+        }, {
+          "kind" : "AddMatchField",
+          "AddMatchField" : {
+            "columnName" : "c_double",
+            "matchFunction" : "equals"
+          }
+        }, {
+          "kind" : "AddMatchField",
+          "AddMatchField" : {
+            "columnName" : "c_float",
+            "matchFunction" : "exact"
+          }
+        } ],
+        "sourceIdCol" : "",
+        "matchThresholdPercentage" : 80,
+        "activeTab" : "match_fields",
+        "recordIdCol" : "c_smallint",
+        "mode" : "PURGE"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Pbm_oTyw93U5rg-nLy3F_$$YE_KQrZQV3GhM6-P5Kerf",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "3ZnXii5nMIT-N_zh5o_h8$$Hl4dRONTvG4ufV-lihqqn",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "componentInfo" : {
+        "gemId" : "FuzzyMatch_DatabricksSqlBasics",
+        "name" : "FuzzyMatch",
+        "projectName" : "DatabricksSqlBasics",
+        "sourceProjectName" : "DatabricksSqlBasics",
+        "sourceProjectVersion" : "0.0.4"
+      }
+    },
+    "M_in6num_wfirhyevEHG-$$zStBERRTnCIJDaQufwQ17" : {
+      "id" : "M_in6num_wfirhyevEHG-$$zStBERRTnCIJDaQufwQ17",
+      "component" : "MultiColumnEdit",
+      "metadata" : {
+        "label" : "MultiColumnEdit_1_1",
+        "slug" : "MultiColumnEdit_1_1",
+        "x" : -620,
+        "y" : -360,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "changeOutputFieldName" : false,
+        "relation_name" : [ "field_data_types_1" ],
+        "columnNames" : [ "c_int", "c_float", "c_string", "c_boolean" ],
+        "_oldMacroProperties" : {
+          "macroName" : "MultiColumnEdit",
+          "projectName" : "DatabricksSqlBasics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['field_data_types_1']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"c_int\", \"dataType\": \"Integer\"}, {\"name\": \"c_float\", \"dataType\": \"Float\"}, {\"name\": \"c_string\", \"dataType\": \"String\"}, {\"name\": \"c_boolean\", \"dataType\": \"Boolean\"}, {\"name\": \"c_struct\", \"dataType\": \"Struct\"}]"
+          }, {
+            "name" : "columnNames",
+            "value" : "[\"c_int\", \"c_float\", \"c_string\", \"c_boolean\"]"
+          }, {
+            "name" : "expressionToBeApplied",
+            "value" : "concat(column_name, column_value)"
+          }, {
+            "name" : "changeOutputFieldName",
+            "value" : "false"
+          }, {
+            "name" : "prefixSuffixOption",
+            "value" : "Prefix"
+          }, {
+            "name" : "prefixSuffixToBeAdded",
+            "value" : "PRE_"
+          } ]
+        },
+        "schema" : "[{\"name\": \"c_int\", \"dataType\": \"Integer\"}, {\"name\": \"c_float\", \"dataType\": \"Float\"}, {\"name\": \"c_string\", \"dataType\": \"String\"}, {\"name\": \"c_boolean\", \"dataType\": \"Boolean\"}, {\"name\": \"c_struct\", \"dataType\": \"Struct\"}]",
+        "expressionToBeApplied" : "concat(column_name, column_value)",
+        "prefixSuffixToBeAdded" : "PRE_",
+        "prefixSuffixOption" : "Prefix"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "YAr0Kfj1D_4YnLaRArIWb$$Wyn-I6inGQ4X-hkbmVz8c",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "jspgQsZbWQ3zOo37AqlgO$$uCpbbIIitfArzjQ6btFil",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "componentInfo" : {
+        "gemId" : "MultiColumnEdit_DatabricksSqlBasics",
+        "name" : "MultiColumnEdit",
+        "projectName" : "DatabricksSqlBasics",
+        "sourceProjectName" : "DatabricksSqlBasics",
+        "sourceProjectVersion" : "0.0.4"
+      }
+    },
+    "mRxWfhnFScIWooUsOzfio" : {
+      "id" : "mRxWfhnFScIWooUsOzfio",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "all_type_non_partitioned",
+        "slug" : "all_type_non_partitioned",
+        "x" : -880,
+        "y" : -260,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "all_type_non_partitioned",
+          "sourceType" : "Table",
+          "sourceName" : "hive_metastore.qa_db_warehouse",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "yp_1og97juozjk4wttFOr",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "dLEd5xttNJRFODbfTp65e",
+    "source" : "odo3QrpAfE75kcyUDUywE$$F5eQxxwUkyDKNJQ06mSUB",
+    "sourcePort" : "nCXtpoxO9C-SBOEdMHGzo$$w_JK83yAbf0y2aCHHERzB",
+    "target" : "M_in6num_wfirhyevEHG-$$zStBERRTnCIJDaQufwQ17",
+    "targetPort" : "YAr0Kfj1D_4YnLaRArIWb$$Wyn-I6inGQ4X-hkbmVz8c"
+  }, {
+    "id" : "F6LsjN3THZUnM1W5TqGoc",
+    "source" : "M_in6num_wfirhyevEHG-$$zStBERRTnCIJDaQufwQ17",
+    "sourcePort" : "jspgQsZbWQ3zOo37AqlgO$$uCpbbIIitfArzjQ6btFil",
+    "target" : "aQdfflGSUiyfvVzTaulxZ$$-QNHmhm5y9YMvtihcxF8V",
+    "targetPort" : "Mhy5eX01--34JiTQlU8OQ$$6wWdLWjcTXjP9fksV1Hkm"
+  }, {
+    "id" : "t2--vAA_48G-J6fG9tqVI",
+    "source" : "aQdfflGSUiyfvVzTaulxZ$$-QNHmhm5y9YMvtihcxF8V",
+    "sourcePort" : "tyYL5pQ4z9bbLhoWhUqed$$wGhMAMWCkKRmlDbpIYBUw",
+    "target" : "2GTIJlzr9qA26KHSL9Y5g$$9z49pyxUUyLK7IRep7OkR",
+    "targetPort" : "2kk2rjfpWeqbHLwri_SAt$$K7blYOPAsW3dP-yzbDym9"
+  }, {
+    "id" : "6KEOLUQ5FTBqlAxEpKqLB",
+    "source" : "2GTIJlzr9qA26KHSL9Y5g$$9z49pyxUUyLK7IRep7OkR",
+    "sourcePort" : "m1McPFDq-Jj0JyJuioHJq$$fYhqNglc97Bm8CKbHMgo1",
+    "target" : "4dGTykXtZ7nrTKoMu-FLQ$$y3MT3voijbFh1j7mfEtD0",
+    "targetPort" : "mu_EQaJvoPMRylPKIkRBs$$e5rbok4XaPA7aYyaJ2sLT"
+  }, {
+    "id" : "LCWP6qZ6i5tAHC6btjLtk",
+    "source" : "2GTIJlzr9qA26KHSL9Y5g$$9z49pyxUUyLK7IRep7OkR",
+    "sourcePort" : "m1McPFDq-Jj0JyJuioHJq$$fYhqNglc97Bm8CKbHMgo1",
+    "target" : "4dGTykXtZ7nrTKoMu-FLQ$$y3MT3voijbFh1j7mfEtD0",
+    "targetPort" : "nPnAeEzzpB7Zbo4yzMXBu$$InokOtQApQBOwDnd8V5Bn"
+  }, {
+    "id" : "49bctrsIPk7ijQniIM4Xe",
+    "source" : "4dGTykXtZ7nrTKoMu-FLQ$$y3MT3voijbFh1j7mfEtD0",
+    "sourcePort" : "trBh6d26Ub6Bw8dH8GR9N$$oZbT_V1UP8rXJs3t1A1g8",
+    "target" : "b1OHn_6oE8m2jBW2I2hfR$$O6nNjGFoi3DSiz382nMcp",
+    "targetPort" : "NlHNqyPS3EDkDeQp0iPTE$$xw8oygQ2bUCHLvQYgRTpR"
+  }, {
+    "id" : "jUwp462gjXoqawUKPyvRI",
+    "source" : "b1OHn_6oE8m2jBW2I2hfR$$O6nNjGFoi3DSiz382nMcp",
+    "sourcePort" : "7VDB0lvW6eKZYSQgm_uYB$$CTysuACTsOkvMg3kWp5u-",
+    "target" : "vipmYyEreiPFAGS5DzZZE$$p6gfTyJIn18nYSmAptjYS",
+    "targetPort" : "IiGHT8YsnTHiQzJBE__HN$$x-v0Ot4eqf7R8EHe7SDo2"
+  }, {
+    "id" : "LCtJTPIauH1dhFfbVtoUx",
+    "source" : "1W_FMgdYfnpVF8QCrBPzO$$jmjEOjqLlEWAXY7IXaFb_",
+    "sourcePort" : "3ZnXii5nMIT-N_zh5o_h8$$Hl4dRONTvG4ufV-lihqqn",
+    "target" : "vipmYyEreiPFAGS5DzZZE$$p6gfTyJIn18nYSmAptjYS",
+    "targetPort" : "LWpStBeFRyu7rW4REBLc_$$KKuXMXcDJMy3bDSvRHtoA"
+  }, {
+    "id" : "BPVgNnmFz-JoIHXFqtzY6$$E5HkZdmu-FGH8W1KnrfCk",
+    "source" : "vipmYyEreiPFAGS5DzZZE$$p6gfTyJIn18nYSmAptjYS",
+    "sourcePort" : "4T121O3D-aOXg3dQhEM94$$_ljRUBiD9caWDROJBdI-a",
+    "target" : "test_model_1##EJOotCkh",
+    "targetPort" : "Ay7Kz62C"
+  }, {
+    "id" : "yPAJJZrKe0-IMcknrq9oU$$tDXBR8KAiPzCDHpQ4nprv",
+    "source" : "mRxWfhnFScIWooUsOzfio",
+    "sourcePort" : "yp_1og97juozjk4wttFOr",
+    "target" : "odo3QrpAfE75kcyUDUywE$$F5eQxxwUkyDKNJQ06mSUB",
+    "targetPort" : "7Sy0XrATJHWL-9iaBz35u$$usuDwebR-xPlXDz7euF-Q"
+  }, {
+    "id" : "HRyBjFdgWw8D-qQsxAgK-",
+    "source" : "mRxWfhnFScIWooUsOzfio",
+    "sourcePort" : "yp_1og97juozjk4wttFOr",
+    "target" : "1W_FMgdYfnpVF8QCrBPzO$$jmjEOjqLlEWAXY7IXaFb_",
+    "targetPort" : "Pbm_oTyw93U5rg-nLy3F_$$YE_KQrZQV3GhM6-P5Kerf"
+  } ],
+  "component" : "Model"
+}
