@@ -61,6 +61,14 @@ Limit_1 AS (
   
   LIMIT 100
 
+),
+
+spark_catalog_qa_database_ungrouped_table_1_1 AS (
+
+  SELECT * 
+  
+  FROM spark_catalog.qa_database.ungrouped_table_1
+
 )
 
 SELECT *

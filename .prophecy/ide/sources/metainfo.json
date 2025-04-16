@@ -23,7 +23,7 @@
       "children" : [ ]
     }, {
       "type" : "Catalog",
-      "name" : "1_2_3",
+      "name" : "aman",
       "children" : [ ]
     }, {
       "type" : "Catalog",
@@ -79,7 +79,7 @@
       "children" : [ ]
     }, {
       "type" : "Catalog",
-      "name" : "iam-cat",
+      "name" : "kaustubh",
       "children" : [ ]
     }, {
       "type" : "Catalog",
@@ -95,7 +95,15 @@
       "children" : [ ]
     }, {
       "type" : "Catalog",
+      "name" : "mei_dev",
+      "children" : [ ]
+    }, {
+      "type" : "Catalog",
       "name" : "newcata_1",
+      "children" : [ ]
+    }, {
+      "type" : "Catalog",
+      "name" : "no_permission",
       "children" : [ ]
     }, {
       "type" : "Catalog",
@@ -231,19 +239,19 @@
       "children" : [ ]
     }, {
       "type" : "Catalog",
+      "name" : "sony",
+      "children" : [ ]
+    }, {
+      "type" : "Catalog",
       "name" : "system",
       "children" : [ ]
     }, {
       "type" : "Catalog",
+      "name" : "tanmay",
+      "children" : [ ]
+    }, {
+      "type" : "Catalog",
       "name" : "testcata",
-      "children" : [ ]
-    }, {
-      "type" : "Catalog",
-      "name" : "testcatalog",
-      "children" : [ ]
-    }, {
-      "type" : "Catalog",
-      "name" : "testkt2",
       "children" : [ ]
     } ]
   },

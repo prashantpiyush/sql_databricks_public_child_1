@@ -1,0 +1,45 @@
+---
+version: 2
+models:
+- name: "model_sanity_shared_pipeline_1_combine_multiple_tables_1"
+  tags:
+  - "prophecy_temp"
+- name: "model_sanity_shared_pipeline_1_Join_1"
+  tags:
+  - "prophecy_temp"
+- name: "model_sanity_shared_pipeline_1_Union_1"
+  tags:
+  - "prophecy_temp"
+- name: "model_sanity_shared_pipeline_1_SQLStatement_1"
+  tags:
+  - "prophecy_temp"
+- name: "model_sanity_shared_pipeline_1_Limit_2"
+  tags:
+  - "prophecy_temp"
+sources:
+- name: "prophecy__temp_sanity_shared_pipeline_1_source"
+  database: "hive_metastore"
+  schema: "qa_db_warehouse"
+  tags:
+  - "prophecy_temp"
+  config:
+    enabled: true
+  tables:
+  - name: "prophecy__temp_sanity_shared_pipeline_1_post_Limit_2_0"
+    tags:
+    - "prophecy_temp"
+  - name: "prophecy__temp_sanity_shared_pipeline_1_post_SQLStatement_1_0"
+    tags:
+    - "prophecy_temp"
+  - name: "prophecy__temp_sanity_shared_pipeline_1_post_combine_multiple_tables_1_0"
+    tags:
+    - "prophecy_temp"
+  - name: "prophecy__temp_sanity_shared_pipeline_1_pre_Intersect_1_0"
+    tags:
+    - "prophecy_temp"
+  - name: "prophecy__temp_sanity_shared_pipeline_1_pre_Union_1_0"
+    tags:
+    - "prophecy_temp"
+  - name: "prophecy__temp_sanity_shared_pipeline_1_pre_child_deduplicate_custom_1_0"
+    tags:
+    - "prophecy_temp"
