@@ -676,6 +676,21 @@
       "ports" : {
         "inputs" : [ {
           "id" : "kZJbvCLxSYb57uxzmkPAX$$5cy3N-zIJhvtA2siP85fg",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "service_label_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_int",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            } ]
+          },
           "slug" : "in0"
         } ],
         "outputs" : [ ],

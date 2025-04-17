@@ -223,6 +223,35 @@
         "relation_name" : [ "MultiColumnEdit_1" ],
         "columnNames" : [ "code", "country_code", "pre_code", "pre_country_code", "pre_country_label", "pre_code_1" ],
         "suffix" : "",
+        "_oldMacroProperties" : {
+          "macroName" : "MultiColumnRename",
+          "projectName" : "DatabricksSqlBasics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['MultiColumnEdit_1']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"c_array\", \"dataType\": \"String\"}, {\"name\": \"code\", \"dataType\": \"String\"}, {\"name\": \"country_code\", \"dataType\": \"String\"}, {\"name\": \"country_label\", \"dataType\": \"String\"}, {\"name\": \"code_1\", \"dataType\": \"String\"}, {\"name\": \"service_label_1\", \"dataType\": \"String\"}, {\"name\": \"c_int_id\", \"dataType\": \"Bigint\"}, {\"name\": \"pre_code\", \"dataType\": \"String\"}, {\"name\": \"pre_country_code\", \"dataType\": \"String\"}, {\"name\": \"pre_country_label\", \"dataType\": \"String\"}, {\"name\": \"pre_code_1\", \"dataType\": \"String\"}, {\"name\": \"pre_service_label_1\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "columnNames",
+            "value" : "[\"code\", \"country_code\", \"pre_code\", \"pre_country_code\", \"pre_country_label\", \"pre_code_1\"]"
+          }, {
+            "name" : "renameMethod",
+            "value" : "editPrefixSuffix"
+          }, {
+            "name" : "editOperation",
+            "value" : "Add"
+          }, {
+            "name" : "editType",
+            "value" : "Suffix"
+          }, {
+            "name" : "editWith",
+            "value" : "_post"
+          }, {
+            "name" : "customExpression",
+            "value" : ""
+          } ]
+        },
         "editOperation" : "Add",
         "editWith" : "_post",
         "schema" : "[{\"name\": \"c_array\", \"dataType\": \"String\"}, {\"name\": \"code\", \"dataType\": \"String\"}, {\"name\": \"country_code\", \"dataType\": \"String\"}, {\"name\": \"country_label\", \"dataType\": \"String\"}, {\"name\": \"code_1\", \"dataType\": \"String\"}, {\"name\": \"service_label_1\", \"dataType\": \"String\"}, {\"name\": \"c_int_id\", \"dataType\": \"Bigint\"}, {\"name\": \"pre_code\", \"dataType\": \"String\"}, {\"name\": \"pre_country_code\", \"dataType\": \"String\"}, {\"name\": \"pre_country_label\", \"dataType\": \"String\"}, {\"name\": \"pre_code_1\", \"dataType\": \"String\"}, {\"name\": \"pre_service_label_1\", \"dataType\": \"String\"}]",
@@ -389,6 +418,56 @@
         "replaceNullTextFields" : true,
         "relation_name" : [ "MultiColumnRename_1" ],
         "columnNames" : [ "c_array", "code", "country_code", "country_label", "code_1", "service_label_1", "pre_code", "pre_country_code", "pre_country_label", "pre_code_1", "pre_service_label_1", "c_int_id", "pre_code_post" ],
+        "_oldMacroProperties" : {
+          "macroName" : "DataCleansing",
+          "projectName" : "DatabricksSqlBasics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['MultiColumnRename_1']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"c_array\", \"dataType\": \"String\"}, {\"name\": \"code_post\", \"dataType\": \"String\"}, {\"name\": \"country_code_post\", \"dataType\": \"String\"}, {\"name\": \"country_label\", \"dataType\": \"String\"}, {\"name\": \"code_1\", \"dataType\": \"String\"}, {\"name\": \"service_label_1\", \"dataType\": \"String\"}, {\"name\": \"c_int_id\", \"dataType\": \"Bigint\"}, {\"name\": \"pre_code_post\", \"dataType\": \"String\"}, {\"name\": \"pre_country_code_post\", \"dataType\": \"String\"}, {\"name\": \"pre_country_label_post\", \"dataType\": \"String\"}, {\"name\": \"pre_code_1_post\", \"dataType\": \"String\"}, {\"name\": \"pre_service_label_1\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "modifyCase",
+            "value" : "makeUppercase"
+          }, {
+            "name" : "columnNames",
+            "value" : "[\"c_array\", \"code\", \"country_code\", \"country_label\", \"code_1\", \"service_label_1\", \"pre_code\", \"pre_country_code\", \"pre_country_label\", \"pre_code_1\", \"pre_service_label_1\", \"c_int_id\", \"pre_code_post\"]"
+          }, {
+            "name" : "replaceNullTextFields",
+            "value" : "true"
+          }, {
+            "name" : "replaceNullTextWith",
+            "value" : "NA"
+          }, {
+            "name" : "replaceNullForNumericFields",
+            "value" : "true"
+          }, {
+            "name" : "replaceNullNumericWith",
+            "value" : "0"
+          }, {
+            "name" : "trimWhiteSpace",
+            "value" : "true"
+          }, {
+            "name" : "removeTabsLineBreaksAndDuplicateWhitespace",
+            "value" : "true"
+          }, {
+            "name" : "allWhiteSpace",
+            "value" : "true"
+          }, {
+            "name" : "cleanLetters",
+            "value" : "true"
+          }, {
+            "name" : "cleanPunctuations",
+            "value" : "true"
+          }, {
+            "name" : "cleanNumbers",
+            "value" : "true"
+          }, {
+            "name" : "removeRowNullAllCols",
+            "value" : "true"
+          } ]
+        },
         "schema" : "[{\"name\": \"c_array\", \"dataType\": \"String\"}, {\"name\": \"code_post\", \"dataType\": \"String\"}, {\"name\": \"country_code_post\", \"dataType\": \"String\"}, {\"name\": \"country_label\", \"dataType\": \"String\"}, {\"name\": \"code_1\", \"dataType\": \"String\"}, {\"name\": \"service_label_1\", \"dataType\": \"String\"}, {\"name\": \"c_int_id\", \"dataType\": \"Bigint\"}, {\"name\": \"pre_code_post\", \"dataType\": \"String\"}, {\"name\": \"pre_country_code_post\", \"dataType\": \"String\"}, {\"name\": \"pre_country_label_post\", \"dataType\": \"String\"}, {\"name\": \"pre_code_1_post\", \"dataType\": \"String\"}, {\"name\": \"pre_service_label_1\", \"dataType\": \"String\"}]",
         "allWhiteSpace" : true,
         "removeTabsLineBreaksAndDuplicateWhitespace" : true,
@@ -571,6 +650,32 @@
         "changeOutputFieldName" : true,
         "relation_name" : [ "FlattenSchema_1" ],
         "columnNames" : [ "code", "country_code", "country_label", "code_1", "service_label_1" ],
+        "_oldMacroProperties" : {
+          "macroName" : "MultiColumnEdit",
+          "projectName" : "DatabricksSqlBasics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['FlattenSchema_1']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"c_array\", \"dataType\": \"String\"}, {\"name\": \"code\", \"dataType\": \"String\"}, {\"name\": \"country_code\", \"dataType\": \"String\"}, {\"name\": \"country_label\", \"dataType\": \"String\"}, {\"name\": \"code_1\", \"dataType\": \"String\"}, {\"name\": \"service_label_1\", \"dataType\": \"String\"}, {\"name\": \"c_int_id\", \"dataType\": \"Bigint\"}]"
+          }, {
+            "name" : "columnNames",
+            "value" : "[\"code\", \"country_code\", \"country_label\", \"code_1\", \"service_label_1\"]"
+          }, {
+            "name" : "expressionToBeApplied",
+            "value" : "upper(column_name)"
+          }, {
+            "name" : "changeOutputFieldName",
+            "value" : "true"
+          }, {
+            "name" : "prefixSuffixOption",
+            "value" : "Prefix"
+          }, {
+            "name" : "prefixSuffixToBeAdded",
+            "value" : "pre_"
+          } ]
+        },
         "schema" : "[{\"name\": \"c_array\", \"dataType\": \"String\"}, {\"name\": \"code\", \"dataType\": \"String\"}, {\"name\": \"country_code\", \"dataType\": \"String\"}, {\"name\": \"country_label\", \"dataType\": \"String\"}, {\"name\": \"code_1\", \"dataType\": \"String\"}, {\"name\": \"service_label_1\", \"dataType\": \"String\"}, {\"name\": \"c_int_id\", \"dataType\": \"Bigint\"}]",
         "expressionToBeApplied" : "upper(column_name)",
         "prefixSuffixToBeAdded" : "pre_",
