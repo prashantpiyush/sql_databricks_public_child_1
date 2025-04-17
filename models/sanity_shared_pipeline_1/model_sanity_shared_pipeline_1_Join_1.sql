@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy__temp_sanity_shared_pipeline_1_pre_Union_1_0",
+    "alias": "prophecy__temp_sanity_shared_pipeline_1_pre_filter_by_count_1",
     "database": "hive_metastore",
     "schema": "qa_db_warehouse"
   })

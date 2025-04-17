@@ -19,6 +19,125 @@
     "version" : 3
   },
   "processes" : {
+    "KU5RvI9veSwZ8yqy5MfKt$$DZJUToJbBAfXTkj_U8CLk" : {
+      "id" : "KU5RvI9veSwZ8yqy5MfKt$$DZJUToJbBAfXTkj_U8CLk",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "sanity_simple_model_1_1",
+        "x" : -380,
+        "y" : -60,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "sanity_simple_model_1",
+          "sourceType" : "Model",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "E9oaYLPApdZ3ExW2WXM5C$$v488xBd24I874suM07tIY",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "ahMGU20VF_qazSbumeccN$$R-KzjnI8I7j0ZnqwiRX3V",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "95nDW2d54K7HBQYnAG_aV$$hqYkBPQWhR7zlraaaFFtF" : {
+      "id" : "95nDW2d54K7HBQYnAG_aV$$hqYkBPQWhR7zlraaaFFtF",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "Limit_2",
+        "x" : 340,
+        "y" : 80,
+        "phase" : 0
+      },
+      "properties" : {
+        "limit" : {
+          "expression" : "2"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "0ot4vxP7I9BJUbwaFakiw$$6hcG_6EdwbLJ3dMfS3Ga6",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "JhSoemvOjMkrri-T8SOol$$CbiY7nutwxD-MVU_BjJZx",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "8zZDktXpT2Y-G8nz2-vtf$$ZQ--IL_7h29GNKWO-RbNb" : {
+      "id" : "8zZDktXpT2Y-G8nz2-vtf$$ZQ--IL_7h29GNKWO-RbNb",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "all_type_parquet",
+        "x" : -400,
+        "y" : 120,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "all_type_parquet",
+          "sourceType" : "Table",
+          "sourceName" : "spark_catalog.qa_database",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "nUtqsljSNSWDKpZZ8Xy5y$$x8o0UbKUYOYB9F7w3iWhT",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "o_QxaG8ci27uqX3OmSv1w$$DVfnJEJhU725V6PIpERRn" : {
+      "id" : "o_QxaG8ci27uqX3OmSv1w$$DVfnJEJhU725V6PIpERRn",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "SQLStatement_1",
+        "x" : 200,
+        "y" : 100,
+        "phase" : 0
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "out",
+          "id" : "out",
+          "language" : "sql",
+          "content" : "select * from all_type_parquet where c_int != (\n    (select count(*) from sanity_simple_model_1_1)\n)"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ecAIbgc9hl1wZ4oLIEvKJ$$T-3mlM0w0V4-J38V_tmKk",
+          "slug" : "all_type_parquet"
+        }, {
+          "id" : "T6QuGrTDOpj2mOmNtAlF2$$GO7sRnUcsuwBQiH4C9EAS",
+          "slug" : "sanity_simple_model_1_1"
+        } ],
+        "outputs" : [ {
+          "id" : "P2S8inSPT0bTIsIazkP9E$$nX-n30_Mwr0elo249UGno",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
     "prophecy__temp_sanity_shared_pipeline_1_post_Limit_2_0" : {
       "id" : "prophecy__temp_sanity_shared_pipeline_1_post_Limit_2_0",
       "component" : "TargetModel",
@@ -49,77 +168,32 @@
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
-    },
-    "AP54Ot4hBzO3roY-e5KkE$$nhyETPgPRCwdNFPfG71L4" : {
-      "id" : "AP54Ot4hBzO3roY-e5KkE$$nhyETPgPRCwdNFPfG71L4",
-      "component" : "Limit",
-      "metadata" : {
-        "label" : "Limit_2",
-        "x" : 540,
-        "y" : 540,
-        "phase" : 0
-      },
-      "properties" : {
-        "limit" : {
-          "expression" : "10"
-        }
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "BoyQ2_qGiq6fNgMUGpyfN$$SczuqCh__9gdxqbi7tvGk",
-          "slug" : "in0"
-        } ],
-        "outputs" : [ {
-          "id" : "5xzS5Gre0UUFxlIveLSmZ$$pmUjdCvGX51zffFrDYFfy",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      }
-    },
-    "KwXjRsjkX9PCfrCXg0hat" : {
-      "id" : "KwXjRsjkX9PCfrCXg0hat",
-      "component" : "Source",
-      "metadata" : {
-        "label" : "all_type_parquet",
-        "x" : 180,
-        "y" : 520,
-        "phase" : 0
-      },
-      "properties" : {
-        "writeOptions" : {
-          "writeMode" : "overwrite"
-        },
-        "table" : {
-          "name" : "all_type_parquet",
-          "sourceType" : "Table",
-          "sourceName" : "spark_catalog.qa_database",
-          "alias" : ""
-        }
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "AVVIU7q7XGsbe1eYpFjRb",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      }
     }
   },
   "connections" : [ {
-    "id" : "conn_AP54Ot4hBzO3roY-e5KkE$$nhyETPgPRCwdNFPfG71L4_prophecy__temp_sanity_shared_pipeline_1_post_Limit_2_0",
-    "source" : "AP54Ot4hBzO3roY-e5KkE$$nhyETPgPRCwdNFPfG71L4",
-    "sourcePort" : "5xzS5Gre0UUFxlIveLSmZ$$pmUjdCvGX51zffFrDYFfy",
+    "id" : "conn_95nDW2d54K7HBQYnAG_aV$$hqYkBPQWhR7zlraaaFFtF_prophecy__temp_sanity_shared_pipeline_1_post_Limit_2_0",
+    "source" : "95nDW2d54K7HBQYnAG_aV$$hqYkBPQWhR7zlraaaFFtF",
+    "sourcePort" : "JhSoemvOjMkrri-T8SOol$$CbiY7nutwxD-MVU_BjJZx",
     "target" : "prophecy__temp_sanity_shared_pipeline_1_post_Limit_2_0",
     "targetPort" : "input_port_0_1"
   }, {
-    "id" : "T7ZdKwEYaV4rljCPcT1QZ",
-    "source" : "KwXjRsjkX9PCfrCXg0hat",
-    "sourcePort" : "AVVIU7q7XGsbe1eYpFjRb",
-    "target" : "AP54Ot4hBzO3roY-e5KkE$$nhyETPgPRCwdNFPfG71L4",
-    "targetPort" : "BoyQ2_qGiq6fNgMUGpyfN$$SczuqCh__9gdxqbi7tvGk"
+    "id" : "iWe7Vq51m_biBiTjI-pC4$$wV6ECInmg6pyqeH0G48Gr",
+    "source" : "o_QxaG8ci27uqX3OmSv1w$$DVfnJEJhU725V6PIpERRn",
+    "sourcePort" : "P2S8inSPT0bTIsIazkP9E$$nX-n30_Mwr0elo249UGno",
+    "target" : "95nDW2d54K7HBQYnAG_aV$$hqYkBPQWhR7zlraaaFFtF",
+    "targetPort" : "0ot4vxP7I9BJUbwaFakiw$$6hcG_6EdwbLJ3dMfS3Ga6"
+  }, {
+    "id" : "VLXPoSaU_2h59RndHaOYI",
+    "source" : "8zZDktXpT2Y-G8nz2-vtf$$ZQ--IL_7h29GNKWO-RbNb",
+    "sourcePort" : "nUtqsljSNSWDKpZZ8Xy5y$$x8o0UbKUYOYB9F7w3iWhT",
+    "target" : "o_QxaG8ci27uqX3OmSv1w$$DVfnJEJhU725V6PIpERRn",
+    "targetPort" : "ecAIbgc9hl1wZ4oLIEvKJ$$T-3mlM0w0V4-J38V_tmKk"
+  }, {
+    "id" : "3kndidf8FWrKRmC6monVV",
+    "source" : "KU5RvI9veSwZ8yqy5MfKt$$DZJUToJbBAfXTkj_U8CLk",
+    "sourcePort" : "ahMGU20VF_qazSbumeccN$$R-KzjnI8I7j0ZnqwiRX3V",
+    "target" : "o_QxaG8ci27uqX3OmSv1w$$DVfnJEJhU725V6PIpERRn",
+    "targetPort" : "T6QuGrTDOpj2mOmNtAlF2$$GO7sRnUcsuwBQiH4C9EAS"
   } ],
   "component" : "Model"
 }
