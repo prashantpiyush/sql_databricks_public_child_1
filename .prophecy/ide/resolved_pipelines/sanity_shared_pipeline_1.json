@@ -141,80 +141,6 @@
       "ports" : {
         "inputs" : [ {
           "id" : "KgC9jL6YZHcpFF9c7ScTb$$KodgvoIoEfuD6mDcQG7rj",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "c_tinyint",
-              "dataType" : {
-                "type" : "TinyInt"
-              }
-            }, {
-              "name" : "c_smallint",
-              "dataType" : {
-                "type" : "SmallInt"
-              }
-            }, {
-              "name" : "c_int",
-              "dataType" : {
-                "type" : "Integer"
-              }
-            }, {
-              "name" : "c_bigint",
-              "dataType" : {
-                "type" : "Bigint"
-              }
-            }, {
-              "name" : "c_float",
-              "dataType" : {
-                "type" : "Float"
-              }
-            }, {
-              "name" : "c_double",
-              "dataType" : {
-                "type" : "Double"
-              }
-            }, {
-              "name" : "c_string",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "c_boolean",
-              "dataType" : {
-                "type" : "Boolean"
-              }
-            }, {
-              "name" : "c_array",
-              "dataType" : {
-                "type" : "Array",
-                "dataType" : {
-                  "type" : "String"
-                }
-              }
-            }, {
-              "name" : "c_struct",
-              "dataType" : {
-                "type" : "Struct",
-                "fields" : [ {
-                  "name" : "city",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "state",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "pin",
-                  "dataType" : {
-                    "type" : "Bigint"
-                  }
-                } ]
-              }
-            } ]
-          },
           "slug" : "in0"
         } ],
         "outputs" : [ ],
@@ -390,6 +316,36 @@
         "isCustomOutputSchema" : false
       }
     },
+    "prophecy__temp_sanity_shared_pipeline_1_pre_filter_by_count_2" : {
+      "id" : "prophecy__temp_sanity_shared_pipeline_1_pre_filter_by_count_2",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "MultiColumnRename_1",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "prophecy__temp_sanity_shared_pipeline_1_pre_filter_by_count_2",
+          "sourceType" : "Source",
+          "sourceName" : "prophecy__temp_sanity_shared_pipeline_1_source",
+          "alias" : ""
+        }
+      },
+      "visualMetaInfo" : {
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_3_1",
+          "slug" : "input_port_3_1"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_3_1",
+          "slug" : "output_port_3_1"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
     "95nDW2d54K7HBQYnAG_aV$$hqYkBPQWhR7zlraaaFFtF" : {
       "id" : "95nDW2d54K7HBQYnAG_aV$$hqYkBPQWhR7zlraaaFFtF",
       "component" : "Model",
@@ -519,33 +475,6 @@
             } ]
           },
           "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
-      }
-    },
-    "Ofo3_jGxgB097EkwdbMbq$$ckfNAk1-m9KT_7dEtUqw3" : {
-      "id" : "Ofo3_jGxgB097EkwdbMbq$$ckfNAk1-m9KT_7dEtUqw3",
-      "component" : "Model",
-      "metadata" : {
-        "label" : "model_sanity_shared_pipeline_1_FuzzyMatch_1",
-        "phase" : 0
-      },
-      "properties" : {
-        "modelName" : "model_sanity_shared_pipeline_1_FuzzyMatch_1"
-      },
-      "visualMetaInfo" : {
-        "visualProcessIds" : [ "prophecy__temp_sanity_shared_pipeline_1_pre_filter_by_count_2", "Ofo3_jGxgB097EkwdbMbq$$ckfNAk1-m9KT_7dEtUqw3" ],
-        "type" : "table",
-        "isTemporaryTable" : true
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "model_sanity_shared_pipeline_1_FuzzyMatch_1_in_1",
-          "slug" : "in_1"
-        } ],
-        "outputs" : [ {
-          "id" : "model_sanity_shared_pipeline_1_FuzzyMatch_1_out_1",
-          "slug" : "out_1"
         } ],
         "isCustomOutputSchema" : false
       }
@@ -872,6 +801,12 @@
     "target" : "prophecy__temp_sanity_shared_pipeline_1_pre_filter_by_count_3",
     "targetPort" : "input_port_4_1"
   }, {
+    "id" : "conn_prophecy__temp_sanity_shared_pipeline_1_pre_filter_by_count_2__rD6Ovk0fnRKMnTbBE6jX$$e3rKLx46TjZkGjKgzD9-0_LMXrOtX12o9DoUO2PEPIl$$EzjLW0hgxQpm1lUYMHa2h",
+    "source" : "prophecy__temp_sanity_shared_pipeline_1_pre_filter_by_count_2",
+    "sourcePort" : "output_port_3_1",
+    "target" : "_rD6Ovk0fnRKMnTbBE6jX$$e3rKLx46TjZkGjKgzD9-0",
+    "targetPort" : "model_sanity_shared_pipeline_1_filter_by_count_in_1"
+  }, {
     "id" : "conn_prophecy__temp_sanity_shared_pipeline_1_pre_filter_by_count_3__rD6Ovk0fnRKMnTbBE6jX$$e3rKLx46TjZkGjKgzD9-0_19GuuqLjwiIVKJNNGqaFv$$L2J0y5GEgmpfPhGR2tf_y",
     "source" : "prophecy__temp_sanity_shared_pipeline_1_pre_filter_by_count_3",
     "sourcePort" : "output_port_4_1",
@@ -925,12 +860,6 @@
     "sourcePort" : "model_sanity_shared_pipeline_1_Limit_2_out_1",
     "target" : "1HwTtvGwP1YsP3N4nwzvP$$tuTX3ig35dGC9TWSw0b_P",
     "targetPort" : "B8EdHfjfydbr_j6k3fN3D$$mWznUqZk5WvTkklIuM_ED"
-  }, {
-    "id" : "conn_Ofo3_jGxgB097EkwdbMbq$$ckfNAk1-m9KT_7dEtUqw3__rD6Ovk0fnRKMnTbBE6jX$$e3rKLx46TjZkGjKgzD9-0",
-    "source" : "Ofo3_jGxgB097EkwdbMbq$$ckfNAk1-m9KT_7dEtUqw3",
-    "sourcePort" : "model_sanity_shared_pipeline_1_FuzzyMatch_1_out_1",
-    "target" : "_rD6Ovk0fnRKMnTbBE6jX$$e3rKLx46TjZkGjKgzD9-0",
-    "targetPort" : "model_sanity_shared_pipeline_1_filter_by_count_in_1"
   }, {
     "id" : "conn_OA7amaV3r1PB3h1wJH5Fs$$HnpWwhknKNdQioRo7wgQL__rD6Ovk0fnRKMnTbBE6jX$$e3rKLx46TjZkGjKgzD9-0",
     "source" : "OA7amaV3r1PB3h1wJH5Fs$$HnpWwhknKNdQioRo7wgQL",

@@ -39,6 +39,16 @@ with DAG(Schedule = Schedule):
         component = "Model", 
         modelName = "model_sanity_shared_pipeline_1_DynamicSelect_1"
     )
+    MultiColumnRename_1 = Task(
+        task_id = "MultiColumnRename_1", 
+        component = "Dataset", 
+        table = {
+          "name": "prophecy__temp_sanity_shared_pipeline_1_pre_filter_by_count_2", 
+          "sourceType": "Source", 
+          "sourceName": "prophecy__temp_sanity_shared_pipeline_1_source", 
+          "alias": ""
+        }
+    )
     model_sanity_shared_pipeline_1_Limit_2 = Task(
         task_id = "model_sanity_shared_pipeline_1_Limit_2", 
         component = "Model", 
@@ -49,11 +59,6 @@ with DAG(Schedule = Schedule):
         component = "Dataset", 
         writeOptions = {"writeMode" : "overwrite"}, 
         table = {"name" : "all_type_parquet", "sourceType" : "Table", "sourceName" : "spark_catalog.qa_database", "alias" : ""}
-    )
-    model_sanity_shared_pipeline_1_FuzzyMatch_1 = Task(
-        task_id = "model_sanity_shared_pipeline_1_FuzzyMatch_1", 
-        component = "Model", 
-        modelName = "model_sanity_shared_pipeline_1_FuzzyMatch_1"
     )
     model_sanity_shared_pipeline_1_Join_1 = Task(
         task_id = "model_sanity_shared_pipeline_1_Join_1", 
@@ -86,8 +91,8 @@ with DAG(Schedule = Schedule):
     )
     model_sanity_shared_pipeline_1_DynamicSelect_1.out_1 >> model_sanity_shared_pipeline_1_filter_by_count.in_1
     model_sanity_shared_pipeline_1_Limit_2.out_1 >> RestAPI_1.in0
-    model_sanity_shared_pipeline_1_FuzzyMatch_1.out_1 >> model_sanity_shared_pipeline_1_filter_by_count.in_1
     model_sanity_shared_pipeline_1_filter_by_count.out_1 >> notify_pipeline_buddy.in0
+    MultiColumnRename_1.output_port_3_1 >> model_sanity_shared_pipeline_1_filter_by_count.in_1
     RestAPI_1.out0 >> RestAPI_1.input_port_4_1
     model_sanity_shared_pipeline_1_Join_1.out_1 >> model_sanity_shared_pipeline_1_filter_by_count.in_1
     (

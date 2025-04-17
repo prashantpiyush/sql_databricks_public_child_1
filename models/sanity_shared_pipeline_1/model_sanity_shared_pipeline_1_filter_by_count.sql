@@ -15,7 +15,7 @@ WITH RestAPI_1 AS (
 
 ),
 
-FuzzyMatch_1 AS (
+MultiColumnRename_1 AS (
 
   SELECT * 
   
@@ -72,7 +72,7 @@ filter_by_count AS (
           + (
               SELECT count(*)
               
-              FROM FuzzyMatch_1
+              FROM MultiColumnRename_1
              )
         )
 

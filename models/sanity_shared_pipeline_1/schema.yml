@@ -16,9 +16,6 @@ models:
 - name: "model_sanity_shared_pipeline_1_filter_by_count"
   tags:
   - "prophecy_temp"
-- name: "model_sanity_shared_pipeline_1_FuzzyMatch_1"
-  tags:
-  - "prophecy_temp"
 sources:
 - name: "prophecy__temp_sanity_shared_pipeline_1_source"
   database: "hive_metastore"

@@ -48,7 +48,7 @@
       "id" : "prophecy__temp_sanity_shared_pipeline_1_pre_filter_by_count_2",
       "component" : "Source",
       "metadata" : {
-        "label" : "FuzzyMatch_1",
+        "label" : "MultiColumnRename_1",
         "phase" : 0
       },
       "properties" : {
@@ -189,7 +189,7 @@
           "path" : "out",
           "id" : "out",
           "language" : "sql",
-          "content" : "select * from Join_1 where c_int != (\n    (select count(*) from DataCleansing_1) + \n    (select count(*) from DynamicSelect_1) +\n    (select count(*) from RestAPI_1) +\n    (select count(*) from FuzzyMatch_1)\n)"
+          "content" : "select * from Join_1 where c_int != (\n    (select count(*) from DataCleansing_1) + \n    (select count(*) from DynamicSelect_1) +\n    (select count(*) from RestAPI_1) +\n    (select count(*) from MultiColumnRename_1)\n)"
         } ]
       },
       "ports" : {

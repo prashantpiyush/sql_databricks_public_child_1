@@ -577,7 +577,52 @@ sqlModels:
     createdAt: '2023-04-12 09:19:50'
   .prophecy/metadata/sqlmodels/env_uitesting_shared_useallmodel_1:
     name: env_uitesting_shared_useallmodel_1
-    schema: null
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: c_tinyint
+        dataType:
+          type: TinyInt
+      - name: c_smallint
+        dataType:
+          type: SmallInt
+      - name: c_int
+        dataType:
+          type: Integer
+      - name: c_bigint
+        dataType:
+          type: Bigint
+      - name: c_float
+        dataType:
+          type: Float
+      - name: c_double
+        dataType:
+          type: Double
+      - name: c_string
+        dataType:
+          type: String
+      - name: c_boolean
+        dataType:
+          type: Boolean
+      - name: c_array
+        dataType:
+          type: Array
+          dataType:
+            type: String
+      - name: c_struct
+        dataType:
+          type: Struct
+          fields:
+          - name: city
+            dataType:
+              type: String
+          - name: state
+            dataType:
+              type: String
+          - name: pin
+            dataType:
+              type: Bigint
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -4237,13 +4282,12 @@ sqlOrchestratorPipelines:
     description: null
     author: abhisheks+shared@prophecy.io
     files:
-    - models/sanity_shared_pipeline_1/model_sanity_shared_pipeline_1_Limit_2.sql
-    - models/sanity_shared_pipeline_1/model_sanity_shared_pipeline_1_FuzzyMatch_1.sql
-    - models/sanity_shared_pipeline_1/model_sanity_shared_pipeline_1_DynamicSelect_1.sql
     - models/sanity_shared_pipeline_1/model_sanity_shared_pipeline_1_Join_1.sql
-    - models/sanity_shared_pipeline_1/model_sanity_shared_pipeline_1_DataCleansing_1.sql
-    - models/sanity_shared_pipeline_1/model_sanity_shared_pipeline_1_filter_by_count.sql
     - models/sanity_shared_pipeline_1/schema.yml
+    - models/sanity_shared_pipeline_1/model_sanity_shared_pipeline_1_filter_by_count.sql
+    - models/sanity_shared_pipeline_1/model_sanity_shared_pipeline_1_DataCleansing_1.sql
+    - models/sanity_shared_pipeline_1/model_sanity_shared_pipeline_1_Limit_2.sql
+    - models/sanity_shared_pipeline_1/model_sanity_shared_pipeline_1_DynamicSelect_1.sql
     - .prophecy/ide/pipelines/sanity_shared_pipeline_1.json
     - pipelines/sanity_shared_pipeline_1.py
     createdAt: '2025-04-14 06:21:27'
