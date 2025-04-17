@@ -149,6 +149,46 @@
         } ],
         "outputs" : [ {
           "id" : "6eLXO8zDEk4_gWXg4WjT2$$Yvanohpfix1Eui61Mgp2o",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "c_array",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_label",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "code_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "service_label_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_int_id",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -788,6 +828,35 @@
         "relation_name" : [ "MultiColumnEdit_1" ],
         "columnNames" : [ "code", "country_code", "pre_code", "pre_country_code", "pre_country_label", "pre_code_1" ],
         "suffix" : "",
+        "_oldMacroProperties" : {
+          "macroName" : "MultiColumnRename",
+          "projectName" : "DatabricksSqlBasics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['MultiColumnEdit_1']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"c_array\", \"dataType\": \"String\"}, {\"name\": \"code\", \"dataType\": \"String\"}, {\"name\": \"country_code\", \"dataType\": \"String\"}, {\"name\": \"country_label\", \"dataType\": \"String\"}, {\"name\": \"code_1\", \"dataType\": \"String\"}, {\"name\": \"service_label_1\", \"dataType\": \"String\"}, {\"name\": \"c_int_id\", \"dataType\": \"Bigint\"}, {\"name\": \"pre_code\", \"dataType\": \"String\"}, {\"name\": \"pre_country_code\", \"dataType\": \"String\"}, {\"name\": \"pre_country_label\", \"dataType\": \"String\"}, {\"name\": \"pre_code_1\", \"dataType\": \"String\"}, {\"name\": \"pre_service_label_1\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "columnNames",
+            "value" : "[\"code\", \"country_code\", \"pre_code\", \"pre_country_code\", \"pre_country_label\", \"pre_code_1\"]"
+          }, {
+            "name" : "renameMethod",
+            "value" : "editPrefixSuffix"
+          }, {
+            "name" : "editOperation",
+            "value" : "Add"
+          }, {
+            "name" : "editType",
+            "value" : "Suffix"
+          }, {
+            "name" : "editWith",
+            "value" : "_post"
+          }, {
+            "name" : "customExpression",
+            "value" : ""
+          } ]
+        },
         "editOperation" : "Add",
         "editWith" : "_post",
         "schema" : "[{\"name\": \"c_array\", \"dataType\": \"String\"}, {\"name\": \"code\", \"dataType\": \"String\"}, {\"name\": \"country_code\", \"dataType\": \"String\"}, {\"name\": \"country_label\", \"dataType\": \"String\"}, {\"name\": \"code_1\", \"dataType\": \"String\"}, {\"name\": \"service_label_1\", \"dataType\": \"String\"}, {\"name\": \"c_int_id\", \"dataType\": \"Bigint\"}, {\"name\": \"pre_code\", \"dataType\": \"String\"}, {\"name\": \"pre_country_code\", \"dataType\": \"String\"}, {\"name\": \"pre_country_label\", \"dataType\": \"String\"}, {\"name\": \"pre_code_1\", \"dataType\": \"String\"}, {\"name\": \"pre_service_label_1\", \"dataType\": \"String\"}]",
@@ -798,10 +867,140 @@
       "ports" : {
         "inputs" : [ {
           "id" : "76gOejdX7IjiikPUppXPb$$4nIRBewlOTfKL1VPW6rCY",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "c_array",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_label",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "code_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "service_label_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_int_id",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "pre_code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pre_country_code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pre_country_label",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pre_code_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pre_service_label_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "in0"
         } ],
         "outputs" : [ {
           "id" : "OMCN1CTea35GSoLhZ5MnT$$2A5ON4RcOMqlFwmiikmC9",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "c_array",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "code_post",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_code_post",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_label",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "code_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "service_label_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_int_id",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "pre_code_post",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pre_country_code_post",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pre_country_label_post",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pre_code_1_post",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pre_service_label_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -1160,6 +1359,56 @@
         "replaceNullTextFields" : true,
         "relation_name" : [ "MultiColumnRename_1" ],
         "columnNames" : [ "c_array", "code", "country_code", "country_label", "code_1", "service_label_1", "pre_code", "pre_country_code", "pre_country_label", "pre_code_1", "pre_service_label_1", "c_int_id", "pre_code_post" ],
+        "_oldMacroProperties" : {
+          "macroName" : "DataCleansing",
+          "projectName" : "DatabricksSqlBasics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['MultiColumnRename_1']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"c_array\", \"dataType\": \"String\"}, {\"name\": \"code_post\", \"dataType\": \"String\"}, {\"name\": \"country_code_post\", \"dataType\": \"String\"}, {\"name\": \"country_label\", \"dataType\": \"String\"}, {\"name\": \"code_1\", \"dataType\": \"String\"}, {\"name\": \"service_label_1\", \"dataType\": \"String\"}, {\"name\": \"c_int_id\", \"dataType\": \"Bigint\"}, {\"name\": \"pre_code_post\", \"dataType\": \"String\"}, {\"name\": \"pre_country_code_post\", \"dataType\": \"String\"}, {\"name\": \"pre_country_label_post\", \"dataType\": \"String\"}, {\"name\": \"pre_code_1_post\", \"dataType\": \"String\"}, {\"name\": \"pre_service_label_1\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "modifyCase",
+            "value" : "makeUppercase"
+          }, {
+            "name" : "columnNames",
+            "value" : "[\"c_array\", \"code\", \"country_code\", \"country_label\", \"code_1\", \"service_label_1\", \"pre_code\", \"pre_country_code\", \"pre_country_label\", \"pre_code_1\", \"pre_service_label_1\", \"c_int_id\", \"pre_code_post\"]"
+          }, {
+            "name" : "replaceNullTextFields",
+            "value" : "true"
+          }, {
+            "name" : "replaceNullTextWith",
+            "value" : "NA"
+          }, {
+            "name" : "replaceNullForNumericFields",
+            "value" : "true"
+          }, {
+            "name" : "replaceNullNumericWith",
+            "value" : "0"
+          }, {
+            "name" : "trimWhiteSpace",
+            "value" : "true"
+          }, {
+            "name" : "removeTabsLineBreaksAndDuplicateWhitespace",
+            "value" : "true"
+          }, {
+            "name" : "allWhiteSpace",
+            "value" : "true"
+          }, {
+            "name" : "cleanLetters",
+            "value" : "true"
+          }, {
+            "name" : "cleanPunctuations",
+            "value" : "true"
+          }, {
+            "name" : "cleanNumbers",
+            "value" : "true"
+          }, {
+            "name" : "removeRowNullAllCols",
+            "value" : "true"
+          } ]
+        },
         "schema" : "[{\"name\": \"c_array\", \"dataType\": \"String\"}, {\"name\": \"code_post\", \"dataType\": \"String\"}, {\"name\": \"country_code_post\", \"dataType\": \"String\"}, {\"name\": \"country_label\", \"dataType\": \"String\"}, {\"name\": \"code_1\", \"dataType\": \"String\"}, {\"name\": \"service_label_1\", \"dataType\": \"String\"}, {\"name\": \"c_int_id\", \"dataType\": \"Bigint\"}, {\"name\": \"pre_code_post\", \"dataType\": \"String\"}, {\"name\": \"pre_country_code_post\", \"dataType\": \"String\"}, {\"name\": \"pre_country_label_post\", \"dataType\": \"String\"}, {\"name\": \"pre_code_1_post\", \"dataType\": \"String\"}, {\"name\": \"pre_service_label_1\", \"dataType\": \"String\"}]",
         "allWhiteSpace" : true,
         "removeTabsLineBreaksAndDuplicateWhitespace" : true,
@@ -1171,10 +1420,140 @@
       "ports" : {
         "inputs" : [ {
           "id" : "61w5LEc1WHL_JqU30ky28$$de6NF9s9vfPMgSGbYhxsN",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "c_array",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "code_post",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_code_post",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_label",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "code_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "service_label_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_int_id",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "pre_code_post",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pre_country_code_post",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pre_country_label_post",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pre_code_1_post",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pre_service_label_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "in0"
         } ],
         "outputs" : [ {
           "id" : "0MRpb5bIZepvLAord5-Rw$$WJLjUkjcu-vQVC9QMDxUH",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "c_array",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "code_post",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_code_post",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_label",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "code_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "service_label_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_int_id",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "pre_code_post",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pre_country_code_post",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pre_country_label_post",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pre_code_1_post",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pre_service_label_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -2048,6 +2427,21 @@
       "ports" : {
         "inputs" : [ {
           "id" : "8ld7R50QC68EGNW3FuQUB$$PKi6lTbOUDJ98zQb-gpuH",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "service_label_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_int",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            } ]
+          },
           "slug" : "in0"
         }, {
           "id" : "MJHRXQKpCzRAX7nkhASs4$$2YyBB1QV9xBINqpArN-dy",
@@ -2088,6 +2482,21 @@
         } ],
         "outputs" : [ {
           "id" : "0UmSNmj1-mErVtLcw-jwb$$Xay11SyZVd-5nMdqtxel0",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "service_label_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_int",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -2106,6 +2515,32 @@
         "changeOutputFieldName" : true,
         "relation_name" : [ "FlattenSchema_1" ],
         "columnNames" : [ "code", "country_code", "country_label", "code_1", "service_label_1" ],
+        "_oldMacroProperties" : {
+          "macroName" : "MultiColumnEdit",
+          "projectName" : "DatabricksSqlBasics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['FlattenSchema_1']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"c_array\", \"dataType\": \"String\"}, {\"name\": \"code\", \"dataType\": \"String\"}, {\"name\": \"country_code\", \"dataType\": \"String\"}, {\"name\": \"country_label\", \"dataType\": \"String\"}, {\"name\": \"code_1\", \"dataType\": \"String\"}, {\"name\": \"service_label_1\", \"dataType\": \"String\"}, {\"name\": \"c_int_id\", \"dataType\": \"Bigint\"}]"
+          }, {
+            "name" : "columnNames",
+            "value" : "[\"code\", \"country_code\", \"country_label\", \"code_1\", \"service_label_1\"]"
+          }, {
+            "name" : "expressionToBeApplied",
+            "value" : "upper(column_name)"
+          }, {
+            "name" : "changeOutputFieldName",
+            "value" : "true"
+          }, {
+            "name" : "prefixSuffixOption",
+            "value" : "Prefix"
+          }, {
+            "name" : "prefixSuffixToBeAdded",
+            "value" : "pre_"
+          } ]
+        },
         "schema" : "[{\"name\": \"c_array\", \"dataType\": \"String\"}, {\"name\": \"code\", \"dataType\": \"String\"}, {\"name\": \"country_code\", \"dataType\": \"String\"}, {\"name\": \"country_label\", \"dataType\": \"String\"}, {\"name\": \"code_1\", \"dataType\": \"String\"}, {\"name\": \"service_label_1\", \"dataType\": \"String\"}, {\"name\": \"c_int_id\", \"dataType\": \"Bigint\"}]",
         "expressionToBeApplied" : "upper(column_name)",
         "prefixSuffixToBeAdded" : "pre_",
@@ -2114,10 +2549,115 @@
       "ports" : {
         "inputs" : [ {
           "id" : "CMFLdJ9t_wY65IPkVB1na$$3ebMI09T6EpjSrnf9v3MC",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "c_array",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_label",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "code_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "service_label_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_int_id",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            } ]
+          },
           "slug" : "in0"
         } ],
         "outputs" : [ {
           "id" : "pfUyARb20OXkdTZEoevlq$$tS0b4fcPRZQKNNLYySomA",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "c_array",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_label",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "code_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "service_label_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_int_id",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "pre_code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pre_country_code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pre_country_label",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pre_code_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pre_service_label_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -2206,6 +2746,21 @@
       "ports" : {
         "inputs" : [ {
           "id" : "kZJbvCLxSYb57uxzmkPAX$$5cy3N-zIJhvtA2siP85fg",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "service_label_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_int",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            } ]
+          },
           "slug" : "in0"
         } ],
         "outputs" : [ ],
@@ -3048,10 +3603,90 @@
       "ports" : {
         "inputs" : [ {
           "id" : "UmzEnuF774Gssu9-7MAAp$$ajAVcuRDgUtfv1ecAEAxD",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "c_array",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "code_post",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_code_post",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_label",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "code_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "service_label_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_int_id",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "pre_code_post",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pre_country_code_post",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pre_country_label_post",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pre_code_1_post",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pre_service_label_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "in0"
         } ],
         "outputs" : [ {
           "id" : "hojD9wzS37qpi9GufPMZf$$09jvUorh55tyzG1demta-",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "service_label_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_int",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
