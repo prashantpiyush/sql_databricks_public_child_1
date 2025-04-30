@@ -1,0 +1,71 @@
+{
+  "id" : "sanity_databricks_shared_working_app",
+  "metainfo" : {
+    "description" : "sanity_databricks_shared_working_app",
+    "pipelineId" : "sanity_working_pipeline_shared_db_1"
+  },
+  "definition" : {
+    "template" : [ {
+      "key" : "UNyJuf6Tvwrys2KoPru3p",
+      "id" : "DataPreview1",
+      "type" : "DataPreview",
+      "properties" : {
+        "tableId" : "xtmkJQcbQXnd5lFozXVUg$$aFzF6pg4JqZ0Roh-vAA6n",
+        "columns" : [ {
+          "key" : "c_tinyint",
+          "column" : "c_tinyint",
+          "label" : "c_tinyint",
+          "selected" : true
+        }, {
+          "key" : "c_smallint",
+          "column" : "c_smallint",
+          "label" : "c_smallint",
+          "selected" : true
+        }, {
+          "key" : "c_int",
+          "column" : "c_int",
+          "label" : "c_int",
+          "selected" : true
+        }, {
+          "key" : "c_bigint",
+          "column" : "c_bigint",
+          "label" : "c_bigint",
+          "selected" : true
+        }, {
+          "key" : "c_float",
+          "column" : "c_float",
+          "label" : "c_float",
+          "selected" : true
+        }, {
+          "key" : "c_double",
+          "column" : "c_double",
+          "label" : "c_double",
+          "selected" : true
+        }, {
+          "key" : "c_string",
+          "column" : "c_string",
+          "label" : "c_string",
+          "selected" : true
+        }, {
+          "key" : "c_boolean",
+          "column" : "c_boolean",
+          "label" : "c_boolean",
+          "selected" : true
+        }, {
+          "key" : "c_array",
+          "column" : "c_array",
+          "label" : "c_array",
+          "selected" : true
+        }, {
+          "key" : "c_struct",
+          "column" : "c_struct",
+          "label" : "c_struct",
+          "selected" : true
+        } ],
+        "title" : "Table Title"
+      },
+      "errors" : { }
+    } ]
+  },
+  "instances" : { }
+}
