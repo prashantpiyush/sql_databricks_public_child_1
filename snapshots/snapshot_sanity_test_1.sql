@@ -23,7 +23,7 @@ Reformat_1 AS (
 
   SELECT *
   
-  FROM sanity_simple_model_1 AS in0
+  FROM sanity_simple_model_1
 
 ),
 
@@ -31,7 +31,7 @@ OrderBy_1 AS (
 
   SELECT *
   
-  FROM Reformat_1 AS in0
+  FROM Reformat_1
 
 )
 

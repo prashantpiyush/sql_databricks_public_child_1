@@ -2,7 +2,7 @@
   "id" : "snapshot_sanity_test_1",
   "metainfo" : {
     "label" : "snapshot_sanity_test_1",
-    "autoLayout" : true,
+    "autoLayout" : false,
     "staleState" : "none",
     "sourceSuggestions" : {
       "sources" : [ ]
@@ -30,6 +30,8 @@
       "component" : "Model",
       "metadata" : {
         "label" : "sanity_simple_model_1",
+        "x" : 20,
+        "y" : 20,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -55,6 +57,8 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "Reformat_1",
+        "x" : 220,
+        "y" : 20,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -81,6 +85,8 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "OrderBy_1",
+        "x" : 420,
+        "y" : 20,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -104,9 +110,11 @@
     },
     "final##dBYxLKeu" : {
       "id" : "final##dBYxLKeu",
-      "component" : "TargetModel",
+      "component" : "TargetSnapshot",
       "metadata" : {
         "label" : "snapshot_sanity_test_1",
+        "x" : 620,
+        "y" : 20,
         "phase" : 0,
         "isLabelGrayed" : false
       },
@@ -115,7 +123,6 @@
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
         "query" : "SELECT *\n\nFROM OrderBy_1\n",
-        "isModel" : false,
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true"
