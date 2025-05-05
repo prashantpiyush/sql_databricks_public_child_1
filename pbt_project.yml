@@ -4283,11 +4283,11 @@ sqlOrchestratorPipelines:
     author: abhisheks+shared@prophecy.io
     files:
     - models/sanity_shared_pipeline_1/model_sanity_shared_pipeline_1_Limit_2.sql
+    - models/sanity_shared_pipeline_1/model_sanity_shared_pipeline_1_DataCleansing_1.sql
+    - models/sanity_shared_pipeline_1/model_sanity_shared_pipeline_1_DynamicSelect_1.sql
     - models/sanity_shared_pipeline_1/model_sanity_shared_pipeline_1_filter_by_count.sql
     - models/sanity_shared_pipeline_1/model_sanity_shared_pipeline_1_Join_1.sql
     - models/sanity_shared_pipeline_1/schema.yml
-    - models/sanity_shared_pipeline_1/model_sanity_shared_pipeline_1_DynamicSelect_1.sql
-    - models/sanity_shared_pipeline_1/model_sanity_shared_pipeline_1_DataCleansing_1.sql
     - .prophecy/ide/pipelines/sanity_shared_pipeline_1.json
     - pipelines/sanity_shared_pipeline_1.py
     createdAt: '2025-04-14 06:21:27'
