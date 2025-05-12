@@ -4233,11 +4233,11 @@ sqlOrchestratorPipelines:
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
-    - models/sanity_shared_pipeline_1/model_sanity_shared_pipeline_1_SQLStatement_1.sql
-    - models/sanity_shared_pipeline_1/model_sanity_shared_pipeline_1_Limit_2.sql
-    - models/sanity_shared_pipeline_1/model_sanity_shared_pipeline_1_combine_multiple_tables_1.sql
-    - models/sanity_shared_pipeline_1/schema.yml
     - models/sanity_shared_pipeline_1/model_sanity_shared_pipeline_1_Union_1.sql
+    - models/sanity_shared_pipeline_1/schema.yml
+    - models/sanity_shared_pipeline_1/model_sanity_shared_pipeline_1_SQLStatement_1.sql
+    - models/sanity_shared_pipeline_1/model_sanity_shared_pipeline_1_combine_multiple_tables_1.sql
+    - models/sanity_shared_pipeline_1/model_sanity_shared_pipeline_1_Limit_2.sql
     - models/sanity_shared_pipeline_1/model_sanity_shared_pipeline_1_Join_1.sql
     - .prophecy/ide/pipelines/sanity_shared_pipeline_1.json
     - pipelines/sanity_shared_pipeline_1.py
